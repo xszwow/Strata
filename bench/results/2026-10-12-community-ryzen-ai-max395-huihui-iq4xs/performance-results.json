@@ -1,0 +1,190 @@
+{
+  "recorded_at": "2026-10-12",
+  "units": {
+    "decode": "output tokens per second",
+    "prefill": "new input tokens per second"
+  },
+  "selected_configuration": {
+    "mtp_experts": "Q4_0 native",
+    "spec": 8,
+    "spec_min_p": 0.6,
+    "mtp_window": 8192,
+    "prefill_chunk": 16384,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "selected_type_screen": {
+    "method": "three repetitions per fixed prompt; 512 output-token cap; decode TPS median and range",
+    "weighted_harmonic_tps": 51.29223847019122,
+    "weights": {
+      "code_greedy": 0.35,
+      "code_sampled": 0.35,
+      "xhigh_throughput": 0.25,
+      "chinese_sampled": 0.05
+    },
+    "total_draft_accepted": 4026,
+    "total_draft_offered": 5682,
+    "draft_acceptance_percent": 70.85533262935586,
+    "cases": {
+      "code_greedy": {
+        "decode_tps": [55.3, 55.4, 55.0],
+        "median_decode_tps": 55.3,
+        "draft_accepted_per_run": 403,
+        "draft_offered_per_run": 562
+      },
+      "code_sampled": {
+        "note": "Historical case name; these finalist requests used temperature 0.",
+        "decode_tps": [51.8, 52.1, 51.8],
+        "median_decode_tps": 51.8,
+        "draft_accepted_per_run": 381,
+        "draft_offered_per_run": 505
+      },
+      "xhigh_throughput": {
+        "decode_tps": [52.0, 52.3, 51.7],
+        "median_decode_tps": 52.0,
+        "draft_accepted_per_run": 375,
+        "draft_offered_per_run": 526
+      },
+      "chinese_sampled": {
+        "note": "Historical case name; these finalist requests used temperature 0.",
+        "decode_tps": [31.2, 31.4, 31.1],
+        "median_decode_tps": 31.2,
+        "draft_accepted_per_run": 183,
+        "draft_offered_per_run": 301
+      }
+    }
+  },
+  "complete_correctness_runs": {
+    "method": "two repetitions; normal stop required; independent correctness verifier",
+    "all_passed": true,
+    "cases": {
+      "toposort": {
+        "decode_tps": [56.6, 58.0],
+        "output_tokens": [397, 397],
+        "passed": 2
+      },
+      "edit_distance": {
+        "decode_tps": [57.8, 58.6],
+        "output_tokens": [321, 321],
+        "passed": 2
+      },
+      "schedule_profit": {
+        "decode_tps": [49.3, 54.6],
+        "output_tokens": [632, 580],
+        "passed": 2
+      },
+      "xhigh": {
+        "decode_tps": [52.1, 50.7],
+        "output_tokens": [1066, 1057],
+        "passed": 2
+      }
+    }
+  },
+  "production_smoke": {
+    "method": "single run per case using the deployed configuration",
+    "code_check": {
+      "decode_tps": 59.7,
+      "output_tokens": 202,
+      "functional_checks_passed": 11
+    },
+    "xhigh": {
+      "decode_tps": 52.8,
+      "output_tokens": 1592,
+      "finish_reason": "stop"
+    }
+  },
+  "codex_tool_trajectories": {
+    "method": "four fixed tool-call tasks, three repetitions each; all task validations passed",
+    "lookup_chain": 0,
+    "micro_decode_tps": 64.63016402512068,
+    "predicted_tokens": 2757,
+    "predicted_milliseconds": 42658.1,
+    "median_request_wall_seconds": 5.5775,
+    "cases": {
+      "playwright_config_patch": {
+        "median_decode_tps": 61.94260979887309,
+        "range": [59.73801640996113, 62.50470667971985],
+        "median_wall_seconds": 4.25
+      },
+      "unit_test_patch": {
+        "median_decode_tps": 64.90377802341071,
+        "range": [64.45567607473451, 65.18830595804036],
+        "median_wall_seconds": 7.61
+      },
+      "tool_followup_patch": {
+        "median_decode_tps": 67.96095491634742,
+        "range": [65.26302662482074, 68.39549079891279],
+        "median_wall_seconds": 6.421
+      },
+      "playwright_script": {
+        "median_decode_tps": 63.608672280953236,
+        "range": [63.165386554372645, 63.77818366919185],
+        "median_wall_seconds": 4.109
+      }
+    },
+    "lookup_chain_3_comparison": {
+      "micro_decode_tps": 64.08117876007785,
+      "gain_percent": -0.8494257647705283,
+      "lookup_accepted": 19,
+      "lookup_offered": 29,
+      "windows_used": 18,
+      "windows_total": 460,
+      "adopted": false
+    }
+  },
+  "long_context": [
+    {
+      "configuration_scope": "selected spec 8 / spec-min-p 0.6",
+      "input_tokens": 63954,
+      "prefill_tps": 1087.2,
+      "output_tokens": 31,
+      "decode_tps": 38.4,
+      "elapsed_seconds": 59.687,
+      "validation": "three markers recovered"
+    },
+    {
+      "configuration_scope": "earlier spec 4 / Q2 MTP capacity run; not a selected-config comparison",
+      "input_tokens": 260934,
+      "prefill_tps": 960.3,
+      "output_tokens": 31,
+      "decode_tps": 43.7,
+      "elapsed_seconds": 272.594,
+      "validation": "three markers recovered"
+    },
+    {
+      "configuration_scope": "final Vulkan vision validation; not a selected-config comparison",
+      "input_tokens": 260881,
+      "image_tokens": 1050,
+      "prefill_tps": 942.5,
+      "output_tokens": 81,
+      "decode_tps": 50.5,
+      "elapsed_seconds": 278.61,
+      "validation": "three markers and six image lines recovered"
+    }
+  ],
+  "temperature_matrix": {
+    "configuration_scope": "earlier Q4 MTP spec 7 / spec-min-p 0.55; two repetitions per cell",
+    "values_are_mean_decode_tps": true,
+    "rows": [
+      {"temperature": 0.0, "xhigh": 51.45, "schedule_profit": 49.75, "difficult_dp": 37.85, "difficult_dp_passed": 0},
+      {"temperature": 0.3, "xhigh": 53.95, "schedule_profit": 50.75, "difficult_dp": 36.95, "difficult_dp_passed": 0},
+      {"temperature": 0.6, "xhigh": 50.55, "schedule_profit": 54.35, "difficult_dp": 35.95, "difficult_dp_passed": 0},
+      {"temperature": 1.0, "xhigh": 48.25, "schedule_profit": 50.95, "difficult_dp": 33.50, "difficult_dp_passed": 0}
+    ],
+    "warning": "All difficult-DP answers stopped normally but failed the independent DP answer check; their TPS is failure-sample throughput."
+  },
+  "vision": {
+    "four_k_small_text_amounts": [
+      {"image_token_cap": 1024, "correct": 36, "total": 44, "prefill_tps": [622.8, 688.6], "decode_tps": [56.0, 56.1], "wall_seconds": [10.922, 9.594]},
+      {"image_token_cap": 2048, "correct": 41, "total": 44, "prefill_tps": [759.5, 808.6], "decode_tps": [56.7, 57.0], "wall_seconds": [13.875, 10.453]},
+      {"image_token_cap": 4096, "correct": 43, "total": 44, "prefill_tps": [995.6, 1006.6], "decode_tps": [63.1, 63.3], "wall_seconds": [19.469, 11.297]},
+      {"image_token_cap": 8192, "correct": 44, "total": 44, "prefill_tps": [1040.7, 1067.5], "decode_tps": [60.5, 61.6], "wall_seconds": [41.875, 15.204]}
+    ],
+    "text_decode_tps_before_after_vision": {
+      "code_greedy": [51.7, 52.6],
+      "code_sampled": [49.7, 49.6],
+      "xhigh": [44.9, 45.7]
+    }
+  }
+}

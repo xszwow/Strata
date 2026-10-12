@@ -1,217 +1,183 @@
-<h1 align="center">Strata</h1>
+<h1 align="center">Strata · Ryzen AI Max+ 395 Windows Edition</h1>
 
-**English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Português](README.pt-BR.md)
+<p align="center"><b>在 128 GB 统一内存的 Ryzen AI Max+ 395 / Radeon 8060S 上运行 Qwen3.8 Flash-Next</b><br>
+Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文 · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
 
-<p align="center"><b>Run a 125-billion-parameter AI model on your own gaming PC</b><br>
-NVIDIA or AMD graphics card (12 GB or more) · Windows or Linux · free and open source</p>
+<p align="center">
+<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md"><b>完整安装教程</b></a> ·
+<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#实测速度与适用范围">实测结果</a> ·
+<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json">测试数据 JSON</a> ·
+<a href="https://github.com/Niko1221/Strata">上游 Strata</a>
+</p>
 
-<p align="center"><a href="https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4"><img src="docs/media/pagoda-preview.webp" width="720" alt="A voxel pagoda garden that Strata's model wrote, running in the browser"></a><br>
-<sub>A voxel pagoda garden, 1 shot prompt running on an RTX 5070 with Strata (IQ3_S, 128K context) ·
-<a href="https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4">full video (49 s)</a></sub></p>
+这是 [`Niko1221/Strata`](https://github.com/Niko1221/Strata) 的社区 fork，专门整理和验证了 **Windows +
+Ryzen AI Max+ 395（Strix Halo / `gfx1151`）** 的本地部署。它不是只保存测试笔记：这个仓库包含所需源码修改、
+可移植安装脚本、模型来源与哈希、完整配置生成器，以及实际 API 测试结果。
 
-Strata runs **[Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Next)** on a normal PC. This is a
-large, smart AI model that usually needs a server. It chats, writes code, reads pictures and works with your apps
-and coding agents. Nothing leaves your PC.
+English summary: this community fork provides a reproducible Windows deployment for Ryzen AI Max+ 395 with native
+Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
+[step-by-step guide](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md).
 
-> **Ryzen AI Max+ 395 / Radeon 8060S on Windows:** this fork's tested Huihui IQ4_XS + native Q4_0 MTP +
-> Vulkan vision deployment has extra build and model-preparation steps. Follow the complete
-> [clone-to-running guide](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md); do not use
-> the generic one-click instructions below if you want that exact configuration.
+如果这套配置帮你复现成功，欢迎给仓库点一个 **Star**；遇到硬件或部署差异，也欢迎带上驱动、内存和日志反馈。
 
-## How fast is it?
+## 这套版本解决了什么
 
-We measured it on two ordinary gaming PCs. A token is about ¾ of a word.
+- 在 Windows HIP 后端加入 MTP 专家的原生 `Q4_0` / `Q8_0` 布局支持；
+- 使用 Huihui Qwen3.8 Flash-Next `UD-IQ4_XS` 主模型；
+- 在 Windows 上构建独立 Vulkan 视觉编码器，并修正高于 4,096 image tokens 时的 GPU warm-up；
+- 固定并验证 `spec 8 / spec-min-p 0.6 / mtp-window 8192`；
+- 支持 262,144 tokens 总上下文、INT8 KV 和 6 份内存 prompt cache；
+- 开启 `codex_compaction_cache`，适合持续代码会话；
+- 提供 `/v1/chat/completions`、`/v1/responses` 和 `/v1/messages`；
+- 下载脚本支持断点续传、Hugging Face / 镜像切换，以及文件大小和 SHA-256 校验；
+- 本机路径运行时生成，不包含原作者电脑的盘符或用户名。
 
-- **Writes answers:** how fast the reply appears in a short chat. 60 tokens per second is faster than you can read.
-- **Reads your prompt:** how fast it takes in what you send (here a 32K-token document, code or chat history).
+## 已验证硬件
 
-<table>
-<tr><th>NVIDIA: RTX 5070 (12 GB), Ryzen 5 7600, 64 GB RAM</th><th>AMD: RX 9070 XT (16 GB), Ryzen 9 3900X, 47 GB RAM</th></tr>
-<tr><td>
-
-| Size | Writes answers | Reads your prompt |
-| --- | ---: | ---: |
-| **Q2_0** | 94 tokens/s | 2,650 tokens/s |
-| **IQ2_XS** | 79 tokens/s | 2,090 tokens/s |
-| **IQ3_XXS** | 62 tokens/s | 1,750 tokens/s |
-| **IQ3_S** | 53 tokens/s | 1,620 tokens/s |
-| **Coder** | 55 tokens/s | 2,180 tokens/s |
-
-</td><td>
-
-| Size | Writes answers | Reads your prompt |
-| --- | ---: | ---: |
-| **Q2_0** | 60 tokens/s | 1,160 tokens/s |
-| **IQ2_XS** | 52 tokens/s | 1,110 tokens/s |
-| **Coder** | 44 tokens/s | 1,420 tokens/s |
-
-</td></tr>
-</table>
-
-NVIDIA: Q2_0 with engine 0.1.36, the other rows with 0.1.26 (4K answers, 32K prompts). The full tables are in
-[DETAILS.md](docs/DETAILS.md#speed-measured). A card with more VRAM is faster: an RTX 3090 (24 GB) should write
-about 100-140 tokens per second. Long chats and other cards: [speed of each model](docs/MODELS.md#how-fast-is-each-size),
-[community results](docs/COMMUNITY_BENCHMARKS.md).
-
-<p align="center"><a href="https://buymeacoffee.com/strataengine"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50"></a><br>
-<sub>Strata is free. If it runs well on your PC, a coffee keeps the work on it going.</sub></p>
-
-## What you need
-
-| | |
+| 项目 | 实测环境 |
 | --- | --- |
-| **Graphics card** | **NVIDIA** GeForce RTX 20, 30, 40 or 50 series, or **AMD** Radeon RX 7900 XT / XTX, RX 7800 XT / 7700 XT, RX 9060 XT, RX 9070 / 9070 XT, Radeon AI PRO R9700 or RX 6800 / 6900 series. It needs **12 GB of VRAM or more**. |
-| **RAM** | 32 GB or more. Your RAM decides [which model](#which-model-should-i-pick) fits. 64 GB runs every size. |
-| **Disk** | About 80 GB free. Use an SSD if you can: the first start is much faster. |
-| **System** | Windows 10 / 11 or Linux, and a current graphics driver from NVIDIA or AMD. |
+| CPU / APU | AMD Ryzen AI Max+ 395，16 核 32 线程 |
+| GPU | Radeon 8060S，`gfx1151` |
+| 内存 | 约 128 GB 统一内存 |
+| 系统 | Windows 11 |
+| 主模型 | Huihui Qwen3.8 Flash-Next Abliterated，Unsloth `UD-IQ4_XS` |
+| MTP | Strata runtime，原生 Q4_0 experts |
+| 视觉 | BF16 mmproj + Vulkan `strata-vision` |
+| Strata 基线 | 0.1.42 |
 
-The installer sets up everything else. Two or three cards can share the model ([multi-GPU](docs/MULTI_GPU.md)).
+其他 Radeon、内存容量或驱动版本可以尝试，但需要重新验证缓存规模和速度。
 
-Experimental, written and tested by community members on their own machines:
+## 实测性能
 
-- **Older graphics cards** (Tesla P40 / V100, GTX 10, Radeon VII / MI50, RX 6700 XT, RX 5500 XT): [Older GPUs](docs/OLDER_GPUS.md).
-- **Intel Arc**, built from source on Linux: [Intel Arc](docs/INTEL_ARC.md).
-- **AMD Ryzen AI Max (Strix Halo)**, built from source on Linux: [Strix Halo](docs/STRIX_HALO.md).
-- **Older processors without AVX2**: they work, but slowly. [Older CPUs](docs/INSTALL.md#older-cpus-experimental).
+下面是这台机器的 decode TPS；不同问题的 MTP 接受率、MoE 路由和输出长度不同，因此不能把单一峰值当成所有任务的
+固定速度。
 
-The full list: [docs/INSTALL.md](docs/INSTALL.md#what-you-need).
+| 工作负载 | 实测结果 |
+| --- | ---: |
+| 代码生成 A，3 次中位数 | **55.3 TPS** |
+| 代码生成 B，3 次中位数 | **51.8 TPS** |
+| xhigh 长推理，3 次中位数 | **52.0 TPS** |
+| 中文长文，3 次中位数 | **31.2 TPS** |
+| 混合题加权调和平均 | **51.29 TPS** |
+| 完整且通过正确性检查的代码任务 | **52.0～58.2 TPS** |
+| 生产配置代码 smoke test | **59.7 TPS** |
+| Codex / Playwright 固定工具轨迹 | **61.94～67.96 TPS** |
+| 12 次 Codex 工具轨迹 micro-average | **64.63 TPS** |
+| 63,954-token 输入 prefill | **1,087.2 TPS** |
+| 260K 级输入 prefill（容量验证） | **约 942～960 TPS** |
 
-## Install
+64.63 TPS 来自偏短、投机命中较好的固定工具任务，不代表中文、任意代码或长推理都能保持 60～65 TPS。完整页面还列出：
 
-### Let your AI set it up
+- 每种题型的 3 次范围和 MTP 接受率；
+- temperature `0 / 0.3 / 0.6 / 1.0` 的重复测试；
+- 完整正确性测试与失败样本；
+- `lookup-chain 3` 对比：整体慢 0.85%，因此默认关闭；
+- 64K、260K 和带图片近满上下文结果；
+- 1,024 / 2,048 / 4,096 / 8,192 image-token 视觉精度、prefill、decode 和端到端等待。
 
-Do you use an AI coding assistant (Claude Code, Cursor, Codex, GitHub Copilot, ...)? Paste this into it:
+查看[完整测试表](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#实测速度与适用范围)或
+下载[结构化聚合数据](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json)。
 
-```text
-Set up Strata on this PC for me: https://github.com/Niko1221/Strata - follow docs/AI_SETUP.md in that repository.
+## 下载后怎么用
+
+仓库不包含约 95 GB 的模型权重，也不提交任何本机绝对路径。先安装 Git、Python 3.10+、CMake、Ninja、
+Visual Studio 2022 C++ Build Tools、当前 AMD 驱动和 LunarG Vulkan SDK，然后在 PowerShell 中执行：
+
+```powershell
+git clone https://github.com/xszwow/Strata.git
+Set-Location .\Strata
 ```
 
-It checks your graphics card, RAM and disk and picks the model that fits. Then it installs and starts it and tells
-you how to connect your apps. AI tools can also install, start and stop Strata through its
-[MCP server](docs/MCP_SERVER.md).
+接下来严格按照：
 
-### Or do it yourself
+> **[Ryzen AI Max+ 395 完整安装教程：从模型下载到 API 可用](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md)**
 
-[Download Strata](https://github.com/Niko1221/Strata/archive/refs/heads/main.zip) and unzip it (or `git clone` it).
-**Windows:** double-click **`START-HERE.bat`**. **Linux:** run **`./setup.sh`** in the Strata folder.
+教程按顺序完成：
 
-The steps are the same for NVIDIA and AMD. The installer finds your card and sets up the right engine for it. It
-asks you a few questions:
+1. 定义可自由更换的 `$DataRoot`；
+2. 断点续传并校验主模型和视觉 projector；
+3. 构建这个 fork 的 Windows HIP 引擎；
+4. 生成原生 Q4_0 MTP runtime；
+5. 构建 Windows Vulkan 视觉组件；
+6. 从安装器检测出的路径生成本机 JSON；
+7. 启动服务并检查 `/health` 和 `/v1/models`。
 
-- which model and which size,
-- how much context (how much text the model keeps in mind),
-- whether it should read pictures.
+不要直接使用上游旧预编译引擎搭配 Q4 MTP：它不包含这个 fork 的原生 Q4/Q8 MTP 支持。
 
-Press Enter each time for the recommended answer. Then it downloads the model (about 70 GB) and starts it. If the
-download stops, run it again: it continues where it left off. Your browser opens the Strata app at
-`http://127.0.0.1:8080`.
+## 当前生产配置
 
-> **While the model starts, your PC can be slow or stop responding for 1-3 minutes** (longest the first time).
-> Strata loads 35-55 GB into your RAM and locks part of it for the graphics card. This is normal. Wait, and don't
-> close the window. The window shows what Strata is doing.
+| 参数 | 值 |
+| --- | --- |
+| 总上下文 | 262,144 tokens |
+| 默认最大输出 | 由客户端请求控制；本机 Codex 使用 reasoning budget 8,192 |
+| KV | INT8 |
+| Prefill chunk | 16,384 |
+| Generation concurrency | 1 |
+| Worker pool | 8 |
+| Expert cache | 24,576 |
+| MTP | Q4_0、`spec 8`、`spec-min-p 0.6`、window 8,192 |
+| Sampling | temperature 0、top-p 0.95、top-k 20 |
+| Prompt cache | 6 个内存 checkpoint |
+| Codex compaction cache | 开启 |
+| Host conversation parking | 关闭 |
+| `lookup-chain` | 关闭 |
+| Vision | Vulkan GPU，1,024～8,192 image tokens |
 
-**Next time**, run `START-HERE.bat` (or `./setup.sh`) again. It starts right away and downloads nothing twice. Close
-its window to stop the model. `UPDATE.bat` (`./update.sh`) updates Strata without starting it. Updating, Docker,
-several cards, where the files go and every option: [docs/INSTALL.md](docs/INSTALL.md).
+## 接入 Codex 和其他客户端
 
-## Which model should I pick?
+服务启动后使用：
 
-The installer recommends one for your RAM. The same model comes in several sizes, compressed more or less. Smaller
-sizes are faster. Larger sizes are a bit smarter.
+| 客户端协议 | 地址 |
+| --- | --- |
+| OpenAI base URL | `http://127.0.0.1:8080/v1` |
+| Chat Completions | `POST /v1/chat/completions` |
+| Responses / Codex | `POST /v1/responses` |
+| Anthropic-compatible | `http://127.0.0.1:8080/v1/messages` |
+| 浏览器界面 | `http://127.0.0.1:8080` |
 
-| Your RAM | Take | Why |
-| --- | --- | --- |
-| **32 GB** | **Coder** | it fits 32 GB, and it is made for code (with a 24 GB card, Q2_0 and IQ2_XS run too) |
-| **48 GB** | **IQ2_XS** (or Q2_0, the fastest) | the larger sizes do not fit |
-| **64 GB** | **IQ2_XS** (recommended), or IQ3_XXS / IQ3_S | every size fits; IQ3_S is the best and the slowest |
-| **96 GB or more** | **IQ3_S**, or Unsloth's UD-IQ4_XS (~4-bit) | room for the largest sizes with everything else open |
+默认只监听本机。不要把无 API key 的服务直接暴露到局域网或公网。
 
-- **[Coder](docs/MODELS.md#coder):** a coding version with half of the experts removed. It reaches 91% of the full
-  model's SWE-bench Verified score (measured by its authors) and fits 32 GB of RAM. It is weaker outside code,
-  including Chinese and other CJK text (#438). For those, take Q2_0, IQ2_XS or IQ3_S, which keep every expert.
-- **[Swift 1.5](docs/MODELS.md#swift-15):** a fine-tune that thinks for a much shorter time before it answers. You
-  get the answer sooner, at about the same quality.
-- **[Unsloth UD-IQ4_XS](docs/MODELS.md#unsloth-ud-iq4_xs):** Unsloth's ~4-bit version, between IQ3_S and
-  UD-Q4_K_XL in quality. A 94 GB download. With less than ~80 GB of RAM, Strata reads part of it from the SSD
-  while it answers, so it is slower there (an NVMe SSD helps).
-- **[Unsloth UD-Q4_K_XL](docs/MODELS.md#unsloth-ud-q4_k_xl-experimental)** (experimental): the closest to the full
-  model. But Strata reads most of it from the SSD while it answers, so it writes only 7-8.5 tokens/s on a 64 GB PC.
-- **[OrcaRouter's Uncensored IQ3_XXS](docs/MODELS.md#orcarouter-uncensored-iq3_xxs):** you set it up by hand. It is
-  not in the installer's menu.
+## 缓存边界
 
-Sizes, downloads and what fits where: [docs/MODELS.md](docs/MODELS.md). To add another model later, run
-`SETUP.bat` (Linux: `./setup.sh --setup`).
+当前已经有：
 
-## Using it
+- 内存 prompt cache；
+- 相同长前缀复用；
+- Codex compaction cache；
+- 图片嵌入缓存。
 
-<p align="center"><img src="docs/media/runpagoda.png" width="900" alt="The Strata app's Monitor tab next to a coding agent"><br>
-<sub>The Strata app's <b>Monitor</b> (left) while a coding agent writes the pagoda garden from the video (right)</sub></p>
+当前没有：
 
-- **In the browser:** open `http://127.0.0.1:8080`. It has **Chat**, a live **Monitor** of the model and your
-  GPU/CPU/RAM, and **About** with the settings and addresses.
-- **Your apps and coding agents:** add an "OpenAI-compatible" provider with the base URL
-  **`http://127.0.0.1:8080/v1`**. Any API key and any model name work.
-  - Apps that use Anthropic's API: `http://127.0.0.1:8080/v1/messages` (Claude Code:
-    `ANTHROPIC_BASE_URL=http://127.0.0.1:8080`).
-  - Codex CLI and other apps that use the OpenAI Responses API: `/v1/responses`
-    ([setup](docs/DETAILS.md#the-responses-api-and-codex-cli)).
-- **Thinking:** choose **off, low, medium or high** in the chat menu or in your app's "reasoning effort". Off is the
-  fastest. High is best for hard questions.
-- **Pictures:** say yes to "Images?" in setup. Then click **Picture** in the chat, or attach pictures in your app.
-  AMD cards read pictures on Linux through the processor; on Windows they can't yet.
-- **From your phone or another PC:** `START-HERE.bat --setup --host 0.0.0.0 --api-key <secret>`. Always set a key.
-- **One request at a time:** by default Strata answers one request, and the others wait. To answer several at once,
-  set `"parallel": 2` ([BATCHING.md](docs/BATCHING.md)). On a 12 GB card this makes each answer slower.
-- **Long prompts:** Strata reads the first message of a chat in full, about 1 minute per 30,000 tokens. Follow-up
-  messages start in seconds.
+- 磁盘持久化 KV；
+- 跨 Strata 重启恢复 KV；
+- Halogen 风格的 256 GiB KV lineage；
+- 当前启用的 host RAM conversation parking。
 
-More: [where your chats are stored](docs/INSTALL.md#where-things-are-stored), [the API](docs/DETAILS.md#using-it).
+因此“262K 上下文”是单请求容量，不等于所有会话 KV 都能永久保存在磁盘。
 
-## Something went wrong?
+## 仓库中的复现材料
 
-- **My PC froze the first time Strata started.** This is normal while it loads the model. Wait, and don't close the
-  window. Still frozen after 10 minutes? Restart the PC, close other programs and try again, or pick a smaller size.
-- **It stopped while downloading or installing.** Run `START-HERE.bat` (or `./setup.sh`) again. It continues where
-  it stopped.
-- **It's very slow and the disk light keeps blinking, or it says "the engine stopped unexpectedly".** Your PC does
-  not have enough free RAM. Close other programs (browsers use a lot), or pick a smaller size (Q2_0 or IQ2_XS).
-- **It says port 8080 is already in use.** Strata is already running. Look for its window.
+| 文件 | 内容 |
+| --- | --- |
+| [完整部署教程](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md) | 环境、命令、验证与排错 |
+| [模型来源](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/models.json) | revision、大小和 SHA-256 |
+| [性能数据](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json) | 各题型、长上下文、温度和视觉聚合结果 |
+| [MTP manifest](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/mtp-source-manifest.json) | 31 个源张量的范围与哈希 |
+| [模型下载脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Get-Models.ps1) | 续传、镜像切换与校验 |
+| [Q4 MTP 脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Prepare-Q4Mtp.ps1) | 下载、打包、生成 runtime |
+| [视觉构建脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Build-Vision-Vulkan.ps1) | Windows Vulkan vision 构建 |
+| [配置生成器](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/New-LocalConfig.ps1) | 按本机实际路径生成 JSON |
+| [启动脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Start-Local.ps1) | 启动兼容 API 服务 |
 
-More problems and their fixes: [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). Still stuck? Open an
-[issue](https://github.com/Niko1221/Strata/issues) and attach `strata-<model>.log` from the Strata folder. Found a
-security problem? Report it privately: [SECURITY.md](SECURITY.md).
+## 与上游的关系
 
-## How does it work?
+本仓库是公开 fork，不冒充独立原创项目。通用 Strata 引擎、安装器、服务端、Web UI 和大量文档来自
+[`Niko1221/Strata`](https://github.com/Niko1221/Strata)。本 fork 主要维护 Ryzen AI Max+ 395 Windows 部署、原生
+Q4/Q8 MTP 支持、Vulkan 高 image-token warm-up，以及对应的复现脚本和测试记录。
 
-Models like this one usually run on servers with hundreds of gigabytes of graphics memory. Your graphics card has
-12-24 GB. Strata makes the model fit by **sharing the work across your whole PC**. Think of a kitchen: the things
-you use all the time stay on the counter, and the rest waits in the pantry.
+- 通用硬件和上游安装方式：[上游 README](https://github.com/Niko1221/Strata#readme)
+- Strata 技术细节：[docs/DETAILS.md](docs/DETAILS.md)
+- AMD HIP：[docs/AMD_HIP.md](docs/AMD_HIP.md)
+- 许可证：[MIT License](LICENSE)
 
-<p align="center"><img src="docs/media/how-it-works.svg" width="860" alt="The model's 24,576 experts: the busiest on the graphics card, all of them in RAM, a lookup table on the SSD"></p>
-
-- **The model is a team of 24,576 small specialists ("experts").** Each word needs only 10 of them.
-- **Your graphics card** keeps the few thousand experts that are used most often. **Your RAM** holds all of them,
-  and **your processor** works on the rest at the same time. **Your SSD** holds a big lookup table.
-
-<p align="center"><img src="docs/media/guess-and-check.svg" width="860" alt="A small helper guesses the next words; the big model checks them all at once and keeps the right ones"></p>
-
-- **Guess, then check:** a small helper guesses the next few words. The big model checks them all at once. You get
-  the same answer, 1.6-1.8x sooner.
-- **Long texts are read in big pieces** (up to 8,192 tokens at a time), at over 1,000 tokens per second.
-
-The longer explanation: [docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md). Every part and its numbers:
-[the details](docs/DETAILS.md#how-it-works) and the [paper](docs/paper/Strata-Paper.pdf).
-
-## Credits and license
-
-The model is [Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Next) by the Qwen team. It was
-compressed by [ISTA-DASLab](https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF), UkisAI (Swift 1.5)
-and Unsloth. Strata uses parts of [llama.cpp / ggml](https://github.com/ggml-org/llama.cpp). All credits:
-[docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md#credits). Strata is open source under the [MIT License](LICENSE). A few
-parts and every model have their own licenses ([which ones](docs/HOW_IT_WORKS.md#license)).
-
-## Support Strata
-
-Strata is free and open source. If it is useful to you, you can support its development:
-
-<p align="center"><a href="https://buymeacoffee.com/strataengine"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50"></a></p>
+Qwen、Huihui、Unsloth、视觉 projector 和其他依赖仍分别受各自许可证与使用条款约束。模型权重不包含在本仓库中。

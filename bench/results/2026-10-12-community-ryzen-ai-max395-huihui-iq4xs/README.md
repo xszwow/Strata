@@ -15,7 +15,7 @@
 与实测相同的权重；下载站点可以切换。
 
 > 这不是官方 Strata 的通用一键安装页，而是这个 fork 的可复现部署。要使用原生 Q4 MTP 和 Windows
-> Vulkan 视觉，必须克隆本文指定的分支并按顺序执行。
+> Vulkan 视觉，必须克隆本 fork 并按顺序执行。
 
 ## 1. 准备条件
 
@@ -39,7 +39,7 @@
 在 PowerShell 中运行：
 
 ```powershell
-git clone --branch feature/mtp-native-q4-q8 --single-branch https://github.com/xszwow/Strata.git
+git clone https://github.com/xszwow/Strata.git
 Set-Location .\Strata
 
 $RepoRoot = (Get-Location).Path

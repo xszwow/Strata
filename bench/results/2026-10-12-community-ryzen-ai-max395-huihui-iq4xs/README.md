@@ -15,7 +15,7 @@
 与实测相同的权重；下载站点可以切换。
 
 > 这不是官方 Strata 的通用一键安装页，而是这个 fork 的可复现部署。要使用原生 Q4 MTP 和 Windows
-> Vulkan 视觉，必须克隆本 fork 并按顺序执行。
+> Vulkan 视觉，必须克隆本 fork 并按顺序执行。当前 `main` 已包含所述补丁，无需指定历史功能分支。
 
 ## 1. 准备条件
 
@@ -75,7 +75,7 @@ $Guide = Join-Path $RepoRoot 'bench\results\2026-10-12-community-ryzen-ai-max395
 
 ## 4. 构建并安装这个分支的 HIP 引擎
 
-原生 Q4 MTP 是这个分支的源码改动，不能用上游旧的预编译引擎代替。在仓库根目录运行：
+原生 Q4 MTP 是这个 fork 的源码改动，不能用上游旧的预编译引擎代替。在仓库根目录运行：
 
 ```powershell
 & .\tools\hip\build_windows.bat
@@ -150,7 +150,7 @@ llama.cpp MTP GGUF。
 build-vision-vulkan\bin\strata-vision.exe
 ```
 
-这个分支包含高 image-token cap 的 GPU warm-up 修正。若不需要看图，可以跳过本节，但生成配置时仍需去掉
+这个 fork 包含高 image-token cap 的 GPU warm-up 修正。若不需要看图，可以跳过本节，但生成配置时仍需去掉
 `--vision` 和 `vision` 对象；当前自动配置脚本按“启用视觉”生成。
 
 ## 7. 生成不含硬编码路径的本机配置
@@ -231,14 +231,19 @@ Invoke-RestMethod 'http://127.0.0.1:8080/v1/models' | ConvertTo-Json -Depth 8
 
 ## 实测速度与适用范围
 
-这里分别报告 **prefill（读取输入）**和 **decode（生成输出）**。除非另有说明，下面的当前配置成绩均使用
+![Strata Ryzen AI Max+ 395 TPS 数据图](tps-infographic.svg)
+
+**统计与复现边界：**数据是当前仓库发布的聚合测试记录，尚非第三方独立复测。`xhigh` 为测试用例标签，不是云端模型同名推理档位的等价证明。综合 51.29 TPS 是按代码 A 35%、代码 B 35%、xhigh 25%、中文 5% 计算的加权调和平均；Codex 64.63 TPS 是固定短工具轨迹的合并生成吞吐，不能当作任意 Codex 工程任务的端到端速度。近 260K 的测试属于不同阶段的容量或视觉专项验证，并非最终 Q4 spec 8 配置在 260K 下的等条件速度证明。当前记录的长上下文任务每项只生成 31～81 tokens，尚未验证 260K 输入后长时间连续生成的表现。
+
+
+这里分别报告 **prefill（新输入处理）**和 **decode（生成输出）**。除非另有说明，下面的当前配置成绩均使用
 Q4 MTP、`spec 8`、`spec-min-p 0.6`、temperature 0、prefill 16,384；完整聚合数据保存在
 [`performance-results.json`](performance-results.json)。同配置电脑也会受内存频率、BIOS、驱动、后台程序、散热和
 prompt 内容影响，以下数字不是速度保证。
 
 ### 不同类型的常规输出 TPS
 
-这组用于最终选型，每种提示重复 3 次、每次最多输出 512 token；表中为 decode TPS 中位数和 3 次范围。所有请求的
+这组用于固定负载的吞吐筛选，每种提示重复 3 次、每次最多输出 512 token；表中为 decode TPS 中位数和 3 次范围。所有请求的
 实际 temperature 都是 0，`sampled` 只是测试用例的历史名称。
 
 | 固定用例 | 类型 | 中位 TPS | 3 次范围 | MTP 接受率 |
@@ -346,7 +351,7 @@ Codex 短工具题的 64.63 TPS 当成所有任务的持续速度。
 
 ### 报错不支持 Q4 MTP，或 `experts.txt` 缺失
 
-确认使用的是本文分支自己构建的 `dist\strata-windows-x64-hip.zip`，不要被 `START-HERE.bat` 换回上游旧引擎。
+确认使用的是本 fork 自己构建的 `dist\strata-windows-x64-hip.zip`，不要被 `START-HERE.bat` 换回上游旧引擎。
 然后重新运行第 5 步；脚本会验证 Q4 runtime 的 5 个必需文件。
 
 ### `/health` 中 `images` 是 `false`

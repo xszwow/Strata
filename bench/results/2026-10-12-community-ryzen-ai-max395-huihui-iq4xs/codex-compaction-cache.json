@@ -1,0 +1,87 @@
+{
+  "CheckedUtc": "2026-10-12T09:43:21.5500530Z",
+  "Setting": "codex_compaction_cache",
+  "Enabled": true,
+  "ProductionConfig": "config/strata/server.json",
+  "ConfigurationSha256": "6FDE2104151DAF81EACEEF467E891B81C020A8AAA3B81BAA4552D1EDDB8BC6EC",
+  "Fixture": "engines/strata/app/third_party/llama.cpp/tools/ui/playwright.config.ts",
+  "FixtureSha256": "C76B8EB30F5F12710B7D9224F37277324B88F4674241987F659FC24D26CAEDBB",
+  "Method": "One live normal turn and compaction with setting off, followed by a production restart and the same pair with setting on. Eight repeated Playwright configurations; Responses API with matching Codex session/thread metadata. Smoke validation, not a statistical speed benchmark.",
+  "Parameters": {
+    "Spec": 8,
+    "SpecMinP": 0.6,
+    "MTP": "Q4_0",
+    "Temperature": 0,
+    "MaxOutputTokens": 64,
+    "Thinking": false
+  },
+  "ExistingUnitTests": {
+    "Suite": "serve.test_responses.CodexCompactionOverHttp",
+    "Passed": 3,
+    "Failed": 0
+  },
+  "Off": [
+    {
+      "Stage": "normal_turn",
+      "Status": "completed",
+      "InputTokens": 2380,
+      "CachedTokens": 0,
+      "OutputTokens": 2,
+      "WallSeconds": 4.109,
+      "Answer": "READY"
+    },
+    {
+      "Stage": "compaction",
+      "Status": "completed",
+      "InputTokens": 2164,
+      "CachedTokens": 0,
+      "OutputTokens": 19,
+      "WallSeconds": 3.328,
+      "Answer": "The user provided eight identical Playwright configuration fixtures for review, and the assistant confirmed readiness."
+    }
+  ],
+  "On": [
+    {
+      "Stage": "normal_turn",
+      "Status": "completed",
+      "InputTokens": 2380,
+      "CachedTokens": 0,
+      "OutputTokens": 2,
+      "WallSeconds": 4.141,
+      "Answer": "READY"
+    },
+    {
+      "Stage": "compaction",
+      "Status": "completed",
+      "InputTokens": 2410,
+      "CachedTokens": 2383,
+      "OutputTokens": 22,
+      "WallSeconds": 1.046,
+      "Answer": "The user asked me to review eight identical Playwright config fixtures and reply \"READY,\" which I did."
+    }
+  ],
+  "Assertions": {
+    "Health": {
+      "status": "ok",
+      "max_context": 262144,
+      "model": "huihui-qwen3.8-flash-next-iq4-xs",
+      "images": true,
+      "api_key": false,
+      "loaded": true,
+      "service": "strata"
+    },
+    "EffectiveCompactionCacheVerified": true,
+    "CallerToolsUnchanged": true,
+    "CachedTokens": 2383,
+    "TotalInputTokens": 2410,
+    "FreshInputTokens": 27
+  },
+  "EngineCompactionTimings": {
+    "InputTokens": 2410,
+    "CachedTokens": 2383,
+    "FreshInputTokens": 27,
+    "PromptMilliseconds": 381,
+    "DecodeMilliseconds": 628
+  },
+  "Limitation": "This preserves prefix reuse for the matching conversation's compaction request; it does not guarantee cache hits after history is replaced by the summary, after an intervening other thread, or across service restart."
+}

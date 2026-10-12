@@ -1,0 +1,95 @@
+{
+  "recorded_at": "2026-10-12",
+  "main_model": {
+    "repository": "huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
+    "revision": "c219df4f109fa42c402c44c702c4e33e2ce05fe2",
+    "quantization": "unsloth-UD-IQ4_XS",
+    "files": [
+      {
+        "name": "Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+        "size": 10946624,
+        "sha256": "5ce89370720f8bf90890f439361282104c1aa1482d4013bb9a50923e758e71a4",
+        "url": "https://hf-mirror.com/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF/resolve/c219df4f109fa42c402c44c702c4e33e2ce05fe2/unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf?download=true"
+      },
+      {
+        "name": "Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf",
+        "size": 49835229856,
+        "sha256": "c67b468b3b83bc12a987e455ec4a0c2c3937250da1c234ae1638d9505180c161",
+        "url": "https://hf-mirror.com/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF/resolve/c219df4f109fa42c402c44c702c4e33e2ce05fe2/unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf?download=true"
+      },
+      {
+        "name": "Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf",
+        "size": 43836407744,
+        "sha256": "130560b6a447e0febf61de9b03476f52143160bc4bcbacc9bfa07d9538718e2c",
+        "url": "https://hf-mirror.com/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF/resolve/c219df4f109fa42c402c44c702c4e33e2ce05fe2/unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf?download=true"
+      }
+    ]
+  },
+  "strata_pack": {
+    "strata_version": "0.1.42",
+    "strata_revision": "61b3fb5dd3f1e8ec09cf7e4e05208bc6d3c46406",
+    "command": "tools/iq_pack.py --gguf <first-main-model-shard> --out <pack-directory> --compat-bf16",
+    "copied_experts_bin": false,
+    "dense_bin": {
+      "size": 1485688320,
+      "sha256": "f53174059b262ed342b82e143af62056081948ef5e5f1903a1a70eeb73fa4a23"
+    }
+  },
+  "mtp": {
+    "source_repository": "Qwen/Qwen3.8-Flash-Next",
+    "source_revision": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+    "source_tensor_count": 31,
+    "expert_quantization": "Q4_0",
+    "expert_layout": "native",
+    "gate_up_type": 2,
+    "down_type": 2,
+    "expert_blob_bytes": 2764800,
+    "intermediate_gguf": {
+      "size": 1596806016,
+      "sha256": "5175c859ea07f6afc299bc16fdc2e8fe4d0f2a77daa7acf2ac665cf95764818c"
+    },
+    "runtime_files": [
+      {
+        "name": "dense.bin",
+        "size": 116099072,
+        "sha256": "c724dc0b0822ada5d2977bf5bde821605feabaa64ea2e0045b67ca656329070a"
+      },
+      {
+        "name": "dense.txt",
+        "size": 1880,
+        "sha256": "8773c81ebb0986e37fe94a8a9933e87be48b1fabc6889a0106bcdab179d1c2ac"
+      },
+      {
+        "name": "draft_vocab.bin",
+        "size": 425196,
+        "sha256": "b1e1d3a7a9e4bf862dcd5923ce661fb59bbd07907e594df5cf86a62ac235cb91"
+      },
+      {
+        "name": "experts.bin",
+        "size": 1415577600,
+        "sha256": "cb101ab35f946698ef09dddc942c41620ac03de40483a661ea07052b59ff16c5"
+      },
+      {
+        "name": "experts.txt",
+        "size": 75,
+        "sha256": "c6fed393954caefd784ba689f7cc23f045f82051631406333c3b37c34e4ba44f"
+      }
+    ]
+  },
+  "vision": {
+    "repository": "huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
+    "revision": "c219df4f109fa42c402c44c702c4e33e2ce05fe2",
+    "name": "mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+    "size": 907543008,
+    "sha256": "b1a82259702816a5330d7bd7607cd9676b11780e79ff7348c21103ff3ce49bd0",
+    "url": "https://hf-mirror.com/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF/resolve/c219df4f109fa42c402c44c702c4e33e2ce05fe2/mmproj-Qwen3.8-Flash-Next-BF16.gguf?download=true"
+  },
+  "llama_cpp_mtp_reference": {
+    "repository": "wy2pay/Qwen3.8-Flash-Next-abliterated-GGUF-IQ4XS",
+    "revision": "9b71e5b984579089e5dac9895ea9b18b8af7e390",
+    "name": "Qwen3.8-Flash-Next-Uncensored-MTP-draft.gguf",
+    "size": 4135893632,
+    "sha256": "ff803fb437e90567c27991fecae2537ea1ed63e8842b0399aa53820f02ae8882",
+    "note": "Reference only; this GGUF is not the Strata mtp-rt-q4_0 directory."
+  }
+}

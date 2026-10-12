@@ -1,11 +1,12 @@
 <h1 align="center">Strata · Ryzen AI Max+ 395 Windows Edition</h1>
 
 <p align="center"><b>在 128 GB 统一内存的 Ryzen AI Max+ 395 / Radeon 8060S 上运行 Qwen3.8 Flash-Next</b><br>
-Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文 · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
+Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文容量验证（不同阶段配置） · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
 
 <p align="center">
 <a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md"><b>完整安装教程</b></a> ·
 <a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#实测速度与适用范围">实测结果</a> ·
+<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg">TPS 数据图</a> ·
 <a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json">测试数据 JSON</a> ·
 <a href="https://github.com/Niko1221/Strata">上游 Strata</a>
 </p>
@@ -49,6 +50,11 @@ Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
 
 ## 实测性能
 
+![Ryzen AI Max+ 395 实测 TPS 汇总，区分最终配置与早期容量测试](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg)
+
+**测试口径：**以下均为本仓库记录的测试结果，尚非第三方独立复测。常规任务 TPS 为最多输出 512 tokens 的三次中位数；`xhigh` 是测试用例标签，不代表已经与云端 Codex 的思考档位进行了同等条件对比。混合题 51.29 TPS 是预设权重（代码 A 35%、代码 B 35%、xhigh 25%、中文 5%）的**加权调和平均**，并非通用性能或质量评分。Codex 的 64.63 TPS 为四类固定工具轨迹、每类三次的**合并生成吞吐**，不包括所有实际代理任务的端到端耗时。
+
+
 下面是这台机器的 decode TPS；不同问题的 MTP 接受率、MoE 路由和输出长度不同，因此不能把单一峰值当成所有任务的
 固定速度。
 
@@ -64,7 +70,9 @@ Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
 | Codex / Playwright 固定工具轨迹 | **61.94～67.96 TPS** |
 | 12 次 Codex 工具轨迹 micro-average | **64.63 TPS** |
 | 63,954-token 输入 prefill | **1,087.2 TPS** |
-| 260K 级输入 prefill（容量验证） | **约 942～960 TPS** |
+| 260K 级输入 prefill（早期 Q2 MTP / 视觉专项，非当前 Q4 spec 8 正面对比） | **约 942～960 TPS** |
+
+**上下文验证边界：**最终 Q4 MTP `spec 8 / spec-min-p 0.6` 配置有 63,954-token 输入测试（1,087.2 prefill TPS）。260,934-token 容量测试使用较早 `Q2 MTP / spec 4` 配置（960.3 prefill TPS）；260,881-token 含图片测试使用视觉专项配置（942.5 prefill TPS）。这证明相应测试当时可以处理接近 262K 的输入，不代表最终 Q4 spec 8 在 260K 上下文有相同吞吐或已完成长期稳定性验证。两项 260K 试验分别只输出了 31 和 81 tokens。
 
 64.63 TPS 来自偏短、投机命中较好的固定工具任务，不代表中文、任意代码或长推理都能保持 60～65 TPS。完整页面还列出：
 
@@ -160,6 +168,7 @@ Set-Location .\Strata
 | 文件 | 内容 |
 | --- | --- |
 | [完整部署教程](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md) | 环境、命令、验证与排错 |
+| [TPS 信息图](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg) | 数据源对齐的 SVG 图片，分别标明早期配置与最终配置 |
 | [模型来源](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/models.json) | revision、大小和 SHA-256 |
 | [性能数据](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json) | 各题型、长上下文、温度和视觉聚合结果 |
 | [MTP manifest](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/mtp-source-manifest.json) | 31 个源张量的范围与哈希 |

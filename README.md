@@ -13,6 +13,11 @@ Strata runs **[Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Nex
 large, smart AI model that usually needs a server. It chats, writes code, reads pictures and works with your apps
 and coding agents. Nothing leaves your PC.
 
+> **Ryzen AI Max+ 395 / Radeon 8060S on Windows:** this fork's tested Huihui IQ4_XS + native Q4_0 MTP +
+> Vulkan vision deployment has extra build and model-preparation steps. Follow the complete
+> [clone-to-running guide](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md); do not use
+> the generic one-click instructions below if you want that exact configuration.
+
 ## How fast is it?
 
 We measured it on two ordinary gaming PCs. A token is about ¾ of a word.

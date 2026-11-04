@@ -1,0 +1,206 @@
+{
+  "results": [
+    {
+      "name": "completed-code-11-cases",
+      "status": 200,
+      "elapsed_s": 2.8991755999995803,
+      "response": {
+        "id": "chatcmpl-a297d4106a544117b47f7855",
+        "object": "chat.completion",
+        "created": 1793822738,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```python\ndef sum_multiples(n: int) -> int:\n    if n <= 0:\n        return 0\n    \n    def sum_divisible_by(k: int) -> int:\n        # Sum of multiples of k up to n: k * (1 + 2 + ... + m) where m = n // k\n        m = n // k\n        return k * m * (m + 1) // 2\n    \n    # Inclusion-exclusion: sum(div by 3) + sum(div by 5) - sum(div by 15)\n    return sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15)\n```"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 83,
+          "completion_tokens": 153,
+          "total_tokens": 236,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 83,
+          "prompt_ms": 734.6,
+          "prompt_per_token_ms": 8.851,
+          "prompt_per_second": 113.0,
+          "predicted_n": 153,
+          "predicted_ms": 2142.6,
+          "predicted_per_token_ms": 14.004,
+          "predicted_per_second": 71.4,
+          "draft_n": 137,
+          "draft_n_accepted": 116
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "thinking-arithmetic",
+      "status": 200,
+      "elapsed_s": 9.876121899997088,
+      "response": {
+        "id": "chatcmpl-73f07e5ba9b14abdb505d73e",
+        "object": "chat.completion",
+        "created": 1793822741,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "234168",
+              "reasoning_content": "The user wants the sum of integers from 1 to 1000 that are divisible by 3 or 5, with duplicates (divisible by both 3 and 5, i.e., divisible by 15) counted only once.\n\nThis is the classic inclusion-exclusion problem.\n\nSum = (sum of multiples of 3) + (sum of multiples of 5) - (sum of multiples of 15)\n\n**Sum of multiples of 3 from 1 to 1000:**\nLargest multiple of 3 ≤ 1000: 999 = 3 × 333, so n = 333\nSum = 3 × (1 + 2 + ... + 333) = 3 × 333 × 334 / 2 = 3 × 55611 = 166833\n\nLet me verify: 333 × 334 = 333 × 300 + 333 × 34 = 99900 + 11322 = 111222\n111222 / 2 = 55611\n55611 × 3 = 166833 ✓\n\n**Sum of multiples of 5 from 1 to 1000:**\nLargest multiple of 5 ≤ 1000: 1000 = 5 × 200, so n = 200\nSum = 5 × (1 + 2 + ... + 200) = 5 × 200 × 201 / 2 = 5 × 20100 = 100500\n\nLet me verify: 200 × 201 = 40200\n40200 / 2 = 20100\n20100 × 5 = 100500 ✓\n\n**Sum of multiples of 15 from 1 to 1000:**\nLargest multiple of 15 ≤ 1000: 990 = 15 × 66, so n = 66\nSum = 15 × (1 + 2 + ... + 66) = 15 × 66 × 67 / 2 = 15 × 2211 = 33165\n\nLet me verify: 66 × 67 = 4422\n4422 / 2 = 2211\n2211 × 15 = 33165 ✓\n\n**Final answer:**\n166833 + 100500 - 33165 = 234168\n\nLet me verify: 166833 + 100500 = 267333\n267333 - 33165 = 234168\n\nThe answer is 234168.\n"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 49,
+          "completion_tokens": 708,
+          "total_tokens": 757,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 49,
+          "prompt_ms": 608.3,
+          "prompt_per_token_ms": 12.414,
+          "prompt_per_second": 80.6,
+          "predicted_n": 708,
+          "predicted_ms": 9248.6,
+          "predicted_per_token_ms": 13.063,
+          "predicted_per_second": 76.6,
+          "draft_n": 617,
+          "draft_n_accepted": 551
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "responses-api",
+      "status": 200,
+      "elapsed_s": 0.36261559999911697,
+      "response": {
+        "id": "resp_7ef74c85e28d4a76847889519a0787d4",
+        "object": "response",
+        "created_at": 1793822751,
+        "status": "completed",
+        "background": false,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 64,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "output": [
+          {
+            "id": "msg_2a27da9fc98d4a188ef0b53e9ab00f0c",
+            "type": "message",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "ROUTE_OK",
+                "annotations": [],
+                "logprobs": []
+              }
+            ]
+          }
+        ],
+        "parallel_tool_calls": true,
+        "previous_response_id": null,
+        "reasoning": {
+          "effort": "none",
+          "summary": null
+        },
+        "store": false,
+        "temperature": 0,
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": null,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 17,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 3,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 20
+        },
+        "user": null,
+        "metadata": {},
+        "completed_at": 1793822751,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 17,
+          "prompt_ms": 261.8,
+          "prompt_per_token_ms": 15.4,
+          "prompt_per_second": 64.9,
+          "predicted_n": 3,
+          "predicted_ms": 93.7,
+          "predicted_per_token_ms": 31.233,
+          "predicted_per_second": 32.0,
+          "draft_n": 4,
+          "draft_n_accepted": 1
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "anthropic-api",
+      "status": 200,
+      "elapsed_s": 0.20416829999885522,
+      "response": {
+        "id": "msg_d9ef80c1a51d441c8fef38ce",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "content": [
+          {
+            "type": "text",
+            "text": "ROUTE_OK"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 1,
+          "output_tokens": 3,
+          "cache_creation_input_tokens": 6,
+          "cache_read_input_tokens": 10
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "real-skip-reasoning",
+      "passed": true,
+      "done": true,
+      "control_status": 200,
+      "reasoning_characters": 73,
+      "answer": "# Smallest Positive Integer Divisible by All Integers from 1 to 20\n\n## The Key Idea\n\nThe smallest number divisible by every integer from 1 to 20 is the **Least Common Multiple (LCM)** of {1, 2, 3, …, 20}. To compute it, we take the **highest power of each prime** that appears in the factorization of any number in that range.\n\n## Prime Factorization of Each Number (1–20)\n\n| Number | Prime Factorization |\n|--------|-------------------|\n| 1 | — |\n| 2 | 2 |\n| 3 | 3 |\n| 4 | 2² |\n| 5 | 5 |\n| 6 | 2 · 3 |\n| 7 | 7 |\n| 8 | **2³** |\n| 9 | **3²** |\n| 10 | 2 · 5 |\n| 11 | **11** |\n| 12 | 2² · 3 |\n| 13 | **13** |\n| 14 | 2 · 7 |\n| 15 | 3 · 5 |\n| 16 | **2⁴** |\n| 17 | **17** |\n| 18 | 2 · 3² |\n| 19 | **19** |\n| 20 | 2² · 5 |\n\n## Selecting the Highest Power of Each Prime\n\n| Prime | Highest power needed | Reason |\n|-------|---------------------|--------|\n| 2 | **2⁴ = 16** | 16 = 2⁴ is in the range |\n| 3 | **3² = 9** | 9 = 3² is in the range |\n| 5 | **5¹ = 5** | 5 is in the range (25 > 20, so no higher power) |\n| 7 | **7¹ = 7** | 7 is in the range (49 > 20) |\n| 11 | **11¹ = 11** | 11 is in the range |\n| 13 | **13¹ = 13** | 13 is in the range |\n| 17 | **17¹ = 17** | 17 is in the range |\n| 19 | **19¹ = 19** | 19 is in the range |\n\n## Computing the LCM\n\n$$\\text{LCM} = 2^4 \\times 3^2 \\times 5 \\times 7 \\times 11 \\times 13 \\times 17 \\times 19$$\n\nStep-by-step:\n\n$$2^4 \\times 3^2 = 16 \\times 9 = 144$$\n$$144 \\times 5 = 720$$\n$$720 \\times 7 = 5040$$\n$$5040 \\times 11 = 55440$$\n$$55440 \\times 13 = 720720$$\n$$720720 \\times 17 = 12252240$$\n$$12252240 \\times 19 = \\boxed{232792560}$$\n\n## Answer\n\n$$\\text{LCM}(1, 2, 3, \\ldots, 20) = 2^4 \\cdot 3^2 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13 \\cdot 17 \\cdot 19 = \\boxed{232{,}792{,}560}$$\n\nThis is the smallest positive integer divisible by every integer from 1 to 20.",
+      "elapsed_s": 13.359664699997666
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

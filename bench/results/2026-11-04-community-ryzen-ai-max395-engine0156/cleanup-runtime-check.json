@@ -1,0 +1,112 @@
+{
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "images": true,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata",
+    "public_compat": "llama-ui-v1",
+    "browser_prefix_cache": "text-before-images-v1",
+    "browser_metrics": "prepare-v1"
+  },
+  "checks": [
+    {
+      "name": "text",
+      "response": {
+        "id": "chatcmpl-e1ae84517a4240ff9b4ace95",
+        "object": "chat.completion",
+        "created": 1793825074,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "CLEANUP_OK"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 17,
+          "completion_tokens": 5,
+          "total_tokens": 22,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 17,
+          "prompt_ms": 370.7,
+          "prompt_per_token_ms": 21.806,
+          "prompt_per_second": 45.9,
+          "predicted_n": 5,
+          "predicted_ms": 127.0,
+          "predicted_per_token_ms": 25.4,
+          "predicted_per_second": 39.4,
+          "draft_n": 7,
+          "draft_n_accepted": 3
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "image",
+      "response": {
+        "id": "chatcmpl-28b8ad54d092458daba89c5b",
+        "object": "chat.completion",
+        "created": 1793825076,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": " red square, blue circle"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1059,
+          "completion_tokens": 6,
+          "total_tokens": 1065,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1059,
+          "prompt_ms": 1430.4,
+          "prompt_per_token_ms": 1.351,
+          "prompt_per_second": 740.4,
+          "predicted_n": 6,
+          "predicted_ms": 117.8,
+          "predicted_per_token_ms": 19.633,
+          "predicted_per_second": 50.9,
+          "draft_n": 7,
+          "draft_n_accepted": 4
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "public-health",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "anonymous-api-rejected",
+      "status": 401,
+      "passed": true
+    }
+  ],
+  "config_sha256": "5d3c8fa2d2965d28f44291fa491d488b76188807435be892e25126e294bda28a",
+  "passed": true,
+  "checked_at": 1793825082.1028144
+}

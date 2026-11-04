@@ -1,0 +1,32 @@
+{
+  "completed_at": 1793823906.1991587,
+  "passed": true,
+  "profile": "mtp-native",
+  "configuration_sha256": "a497ced70ee39fc911e8ecaad2ade5fcb8541bda4f60c1a782fd2df05d49261b",
+  "engine_sha256": "37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6",
+  "server_pid": 13408,
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "images": true,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata",
+    "public_compat": "llama-ui-v1",
+    "browser_prefix_cache": "text-before-images-v1",
+    "browser_metrics": "prepare-v1"
+  },
+  "observer_pid": 15720,
+  "candidate_port_closed": true,
+  "workloads_match_baseline": true,
+  "no_new_functional_failure": true,
+  "known_baseline_failure": [
+    "arithmetic-1000"
+  ],
+  "full_context_prompt_tokens": 260934,
+  "local_acceptance_checks": 2,
+  "public_acceptance_checks": 15,
+  "source_and_runtime_verified": true
+}

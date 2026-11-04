@@ -1,0 +1,19 @@
+{
+  "targets_deleted": 99,
+  "files_deleted": 23819,
+  "bytes_deleted": 6926073677,
+  "remaining_paths": [],
+  "health_after_cleanup": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "images": true,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata",
+    "public_compat": "llama-ui-v1",
+    "browser_prefix_cache": "text-before-images-v1",
+    "browser_metrics": "prepare-v1"
+  }
+}

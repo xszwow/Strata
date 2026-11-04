@@ -1,0 +1,11 @@
+{
+  "engine": "<MODEL_WORKSPACE>\\engines\\strata\\versions\\0.1.56\\engine\\strata-native-mtp.exe",
+  "engine_sha256": "37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6",
+  "build_exit": 0,
+  "hip_arch": "gfx1151",
+  "patches": {
+    "src\\core\\mtp.cpp": "3189836f4f819192ea98e03eeb27acb845d08ad1b6ecedcc8ae8e4ddc35fa6c3",
+    "include\\strata\\core\\mtp.hpp": "7cadd53d25b43db4c8e90fb819eb7ac5ca9df2f4c58f6d41cc2c8f0c3dc4b075",
+    "tools\\mtp_rt.py": "68f3d758407b838748b8701001125d57f99f86abb795a74a45e65b8f1cae77b0"
+  }
+}

@@ -17,6 +17,8 @@
 > 这不是官方 Strata 的通用一键安装页，而是这个 fork 的可复现部署。要使用原生 Q4 MTP 和 Windows
 > Vulkan 视觉，必须克隆本 fork 并按顺序执行。当前 `main` 已包含所述补丁，无需指定历史功能分支。
 
+当前安装步骤对应 **源码 0.2.10 / 引擎 0.1.56 + 本 fork Q4 MTP 补丁**。下方原有性能表是 10 月的历史记录；[11 月升级对照](../2026-11-04-community-ryzen-ai-max395-engine0156/README.md) 包含新版速度、近满上下文和失败样例。
+
 ## 1. 准备条件
 
 推荐与实测机器尽量一致：
@@ -100,6 +102,7 @@ $MainModelDir = Join-Path $DataRoot 'models\huihui-ud-iq4-xs'
   --model UD-IQ4_XS `
   --context 262144 `
   --vision no `
+  --drafter mtp `
   --gguf-dir $MainModelDir `
   --data-dir $DataRoot `
   --no-start `
@@ -211,6 +214,8 @@ $Config = Join-Path $RepoRoot 'strata-huihui-iq4xs-q4mtp.json'
   -OutputPath $Config `
   -UseHyf57K
 ```
+
+配置生成器固定 `drafting: mtp`，移除基础配置的 DFlash2 参数，并保留单路会话设置。
 
 脚本会校验内附词表的大小与 SHA-256，再写入 `--mtp-draft-vocab` 的本机路径。该文件仅影响 MTP 草稿头，
 不会替换主模型 tokenizer；`spec 8 / 0.6`、`prompt-cache 6` 和 `--conversation-cache-mib 0` 保持原值。

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "strata-control-0.1.56-windows-x86_64.zip",
+    "url": "https://github.com/Niko1221/Strata/releases/download/v0.2.10/strata-control-0.1.56-windows-x86_64.zip",
+    "sha256": "ef74f429c60341048a68249d41699142a1ec3716cee322621875e823f4ead873",
+    "actual_sha256": "ef74f429c60341048a68249d41699142a1ec3716cee322621875e823f4ead873"
+  },
+  {
+    "name": "strata-engine-0.1.56-windows-x86_64-hip-rdna3.tar.gz",
+    "url": "https://github.com/Niko1221/Strata/releases/download/v0.2.10/strata-engine-0.1.56-windows-x86_64-hip-rdna3.tar.gz",
+    "sha256": "b44aa3f33bae8f02774588651459d5402923428a0bcb34de505e0af949a7ceeb",
+    "actual_sha256": "b44aa3f33bae8f02774588651459d5402923428a0bcb34de505e0af949a7ceeb"
+  },
+  {
+    "name": "source-v0.2.10.zip",
+    "url": "https://codeload.github.com/Niko1221/Strata/zip/refs/tags/v0.2.10",
+    "sha256": null,
+    "actual_sha256": "f00cfe9a3d220328c7961e27992295c88371afa62d1e9d461000f449d8a60eb3"
+  }
+]

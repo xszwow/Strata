@@ -1,0 +1,45 @@
+{
+  "benchmark-strata-upgrade.py": {
+    "string_fixtures": [
+      "Fixed synthetic workloads shared by old/new engines; save every response.",
+      "Use lookup_weather for Beijing now. Do not guess the weather.",
+      "Write a Python function that hashes a large file in chunks with SHA256, validates an expected digest, and raises useful exceptions. Include type hints, a docstring, usage and explanation. No external libraries.",
+      "用中文写一篇约600字的说明，解释大文件下载速度为什么时快时慢，涵盖Wi-Fi、公网拥塞、CDN、限速和排查。直接写正文。",
+      "Explain and prove the inclusion-exclusion formula for the sum of integers 1 through n divisible by 3 or 5. Give the arithmetic formula, corner cases, and Python verification. Write a detailed answer.",
+      "What is the current temperature in Beijing? Reply with only the value from the tool.",
+      " divisible by 3 or 5, counting duplicates once? Reply with only the number.",
+      "work/strata-upgrade-20261104/candidate-process.json"
+    ]
+  },
+  "quality-strata-upgrade.py": {
+    "string_fixtures": [
+      "Check completed code, reasoning, API routes and real same-prefix skip.",
+      "Find the smallest positive integer divisible by all integers from 1 to 20. Explain the prime factors and compute the answer.",
+      "<MODEL_WORKSPACE>/config/strata/server.json",
+      "Write ONLY a Python function sum_multiples(n: int) -> int returning the sum of integers 1 through n inclusive divisible by 3 or 5, counting duplicates once. Use arithmetic formulas and //, no loops, imports or comprehensions. A local arithmetic helper is allowed. Return 0 for n=0. One fenced Python code block.",
+      "Compute the sum of integers 1 through 1000 divisible by 3 or 5, duplicates counted once. Think carefully and verify the arithmetic. Reply with only the final integer.",
+      "work/strata-upgrade-20261104/candidate-process.json"
+    ]
+  },
+  "check-strata-parser-upgrade.py": {
+    "string_fixtures": [
+      "Run the new real-output corpus against either installed frontend.",
+      "work/strata-upgrade-20261104/source/Strata-0.2.10"
+    ]
+  },
+  "verify-strata-upgrade-local.py": {
+    "string_fixtures": [
+      "Exercise the real text prefix before images on the selected production engine.",
+      "Describe the user image accurately. Keep the answer brief.\n",
+      "reports/strata-upgrade-20261104/local-acceptance.json"
+    ]
+  },
+  "verify-strata-upgrade-public.py": {
+    "string_fixtures": [
+      "Verify production TLS, auth, model, resumable IVYUN stream and replay.",
+      "/api/browser/status?conversationId=upgrade-status",
+      "reports/strata-upgrade-20261104/ivyun-stream-upgrade.sse",
+      "reports/strata-upgrade-20261104/public-acceptance.json"
+    ]
+  }
+}

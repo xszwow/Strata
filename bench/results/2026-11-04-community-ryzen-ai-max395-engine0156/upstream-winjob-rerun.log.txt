@@ -1,0 +1,11 @@
+test_a_contained_child_is_opted_out_of_power_throttling (serve.test_winjob.TestNoThrottle.test_a_contained_child_is_opted_out_of_power_throttling) ... ok
+test_children_end_with_a_killed_server (serve.test_winjob.TestWinJob.test_children_end_with_a_killed_server) ... <USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='cp936'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_elsewhere_or_without_a_process_it_is_a_no_op (serve.test_winjob.TestWinJob.test_elsewhere_or_without_a_process_it_is_a_no_op) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.586s
+
+OK

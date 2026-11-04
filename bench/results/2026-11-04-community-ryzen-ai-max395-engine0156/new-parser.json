@@ -1,0 +1,2467 @@
+{
+  "label": "new",
+  "samples": 164,
+  "passed": 164,
+  "results": [
+    {
+      "name": "4427-todos-valid",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-valid",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-valid",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-valid",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-stray-items",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Init git repo with LFS",
+                "status": "in_progress",
+                "pending": false,
+                "completed": false
+              },
+              {
+                "content": "Write Blender build script",
+                "status": "pending",
+                "pending": false,
+                "completed": false
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-stray-items",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Init git repo with LFS",
+                "status": "in_progress",
+                "pending": false,
+                "completed": false
+              },
+              {
+                "content": "Write Blender build script",
+                "status": "pending",
+                "pending": false,
+                "completed": false
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-stray-items",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Init git repo with LFS",
+                "status": "in_progress",
+                "pending": false,
+                "completed": false
+              },
+              {
+                "content": "Write Blender build script",
+                "status": "pending",
+                "pending": false,
+                "completed": false
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-stray-items",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Init git repo with LFS",
+                "status": "in_progress",
+                "pending": false,
+                "completed": false
+              },
+              {
+                "content": "Write Blender build script",
+                "status": "pending",
+                "pending": false,
+                "completed": false
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-single-quotes",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-single-quotes",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-single-quotes",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-single-quotes",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-trailing-comma-and-open-bracket",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-trailing-comma-and-open-bracket",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-trailing-comma-and-open-bracket",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-trailing-comma-and-open-bracket",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "a",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-json-string-of-an-array",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-json-string-of-an-array",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-json-string-of-an-array",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-json-string-of-an-array",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": [
+              {
+                "content": "Generate lorem ipsum page texture atlas (PIL) + inspect",
+                "status": "in_progress"
+              },
+              {
+                "content": "Blender script: book geometry + materials",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-not-json-stays-text",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": "buy milk"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-not-json-stays-text",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": "buy milk"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-not-json-stays-text",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": "buy milk"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-todos-not-json-stays-text",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "todo_write",
+          {
+            "todos": "buy milk"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la /home/user/imap-attachments/ 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la /home/user/imap-attachments/ 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la /home/user/imap-attachments/ 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la /home/user/imap-attachments/ 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line-in-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line-in-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line-in-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4427-one-line-in-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": " ls -la 2>&1 | head -30 "
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-nested-call",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-nested-call",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-nested-call",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-nested-call",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-reopened-parameter",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n</parameter>\n<parameter=content>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-reopened-parameter",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n</parameter>\n<parameter=content>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-reopened-parameter",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n</parameter>\n<parameter=content>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-reopened-parameter",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "fixture.txt",
+            "content": "first line\n</parameter>\n<parameter=content>\nlast line"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-heredoc",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "bash",
+          {
+            "command": "python3 - <<'PY'\ntext = '''<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>'''\nprint('tail that must not be lost')\nPY"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-heredoc",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "bash",
+          {
+            "command": "python3 - <<'PY'\ntext = '''<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>'''\nprint('tail that must not be lost')\nPY"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-heredoc",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "bash",
+          {
+            "command": "python3 - <<'PY'\ntext = '''<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>'''\nprint('tail that must not be lost')\nPY"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-heredoc",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "bash",
+          {
+            "command": "python3 - <<'PY'\ntext = '''<tool_call>\n<function=read>\n<parameter=path>\nnested.txt\n</parameter>\n</function>\n</tool_call>'''\nprint('tail that must not be lost')\nPY"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-call-format-in-a-file",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "DOC.md",
+            "content": "Close a call with </function> and then </tool_call>.\nlike this."
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-call-format-in-a-file",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "DOC.md",
+            "content": "Close a call with </function> and then </tool_call>.\nlike this."
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-call-format-in-a-file",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "DOC.md",
+            "content": "Close a call with </function> and then </tool_call>.\nlike this."
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4078-call-format-in-a-file",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "DOC.md",
+            "content": "Close a call with </function> and then </tool_call>.\nlike this."
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-line",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-line",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-line",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-line",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-in-a-fence",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-in-a-fence",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-in-a-fence",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-in-a-fence",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-after-a-backtick",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-after-a-backtick",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-after-a-backtick",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-stray-think-after-a-backtick",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "reasoning sample:\n</think>\nanswer sample"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-quoted-think-stays-reasoning",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-quoted-think-stays-reasoning",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-quoted-think-stays-reasoning",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-quoted-think-stays-reasoning",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-closer-in-the-answer-text-is-kept-mid-line",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-closer-in-the-answer-text-is-kept-mid-line",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-closer-in-the-answer-text-is-kept-mid-line",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-closer-in-the-answer-text-is-kept-mid-line",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "4077-no-second-closer-is-the-normal-case",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-no-second-closer-is-the-normal-case",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-no-second-closer-is-the-normal-case",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "4077-no-second-closer-is-the-normal-case",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-one-call",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-one-call",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-one-call",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-one-call",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-int-argument",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": "make -j8",
+            "timeout": 30
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-int-argument",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": "make -j8",
+            "timeout": 30
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-int-argument",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": "make -j8",
+            "timeout": 30
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-int-argument",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "run_command",
+          {
+            "command": "make -j8",
+            "timeout": 30
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-after-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-after-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-after-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-after-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-call-in-the-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-call-in-the-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-call-in-the-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-call-in-the-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "c.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "c.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "c.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "c.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-calls-with-prose-between",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-calls-with-prose-between",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-calls-with-prose-between",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-calls-with-prose-between",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls-in-the-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls-in-the-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls-in-the-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-three-calls-in-the-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out-in-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out-in-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out-in-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-function-close-left-out-in-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write_file",
+          {
+            "path": "out.txt",
+            "content": "hello"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-in-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-in-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-in-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-in-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls-in-thinking",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls-in-thinking",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls-in-thinking",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-wrapper-close-left-out-two-calls-in-thinking",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "read",
+          {
+            "path": "a.txt"
+          }
+        ],
+        [
+          "read",
+          {
+            "path": "b.txt"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "qwen-undeclared-name-is-text",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-undeclared-name-is-text",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-undeclared-name-is-text",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-undeclared-name-is-text",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-a-value",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-a-value",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-a-value",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-a-value",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-the-opener",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-the-opener",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-the-opener",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-inside-the-opener",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-after-function-close-on-length",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-after-function-close-on-length",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-after-function-close-on-length",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-cut-after-function-close-on-length",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-quoted-in-a-fence",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-quoted-in-a-fence",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-quoted-in-a-fence",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-quoted-in-a-fence",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-prose-names-the-format",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-prose-names-the-format",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-prose-names-the-format",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "qwen-prose-names-the-format",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": []
+    },
+    {
+      "name": "drift-parameter-as-opener",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-parameter-as-opener",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-parameter-as-opener",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-parameter-as-opener",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-json-in-the-wrapper",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-json-in-the-wrapper",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-json-in-the-wrapper",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-json-in-the-wrapper",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-bare-function",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-bare-function",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-bare-function",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-bare-function",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-batch-in-one-wrapper",
+      "piece_size": 0,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ],
+        [
+          "write",
+          {
+            "path": "b.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-batch-in-one-wrapper",
+      "piece_size": 1,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ],
+        [
+          "write",
+          {
+            "path": "b.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-batch-in-one-wrapper",
+      "piece_size": 3,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ],
+        [
+          "write",
+          {
+            "path": "b.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "drift-batch-in-one-wrapper",
+      "piece_size": 7,
+      "passed": true,
+      "error": null,
+      "calls": [
+        [
+          "write",
+          {
+            "path": "a.md",
+            "content": "hi"
+          }
+        ],
+        [
+          "write",
+          {
+            "path": "b.md",
+            "content": "hi"
+          }
+        ]
+      ]
+    }
+  ]
+}

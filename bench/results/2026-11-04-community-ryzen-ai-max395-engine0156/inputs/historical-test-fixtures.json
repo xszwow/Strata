@@ -1,0 +1,156 @@
+{
+  "Benchmark-Deployed.py": [
+    "Comparable local API measurements; persist complete responses and running settings.",
+    "用中文写一篇约600字的说明，解释为什么同一台电脑下载大文件时，速度会从15MB/s降到4MB/s，又可能恢复。依次解释Wi-Fi链路、公网拥塞、CDN节点、服务器限速和如何判断下载是否仍在继续。直接写正文，不要先列提纲。",
+    "Write a Python function that reads a large file in chunks, calculates SHA256, compares it with an expected digest, and raises a useful exception if the file is missing or the digest is wrong. Include type hints, a docstring, a usage example, and a short explanation of why chunked reading is useful. Do not use external libraries.",
+    "计算1到1000中所有能被3或5整除的整数之和，重复的只计一次。请用等差数列与容斥原理推导，说明每个求和项、上限如何取整，并给出最终结果与简短Python核验代码。",
+    "Write ONLY a Python function sum_multiples(n: int) -> int that returns the sum of integers from 1 through n inclusive divisible by 3 or 5, counting duplicates once. Use arithmetic formulas, no loops, comprehensions, imports, function calls, or exponentiation. Use // for integer division. Return 0 for n=0. Output the function in one fenced Python code block.",
+    "Enable checkpoint saving and prompt reuse for validation",
+    "Override the running Strata server draft-confidence gate for each request",
+    "Override sampling temperature for every selected case (including reasoning)",
+    "Code contains operations outside the arithmetic-only validator",
+    "engines/strata/runtime/current-server-launch.json"
+  ],
+  "Benchmark-Ple-Io.py": [
+    "Compare PLE I/O on one owned test server, preserving the daily launch record.",
+    "All physical disks and processes; background I/O is included.",
+    "Uncached request or generation timing check failed",
+    "Test engine arguments do not match the saved config",
+    "Test server failed to become ready within 600 seconds"
+  ],
+  "Benchmark-Ple-Wake.py": [
+    "Test fresh PLE rows after five idle seconds, with and without SSD keepalive.",
+    "All physical disks and processes; background I/O is included.",
+    ": idle 5s, then request previously unseen n-gram rows",
+    "Missing streamed output or unexpected prompt reuse"
+  ],
+  "Code-Oracle.py": [
+    "Check requested pure algorithms; reject imports, I/O and reflective attributes.",
+    "^[ \\t]*```([^\\r\\n`]*)\\r?\\n(.*?)^[ \\t]*```[ \\t]*\\r?$"
+  ],
+  "Compare-Profiles.py": [
+    "Run an explicit parameter manifest using the same requests for every profile.",
+    "strata serve: .*?(?:free: (\\d+)-token chunks|trying a (\\d+)-token chunk|prompt chunk auto: (\\d+) tokens)",
+    "pre-filled (\\d+) of (\\d+) slots from the profile",
+    "Cross-profile tests; quality and completed long-context validation are separate gates",
+    "\nEnd of reference records. First print the three CHECK values as JSON. Then implement a Python function for breadth-first search shortest path in a directed unweighted graph with a visited set, path reconstruction, unreachable-node handling, type hints and three example tests. Explain its correctness and complexity. Use only standard Python; do not repeat the reference records.",
+    "Reference records follow. Read them and remember CHECK_A, CHECK_B, CHECK_C.\n",
+    "No-draft control unexpectedly proposed speculative tokens"
+  ],
+  "Full-Validation.py": [
+    "Near-full context retrieval and completed code, with host-memory sampling.",
+    "\nEnd of reference records. First print CHECK_A, CHECK_B, CHECK_C as JSON. Then write ONLY one complete Python function bfs_path(graph: dict[int, list[int]], start: int, target: int) -> list[int]. Find a shortest directed unweighted path, visiting neighbors in list order. Return [] if unreachable, [start] if start == target. Missing adjacency lists mean no outgoing edges. Handle cycles and duplicate edges, use a visited set, reconstruct the path, and do not mutate inputs. Use O(V+E) time with an indexed queue, only builtins, no imports, helpers, classes, decorators or I/O. Return the complete function in one fenced Python block; a short docstring is enough.",
+    "Read these reference records and remember CHECK_A, CHECK_B, CHECK_C.\n",
+    "Full-context verifier changed; regrade stored responses explicitly or use a new label",
+    "Existing validation uses a different configuration",
+    "Input token count or cold-cache evidence does not match"
+  ],
+  "Optimize-Local.py": [
+    "Resumable, one-engine-at-a-time tuning with uncached raw API measurements.",
+    "engines/strata/runtime/current-server-launch.json",
+    "Sample host headroom while an HTTP request blocks; no OS settings changed.",
+    "Write a Python function that reads a large file in chunks, calculates SHA256, compares it with an expected digest, and raises a useful exception if the file is missing or the digest is wrong. Include type hints, a docstring, a usage example, and a short explanation of why chunked reading is useful. Do not use external libraries.",
+    "Implement a small Python LRU cache without external libraries. Include get and put, promotion on access, eviction at capacity, capacity validation, type hints, and example assertions covering overwritten keys and missing keys. Explain the complexity and why the ordering is correct. Provide complete readable code.",
+    "计算1到1000中所有能被3或5整除的整数之和，重复的只计一次。请用等差数列与容斥原理推导，说明每个求和项、上限如何取整，并给出最终结果与简短Python核验代码。",
+    "用中文写一篇约600字的说明，解释为什么同一台电脑下载大文件时，速度会从15MB/s降到4MB/s，又可能恢复。依次解释Wi-Fi链路、公网拥塞、CDN节点、服务器限速和如何判断下载是否仍在继续。直接写正文，不要先列提纲。",
+    "throughput prefix; length termination is not a completed quality task",
+    "Screening only: finalists need interleaved repeats, completed code/reasoning and 256K verification",
+    "Launch PID belongs to another process; refusing to change it",
+    "Running engine arguments do not match the complete profile",
+    "Live server exceeded the observation window; not restarting it",
+    "Running engine environment does not match the profile",
+    "Existing result settings differ; use another work folder or retain the recorded settings"
+  ],
+  "Prepare-Stage.py": [
+    "Freeze a next-stage manifest from an explicitly selected candidate configuration.",
+    "Existing stage has a different foundation; use a new stage name"
+  ],
+  "Quality-Local.py": [
+    "Completed algorithm/reasoning checks for finalists; bounded pure-code oracle child.",
+    "Write ONLY one Python function toposort(nodes: list[int], edges: list[tuple[int, int]]) -> list[int]. Return the lexicographically smallest topological ordering of the directed graph. Every endpoint is in nodes, nodes are unique, duplicate edges count once. Empty input returns []. Raise ValueError for a cycle, including a self-loop. Do not mutate the inputs. Use only builtins: no imports, helpers, classes, decorators, or I/O. Return the complete function in one fenced Python block.",
+    "Write ONLY one Python function edit_distance(a: str, b: str) -> int computing Levenshtein distance with insert/delete/substitute each cost 1. Handle empty and Unicode strings. Use O(min(len(a),len(b))) auxiliary memory and dynamic programming. Use only builtins: no imports, helpers, classes, decorators, or I/O. Return the complete function in one fenced Python block.",
+    "Write ONLY one Python function schedule_profit(jobs: list[tuple[int, int, int]]) -> int. Each job is (start, end, profit), start < end; jobs may be unsorted or duplicate and profit may be negative. Find maximum total profit of non-overlapping jobs; end == next start is allowed, and choosing no jobs yields 0. Use weighted interval scheduling with O(n log n) time, your binary search inside this function, and O(n) memory. Do not mutate input. Use only builtins: no imports, helpers, classes, decorators, or I/O. Return the complete function in one fenced Python block.",
+    "计算1到1000中所有能被3或5整除的整数之和，重复的只计一次。请用等差数列与容斥原理推导，说明每个求和项、上限如何取整，并给出最终结果与简短Python核验代码。正文最后独立一行给出JSON {\"sum\": 整数答案}。",
+    "有多少个长度为40的二进制字符串，同时满足：恰好13个1；不含连续三个1；把字符串视为可带前导零的二进制整数后，除以7的余数是4？请推导动态规划状态和转移，提供可复现的Python核验代码，并在正文最后独立一行给出JSON {\"count\": 整数答案}。注意必须计算出实际整数结果。",
+    "Assign the waiting child a 256 MiB limit before supplying generated code.",
+    "Use xhigh for complete algorithm implementations too",
+    "Independent thinking token budget; 0 leaves thinking unbounded",
+    "Override sampling temperature for every selected case",
+    "Use a different deterministic seed for each repetition",
+    "Quality verifier changed; regrade stored responses explicitly or use a new label",
+    "Existing quality record uses different reasoning or draft settings",
+    "Existing quality record uses a different thinking budget",
+    "Existing quality record uses different sampling settings",
+    "Existing quality record uses a different service port",
+    "Existing quality record uses a different engine configuration",
+    "Existing quality record uses a different prompt; use a new label",
+    "Quality comparison unexpectedly reused prompt tokens"
+  ],
+  "Rank-Profiles.py": [
+    "Rank complete comparable measurements; selection remains a candidate until final gates.",
+    "candidate; requires complete quality and 256K validation",
+    "No passing baseline; refusing automatic selection",
+    "Also reject >5%% prompt-throughput regressions",
+    "Partial-kernel measurement rather than complete inference",
+    "Native runtime reduced the requested prefill chunk; keep result but do not deploy that request"
+  ],
+  "Stability-Local.py": [
+    "Twelve xhigh coding turns on one conversation, testing code and cache reuse.",
+    "Conversation test requires the daily cache-enabled server",
+    "Conversation verifier changed; regrade stored responses explicitly or use a new label"
+  ],
+  "Summarize-Ple-Io.py": [
+    "Summarize recorded PLE experiments without reading generated text into the console.",
+    "Matched temperature-zero throughput prefixes; prompt reuse disabled; warmups excluded.",
+    "Physical-disk counters include every process. Engine idle I/O is measured separately.",
+    "Hashes establish I/O parity for these samples; truncated prefixes are not full quality tests."
+  ],
+  "Vision-Audit.py": [
+    "Audit the concrete deployment and saved raw evidence before finishing the task.",
+    "$s=Get-Counter '\\GPU Adapter Memory(*)\\Dedicated Usage','\\GPU Process Memory(*)\\Dedicated Usage','\\Memory\\Committed Bytes','\\Memory\\Commit Limit','\\Memory\\Available Bytes' -ErrorAction Stop; $s.CounterSamples | Where-Object {$_.CookedValue -gt 104857600} | Select-Object Path,@{Name='GiB';Expression={$_.CookedValue/1GB}} | ConvertTo-Json -Compress",
+    "engines/strata/app/third_party/llama.cpp/ggml/src/ggml-vulkan/ggml-vulkan-types.h",
+    "engines/strata/app/tools/vision/strata_vision.cpp",
+    "image_cache_multi_image_responses_and_xhigh_code",
+    "models/vision/mmproj-Qwen3.8-Flash-Next-BF16.provenance.json",
+    "engines/strata/runtime/current-server-launch.json",
+    "98d9233921291ef90373bdb41854c328e30b2f4200811d06781d433df59934fc"
+  ],
+  "Vision-Compare-Profiles.py": [
+    "Sequential, resumable local image quality comparison with one main engine.",
+    "$s=Get-Counter '\\GPU Adapter Memory(*)\\Dedicated Usage','\\GPU Process Memory(*)\\Dedicated Usage' -ErrorAction Stop; $s.CounterSamples | Where-Object {$_.CookedValue -gt 104857600} | Select-Object Path,@{Name='GiB';Expression={$_.CookedValue/1GB}} | ConvertTo-Json -Compress",
+    "models/vision/mmproj-Qwen3.8-Flash-Next-BF16.gguf"
+  ],
+  "Vision-Complete.py": [
+    "Run the selected vision deployment checks in series and preserve resumable state.",
+    "Final pipeline finished; audit correctness from the saved responses.",
+    "Saved pipeline belongs to another deployment; archive it before changing settings"
+  ],
+  "Vision-Encoder-Benchmark.py": [
+    "Measure the real encoder protocol and compare CPU/Vulkan embeddings.",
+    "models/unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+    "models/vision/mmproj-Qwen3.8-Flash-Next-BF16.gguf"
+  ],
+  "Vision-Final-Checks.py": [
+    "Check real image caching, multi-image/Responses APIs and near-full context.",
+    "Read these reference records and keep CHECK_A, CHECK_B, CHECK_C.\n",
+    "\nEnd of records. Output the three CHECK values in order, followed by an exact transcription of all six lines in the attached image. Do not explain.",
+    "engines/strata/runtime/current-server-launch.json",
+    "Generated code is outside the bounded function checker",
+    "Run the image integration checks first to obtain the real Chinese-image embeddings",
+    "Read the title of the FIRST image and the work-order ID and verification phrase of the SECOND image. Label which image each answer comes from.",
+    "认真检查截图中的错误。说明异常类型、缺失键和出错行，然后只给一个完整的 Python get_value(cache, key) 函数：键存在时返回对应值，不存在时返回 None。保持原函数语义，不导入库。函数放在一个 Python 代码块里。"
+  ],
+  "Vision-HighResolution.py": [
+    "Compare image caps on a 4K document with non-patterned, exact OCR values.",
+    "Read the audit ledger ID and the 44 values in the far-right AMOUNT column, top to bottom. Output only the ID and those 44 values. Do not read DEBIT or CREDIT; do not calculate or infer missing values.",
+    "label must contain only letters, digits, underscores or hyphens"
+  ],
+  "Vision-Validate.py": [
+    "Reproducible visual fixtures, API checks and paired text benchmarks.",
+    "Read the title verbatim. Name the three colored shapes in left-to-right order. Be brief.",
+    "Read the invoice ID and all 12 numbers in the Amount column, top to bottom. Output only those values, without calculating a total.",
+    "Read the ledger ID and the 44 numbers in the rightmost AMOUNT column, top to bottom. Output only the ID followed by those 44 numbers. Do not read DEBIT or CREDIT and do not calculate totals.",
+    "From this screenshot, report the exception type, the missing key, and the failing line number. Then explain the bug and give the corrected one-line return for a missing key. Do not invent unseen code.",
+    "Stored image results use a different configuration"
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  "src\\core\\mtp.cpp",
+  "include\\strata\\core\\mtp.hpp",
+  "tools\\mtp_fetch.py",
+  "tools\\mtp_rt.py",
+  "tools\\vision\\strata_vision.cpp"
+]

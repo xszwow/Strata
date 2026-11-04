@@ -1,7 +1,7 @@
 <h1 align="center">Strata · Ryzen AI Max+ 395 Windows Edition</h1>
 
 <p align="center"><b>在 128 GB 统一内存的 Ryzen AI Max+ 395 / Radeon 8060S 上运行 Qwen3.8 Flash-Next</b><br>
-Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文容量验证（不同阶段配置） · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
+Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文实测 · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
 
 <p align="center">
 <a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md"><b>完整安装教程</b></a> ·
@@ -21,7 +21,27 @@ Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
 
 如果这套配置帮你复现成功，欢迎给仓库点一个 **Star**；遇到硬件或部署差异，也欢迎带上驱动、内存和日志反馈。
 
-## 2026-11-04 更新：57K 草稿词表与复用核验
+## 2026-11-04 引擎升级：服务 0.2.10 / 引擎 0.1.56
+
+当前源码已更新到上游 v0.2.10，保留本 fork 的原生 Q4/Q8 MTP、可选 57K 草稿词表和 Vulkan 高分辨率预热补丁。
+同机对照后，日用选择 **Q4 MTP + 57K，spec 8 / spec-min-p 0.6，16K prefill**。配置生成器明确设置 `drafting: mtp`，并清除基础配置中的 DFlash2 参数。
+
+| 同日固定请求，三次生成速度中位数 | 原 0.1.42 | 正式新版 |
+| --- | ---: | ---: |
+| 代码 | 52.0 TPS | 60.5 TPS |
+| 中文说明 | 33.5 TPS | 40.0 TPS |
+| 英文公式说明，关闭思考 | 47.3 TPS | 53.4 TPS |
+
+每次最多输出 256 tokens；这些是固定工作负载的速度测量，不是通用质量评分。
+8K / 32K / 64K 输入预填充分别从 13.56 / 33.55 / 57.87 秒缩短到 6.63 / 25.92 / 49.69 秒。
+最终 Q4 spec 8 配置已完成 **260,934-token 输入**，预填充 227.86 秒，三处校验码全部找回。
+工具解析固定语料由 88/164 提高到 164/164；完整代码、图片、缓存、Responses、Anthropic 和跳过思考另有验收。
+关闭思考的一道算术题在原版和新版均失败，已保留原始回复。DFlash2 在这组测试中出现额外算术失败，因此未选作默认。
+
+完整对照、构建哈希、验收边界和测试数据见 [本次升级报告](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/README.md)。
+[原版上游 README](README.upstream.md) 单独保留；下方 10 月的表格及 SVG 均为历史测量。
+
+## 历史补充：57K 草稿词表与复用核验
 
 补充发布 10 月 19 日、21 日的本机测试报告及结果数据，并为配置生成器加入可选的 `-UseHyf57K`。
 该选项使用仓库内附、经过 SHA-256 校验的 **56,919 项 MTP 草稿词表**，主模型分词器与完整词表不变。
@@ -58,11 +78,12 @@ Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
 | 主模型 | Huihui Qwen3.8 Flash-Next Abliterated，Unsloth `UD-IQ4_XS` |
 | MTP | Strata runtime，原生 Q4_0 experts |
 | 视觉 | BF16 mmproj + Vulkan `strata-vision` |
-| Strata 基线 | 0.1.42 |
+| 当前源码 / 引擎 | 0.2.10 / 0.1.56（本机 Q4 MTP 补丁） |
+| 同日对照基线 | 0.1.42 |
 
 其他 Radeon、内存容量或驱动版本可以尝试，但需要重新验证缓存规模和速度。
 
-## 实测性能
+## 历史性能（10 月测量）
 
 ![Ryzen AI Max+ 395 实测 TPS 汇总，区分最终配置与早期容量测试](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg)
 
@@ -86,7 +107,7 @@ Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
 | 63,954-token 输入 prefill | **1,087.2 TPS** |
 | 260K 级输入 prefill（早期 Q2 MTP / 视觉专项，非当前 Q4 spec 8 正面对比） | **约 942～960 TPS** |
 
-**上下文验证边界：**最终 Q4 MTP `spec 8 / spec-min-p 0.6` 配置有 63,954-token 输入测试（1,087.2 prefill TPS）。260,934-token 容量测试使用较早 `Q2 MTP / spec 4` 配置（960.3 prefill TPS）；260,881-token 含图片测试使用视觉专项配置（942.5 prefill TPS）。这证明相应测试当时可以处理接近 262K 的输入，不代表最终 Q4 spec 8 在 260K 上下文有相同吞吐或已完成长期稳定性验证。两项 260K 试验分别只输出了 31 和 81 tokens。
+**10 月这批数据的上下文验证边界：**当时的最终 Q4 MTP `spec 8 / spec-min-p 0.6` 配置有 63,954-token 输入测试（1,087.2 prefill TPS）。260,934-token 容量测试使用较早 `Q2 MTP / spec 4` 配置（960.3 prefill TPS）；260,881-token 含图片测试使用视觉专项配置（942.5 prefill TPS）。这证明相应测试当时可以处理接近 262K 的输入，不代表同一批 Q4 spec 8 的 260K 吞吐。11 月 4 日新版 Q4 spec 8 的近满上下文实测见上方新报告；尚无长期稳定性结论。两项 260K 试验分别只输出了 31 和 81 tokens。
 
 64.63 TPS 来自偏短、投机命中较好的固定工具任务，不代表中文、任意代码或长推理都能保持 60～65 TPS。完整页面还列出：
 

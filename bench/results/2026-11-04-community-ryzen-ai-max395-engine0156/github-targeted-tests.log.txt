@@ -1,0 +1,16 @@
+the process that started this download has ended: stopping
+
+<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='cp936'>
+
+  if method() is not None:
+
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+----------------------------------------------------------------------
+
+Ran 23 tests in 2.476s
+
+
+
+OK
+

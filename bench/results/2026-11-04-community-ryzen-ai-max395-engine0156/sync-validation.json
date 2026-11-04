@@ -1,0 +1,46 @@
+{
+  "upstream_release": "v0.2.10",
+  "upstream_commit": "ffa80d73133ea5c548aefe57889a16e8085a938f",
+  "engine_version": "0.1.56",
+  "engine_sha256": "37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6",
+  "native_mtp_source_hashes_match_deployed_build": true,
+  "config_generator": {
+    "passed": true,
+    "injected_dflash_flags_removed": 8,
+    "explicit_drafting": "mtp",
+    "mtp_enabled": true,
+    "hyf57k_size_and_hash": "passed",
+    "hipblaslt_second_lib_directory": "passed"
+  },
+  "tests": {
+    "mtp_fetch_and_draft_vocab": {
+      "direct_base_python": {
+        "passed": 23,
+        "failed": 0
+      },
+      "venv_launcher": {
+        "passed": 22,
+        "failed": 1,
+        "failure": "test_a_download_ends_with_the_process_that_started_it",
+        "limitation": "The Windows venv Python launcher adds a parent process; the upstream download watcher did not exit in this test. Direct base Python with the same site-packages passes. No claim that this limitation is fixed."
+      }
+    },
+    "powershell_parse": "passed",
+    "post_migration_runtime_checks": "Text, image, public health and anonymous authentication rejection passed."
+  },
+  "source_diff_vs_deployed_source": [
+    "README.md",
+    "tools\\mtp_fetch.py",
+    "tools\\vision\\strata_vision.cpp"
+  ],
+  "source_missing_vs_deployed_source": [],
+  "upstream_whitespace_notes": [
+    "docs/MODELS.md EOF",
+    "docs/STRIX_HALO.md EOF",
+    "setup.py EOF",
+    "src/kernels/cuda/fused_gr.cu EOF",
+    "src/prefill/prefill.cpp EOF",
+    "tools/check_isa_guard.py line 33"
+  ],
+  "other_backends": "Not rebuilt or tested on this Windows HIP machine."
+}

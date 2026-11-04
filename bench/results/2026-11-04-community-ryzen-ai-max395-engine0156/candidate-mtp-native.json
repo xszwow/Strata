@@ -1,0 +1,911 @@
+{
+  "label": "candidate-mtp-native",
+  "started": 1793822176.3473752,
+  "results": [
+    {
+      "case": "code-0",
+      "elapsed_s": 4.8709987000002,
+      "status": 200,
+      "payload_sha256": "801d8bd1d83ac6cf86b51d60432a26ceaeef8c3ab44bb5ff3021e763517d9602",
+      "response": {
+        "id": "chatcmpl-a9e322fe37f54998ad08bb3a",
+        "object": "chat.completion",
+        "created": 1793822176,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```python\nimport hashlib\nfrom typing import Optional\n\n\nclass FileHashError(Exception):\n    \"\"\"Base exception for file hashing errors.\"\"\"\n    pass\n\n\nclass FileReadError(FileHashError):\n    \"\"\"Raised when an error occurs while reading the file.\"\"\"\n    pass\n\n\nclass DigestMismatchError(FileHashError):\n    \"\"\"Raised when the computed digest does not match the expected digest.\"\"\"\n\n    def __init__(self, expected: str, actual: str):\n        self.expected = expected\n        self.actual = actual\n        super().__init__(f\"Digest mismatch: expected {expected}, got {actual}\")\n\n\ndef hash_file_sha256(\n    file_path: str,\n    chunk_size: int = 8192,\n    expected_digest: Optional[str] = None\n) -> str:\n    \"\"\"\n    Hash a large file in chunks using SHA-256 and optionally validate against an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It computes the SHA-256 hash of the\n    file's contents and, if an expected digest is provided, validates that the computed\n    hash matches.\n\n"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 660.1,
+          "prompt_per_token_ms": 12.002,
+          "prompt_per_second": 83.3,
+          "predicted_n": 256,
+          "predicted_ms": 4189.8,
+          "predicted_per_token_ms": 16.366,
+          "predicted_per_second": 61.1,
+          "draft_n": 309,
+          "draft_n_accepted": 196
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "chinese-0",
+      "elapsed_s": 7.103159199999936,
+      "status": 200,
+      "payload_sha256": "0d2696b61826d3eab7c3fc38e413f7b4cb06cf42681c48299fd78f9924ecc8fd",
+      "response": {
+        "id": "chatcmpl-2e135514d2fd4e03af2c5a69",
+        "object": "chat.completion",
+        "created": 1793822181,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "大文件下载速度忽快忽慢，往往并非单一因素所致，而是本地网络、传输路径及服务器策略共同作用的结果。要理解这一现象，我们需要从Wi-Fi环境、公网拥塞、CDN机制以及限速策略等多个维度进行剖析。\n\n首先，Wi-Fi信号的不稳定性是家庭用户最常见的“隐形杀手”。无线信号极易受到墙体阻隔、微波炉干扰或邻近信道拥堵的影响。当信号强度波动时，路由器会自动调整调制解调方式以维持连接，这直接导致带宽剧烈抖动。此外，若家中有多台设备同时在线看视频或玩游戏，Wi-Fi信道的竞争也会造成下载速度的间歇性跌落。\n\n其次，公网拥塞如同高速公路上的早晚高峰。数据从服务器传输到你的电脑，需经过多个运营商节点和骨干网。在晚间黄金时段，大量用户并发访问会导致核心路由器队列堆积，数据包丢失率上升，TCP协议随之触发拥塞控制机制，主动降低发送速率以避免网络崩溃，从而表现为下载速度变慢。\n\n再者，内容分发网络（CDN）的调度策略也至关重要。大型网站通常使用CDN将文件缓存至离用户最近的节点。然而，智能DNS解析可能因负载平衡或节点故障，将你分配到较"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 256,
+          "total_tokens": 308,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 52,
+          "prompt_ms": 487.6,
+          "prompt_per_token_ms": 9.377,
+          "prompt_per_second": 106.6,
+          "predicted_n": 256,
+          "predicted_ms": 6590.0,
+          "predicted_per_token_ms": 25.742,
+          "predicted_per_second": 38.8,
+          "draft_n": 235,
+          "draft_n_accepted": 120
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "reasoning-0",
+      "elapsed_s": 5.30653319999692,
+      "status": 200,
+      "payload_sha256": "5b9a963db698d36a8411b620fe36f8d5735ebee3bb46d8bc203b35ec5bd7a802",
+      "response": {
+        "id": "chatcmpl-5839001e719c40baad3d08a3",
+        "object": "chat.completion",
+        "created": 1793822188,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "### 1. Problem Definition and Arithmetic Formula\n\nLet $S$ be the set of integers $\\{1, 2, \\dots, n\\}$. We want to find the sum of all elements in $S$ that are divisible by **3** or **5**.\n\nLet:\n*   $A = \\{x \\in S \\mid x \\text{ is divisible by } 3\\}$\n*   $B = \\{x \\in S \\mid x \\text{ is divisible by } 5\\}$\n\nWe seek the sum of elements in the union of these sets: $\\Sigma(A \\cup B)$.\n\n#### The Inclusion-Exclusion Principle for Sums\nFor any two finite sets $A$ and $B$, the sum of elements in their union is given by:\n$$ \\Sigma(A \\cup B) = \\Sigma(A) + \\Sigma(B) - \\Sigma(A \\cap B) $$\n\n**Why subtract?**\nIf we simply add $\\Sigma(A)$ and $\\Sigma(B)$, any number divisible by **both** 3 and 5 (i.e., divisible by $\\text{lcm}(3,5)=15$) is counted twice. We must subtract"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 495.9,
+          "prompt_per_token_ms": 9.016,
+          "prompt_per_second": 110.9,
+          "predicted_n": 256,
+          "predicted_ms": 4801.7,
+          "predicted_per_token_ms": 18.757,
+          "predicted_per_second": 53.3,
+          "draft_n": 330,
+          "draft_n_accepted": 183
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "code-1",
+      "elapsed_s": 4.720576400002756,
+      "status": 200,
+      "payload_sha256": "801d8bd1d83ac6cf86b51d60432a26ceaeef8c3ab44bb5ff3021e763517d9602",
+      "response": {
+        "id": "chatcmpl-f556c11d843f4cf985f68ef0",
+        "object": "chat.completion",
+        "created": 1793822193,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```python\nimport hashlib\nfrom typing import Optional\n\n\nclass FileHashError(Exception):\n    \"\"\"Base exception for file hashing errors.\"\"\"\n    pass\n\n\nclass FileReadError(FileHashError):\n    \"\"\"Raised when an error occurs while reading the file.\"\"\"\n    pass\n\n\nclass DigestMismatchError(FileHashError):\n    \"\"\"Raised when the computed digest does not match the expected digest.\"\"\"\n\n    def __init__(self, expected: str, actual: str):\n        self.expected = expected\n        self.actual = actual\n        super().__init__(f\"Digest mismatch: expected {expected}, got {actual}\")\n\n\ndef hash_file_sha256(\n    file_path: str,\n    chunk_size: int = 8192,\n    expected_digest: Optional[str] = None\n) -> str:\n    \"\"\"\n    Hash a large file in chunks using SHA-256 and optionally validate against an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It computes the SHA-256 hash of the\n    file's contents and, if an expected digest is provided, validates that the computed\n    digest matches.\n\n"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 508.1,
+          "prompt_per_token_ms": 9.238,
+          "prompt_per_second": 108.2,
+          "predicted_n": 256,
+          "predicted_ms": 4191.5,
+          "predicted_per_token_ms": 16.373,
+          "predicted_per_second": 61.1,
+          "draft_n": 305,
+          "draft_n_accepted": 196
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "chinese-1",
+      "elapsed_s": 6.835753100000147,
+      "status": 200,
+      "payload_sha256": "0d2696b61826d3eab7c3fc38e413f7b4cb06cf42681c48299fd78f9924ecc8fd",
+      "response": {
+        "id": "chatcmpl-3f2240b4be5f4a8bab1c1ac8",
+        "object": "chat.completion",
+        "created": 1793822198,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "大文件下载速度忽快忽慢，往往并非单一因素所致，而是本地网络、传输路径及服务器策略共同作用的结果。要理解这一现象，我们需要从Wi-Fi环境、公网拥塞、CDN机制以及限速策略等多个维度进行剖析。\n\n首先，Wi-Fi信号的不稳定性是家庭用户最常见的“隐形杀手”。无线信号极易受到墙体阻隔、微波炉干扰或邻近信道拥堵的影响。当信号强度波动时，路由器会自动调整调制解调方式以维持连接，这直接导致带宽剧烈抖动。此外，若家中有多台设备同时在线看视频或玩游戏，它们会抢占有限的无线信道资源，造成下载速度间歇性跌落。\n\n其次，公网拥塞如同高速公路上的早晚高峰。数据从服务器传输到你的电脑，需经过多个运营商节点和骨干网。在晚间黄金时段，大量用户并发访问会导致核心路由器队列堆积，产生丢包和延迟。此时，TCP协议会触发拥塞控制机制，主动降低发送速率以避免网络崩溃，从而表现为下载速度突然变慢，待拥堵缓解后又迅速回升。\n\n再者，内容分发网络（CDN）的调度策略也至关重要。大型网站通常使用CDN将文件缓存至离用户最近的边缘节点。然而，由于"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 256,
+          "total_tokens": 308,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 52,
+          "prompt_ms": 495.2,
+          "prompt_per_token_ms": 9.523,
+          "prompt_per_second": 105.0,
+          "predicted_n": 256,
+          "predicted_ms": 6321.6,
+          "predicted_per_token_ms": 24.694,
+          "predicted_per_second": 40.5,
+          "draft_n": 219,
+          "draft_n_accepted": 122
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "reasoning-1",
+      "elapsed_s": 5.258711599999515,
+      "status": 200,
+      "payload_sha256": "5b9a963db698d36a8411b620fe36f8d5735ebee3bb46d8bc203b35ec5bd7a802",
+      "response": {
+        "id": "chatcmpl-64aef1d6118d40768f71cb9e",
+        "object": "chat.completion",
+        "created": 1793822205,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "### 1. Problem Definition and Arithmetic Formula\n\nLet $S$ be the set of integers $\\{1, 2, \\dots, n\\}$. We want to find the sum of all elements in $S$ that are divisible by **3** or **5**.\n\nLet:\n*   $A = \\{x \\in S \\mid x \\text{ is divisible by } 3\\}$\n*   $B = \\{x \\in S \\mid x \\text{ is divisible by } 5\\}$\n\nWe seek the sum of elements in the union of these sets: $\\Sigma(A \\cup B)$.\n\n#### The Inclusion-Exclusion Principle for Sums\nFor any two finite sets $A$ and $B$, the sum of elements in their union is given by:\n$$ \\Sigma(A \\cup B) = \\Sigma(A) + \\Sigma(B) - \\Sigma(A \\cap B) $$\n\n**Why subtract?**\nIf we simply add $\\Sigma(A)$ and $\\Sigma(B)$, any number divisible by **both** 3 and 5 (i.e., divisible by $\\text{lcm}(3,5)=15$) is counted twice. We must subtract"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 486.0,
+          "prompt_per_token_ms": 8.836,
+          "prompt_per_second": 113.2,
+          "predicted_n": 256,
+          "predicted_ms": 4764.7,
+          "predicted_per_token_ms": 18.612,
+          "predicted_per_second": 53.7,
+          "draft_n": 329,
+          "draft_n_accepted": 183
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "code-2",
+      "elapsed_s": 4.728174700001546,
+      "status": 200,
+      "payload_sha256": "801d8bd1d83ac6cf86b51d60432a26ceaeef8c3ab44bb5ff3021e763517d9602",
+      "response": {
+        "id": "chatcmpl-483c50f7d41941f7aac99a1f",
+        "object": "chat.completion",
+        "created": 1793822210,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```python\nimport hashlib\nfrom typing import Optional\n\n\nclass FileHashError(Exception):\n    \"\"\"Base exception for file hashing errors.\"\"\"\n    pass\n\n\nclass FileReadError(FileHashError):\n    \"\"\"Raised when an error occurs while reading the file.\"\"\"\n    pass\n\n\nclass DigestMismatchError(FileHashError):\n    \"\"\"Raised when the computed digest does not match the expected digest.\"\"\"\n\n    def __init__(self, expected: str, actual: str):\n        self.expected = expected\n        self.actual = actual\n        super().__init__(f\"Digest mismatch: expected {expected}, got {actual}\")\n\n\ndef hash_file_sha256(\n    file_path: str,\n    chunk_size: int = 8192,\n    expected_digest: Optional[str] = None\n) -> str:\n    \"\"\"\n    Hash a large file in chunks using SHA-256 and optionally validate against an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It computes the SHA-256 hash of the\n    file's contents and, if an expected digest is provided, validates that the computed\n    digest matches.\n\n"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 499.0,
+          "prompt_per_token_ms": 9.073,
+          "prompt_per_second": 110.2,
+          "predicted_n": 256,
+          "predicted_ms": 4221.0,
+          "predicted_per_token_ms": 16.488,
+          "predicted_per_second": 60.6,
+          "draft_n": 305,
+          "draft_n_accepted": 196
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "chinese-2",
+      "elapsed_s": 6.898745400001644,
+      "status": 200,
+      "payload_sha256": "0d2696b61826d3eab7c3fc38e413f7b4cb06cf42681c48299fd78f9924ecc8fd",
+      "response": {
+        "id": "chatcmpl-a884f1314e674df0aaf70367",
+        "object": "chat.completion",
+        "created": 1793822215,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "大文件下载速度忽快忽慢，往往并非单一因素所致，而是本地网络、传输路径及服务器策略共同作用的结果。要理解这一现象，我们需要从Wi-Fi环境、公网拥塞、CDN机制以及限速策略等多个维度进行剖析。\n\n首先，Wi-Fi信号的不稳定性是家庭用户最常见的“隐形杀手”。无线信号极易受到墙体阻隔、微波炉干扰或邻近信道拥堵的影响。当信号强度波动时，路由器会自动调整调制解调方式以维持连接，这直接导致带宽剧烈抖动。此外，若家中有多台设备同时在线看视频或玩游戏，它们会抢占有限的无线信道资源，造成下载速度间歇性跌落。\n\n其次，公网拥塞如同高速公路上的早晚高峰。数据从服务器传输到你的电脑，需经过多个运营商节点和骨干网。在晚间黄金时段，大量用户并发访问会导致核心路由器队列堆积，产生丢包和延迟。此时，TCP协议会触发拥塞控制机制，主动降低发送速率以避免网络崩溃，从而表现为下载速度突然变慢，待拥堵缓解后又迅速回升。\n\n再者，内容分发网络（CDN）的调度策略也至关重要。大型网站通常使用CDN将文件缓存至离用户最近的边缘节点。然而，由于"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 256,
+          "total_tokens": 308,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 52,
+          "prompt_ms": 488.8,
+          "prompt_per_token_ms": 9.4,
+          "prompt_per_second": 106.4,
+          "predicted_n": 256,
+          "predicted_ms": 6401.1,
+          "predicted_per_token_ms": 25.004,
+          "predicted_per_second": 40.0,
+          "draft_n": 219,
+          "draft_n_accepted": 122
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "reasoning-2",
+      "elapsed_s": 5.395007899998745,
+      "status": 200,
+      "payload_sha256": "5b9a963db698d36a8411b620fe36f8d5735ebee3bb46d8bc203b35ec5bd7a802",
+      "response": {
+        "id": "chatcmpl-83872ac40b7f433cbc4164e2",
+        "object": "chat.completion",
+        "created": 1793822222,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "### 1. Problem Definition and Arithmetic Formula\n\nLet $S$ be the set of integers $\\{1, 2, \\dots, n\\}$. We want to find the sum of all elements in $S$ that are divisible by **3** or **5**.\n\nLet:\n*   $A = \\{x \\in S \\mid x \\text{ is divisible by } 3\\}$\n*   $B = \\{x \\in S \\mid x \\text{ is divisible by } 5\\}$\n\nWe seek the sum of elements in the union of these sets: $\\Sigma(A \\cup B)$.\n\n#### The Inclusion-Exclusion Principle for Sums\nFor any two finite sets $A$ and $B$, the sum of elements in their union is given by:\n$$ \\Sigma(A \\cup B) = \\Sigma(A) + \\Sigma(B) - \\Sigma(A \\cap B) $$\n\n**Why subtract?**\nIf we simply add $\\Sigma(A)$ and $\\Sigma(B)$, any number divisible by **both** 3 and 5 (i.e., divisible by $\\text{lcm}(3,5)=15$) is counted twice. We must subtract"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 256,
+          "total_tokens": 311,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 55,
+          "prompt_ms": 509.3,
+          "prompt_per_token_ms": 9.26,
+          "prompt_per_second": 108.0,
+          "predicted_n": 256,
+          "predicted_ms": 4864.5,
+          "predicted_per_token_ms": 19.002,
+          "predicted_per_second": 52.6,
+          "draft_n": 329,
+          "draft_n_accepted": 183
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "prefill-8k",
+      "elapsed_s": 8.187443300001178,
+      "status": 200,
+      "payload_sha256": "335d7515c330d50a2088122c541418329b0bf275e9284d260eb61626b66ce7dc",
+      "response": {
+        "id": "chatcmpl-334baeba9fd94e6588f780f7",
+        "object": "chat.completion",
+        "created": 1793822227,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 8313,
+          "completion_tokens": 96,
+          "total_tokens": 8409,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 8313,
+          "prompt_ms": 6612.2,
+          "prompt_per_token_ms": 0.795,
+          "prompt_per_second": 1257.2,
+          "predicted_n": 96,
+          "predicted_ms": 1528.5,
+          "predicted_per_token_ms": 15.922,
+          "predicted_per_second": 62.8,
+          "draft_n": 99,
+          "draft_n_accepted": 74
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "prefill-32k",
+      "elapsed_s": 27.768260799999553,
+      "status": 200,
+      "payload_sha256": "e7f0a280987225cbe228a66464727e0edce8c681729fc9f1872f0d1f7f5e1d2d",
+      "response": {
+        "id": "chatcmpl-1993530bfe984eb99b2479a2",
+        "object": "chat.completion",
+        "created": 1793822235,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 32889,
+          "completion_tokens": 96,
+          "total_tokens": 32985,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 32889,
+          "prompt_ms": 25929.2,
+          "prompt_per_token_ms": 0.788,
+          "prompt_per_second": 1268.4,
+          "predicted_n": 96,
+          "predicted_ms": 1788.7,
+          "predicted_per_token_ms": 18.632,
+          "predicted_per_second": 53.7,
+          "draft_n": 114,
+          "draft_n_accepted": 70
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "prefill-64k",
+      "elapsed_s": 50.46173030000136,
+      "status": 200,
+      "payload_sha256": "368bc1c3d9336cc52435ccb257a9e3387702a06e697d4831d101126449ea3d09",
+      "response": {
+        "id": "chatcmpl-d9fed06b4bf74109be68bbe9",
+        "object": "chat.completion",
+        "created": 1793822263,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "CHECK_A = ORCHID7319\nCHECK_B = MAPLE2846\nCHECK_C = CEDAR9052"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 63954,
+          "completion_tokens": 31,
+          "total_tokens": 63985,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 63954,
+          "prompt_ms": 49742.8,
+          "prompt_per_token_ms": 0.778,
+          "prompt_per_second": 1285.7,
+          "predicted_n": 31,
+          "predicted_ms": 649.3,
+          "predicted_per_token_ms": 20.945,
+          "predicted_per_second": 47.7,
+          "draft_n": 42,
+          "draft_n_accepted": 22
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "arithmetic-0",
+      "elapsed_s": 0.49692679999861866,
+      "status": 200,
+      "payload_sha256": "f19e3a1aaa057e1fb5f5b6ad64b5acc830860585b94af607a6e5de4ffc8da583",
+      "response": {
+        "id": "chatcmpl-227bcfbec2404989830e3a23",
+        "object": "chat.completion",
+        "created": 1793822313,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "0"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 2,
+          "total_tokens": 43,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 41,
+          "prompt_ms": 374.3,
+          "prompt_per_token_ms": 9.129,
+          "prompt_per_second": 109.5,
+          "predicted_n": 2,
+          "predicted_ms": 101.2,
+          "predicted_per_token_ms": 50.6,
+          "predicted_per_second": 19.8,
+          "draft_n": 4,
+          "draft_n_accepted": 0
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "arithmetic-15",
+      "elapsed_s": 0.5566481999994721,
+      "status": 200,
+      "payload_sha256": "ff3c1d21fcb4f902b9cb0d3e7993bad88a288ce997434da5f34a71de07d11c08",
+      "response": {
+        "id": "chatcmpl-09e728bfd55a40699570f525",
+        "object": "chat.completion",
+        "created": 1793822314,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "60"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 42,
+          "completion_tokens": 3,
+          "total_tokens": 45,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 42,
+          "prompt_ms": 409.5,
+          "prompt_per_token_ms": 9.75,
+          "prompt_per_second": 102.6,
+          "predicted_n": 3,
+          "predicted_ms": 138.8,
+          "predicted_per_token_ms": 46.267,
+          "predicted_per_second": 21.6,
+          "draft_n": 4,
+          "draft_n_accepted": 0
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "arithmetic-1000",
+      "elapsed_s": 0.6254506999976002,
+      "status": 200,
+      "payload_sha256": "74bc7355f1cc6aab3c73906dbd3e423a2226e7e330dd5cbe97922114bbec1ecd",
+      "response": {
+        "id": "chatcmpl-f20ce43f86d34193bcd2592d",
+        "object": "chat.completion",
+        "created": 1793822315,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "266333"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 44,
+          "completion_tokens": 7,
+          "total_tokens": 51,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 44,
+          "prompt_ms": 414.3,
+          "prompt_per_token_ms": 9.416,
+          "prompt_per_second": 106.2,
+          "predicted_n": 7,
+          "predicted_ms": 202.6,
+          "predicted_per_token_ms": 28.943,
+          "predicted_per_second": 34.6,
+          "draft_n": 9,
+          "draft_n_accepted": 3
+        }
+      },
+      "passed": false
+    },
+    {
+      "case": "tool-call",
+      "elapsed_s": 1.0325069000027725,
+      "status": 200,
+      "payload_sha256": "a64d53ccb1c058aefc1c4673c16873bbacb04e02c244d3e406d4dfbd14bd3f36",
+      "response": {
+        "id": "chatcmpl-1c152d729dc5434cb9851b51",
+        "object": "chat.completion",
+        "created": 1793822315,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "tool_calls": [
+                {
+                  "id": "call_3256486572de4236aec0a3f5",
+                  "type": "function",
+                  "function": {
+                    "name": "lookup_weather",
+                    "arguments": "{\"city\":\"Beijing\"}"
+                  }
+                }
+              ]
+            },
+            "finish_reason": "tool_calls"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 274,
+          "completion_tokens": 28,
+          "total_tokens": 302,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 274,
+          "prompt_ms": 646.6,
+          "prompt_per_token_ms": 2.36,
+          "prompt_per_second": 423.8,
+          "predicted_n": 28,
+          "predicted_ms": 375.5,
+          "predicted_per_token_ms": 13.411,
+          "predicted_per_second": 74.6,
+          "draft_n": 28,
+          "draft_n_accepted": 23
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "tool-result",
+      "elapsed_s": 0.8137398999970173,
+      "status": 200,
+      "payload_sha256": "d9c6c2e2ab6fa458a2b9c9669ab71da150af1d03caede1534873cb7ae596321a",
+      "response": {
+        "id": "chatcmpl-4c63bbba359348989e730f1f",
+        "object": "chat.completion",
+        "created": 1793822316,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "23 C"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 330,
+          "completion_tokens": 4,
+          "total_tokens": 334,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 330,
+          "prompt_ms": 675.8,
+          "prompt_per_token_ms": 2.048,
+          "prompt_per_second": 488.3,
+          "predicted_n": 4,
+          "predicted_ms": 112.9,
+          "predicted_per_token_ms": 28.225,
+          "predicted_per_second": 35.4,
+          "draft_n": 6,
+          "draft_n_accepted": 2
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "vision",
+      "elapsed_s": 2.8112074000018765,
+      "status": 200,
+      "payload_sha256": "f82d5247166d77cb021c9fc2c5dd58085d3ba4c55d870afb6fbee5e5b7bd7375",
+      "response": {
+        "id": "chatcmpl-e905fe43d2ad43e1bf9c25a7",
+        "object": "chat.completion",
+        "created": 1793822318,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": " red square, blue circle"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1059,
+          "completion_tokens": 6,
+          "total_tokens": 1065,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1059,
+          "prompt_ms": 1326.7,
+          "prompt_per_token_ms": 1.253,
+          "prompt_per_second": 798.2,
+          "predicted_n": 6,
+          "predicted_ms": 120.7,
+          "predicted_per_token_ms": 20.117,
+          "predicted_per_second": 49.7,
+          "draft_n": 7,
+          "draft_n_accepted": 4
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "cache-0",
+      "elapsed_s": 9.270376899999974,
+      "status": 200,
+      "payload_sha256": "7e1f4c228a4e2412705f12b7e5722d944a91b8328ab2ba088c2dfc1ad2fc8a52",
+      "response": {
+        "id": "chatcmpl-59295c154a1749908669ee56",
+        "object": "chat.completion",
+        "created": 1793822320,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "ORCHID7319"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 11866,
+          "completion_tokens": 8,
+          "total_tokens": 11874,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 11866,
+          "prompt_ms": 9114.8,
+          "prompt_per_token_ms": 0.768,
+          "prompt_per_second": 1301.8,
+          "predicted_n": 8,
+          "predicted_ms": 121.6,
+          "predicted_per_token_ms": 15.2,
+          "predicted_per_second": 65.8,
+          "draft_n": 7,
+          "draft_n_accepted": 6
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "cache-1",
+      "elapsed_s": 0.21086400000058347,
+      "status": 200,
+      "payload_sha256": "7e1f4c228a4e2412705f12b7e5722d944a91b8328ab2ba088c2dfc1ad2fc8a52",
+      "response": {
+        "id": "chatcmpl-188977050b1246b49d3d19c1",
+        "object": "chat.completion",
+        "created": 1793822329,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "ORCHID7319"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 11866,
+          "completion_tokens": 8,
+          "total_tokens": 11874,
+          "prompt_tokens_details": {
+            "cached_tokens": 11859
+          }
+        },
+        "timings": {
+          "cache_n": 11859,
+          "prompt_n": 7,
+          "prompt_ms": 73.8,
+          "prompt_per_token_ms": 10.543,
+          "prompt_per_second": 94.9,
+          "predicted_n": 8,
+          "predicted_ms": 123.1,
+          "predicted_per_token_ms": 15.387,
+          "predicted_per_second": 65.0,
+          "draft_n": 7,
+          "draft_n_accepted": 6
+        }
+      },
+      "passed": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "max_context": 262144,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "images": true,
+    "api_key": false,
+    "image_generation": false,
+    "loaded": true,
+    "service": "strata",
+    "public_compat": "llama-ui-v1",
+    "browser_prefix_cache": "text-before-images-v1",
+    "browser_metrics": "prepare-v1"
+  },
+  "finished": 1793822329.827034,
+  "passed": false
+}

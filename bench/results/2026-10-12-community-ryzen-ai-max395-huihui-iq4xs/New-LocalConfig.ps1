@@ -82,6 +82,11 @@ function Remove-Option([Collections.Generic.List[string]]$Items, [string]$Name) 
 $arguments = [Collections.Generic.List[string]]::new()
 foreach ($argument in $config.args) { $arguments.Add([string]$argument) }
 
+# New setup may select DFlash2 automatically; this measured preset uses MTP.
+foreach ($draftFlag in @('--draft', '--draft-model', '--draft-conf', '--draft-mtp-spec', '--draft-fallback', '--draft-cap', '--draft-rule', '--draft-mtp-min-p')) {
+    Remove-Option $arguments $draftFlag
+}
+
 Set-Option $arguments '--expert-cache' '24576'
 Set-Option $arguments '--prefill' '16384'
 Set-Option $arguments '--spec' '8'
@@ -131,16 +136,21 @@ $environment['STRATA_PREFILL_STREAM_MIN'] = '128'
 $environment['STRATA_FILE_RELEASE'] = '1'
 $environment['STRATA_UNBUFFERED_LOAD'] = '1'
 
-if ($config.lib_dirs -and $config.lib_dirs.Count -gt 0) {
-    $tensile = Join-Path ([string]$config.lib_dirs[0]) 'hipblaslt\library\gfx1151'
+foreach ($libraryDirectory in $config.lib_dirs) {
+    $tensile = Join-Path ([string]$libraryDirectory) 'hipblaslt\library\gfx1151'
     if (Test-Path -LiteralPath $tensile -PathType Container) {
         $environment['HIPBLASLT_TENSILE_LIBPATH'] = $tensile
+        break
     }
 }
 
 Set-Property $config 'args' $arguments.ToArray()
 Set-Property $config 'model_name' $ModelName
 Set-Property $config 'parallel' 1
+Set-Property $config 'drafting' 'mtp'
+Set-Property $config 'mtp' $true
+Set-Property $config 'tool_call_recovery' $true
+Set-Property $config 'reasoning_close_retry' $true
 Set-Property $config 'codex_compaction_cache' $true
 Set-Property $config 'reasoning_effort' 'high'
 Set-Property $config 'reasoning_budget_tokens' 8192

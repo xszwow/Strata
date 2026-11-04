@@ -1,0 +1,90 @@
+{
+  "checks": [
+    {
+      "name": "anonymous-/login.html",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "anonymous-/api/user/profile",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous-/v1/models",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous-/health",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "wrong-api-key",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "x-api-key-models",
+      "passed": true
+    },
+    {
+      "name": "authenticated-health",
+      "passed": true,
+      "health": {
+        "status": "ok",
+        "max_context": 262144,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "images": true,
+        "api_key": true,
+        "image_generation": false,
+        "loaded": true,
+        "service": "strata",
+        "public_compat": "llama-ui-v1",
+        "browser_prefix_cache": "text-before-images-v1",
+        "browser_metrics": "prepare-v1",
+        "public_gateway": true
+      }
+    },
+    {
+      "name": "model-alias",
+      "passed": true
+    },
+    {
+      "name": "owner-login",
+      "passed": true
+    },
+    {
+      "name": "authenticated-/api/user/profile",
+      "passed": true
+    },
+    {
+      "name": "authenticated-/api/chat/model",
+      "passed": true
+    },
+    {
+      "name": "ivyun-model-stream",
+      "passed": true,
+      "status": 200,
+      "seconds": 1.906,
+      "bytes": 1778,
+      "answer": "UPGRADE_OK"
+    },
+    {
+      "name": "ivyun-replay",
+      "passed": true,
+      "sha256": "11500d1baa18dbc771ae3425393e15e559d164f33f9764005c5ba832fe6c7e75"
+    },
+    {
+      "name": "ivyun-cancel-protocol",
+      "passed": true
+    },
+    {
+      "name": "browser-status",
+      "passed": true,
+      "status": 200
+    }
+  ],
+  "passed": true
+}

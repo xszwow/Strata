@@ -1,0 +1,48 @@
+{
+  "decode": {
+    "max_tokens": 256,
+    "repetitions": 3,
+    "statistic": "median tokens per second per workload",
+    "temperature": 0,
+    "seed": 12345,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0,
+    "cache_prompt": false,
+    "thinking": false
+  },
+  "prefill": "One cold request per input size; max_tokens 96. Full-context expected markers: ORCHID7319, MAPLE2846, CEDAR9052.",
+  "quality_code_inputs": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    15,
+    100,
+    999,
+    1000,
+    10000,
+    1000000
+  ],
+  "image": {
+    "size": [
+      512,
+      384
+    ],
+    "background": "white",
+    "red_rectangle": [
+      40,
+      60,
+      220,
+      240
+    ],
+    "blue_ellipse": [
+      280,
+      80,
+      450,
+      250
+    ]
+  },
+  "scope": "Synthetic requests only. Original response data and failed cases retained."
+}

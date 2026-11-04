@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "name": "image-with-text-prefix-0",
+      "passed": true,
+      "elapsed_s": 6.907444200001919,
+      "status": 200,
+      "response": {
+        "id": "chatcmpl-fb4853147abb41e7bc780deb",
+        "object": "chat.completion",
+        "created": 1793823609,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Red square and blue circle."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 8096,
+          "completion_tokens": 7,
+          "total_tokens": 8103,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 8096,
+          "prompt_ms": 6704.4,
+          "prompt_per_token_ms": 0.828,
+          "prompt_per_second": 1207.6,
+          "predicted_n": 7,
+          "predicted_ms": 165.7,
+          "predicted_per_token_ms": 23.671,
+          "predicted_per_second": 42.2,
+          "draft_n": 8,
+          "draft_n_accepted": 4
+        }
+      }
+    },
+    {
+      "name": "image-with-text-prefix-1",
+      "passed": true,
+      "elapsed_s": 1.8470481999975163,
+      "status": 200,
+      "response": {
+        "id": "chatcmpl-6470ae5969514bcf9cb99263",
+        "object": "chat.completion",
+        "created": 1793823616,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "On the left is a red square. On the right is a blue circle."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 8097,
+          "completion_tokens": 17,
+          "total_tokens": 8114,
+          "prompt_tokens_details": {
+            "cached_tokens": 7040
+          }
+        },
+        "timings": {
+          "cache_n": 7040,
+          "prompt_n": 1057,
+          "prompt_ms": 1414.5,
+          "prompt_per_token_ms": 1.338,
+          "prompt_per_second": 747.3,
+          "predicted_n": 17,
+          "predicted_ms": 382.3,
+          "predicted_per_token_ms": 22.488,
+          "predicted_per_second": 44.5,
+          "draft_n": 28,
+          "draft_n_accepted": 12
+        }
+      }
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

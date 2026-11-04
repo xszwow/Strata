@@ -1,0 +1,69 @@
+...............sss...s..........................sssss.............................<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:940: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '<USER_PROFILE>\\AppData\\Local\\Temp\\tmptin9wj81'>
+  _warnings.warn(warn_message, ResourceWarning)
+..............................................................................s......................................................................................................<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\server.py:8029: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='utf-8'>
+  images, figures = gen.run(job, cancel)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\server.py:8033: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='utf-8'>
+  return
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..................................<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\case.py:669: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='utf-8'>
+  function, args, kwargs = self._cleanups.pop()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.s..ss..................................................................................[strata] MCP image cache unavailable: disk full
+...........................................................................................................................................................ss...............................................................................ss.............................sss............s.....................................................................................................................................................................................strata serve: AMD: HIP_PATH=Z:\definitely\not\here does not exist: not passed to the engine
+.strata serve: AMD: HIP_PATH=<USER_PROFILE>\AppData\Local\Temp\tmprncdun8_\TheRock\build does not exist: not passed to the engine
+strata serve: AMD: HIP_DEVICE_LIB_PATH=<USER_PROFILE>\AppData\Local\Temp\tmprncdun8_\TheRock\build does not exist: not passed to the engine
+.strata serve: AMD: TEMP=<USER_PROFILE>\AppData\Local\Temp\tmpgpbi2o7_\no\such\dir is not writable: using <USER_PROFILE>\AppData\Local\Temp\tmpgpbi2o7_\tmp
+..................................................................................................<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\case.py:589: ResourceWarning: unclosed <socket.socket fd=4884, family=2, type=1, proto=0, laddr=('127.0.0.1', 51579)>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....................................................ss.s...................................................................................................................................................s......................................................ss.......................................................................................s.............................................s.............s...............s.........Exception in thread Thread-4132 (_readerthread):
+Traceback (most recent call last):
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+Exception in thread Thread-4134 (_readerthread):
+Traceback (most recent call last):
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "<USER_PROFILE>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+E.
+======================================================================
+ERROR: test_children_end_with_a_killed_server (test_winjob.TestWinJob.test_children_end_with_a_killed_server)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\test_winjob.py", line 50, in test_children_end_with_a_killed_server
+    while (running(child) or running(grandchild)) and time.monotonic() < deadline:
+           ^^^^^^^^^^^^^^
+  File "<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\test_winjob.py", line 32, in running
+    return str(pid) in out
+           ^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\test_winjob.py", line 58, in test_children_end_with_a_killed_server
+    if pid and running(pid):
+               ^^^^^^^^^^^^
+  File "<PUBLIC_WORKSPACE>\work\strata-upgrade-20261104\source\Strata-0.2.10\serve\test_winjob.py", line 32, in running
+    return str(pid) in out
+           ^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+----------------------------------------------------------------------
+Ran 1385 tests in 483.306s
+
+FAILED (errors=1, skipped=31)

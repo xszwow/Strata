@@ -1,0 +1,20 @@
+{
+  "url": "https://github.com/hfan95091-coder/HyFengine-v3/releases/download/v3.0-gfx1151/strata-v3-part2-model-pack.zip",
+  "member": {
+    "path": "gfx1151engine-v3/data/draft_vocab_zh57k.bin",
+    "size": 227676,
+    "compressed": 80010,
+    "crc32": "8032cc6d",
+    "offset": 0
+  },
+  "sha256": "cab9ddf26b779bbfc2882371da6ace6c68820a2f037883c07aa955253b3b287e",
+  "downloaded_range_bytes": 81001,
+  "TokenCount": 56919,
+  "MainVocabularyUnchanged": true,
+  "ActivatedUtc": "2026-10-19T17:12:53.082594+00:00",
+  "repository_file": "draft_vocab_zh57k.bin",
+  "measured_results": "optimization-comparison.json",
+  "format": "little-endian uint32 token IDs; no header",
+  "attribution": "hfan95091-coder/HyFengine-v3; Strata contributors",
+  "source_license": "https://github.com/hfan95091-coder/HyFengine-v3/blob/df922a8286e6c09e539ac9e8aa178f5294a30f83/LICENSE"
+}

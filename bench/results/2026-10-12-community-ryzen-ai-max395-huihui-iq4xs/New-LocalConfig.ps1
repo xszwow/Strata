@@ -14,6 +14,8 @@ param(
 
     [string]$OutputPath,
 
+    [switch]$UseHyf57K,
+
     [string]$ModelName = 'huihui-qwen3.8-flash-next-iq4-xs'
 )
 
@@ -23,6 +25,17 @@ $baseConfigPath = (Resolve-Path -LiteralPath $BaseConfig).Path
 $mtpRuntimePath = (Resolve-Path -LiteralPath $MtpRuntime).Path
 $visionExePath = (Resolve-Path -LiteralPath $VisionExe).Path
 $visionMmprojPath = (Resolve-Path -LiteralPath $VisionMmproj).Path
+
+# Optional, measured on this deployment only. Keep the base vocabulary unchanged
+# unless requested; the main tokenizer is never replaced by this MTP draft list.
+if ($UseHyf57K) {
+    $draftVocabPath = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\2026-10-21-community-ryzen-ai-max395-hyf-reuse\draft_vocab_zh57k.bin')).Path
+    $expectedHash = 'cab9ddf26b779bbfc2882371da6ace6c68820a2f037883c07aa955253b3b287e'
+    if ((Get-Item -LiteralPath $draftVocabPath).Length -ne 227676 -or
+        (Get-FileHash -LiteralPath $draftVocabPath -Algorithm SHA256).Hash -ne $expectedHash) {
+        throw 'The bundled HyF 57K MTP draft vocabulary failed size/SHA-256 verification.'
+    }
+}
 
 if (-not $OutputPath) {
     $OutputPath = Join-Path $repoRoot 'strata-huihui-iq4xs-q4mtp.json'
@@ -82,6 +95,7 @@ Set-Option $arguments '--prompt-cache' '6'
 Set-Option $arguments '--conversation-cache-mib' '0'
 Set-Option $arguments '--mtp' $mtpRuntimePath
 Set-Option $arguments '--mtp-window' '8192'
+if ($UseHyf57K) { Set-Option $arguments '--mtp-draft-vocab' $draftVocabPath }
 Set-Option $arguments '--resident-budget-gib' '1'
 Set-Option $arguments '--spec-min-p' '0.6'
 Add-Flag $arguments '--mmap-experts'

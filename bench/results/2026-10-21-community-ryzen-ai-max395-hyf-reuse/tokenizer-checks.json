@@ -1,0 +1,41 @@
+{
+  "vocab_entries": 248320,
+  "merge_pairs": 247587,
+  "full_token_id_mapping_equal": true,
+  "full_merge_rank_mapping_equal": true,
+  "full_token_types_equal": true,
+  "corpus": [
+    {
+      "parse_special": false,
+      "cases": 1016,
+      "total_tokens": 51573,
+      "id_mismatches": [],
+      "roundtrip_failures": []
+    },
+    {
+      "parse_special": true,
+      "cases": 1016,
+      "total_tokens": 47643,
+      "id_mismatches": [],
+      "roundtrip_failures": []
+    }
+  ],
+  "chat_template": [
+    {
+      "thinking": false,
+      "render_equal": true
+    },
+    {
+      "thinking": true,
+      "render_equal": true
+    }
+  ],
+  "method": "Same installed tokenizer code with each asset set; no downloaded Python executed.",
+  "draft_vocab": {
+    "identical": true,
+    "count": 56919,
+    "unique_ids": 56919,
+    "ids_in_main_vocab": true,
+    "sha256": "cab9ddf26b779bbfc2882371da6ace6c68820a2f037883c07aa955253b3b287e"
+  }
+}

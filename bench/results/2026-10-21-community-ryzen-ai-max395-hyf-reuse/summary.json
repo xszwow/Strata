@@ -1,0 +1,128 @@
+{
+  "checks": {
+    "daily_config_unchanged": true,
+    "same_engine_process": true,
+    "parking_off_at_start_end_and_every_request": true,
+    "all_15_answers_correct": true,
+    "no_competing_requests_during_measurements": true,
+    "all_2032_tokenizer_cases_passed": true,
+    "daily_service_healthy": true
+  },
+  "live_groups": {
+    "A-cold": {
+      "requests": 3,
+      "ttft_median_ms": 5769.584199995734,
+      "elapsed_median_ms": 5870.640599998296,
+      "prefill_median_ms": 5702.1,
+      "cached_token_counts": [
+        0,
+        0,
+        0
+      ],
+      "new_prompt_token_counts": [
+        6247,
+        6247,
+        6247
+      ]
+    },
+    "A-repeat": {
+      "requests": 3,
+      "ttft_median_ms": 139.01349999650847,
+      "elapsed_median_ms": 237.5080999918282,
+      "prefill_median_ms": 75.8,
+      "cached_token_counts": [
+        6240,
+        6240,
+        6240
+      ],
+      "new_prompt_token_counts": [
+        7,
+        7,
+        7
+      ]
+    },
+    "A-followup": {
+      "requests": 3,
+      "ttft_median_ms": 321.22500000696164,
+      "elapsed_median_ms": 509.97080000524875,
+      "prefill_median_ms": 260.4,
+      "cached_token_counts": [
+        6240,
+        6255,
+        6255
+      ],
+      "new_prompt_token_counts": [
+        38,
+        23,
+        23
+      ]
+    },
+    "B": {
+      "requests": 3,
+      "ttft_median_ms": 754.3287000007695,
+      "elapsed_median_ms": 847.7649000124075,
+      "prefill_median_ms": 699.4,
+      "cached_token_counts": [
+        0,
+        0,
+        0
+      ],
+      "new_prompt_token_counts": [
+        65,
+        65,
+        65
+      ]
+    },
+    "A-return": {
+      "requests": 3,
+      "ttft_median_ms": 5763.841899999534,
+      "elapsed_median_ms": 5900.488800005405,
+      "prefill_median_ms": 5697.9,
+      "cached_token_counts": [
+        0,
+        0,
+        0
+      ],
+      "new_prompt_token_counts": [
+        6278,
+        6278,
+        6278
+      ]
+    }
+  },
+  "identical_asset_count": 14,
+  "total_assets_compared": 17,
+  "bytes_downloaded": 4082318,
+  "cpu_benchmarks": [
+    {
+      "fixture": "chinese_6k",
+      "tokens": 6159,
+      "median_ms": {
+        "installed": 1.0806999998749234,
+        "hyf_v4": 15.053199997055344
+      },
+      "output_ids_equal": true
+    },
+    {
+      "fixture": "mixed_code",
+      "tokens": 2969,
+      "median_ms": {
+        "installed": 0.9123999989242293,
+        "hyf_v4": 4.362050000054296
+      },
+      "output_ids_equal": true
+    },
+    {
+      "fixture": "chinese_25k",
+      "tokens": 24636,
+      "median_ms": {
+        "installed": 4.197000002022833,
+        "hyf_v4": 59.80089999502525
+      },
+      "output_ids_equal": true
+    }
+  ],
+  "repeat_ttft_reduction_percent": 97.59058027099057,
+  "followup_ttft_reduction_percent": 94.43244107595832,
+  "scope": "No deployment or original config changes. Conversation RAM parking intentionally not enabled or benchmarked."
+}

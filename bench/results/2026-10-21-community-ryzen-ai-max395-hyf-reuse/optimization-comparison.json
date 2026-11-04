@@ -1,0 +1,1013 @@
+{
+  "scope": "Matched greedy local model; equal-weight harmonic mean of code, reasoning, Chinese. Tool and 31-token retrieval output excluded from decode score. Whole-machine disk counters include background I/O. Screening is not a complete quality evaluation.",
+  "profiles": {
+    "author57-s5": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 48.95,
+          "prefill_tps": 66.8,
+          "draft_acceptance": 0.6768941984541959,
+          "min_ram_gib": 10.146308898925781,
+          "min_commit_gib": 17.387298583984375,
+          "median_physical_read_mib": 16.67529296875,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "10b7d621831f8ac283b0cd79b2426f3687098e38a0147b2436db2b22781523ab",
+            "10b7d621831f8ac283b0cd79b2426f3687098e38a0147b2436db2b22781523ab"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 61.7,
+          "prefill_tps": 411.95,
+          "draft_acceptance": 0.9411764705882353,
+          "min_ram_gib": 10.241462707519531,
+          "min_commit_gib": 17.559825897216797,
+          "median_physical_read_mib": 0.291015625,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "a0803ea3bb226f5427f07c201ef4603fb7b06ddfe4b6ea0e52657f048f9aa995",
+            "7b5890ff8b2a59bd2e4b01ccf03ea84f66bbeb19734a2e0ec3e0ea394c340d4d"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 51.9,
+          "prefill_tps": 135.2,
+          "draft_acceptance": 0.7265774378585086,
+          "min_ram_gib": 10.226512908935547,
+          "min_commit_gib": 17.500438690185547,
+          "median_physical_read_mib": 13.818359375,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "63821c9785bbf8adafd5a884001349db694895568944f0aa682ae523d341703f",
+            "63821c9785bbf8adafd5a884001349db694895568944f0aa682ae523d341703f"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.900000000000002,
+          "prefill_tps": 128.3,
+          "draft_acceptance": 0.4107142857142857,
+          "min_ram_gib": 10.112873077392578,
+          "min_commit_gib": 17.457763671875,
+          "median_physical_read_mib": 82.934814453125,
+          "output_tokens": [
+            396,
+            396
+          ],
+          "output_hashes": [
+            "dc58c990809a49d4f8476c5b321e21bdeaa8b1db2ee57b83595146ea1327ec10",
+            "dc58c990809a49d4f8476c5b321e21bdeaa8b1db2ee57b83595146ea1327ec10"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 42.7,
+          "prefill_tps": 1150.9,
+          "draft_acceptance": 0.78125,
+          "min_ram_gib": 10.146171569824219,
+          "min_commit_gib": 17.448673248291016,
+          "median_physical_read_mib": 1.33056640625,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 122.31299999999464,
+      "balanced_harmonic_tps": 42.22687994344886,
+      "gain_pct": -2.0907203093498916,
+      "case_gain_pct": {
+        "code_greedy": -5.550500454959062,
+        "xhigh_throughput": -5.22749273959342,
+        "chinese": 2.080000000000015
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": false,
+        "xhigh_throughput": false,
+        "chinese": false
+      },
+      "passes_speed_screen": false
+    },
+    "author57": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.7,
+          "prefill_tps": 67.25,
+          "draft_acceptance": 0.6955108386481281,
+          "min_ram_gib": 10.08243179321289,
+          "min_commit_gib": 17.324874877929688,
+          "median_physical_read_mib": 15.446533203125,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "661f72d8f78c5c56fd18594c6197230683455c4806ad7bd1d76ccd5278656036",
+            "661f72d8f78c5c56fd18594c6197230683455c4806ad7bd1d76ccd5278656036"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 72.25,
+          "prefill_tps": 411.75,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 10.160186767578125,
+          "min_commit_gib": 17.372543334960938,
+          "median_physical_read_mib": 0.23828125,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "8b91bd11679622694a78279482d4c2069fd1a2c21678df52287b8b64331c37b4",
+            "161ee3ef4efff9d2c7b03448822c8a15ce53f4c17e4f5f274a0a7184c69a5623"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 56.55,
+          "prefill_tps": 134.5,
+          "draft_acceptance": 0.7209394611443403,
+          "min_ram_gib": 10.070796966552734,
+          "min_commit_gib": 17.291637420654297,
+          "median_physical_read_mib": 15.95068359375,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.900000000000002,
+          "prefill_tps": 126.6,
+          "draft_acceptance": 0.5373961218836565,
+          "min_ram_gib": 10.188713073730469,
+          "min_commit_gib": 17.22765350341797,
+          "median_physical_read_mib": 24.0390625,
+          "output_tokens": [
+            406,
+            406
+          ],
+          "output_hashes": [
+            "2a4a5c07c98fc5748bcd6f0fa3ea9dc6b9ae93b87bdba279a8510999a180eae0",
+            "2a4a5c07c98fc5748bcd6f0fa3ea9dc6b9ae93b87bdba279a8510999a180eae0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 44.55,
+          "prefill_tps": 1150.95,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 10.254985809326172,
+          "min_commit_gib": 17.33945083618164,
+          "median_physical_read_mib": 2.558349609375,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 119.875,
+      "balanced_harmonic_tps": 43.87646323161581,
+      "gain_pct": 1.7340830327501555,
+      "case_gain_pct": {
+        "code_greedy": 2.9117379435850577,
+        "xhigh_throughput": 0.09680542110357404,
+        "chinese": 2.080000000000015
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": false,
+        "chinese": false
+      },
+      "passes_speed_screen": false
+    },
+    "baseline-return": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.8,
+          "prefill_tps": 67.1,
+          "draft_acceptance": 0.7156592806258468,
+          "min_ram_gib": 10.285110473632812,
+          "min_commit_gib": 17.093978881835938,
+          "median_physical_read_mib": 12.468994140625,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0",
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 70.7,
+          "prefill_tps": 411.70000000000005,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 10.299442291259766,
+          "min_commit_gib": 17.194690704345703,
+          "median_physical_read_mib": 0.1484375,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "bde56aef71d4cdf0bd02454645dc7a20837f0dbf855421d207f1353bfb0ce46f",
+            "b9215f5b36aadef4e2d74a891bb1e2610082a5ce919ed3c44328b13e2c6831d6"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 55.0,
+          "prefill_tps": 135.3,
+          "draft_acceptance": 0.7209394611443403,
+          "min_ram_gib": 10.247745513916016,
+          "min_commit_gib": 17.162342071533203,
+          "median_physical_read_mib": 14.017578125,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.3,
+          "prefill_tps": 128.10000000000002,
+          "draft_acceptance": 0.6079734219269103,
+          "min_ram_gib": 10.274967193603516,
+          "min_commit_gib": 17.165420532226562,
+          "median_physical_read_mib": 20.74609375,
+          "output_tokens": [
+            398,
+            398
+          ],
+          "output_hashes": [
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a",
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 42.6,
+          "prefill_tps": 1152.7,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 10.308414459228516,
+          "min_commit_gib": 17.115589141845703,
+          "median_physical_read_mib": 0.734130859375,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 121.92200000002049,
+      "balanced_harmonic_tps": 43.205428434843284,
+      "gain_pct": 0.17818940084206591,
+      "case_gain_pct": {
+        "code_greedy": 0.09099181073701779,
+        "xhigh_throughput": 0.2904162633107221,
+        "chinese": 0.16000000000000458
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": true,
+        "chinese": true
+      },
+      "passes_speed_screen": false
+    },
+    "baseline": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.650000000000006,
+          "prefill_tps": 67.15,
+          "draft_acceptance": 0.7177040065053515,
+          "min_ram_gib": 9.418472290039062,
+          "min_commit_gib": 16.58505630493164,
+          "median_physical_read_mib": 12.365234375,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0",
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 70.1,
+          "prefill_tps": 412.45,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 9.452926635742188,
+          "min_commit_gib": 16.535205841064453,
+          "median_physical_read_mib": 0.12890625,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "6e707e02b0c0ee857d079e026de7897e3bff822dc353078f950f79c0d736a9fd",
+            "7e7b141762f7412f65011fa1a72d3a2df58899e448fc5c15fbf0d6ac3706b5c7"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 54.95,
+          "prefill_tps": 132.95,
+          "draft_acceptance": 0.7209394611443403,
+          "min_ram_gib": 9.42047119140625,
+          "min_commit_gib": 16.564579010009766,
+          "median_physical_read_mib": 13.873046875,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.25,
+          "prefill_tps": 126.85,
+          "draft_acceptance": 0.6079734219269103,
+          "min_ram_gib": 9.41000747680664,
+          "min_commit_gib": 16.498111724853516,
+          "median_physical_read_mib": 17.923828125,
+          "output_tokens": [
+            398,
+            398
+          ],
+          "output_hashes": [
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a",
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 42.9,
+          "prefill_tps": 1155.15,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 9.417125701904297,
+          "min_commit_gib": 16.587326049804688,
+          "median_physical_read_mib": 0.669921875,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 130.28100000001723,
+      "balanced_harmonic_tps": 43.12857788032663,
+      "gain_pct": 0.0,
+      "case_gain_pct": {
+        "code_greedy": 0.0,
+        "xhigh_throughput": 0.0,
+        "chinese": 0.0
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": true,
+        "chinese": true
+      },
+      "passes_speed_screen": false
+    },
+    "mmap": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.45,
+          "prefill_tps": 66.7,
+          "draft_acceptance": 0.7156592806258468,
+          "min_ram_gib": 9.963069915771484,
+          "min_commit_gib": 17.16150665283203,
+          "median_physical_read_mib": 18.33984375,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0",
+            "8d249db245b236df0c3c008c79459a0148e997dfb0be923ef4a940810a38f4f0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 70.5,
+          "prefill_tps": 403.25,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 9.947906494140625,
+          "min_commit_gib": 17.1561279296875,
+          "median_physical_read_mib": 2.540771484375,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "b4602d9b621761d33b71c0e901c6bdc6aa3b380ca262a0c7a84430851091532d",
+            "21c3639f25139530ada296cb915ee6f20ae676a8ae504d1aae98c14f5d055e28"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 54.849999999999994,
+          "prefill_tps": 133.6,
+          "draft_acceptance": 0.7190060415459736,
+          "min_ram_gib": 10.033634185791016,
+          "min_commit_gib": 17.249019622802734,
+          "median_physical_read_mib": 15.532470703125,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.35,
+          "prefill_tps": 127.94999999999999,
+          "draft_acceptance": 0.6079734219269103,
+          "min_ram_gib": 9.889888763427734,
+          "min_commit_gib": 17.034873962402344,
+          "median_physical_read_mib": 19.27490234375,
+          "output_tokens": [
+            398,
+            398
+          ],
+          "output_hashes": [
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a",
+            "b289e75a352953ef7f511123563cf6ccd4c725b5fc6f2fe8b4fb8a4e4b68de5a"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 42.849999999999994,
+          "prefill_tps": 1148.8000000000002,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 9.880096435546875,
+          "min_commit_gib": 16.962688446044922,
+          "median_physical_read_mib": 1.1240234375,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 122.76600000000326,
+      "balanced_harmonic_tps": 43.12463066883579,
+      "gain_pct": -0.00915219486669061,
+      "case_gain_pct": {
+        "code_greedy": -0.18198362147407998,
+        "xhigh_throughput": -0.38722168441432947,
+        "chinese": 0.32000000000000917
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": true,
+        "chinese": true
+      },
+      "passes_speed_screen": false
+    },
+    "spec5-resume": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 48.85,
+          "prefill_tps": 67.5,
+          "draft_acceptance": 0.6952294809657087,
+          "min_ram_gib": 9.978595733642578,
+          "min_commit_gib": 17.402118682861328,
+          "median_physical_read_mib": 15.296875,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "988219d53e19d831178e68923d9cf18f59a5ca9a5ab0f20df1451f0a6d2dc220",
+            "988219d53e19d831178e68923d9cf18f59a5ca9a5ab0f20df1451f0a6d2dc220"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 59.4,
+          "prefill_tps": 408.4,
+          "draft_acceptance": 0.9411764705882353,
+          "min_ram_gib": 10.052860260009766,
+          "min_commit_gib": 17.475749969482422,
+          "median_physical_read_mib": 0.273681640625,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "f01f120666ac93807a3cbaee0997f27651982591972b5cbb99b552d9f2b97989",
+            "9369d33ecf2918e29c63973086e1bc26aa125ba8ea8f233817e94d0950ccceb9"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 50.55,
+          "prefill_tps": 135.25,
+          "draft_acceptance": 0.7265774378585086,
+          "min_ram_gib": 10.017936706542969,
+          "min_commit_gib": 17.377521514892578,
+          "median_physical_read_mib": 13.97119140625,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "63821c9785bbf8adafd5a884001349db694895568944f0aa682ae523d341703f",
+            "63821c9785bbf8adafd5a884001349db694895568944f0aa682ae523d341703f"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 32.2,
+          "prefill_tps": 126.9,
+          "draft_acceptance": 0.4442231075697211,
+          "min_ram_gib": 10.014129638671875,
+          "min_commit_gib": 17.364158630371094,
+          "median_physical_read_mib": 25.189208984375,
+          "output_tokens": [
+            419,
+            419
+          ],
+          "output_hashes": [
+            "32d3963382c87a89b7d086bb510060a17fe6a14cd472dc3a496bd05eb84303ed",
+            "32d3963382c87a89b7d086bb510060a17fe6a14cd472dc3a496bd05eb84303ed"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 42.7,
+          "prefill_tps": 1152.35,
+          "draft_acceptance": 0.78125,
+          "min_ram_gib": 9.996078491210938,
+          "min_commit_gib": 17.347885131835938,
+          "median_physical_read_mib": 1.78515625,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 121.31200000000536,
+      "balanced_harmonic_tps": 42.07035311432576,
+      "gain_pct": -2.45365096186857,
+      "case_gain_pct": {
+        "code_greedy": -8.007279344858976,
+        "xhigh_throughput": -5.42110358180059,
+        "chinese": 3.0399999999999983
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": false,
+        "xhigh_throughput": false,
+        "chinese": false
+      },
+      "passes_speed_screen": false
+    },
+    "zh57": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.45,
+          "prefill_tps": 67.5,
+          "draft_acceptance": 0.6959830304388004,
+          "min_ram_gib": 9.512187957763672,
+          "min_commit_gib": 16.776309967041016,
+          "median_physical_read_mib": 12.47265625,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5b5a8556ecb78b245ba826a5d851d092bf761d87d68f1906c2f78edcc0e1fec0",
+            "5b5a8556ecb78b245ba826a5d851d092bf761d87d68f1906c2f78edcc0e1fec0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 73.0,
+          "prefill_tps": 410.54999999999995,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 9.536117553710938,
+          "min_commit_gib": 16.822120666503906,
+          "median_physical_read_mib": 0.0859375,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "477adecd5d4cb0f512a985baf806ff7e1ed7998f25de6175f61cc94ae625ea37",
+            "947ba57232ed8a875b89cf8fe8298794e66b69b10fb7f158e0ec3716bbc37f4c"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 56.45,
+          "prefill_tps": 134.85,
+          "draft_acceptance": 0.7190014642220525,
+          "min_ram_gib": 9.529106140136719,
+          "min_commit_gib": 16.771766662597656,
+          "median_physical_read_mib": 13.890625,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.6,
+          "prefill_tps": 128.65,
+          "draft_acceptance": 0.5243243243243243,
+          "min_ram_gib": 9.495834350585938,
+          "min_commit_gib": 16.763824462890625,
+          "median_physical_read_mib": 20.104736328125,
+          "output_tokens": [
+            406,
+            406
+          ],
+          "output_hashes": [
+            "2a4a5c07c98fc5748bcd6f0fa3ea9dc6b9ae93b87bdba279a8510999a180eae0",
+            "2a4a5c07c98fc5748bcd6f0fa3ea9dc6b9ae93b87bdba279a8510999a180eae0"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 44.55,
+          "prefill_tps": 1152.5,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 9.493045806884766,
+          "min_commit_gib": 16.816143035888672,
+          "median_physical_read_mib": 0.792236328125,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 122.25,
+      "balanced_harmonic_tps": 43.60673805044907,
+      "gain_pct": 1.1086852236334765,
+      "case_gain_pct": {
+        "code_greedy": 2.729754322111,
+        "xhigh_throughput": -0.38722168441432947,
+        "chinese": 1.1200000000000099
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": false,
+        "chinese": false
+      },
+      "passes_speed_screen": false
+    },
+    "zh68": {
+      "cases": {
+        "xhigh_throughput": {
+          "decode_tps": 51.6,
+          "prefill_tps": 67.1,
+          "draft_acceptance": 0.7032824086482623,
+          "min_ram_gib": 9.571704864501953,
+          "min_commit_gib": 16.715248107910156,
+          "median_physical_read_mib": 13.25390625,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5b5a8556ecb78b245ba826a5d851d092bf761d87d68f1906c2f78edcc0e1fec0",
+            "661f72d8f78c5c56fd18594c6197230683455c4806ad7bd1d76ccd5278656036"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "tool_call": {
+          "decode_tps": 72.15,
+          "prefill_tps": 413.35,
+          "draft_acceptance": 0.935064935064935,
+          "min_ram_gib": 9.616004943847656,
+          "min_commit_gib": 16.763626098632812,
+          "median_physical_read_mib": 0.076171875,
+          "output_tokens": [
+            80,
+            80
+          ],
+          "output_hashes": [
+            "205520c252fb9c10c8ed09ebf2d184935e6c050e8127db951cc1806b3200d533",
+            "0510dcad09dde57f9c33377a40d8b3fbea18d799c6c3feaf2b4fd073fbe1d22f"
+          ],
+          "validation": [
+            {
+              "ToolPassed": true
+            },
+            {
+              "ToolPassed": true
+            }
+          ]
+        },
+        "code_greedy": {
+          "decode_tps": 56.1,
+          "prefill_tps": 133.7,
+          "draft_acceptance": 0.7190060415459736,
+          "min_ram_gib": 9.619991302490234,
+          "min_commit_gib": 16.733963012695312,
+          "median_physical_read_mib": 14.044921875,
+          "output_tokens": [
+            512,
+            512
+          ],
+          "output_hashes": [
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8",
+            "5f14f4760e75c2343b1eee114d98d30d91c65efcf407c79431dbf9969c9931d8"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "chinese": {
+          "decode_tps": 31.9,
+          "prefill_tps": 127.25,
+          "draft_acceptance": 0.5734463276836158,
+          "min_ram_gib": 9.574752807617188,
+          "min_commit_gib": 16.67284393310547,
+          "median_physical_read_mib": 19.400390625,
+          "output_tokens": [
+            432,
+            432
+          ],
+          "output_hashes": [
+            "7c5cff99b990fae726f81f56e0efa484df616bfb497f66781d0be484612d9fa7",
+            "7c5cff99b990fae726f81f56e0efa484df616bfb497f66781d0be484612d9fa7"
+          ],
+          "validation": [
+            {},
+            {}
+          ]
+        },
+        "long11k": {
+          "decode_tps": 44.150000000000006,
+          "prefill_tps": 1149.3,
+          "draft_acceptance": 0.5813953488372093,
+          "min_ram_gib": 9.543270111083984,
+          "min_commit_gib": 16.665035247802734,
+          "median_physical_read_mib": 3.697021484375,
+          "output_tokens": [
+            31,
+            31
+          ],
+          "output_hashes": [
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073",
+            "10ab8d59a7a4224dad5565a2909b3dff3e26a3cb93e7cd1f91341ce638825073"
+          ],
+          "validation": [
+            {
+              "NeedlesPassed": true
+            },
+            {
+              "NeedlesPassed": true
+            }
+          ]
+        }
+      },
+      "load_seconds": 122.21799999999348,
+      "balanced_harmonic_tps": 43.76168482510556,
+      "gain_pct": 1.467952285687879,
+      "case_gain_pct": {
+        "code_greedy": 2.0928116469517644,
+        "xhigh_throughput": -0.09680542110358514,
+        "chinese": 2.079999999999993
+      },
+      "same_outputs_as_baseline": {
+        "code_greedy": true,
+        "xhigh_throughput": false,
+        "chinese": false
+      },
+      "passes_speed_screen": false
+    }
+  }
+}

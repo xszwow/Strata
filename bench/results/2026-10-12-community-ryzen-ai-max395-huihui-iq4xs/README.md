@@ -197,6 +197,29 @@ $Config = Join-Path $RepoRoot 'strata-huihui-iq4xs-q4mtp.json'
 | `lookup-chain` | 关闭；实测真实工具轨迹平均慢约 0.85% |
 | Vision | Vulkan GPU，1,024～8,192 image tokens，16 threads |
 
+### 可选：启用已测的 57K MTP 草稿词表
+
+10 月 19 日日用配置启用了 HyF 的 56,919 项草稿词表；11 月 4 日将同一文件及来源记录补充到本仓库。
+要复现这一选择，在第 7 步的配置生成命令中加入 `-UseHyf57K`：
+
+```powershell
+& "$Guide\New-LocalConfig.ps1" `
+  -BaseConfig $BaseConfig.FullName `
+  -MtpRuntime $MtpRuntime `
+  -VisionExe $VisionExe `
+  -VisionMmproj $VisionMmproj `
+  -OutputPath $Config `
+  -UseHyf57K
+```
+
+脚本会校验内附词表的大小与 SHA-256，再写入 `--mtp-draft-vocab` 的本机路径。该文件仅影响 MTP 草稿头，
+不会替换主模型 tokenizer；`spec 8 / 0.6`、`prompt-cache 6` 和 `--conversation-cache-mib 0` 保持原值。
+不加此选项时保留基础配置的词表选择；如果基础配置已含 `--mtp-draft-vocab`，省略开关不会将它移除。
+需要恢复 MTP runtime 自带词表时，请从生成配置的 `args` 中移除 `--mtp-draft-vocab` 及紧随的路径，再重启服务。
+
+同机小样本对照的三项均衡吞吐约提升 1.73%，并未验证全面质量等价，不能当作其他模型或硬件的默认推荐。
+查看[完整报告、结果数据和文件来源](../2026-10-21-community-ryzen-ai-max395-hyf-reuse/README.md)。
+
 ## 8. 启动、检查和接入
 
 启动服务：

@@ -20,7 +20,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..\..')).Path
+$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
 $baseConfigPath = (Resolve-Path -LiteralPath $BaseConfig).Path
 $mtpRuntimePath = (Resolve-Path -LiteralPath $MtpRuntime).Path
 $visionExePath = (Resolve-Path -LiteralPath $VisionExe).Path
@@ -29,7 +29,7 @@ $visionMmprojPath = (Resolve-Path -LiteralPath $VisionMmproj).Path
 # Optional, measured on this deployment only. Keep the base vocabulary unchanged
 # unless requested; the main tokenizer is never replaced by this MTP draft list.
 if ($UseHyf57K) {
-    $draftVocabPath = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\2026-10-21-community-ryzen-ai-max395-hyf-reuse\draft_vocab_zh57k.bin')).Path
+    $draftVocabPath = (Resolve-Path -LiteralPath (Join-Path $repoRoot 'bench\results\2026-10-21-community-ryzen-ai-max395-hyf-reuse\draft_vocab_zh57k.bin')).Path
     $expectedHash = 'cab9ddf26b779bbfc2882371da6ace6c68820a2f037883c07aa955253b3b287e'
     if ((Get-Item -LiteralPath $draftVocabPath).Length -ne 227676 -or
         (Get-FileHash -LiteralPath $draftVocabPath -Algorithm SHA256).Hash -ne $expectedHash) {

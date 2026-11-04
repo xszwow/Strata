@@ -1,3 +1,5 @@
+> **This fork: source 0.2.10 / engine 0.1.56 + native Q4 MTP.** For the measured Windows Ryzen AI Max+ 395 preset, use [WINDOWS_RYZEN_AI_MAX395.md](WINDOWS_RYZEN_AI_MAX395.md). The upstream reference below retains its own review date and scope.
+
 # Set up Strata for a user
 
 Use this guide when a user asks an AI agent to install Strata (version 0.2.5). There are two release routes. Pick

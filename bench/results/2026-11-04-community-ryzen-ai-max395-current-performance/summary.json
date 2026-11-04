@@ -1,0 +1,460 @@
+{
+  "measured_date": "2026-11-04",
+  "source_version": "0.2.10",
+  "engine_version": "0.1.56",
+  "measurement_count": 41,
+  "excluded_warmups": 2,
+  "all_requests_http_200": true,
+  "all_prompt_cache_n_zero": true,
+  "comparison": "October historical baseline versus current full deployment, including HyF 57K; not a same-day or engine-only experiment.",
+  "screen": {
+    "code_greedy": {
+      "tps": [
+        59.1,
+        60.2,
+        60.3
+      ],
+      "median_tps": 60.2,
+      "range": [
+        59.1,
+        60.3
+      ],
+      "historical_median_tps": 55.3,
+      "gain_percent": 8.860759493670889,
+      "output_tokens": [
+        512,
+        512,
+        512
+      ],
+      "draft_acceptance_percent": 64.09836065573771
+    },
+    "code_sampled": {
+      "tps": [
+        62.0,
+        62.4,
+        62.8
+      ],
+      "median_tps": 62.4,
+      "range": [
+        62.0,
+        62.8
+      ],
+      "historical_median_tps": 51.8,
+      "gain_percent": 20.463320463320468,
+      "output_tokens": [
+        512,
+        512,
+        512
+      ],
+      "draft_acceptance_percent": 69.85074626865672
+    },
+    "xhigh_throughput": {
+      "tps": [
+        59.7,
+        60.4,
+        60.4
+      ],
+      "median_tps": 60.4,
+      "range": [
+        59.7,
+        60.4
+      ],
+      "historical_median_tps": 52.0,
+      "gain_percent": 16.15384615384614,
+      "output_tokens": [
+        512,
+        512,
+        512
+      ],
+      "draft_acceptance_percent": 66.68663870581186
+    },
+    "chinese_sampled": {
+      "tps": [
+        38.3,
+        38.9,
+        38.5
+      ],
+      "median_tps": 38.5,
+      "range": [
+        38.3,
+        38.9
+      ],
+      "historical_median_tps": 31.2,
+      "gain_percent": 23.397435897435905,
+      "output_tokens": [
+        424,
+        424,
+        424
+      ],
+      "draft_acceptance_percent": 50.91383812010444
+    }
+  },
+  "complete_quality": {
+    "toposort": {
+      "tps": [
+        62.0,
+        61.6
+      ],
+      "mean_tps": 61.8,
+      "output_tokens": [
+        351,
+        351
+      ],
+      "passed": 0,
+      "total": 2,
+      "historical_tps": [
+        56.6,
+        58.0
+      ]
+    },
+    "edit_distance": {
+      "tps": [
+        62.7,
+        63.0
+      ],
+      "mean_tps": 62.85,
+      "output_tokens": [
+        329,
+        329
+      ],
+      "passed": 2,
+      "total": 2,
+      "historical_tps": [
+        57.8,
+        58.6
+      ]
+    },
+    "schedule_profit": {
+      "tps": [
+        60.6,
+        61.0
+      ],
+      "mean_tps": 60.8,
+      "output_tokens": [
+        518,
+        518
+      ],
+      "passed": 2,
+      "total": 2,
+      "historical_tps": [
+        49.3,
+        54.6
+      ]
+    },
+    "xhigh": {
+      "tps": [
+        60.6,
+        61.3
+      ],
+      "mean_tps": 60.95,
+      "output_tokens": [
+        1062,
+        1062
+      ],
+      "passed": 2,
+      "total": 2,
+      "historical_tps": [
+        52.1,
+        50.7
+      ]
+    }
+  },
+  "smoke": {
+    "smoke-code-check": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 93,
+        "prompt_ms": 656.8,
+        "prompt_per_token_ms": 7.062,
+        "prompt_per_second": 141.6,
+        "predicted_n": 139,
+        "predicted_ms": 1929.2,
+        "predicted_per_token_ms": 13.879,
+        "predicted_per_second": 72.1,
+        "draft_n": 148,
+        "draft_n_accepted": 113
+      },
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": false,
+        "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 6, in <module>\n    assert sum(isinstance(n, ast.FunctionDef) for n in ast.walk(tree)) == 1, 'Nested helpers are outside this oracle'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Nested helpers are outside this oracle\n"
+      }
+    },
+    "smoke-xhigh": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 108,
+        "prompt_ms": 731.6,
+        "prompt_per_token_ms": 6.774,
+        "prompt_per_second": 147.6,
+        "predicted_n": 1592,
+        "predicted_ms": 25653.0,
+        "predicted_per_token_ms": 16.114,
+        "predicted_per_second": 62.1,
+        "draft_n": 1654,
+        "draft_n_accepted": 1207
+      },
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "check": "Exact arithmetic final answer 234168; JSON sum required for quality prompt"
+      }
+    }
+  },
+  "tools": {
+    "playwright_config_patch": {
+      "tps": [
+        79.2,
+        77.1,
+        77.9
+      ],
+      "median_tps": 77.9,
+      "range": [
+        77.1,
+        79.2
+      ],
+      "passed": 3,
+      "total": 3
+    },
+    "unit_test_patch": {
+      "tps": [
+        86.4,
+        83.3,
+        83.1
+      ],
+      "median_tps": 83.3,
+      "range": [
+        83.1,
+        86.4
+      ],
+      "passed": 3,
+      "total": 3
+    },
+    "tool_followup_patch": {
+      "tps": [
+        78.4,
+        78.7,
+        78.6
+      ],
+      "median_tps": 78.6,
+      "range": [
+        78.4,
+        78.7
+      ],
+      "passed": 3,
+      "total": 3
+    },
+    "playwright_script": {
+      "tps": [
+        73.3,
+        73.5,
+        73.8
+      ],
+      "median_tps": 73.5,
+      "range": [
+        73.3,
+        73.8
+      ],
+      "passed": 3,
+      "total": 3
+    }
+  },
+  "context": {
+    "context-260k": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 260934,
+        "prompt_ms": 233724.1,
+        "prompt_per_token_ms": 0.896,
+        "prompt_per_second": 1116.4,
+        "predicted_n": 31,
+        "predicted_ms": 754.4,
+        "predicted_per_token_ms": 24.335,
+        "predicted_per_second": 41.1,
+        "draft_n": 42,
+        "draft_n_accepted": 21
+      },
+      "elapsed_s": 234.63575780000247,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "missing": []
+      },
+      "same_historical_request": true
+    },
+    "context-64k": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 63954,
+        "prompt_ms": 51158.6,
+        "prompt_per_token_ms": 0.8,
+        "prompt_per_second": 1250.1,
+        "predicted_n": 31,
+        "predicted_ms": 646.0,
+        "predicted_per_token_ms": 20.839,
+        "predicted_per_second": 48.0,
+        "draft_n": 42,
+        "draft_n_accepted": 22
+      },
+      "elapsed_s": 51.86996910000016,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "missing": []
+      },
+      "same_historical_request": true
+    },
+    "context-nearfull-image": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 260791,
+        "prompt_ms": 228507.5,
+        "prompt_per_token_ms": 0.876,
+        "prompt_per_second": 1141.3,
+        "predicted_n": 81,
+        "predicted_ms": 1684.0,
+        "predicted_per_token_ms": 20.79,
+        "predicted_per_second": 48.1,
+        "draft_n": 109,
+        "draft_n_accepted": 61
+      },
+      "elapsed_s": 230.37950679999994,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "missing": []
+      },
+      "same_historical_request": false
+    }
+  },
+  "vision": {
+    "vision-chinese-1": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1085,
+        "prompt_ms": 1343.5,
+        "prompt_per_token_ms": 1.238,
+        "prompt_per_second": 807.6,
+        "predicted_n": 50,
+        "predicted_ms": 957.1,
+        "predicted_per_token_ms": 19.142,
+        "predicted_per_second": 52.2,
+        "draft_n": 74,
+        "draft_n_accepted": 38
+      },
+      "elapsed_s": 3.6976152999995975,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "missing": []
+      }
+    },
+    "vision-chinese-2": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1085,
+        "prompt_ms": 1362.4,
+        "prompt_per_token_ms": 1.256,
+        "prompt_per_second": 796.4,
+        "predicted_n": 50,
+        "predicted_ms": 962.7,
+        "predicted_per_token_ms": 19.254,
+        "predicted_per_second": 51.9,
+        "draft_n": 74,
+        "draft_n_accepted": 38
+      },
+      "elapsed_s": 2.3569328999983554,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "missing": []
+      }
+    },
+    "vision-ledger8192-1": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8225,
+        "prompt_ms": 6346.0,
+        "prompt_per_token_ms": 0.772,
+        "prompt_per_second": 1296.1,
+        "predicted_n": 448,
+        "predicted_ms": 5548.3,
+        "predicted_per_token_ms": 12.385,
+        "predicted_per_second": 80.7,
+        "draft_n": 428,
+        "draft_n_accepted": 381
+      },
+      "elapsed_s": 38.60897979999936,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "correct_rows": 44,
+        "expected_rows": 44,
+        "read_rows": 44
+      }
+    },
+    "vision-ledger8192-2": {
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8225,
+        "prompt_ms": 6441.6,
+        "prompt_per_token_ms": 0.783,
+        "prompt_per_second": 1276.9,
+        "predicted_n": 448,
+        "predicted_ms": 5504.1,
+        "predicted_per_token_ms": 12.286,
+        "predicted_per_second": 81.4,
+        "draft_n": 428,
+        "draft_n_accepted": 381
+      },
+      "elapsed_s": 12.09266629999911,
+      "validation": {
+        "finish_reason": "stop",
+        "uncached": true,
+        "passed": true,
+        "correct_rows": 44,
+        "expected_rows": 44,
+        "read_rows": 44
+      }
+    }
+  },
+  "failures": {
+    "quality-toposort-1": {
+      "finish_reason": "stop",
+      "uncached": true,
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 12, in <module>\n    assert not isinstance(n, (ast.Import, ast.ImportFrom, ast.With, ast.AsyncWith, ast.ClassDef, ast.Global, ast.Nonlocal, ast.AsyncFunctionDef, ast.Await, ast.Yield, ast.YieldFrom)), type(n).__name__\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Import\n"
+    },
+    "quality-toposort-2": {
+      "finish_reason": "stop",
+      "uncached": true,
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 12, in <module>\n    assert not isinstance(n, (ast.Import, ast.ImportFrom, ast.With, ast.AsyncWith, ast.ClassDef, ast.Global, ast.Nonlocal, ast.AsyncFunctionDef, ast.Await, ast.Yield, ast.YieldFrom)), type(n).__name__\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Import\n"
+    },
+    "smoke-code-check": {
+      "finish_reason": "stop",
+      "uncached": true,
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 6, in <module>\n    assert sum(isinstance(n, ast.FunctionDef) for n in ast.walk(tree)) == 1, 'Nested helpers are outside this oracle'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Nested helpers are outside this oracle\n"
+    }
+  },
+  "weighted_harmonic_tps": 59.309511571456426,
+  "historical_weighted_harmonic_tps": 51.29223847019122,
+  "weighted_gain_percent": 15.630577530603373,
+  "weights": {
+    "code_greedy": 0.35,
+    "code_sampled": 0.35,
+    "xhigh_throughput": 0.25,
+    "chinese_sampled": 0.05
+  },
+  "tools_micro_tps": 78.92504036106953,
+  "tools_comparability": "New reconstructed equivalent tasks; historical message text was not retained, so no same-prompt speedup percentage. Structural tool/script checks only, not a live Playwright end-to-end run."
+}

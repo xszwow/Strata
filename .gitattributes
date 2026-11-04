@@ -31,3 +31,6 @@ serve/web/vendor/** -text
 
 # Archived measurements and inputs have byte-level dataset-manifest hashes.
 bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/** -text
+
+# Current measurements preserve the published dataset hashes byte for byte.
+bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/** -text

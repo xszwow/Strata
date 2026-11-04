@@ -1,0 +1,88 @@
+{
+  "id": "screen-chinese_sampled-2",
+  "group": "screen",
+  "historical_source": "optimization-temp0-finalist/results/finalists.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "4ae47bac89ce49c87cd874012e29c44eac39f2807adcc4e550d0f830d1fcff55",
+  "baseline_decode_tps": 31.4,
+  "started_utc": "2026-11-04T21:08:57.377952+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "用中文写一篇约600字的说明，解释为什么同一台电脑下载大文件时，速度会从15MB/s降到4MB/s，又可能恢复。依次解释Wi-Fi链路、公网拥塞、CDN节点、服务器限速和如何判断下载是否仍在继续。直接写正文，不要先列提纲。"
+      }
+    ],
+    "max_tokens": 512,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "9b0e76902b49dd4233e5a48b1b1675e224f85b3e32693bcc1364e3044c71b652",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 15101435904,
+    "percent": 55.6,
+    "used": 18880622592,
+    "free": 15101435904
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-8e0a91c0a3484abe8cf91fdd",
+    "object": "chat.completion",
+    "created": 1793826537,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 80,
+      "completion_tokens": 424,
+      "total_tokens": 504,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 80,
+      "prompt_ms": 622.0,
+      "prompt_per_token_ms": 7.775,
+      "prompt_per_second": 128.6,
+      "predicted_n": 424,
+      "predicted_ms": 10905.8,
+      "predicted_per_token_ms": 25.721,
+      "predicted_per_second": 38.9,
+      "draft_n": 383,
+      "draft_n_accepted": 195
+    }
+  },
+  "elapsed_s": 11.54986419999841,
+  "finished_utc": "2026-11-04T21:09:08.928453+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 15088357376,
+    "percent": 55.6,
+    "used": 18893701120,
+    "free": 15088357376
+  },
+  "uncached": true
+}

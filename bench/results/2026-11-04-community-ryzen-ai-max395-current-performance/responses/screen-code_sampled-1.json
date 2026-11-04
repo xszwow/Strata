@@ -1,0 +1,88 @@
+{
+  "id": "screen-code_sampled-1",
+  "group": "screen",
+  "historical_source": "optimization-temp0-finalist/results/finalists.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "cea0b277c65971ba663ab1f5b662d8e30b6a82c196c54c808744bd72bbe1551f",
+  "baseline_decode_tps": 51.8,
+  "started_utc": "2026-11-04T21:07:59.485556+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement a small Python LRU cache without external libraries. Include get and put, promotion on access, eviction at capacity, capacity validation, type hints, and example assertions covering overwritten keys and missing keys. Explain the complexity and why the ordering is correct. Provide complete readable code."
+      }
+    ],
+    "max_tokens": 512,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "10b2c7eb9a66e6fbe97e3be60fe0a85e0b848b54d6695edba8b82af44dfccecb",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 15014236160,
+    "percent": 55.8,
+    "used": 18967822336,
+    "free": 15014236160
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-db3767c0ba2242bba46d1e50",
+    "object": "chat.completion",
+    "created": 1793826479,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Here is a complete, self-contained implementation of an LRU (Least Recently Used) cache in Python.\n\n### Implementation Strategy\nTo achieve $O(1)$ time complexity for both `get` and `put`, we combine two data structures:\n1.  **Hash Map (`dict`)**: Maps keys to nodes for $O(1)$ lookup.\n2.  **Doubly Linked List**: Maintains the order of usage. The head represents the Most Recently Used (MRU) item, and the tail represents the Least Recently Used (LRU) item.\n\n### Python Code\n\n```python\nfrom typing import Optional, Any, TypeVar, Generic\n\n# Define generic types for keys and values\nK = TypeVar('K')\nV = TypeVar('V')\n\n\nclass Node(Generic[K, V]):\n    \"\"\"A node in the doubly linked list.\"\"\"\n    __slots__ = ('key', 'value', 'prev', 'next')\n\n    def __init__(self, key: K, value: V):\n        self.key = key\n        self.value = value\n        self.prev: Optional['Node[K, V]'] = None\n        self.next: Optional['Node[K, V]'] = None\n\n\nclass LRUCache(Generic[K, V]):\n    \"\"\"\n    A Least Recently Used (LRU) Cache implementation.\n    \n    Time Complexity:\n    - get: O(1)\n    - put: O(1)\n    \n    Space Complexity: O(capacity)\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if not isinstance(capacity, int) or capacity <= 0:\n            raise ValueError(\"Capacity must be a positive integer.\")\n        \n        self.capacity = capacity\n        self.cache: dict[K, Node[K, V]] = {}\n        \n        # Dummy head and tail to simplify edge cases (no need to check for None prev/next)\n        self.head = Node(None, None)  # MRU side\n        self.tail = Node(None, None)  # LRU side\n        \n        # Initialize empty list\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _remove(self, node: Node[K, V]) -> None:\n        \"\"\"Unlinks a node from the doubly linked list.\"\"\"\n        prev_node = node.prev\n        next_node = node.next\n        if prev_node and next_node"
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 67,
+      "completion_tokens": 512,
+      "total_tokens": 579,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 67,
+      "prompt_ms": 587.1,
+      "prompt_per_token_ms": 8.763,
+      "prompt_per_second": 114.1,
+      "predicted_n": 512,
+      "predicted_ms": 8254.1,
+      "predicted_per_token_ms": 16.121,
+      "predicted_per_second": 62.0,
+      "draft_n": 559,
+      "draft_n_accepted": 390
+    }
+  },
+  "elapsed_s": 8.857525399998849,
+  "finished_utc": "2026-11-04T21:08:08.345561+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 15011885056,
+    "percent": 55.8,
+    "used": 18970173440,
+    "free": 15011885056
+  },
+  "uncached": true
+}

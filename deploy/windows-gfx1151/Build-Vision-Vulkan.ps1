@@ -1,11 +1,12 @@
 [CmdletBinding()]
 param(
     [int]$Jobs = [Math]::Max(1, [Environment]::ProcessorCount / 2),
-    [string]$BuildDirectory
+    [string]$BuildDirectory,
+    [string]$LlamaDirectory
 )
 
 $ErrorActionPreference = 'Stop'
-$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..\..')).Path
+$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
 if (-not $BuildDirectory) {
     $BuildDirectory = Join-Path $repoRoot 'build-vision-vulkan'
 }
@@ -28,13 +29,33 @@ if (-not (Test-Path -LiteralPath $spirvHeaders -PathType Container)) {
     throw "SPIR-V CMake package not found under VULKAN_SDK: $spirvHeaders"
 }
 
+# Reuse the dependency downloaded by the current HIP build; older local layouts
+# may instead keep it under third_party. An explicit path takes precedence.
+if (-not $LlamaDirectory) {
+    $llamaCandidates = @()
+    if ($env:STRATA_GGML_DIR) { $llamaCandidates += $env:STRATA_GGML_DIR }
+    if ($env:BUILD_DIR) { $llamaCandidates += (Join-Path $env:BUILD_DIR '_deps\strata_llamacpp-src') }
+    $llamaCandidates += (Join-Path $repoRoot 'build-hip-win\_deps\strata_llamacpp-src')
+    $llamaCandidates += (Join-Path $repoRoot 'third_party\llama.cpp')
+    foreach ($candidate in $llamaCandidates) {
+        if (Test-Path -LiteralPath (Join-Path $candidate 'tools\mtmd\CMakeLists.txt') -PathType Leaf) {
+            $LlamaDirectory = $candidate
+            break
+        }
+    }
+}
+if (-not $LlamaDirectory -or -not (Test-Path -LiteralPath (Join-Path $LlamaDirectory 'tools\mtmd\CMakeLists.txt') -PathType Leaf)) {
+    throw 'llama.cpp with tools/mtmd is missing. Complete the HIP build first, or pass -LlamaDirectory with its dependency checkout.'
+}
+$LlamaDirectory = (Resolve-Path -LiteralPath $LlamaDirectory).Path
+
 $configure = @(
     '-G', 'Ninja',
     '-S', (Join-Path $repoRoot 'tools\vision'),
     '-B', $BuildDirectory,
     '-DCMAKE_BUILD_TYPE=Release',
     "-DCMAKE_MAKE_PROGRAM=$ninja",
-    "-DLLAMA_DIR=$(Join-Path $repoRoot 'third_party\llama.cpp')",
+    "-DLLAMA_DIR=$LlamaDirectory",
     '-DSTRATA_VISION_CUDA=OFF',
     '-DSTRATA_PORTABLE=ON',
     '-DGGML_VULKAN=ON',

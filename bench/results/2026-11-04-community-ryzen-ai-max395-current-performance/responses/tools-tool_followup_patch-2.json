@@ -1,0 +1,170 @@
+{
+  "id": "tools-tool_followup_patch-2",
+  "group": "tools",
+  "expected": {
+    "tool": "apply_patch",
+    "must_contain": [
+      "isJsonRpcRequest",
+      "Array.isArray",
+      "jsonrpc",
+      "2.0",
+      "method",
+      "string"
+    ]
+  },
+  "historical_source": "Reconstructed from historical task names, saved responses and pinned source fixtures",
+  "same_historical_messages_and_parameters": false,
+  "comparability": "New equivalent task; original tool request messages were not retained.",
+  "started_utc": "2026-11-04T21:29:54.713160+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a coding assistant working only on the supplied synthetic fixture. For a requested edit, return one apply_patch tool call. Preserve unrelated code. The file content is provided in the conversation."
+      },
+      {
+        "role": "user",
+        "content": "Read src/lib/utils/request-helpers.ts then add export function isJsonRpcRequest(value: unknown): boolean. It accepts only non-null non-array objects whose jsonrpc equals '2.0' and method is a non-empty string. Keep existing functions unchanged."
+      },
+      {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_read_fixture",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"path\": \"src/lib/utils/request-helpers.ts\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_read_fixture",
+        "content": "/**\n * HTTP request inspection utilities for diagnostic logging.\n * These helpers extract metadata from fetch-style request arguments\n * without exposing sensitive payload data.\n */\n\nexport interface RequestBodySummary {\n\tkind: string;\n\tsize?: number;\n}\n\nexport function getRequestUrl(input: RequestInfo | URL): string {\n\tif (typeof input === 'string') {\n\t\treturn input;\n\t}\n\n\tif (input instanceof URL) {\n\t\treturn input.href;\n\t}\n\n\treturn input.url;\n}\n\nexport function getRequestMethod(\n\tinput: RequestInfo | URL,\n\tinit?: RequestInit,\n\tbaseInit?: RequestInit\n): string {\n\tif (init?.method) {\n\t\treturn init.method;\n\t}\n\n\tif (typeof Request !== 'undefined' && input instanceof Request) {\n\t\treturn input.method;\n\t}\n\n\treturn baseInit?.method ?? 'GET';\n}\n\nexport function getRequestBody(\n\tinput: RequestInfo | URL,\n\tinit?: RequestInit\n): BodyInit | null | undefined {\n\tif (init?.body !== undefined) {\n\t\treturn init.body;\n\t}\n\n\tif (typeof Request !== 'undefined' && input instanceof Request) {\n\t\treturn input.body;\n\t}\n\n\treturn undefined;\n}\n\nexport function summarizeRequestBody(body: BodyInit | null | undefined): RequestBodySummary {\n\tif (body == null) {\n\t\treturn { kind: 'empty' };\n\t}\n\n\tif (typeof body === 'string') {\n\t\treturn { kind: 'string', size: body.length };\n\t}\n\n\tif (body instanceof Blob) {\n\t\treturn { kind: 'blob', size: body.size };\n\t}\n\n\tif (body instanceof URLSearchParams) {\n\t\treturn { kind: 'urlsearchparams', size: body.toString().length };\n\t}\n\n\tif (body instanceof FormData) {\n\t\treturn { kind: 'formdata' };\n\t}\n\n\tif (body instanceof ArrayBuffer) {\n\t\treturn { kind: 'arraybuffer', size: body.byteLength };\n\t}\n\n\tif (ArrayBuffer.isView(body)) {\n\t\treturn { kind: body.constructor.name, size: body.byteLength };\n\t}\n\n\treturn { kind: typeof body };\n}\n\nexport function formatDiagnosticErrorMessage(error: unknown): string {\n\tconst message = error instanceof Error ? error.message : String(error);\n\n\treturn message.includes('Failed to fetch') ? `${message} (check CORS?)` : message;\n}\n\nexport function extractJsonRpcMethods(body: BodyInit | null | undefined): string[] | undefined {\n\tif (typeof body !== 'string') {\n\t\treturn undefined;\n\t}\n\n\ttry {\n\t\tconst parsed = JSON.parse(body);\n\t\tconst messages = Array.isArray(parsed) ? parsed : [parsed];\n\t\tconst methods = messages\n\t\t\t.map((message: Record<string, unknown>) =>\n\t\t\t\ttypeof message?.method === 'string' ? (message.method as string) : undefined\n\t\t\t)\n\t\t\t.filter((method: string | undefined): method is string => Boolean(method));\n\n\t\treturn methods.length > 0 ? methods : undefined;\n\t} catch {\n\t\treturn undefined;\n\t}\n}\n"
+      }
+    ],
+    "max_tokens": 512,
+    "temperature": 0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "apply_patch",
+          "description": "Apply an OpenAI-style patch to the supplied fixture file. Use *** Begin Patch, *** Update File or *** Add File, @@ hunks, and *** End Patch.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "patch": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "patch"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a file",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "request_sha256": "225ac4a30d1d9ad23a6ea4b38a2b448cc542acbe7771f1c65a8792c05ca612a6",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 13312086016,
+    "percent": 60.8,
+    "used": 20669972480,
+    "free": 13312086016
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-09f2c3a8881e4fa29d1cc01c",
+    "object": "chat.completion",
+    "created": 1793827794,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_3196f859fe2d4891afb67fb1",
+              "type": "function",
+              "function": {
+                "name": "apply_patch",
+                "arguments": "{\"patch\":\"*** Begin Patch\\n*** Update File: src/lib/utils/request-helpers.ts\\n@@\\n export function extractJsonRpcMethods(body: BodyInit | null | undefined): string[] | undefined {\\n \\tif (typeof body !== 'string') {\\n \\t\\treturn undefined;\\n \\t}\\n \\n \\ttry {\\n \\t\\tconst parsed = JSON.parse(body);\\n \\t\\tconst messages = Array.isArray(parsed) ? parsed : [parsed];\\n \\t\\tconst methods = messages\\n \\t\\t\\t.map((message: Record<string, unknown>) =>\\n \\t\\t\\t\\ttypeof message?.method === 'string' ? (message.method as string) : undefined\\n \\t\\t\\t)\\n \\t\\t\\t.filter((method: string | undefined): method is string => Boolean(method));\\n \\n \\t\\treturn methods.length > 0 ? methods : undefined;\\n \\t} catch {\\n \\t\\treturn undefined;\\n \\t}\\n }\\n+\\n+export function isJsonRpcRequest(value: unknown): boolean {\\n+\\tif (typeof value !== 'object' || value === null || Array.isArray(value)) {\\n+\\t\\treturn false;\\n+\\t}\\n+\\n+\\tconst candidate = value as Record<string, unknown>;\\n+\\n+\\treturn (\\n+\\t\\tcandidate.jsonrpc === '2.0' &&\\n+\\t\\ttypeof candidate.method === 'string' &&\\n+\\t\\tcandidate.method.length > 0\\n+\\t);\\n+}\\n*** End Patch\"}"
+              }
+            }
+          ]
+        },
+        "finish_reason": "tool_calls"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1158,
+      "completion_tokens": 318,
+      "total_tokens": 1476,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 1158,
+      "prompt_ms": 1372.3,
+      "prompt_per_token_ms": 1.185,
+      "prompt_per_second": 843.8,
+      "predicted_n": 318,
+      "predicted_ms": 4041.4,
+      "predicted_per_token_ms": 12.709,
+      "predicted_per_second": 78.7,
+      "draft_n": 322,
+      "draft_n_accepted": 269
+    }
+  },
+  "elapsed_s": 5.443005999997695,
+  "finished_utc": "2026-11-04T21:30:00.156810+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 13472968704,
+    "percent": 60.4,
+    "used": 20509089792,
+    "free": 13472968704
+  },
+  "uncached": true
+}

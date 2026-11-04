@@ -1,0 +1,87 @@
+{
+  "id": "screen-xhigh_throughput-2",
+  "group": "screen",
+  "historical_source": "optimization-temp0-finalist/results/finalists.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "9901e85a7398046a2289cc0467c74d762e7c8b5f82d9b2e8fae8815180c50ea5",
+  "baseline_decode_tps": 52.3,
+  "started_utc": "2026-11-04T21:08:47.747993+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "计算1到1000中所有能被3或5整除的整数之和，重复的只计一次。请用等差数列与容斥原理推导，说明每个求和项、上限如何取整，并给出最终结果与简短Python核验代码。"
+      }
+    ],
+    "max_tokens": 512,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "reasoning_effort": "xhigh"
+  },
+  "request_sha256": "838e008a0caf9a1943d6c1d8629879fcc716379c0c5218144a80d08625da1f98",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 14951022592,
+    "percent": 56.0,
+    "used": 19031035904,
+    "free": 14951022592
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-efae3a97bead451aa61f920a",
+    "object": "chat.completion",
+    "created": 1793826527,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "设 \\(S\\) 为 \\(1\\) 到 \\(1000\\) 中所有能被 \\(3\\) 或 \\(5\\) 整除的整数之和。  \n由于同时能被 \\(3\\) 和 \\(5\\) 整除的数会被重复计算，需要用容斥原理：\n\n\\[\nS = S_3 + S_5 - S_{15}\n\\]\n\n其中：\n\n- \\(S_3\\)：能被 \\(3\\) 整除的数之和；\n- \\(S_5\\)：能被 \\(5\\) 整除的数之和；\n- \\(S_{15}\\)：能被 \\(15\\) 整除的数之和，因为 \\(15=\\operatorname{lcm}(3,5)\\)。\n\n---\n\n## 1. 能被 3 整除的数之和\n\n不超过 \\(1000\\) 的 \\(3\\) 的倍数为：\n\n\\[\n3,6,9,\\dots,3n\n\\]\n\n上限满足：\n\n\\[\n3n \\le 1000\n\\]\n\n因此：\n\n\\[\nn",
+          "reasoning_content": "We need answer in Chinese. Need solve problem: sum of integers 1 to 1000 divisible by 3 or 5, duplicates counted once. Use arithmetic progression and inclusion-exclusion, explain each sum term, upper limit floor, final result, short Python verification code.\n\nNeed compute: sum multiples of 3 <=1000 + sum multiples of 5 <=1000 - sum multiples of 15 <=1000.\nFor multiples of d: n = floor(1000/d). Sum = d * n(n+1)/2.\nFor 3: floor(1000/3)=333. Sum3=3*333*334/2 = 3*333*167 = 999*167? 333*334=111222? Let's compute: 333*334 = 333*(300+34)=99900+11322=111222. /2=55611. *3=166833. Or\n\nI have thought about this long enough; time to give my answer.\n"
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 108,
+      "completion_tokens": 512,
+      "total_tokens": 620,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 108,
+      "prompt_ms": 1420.7,
+      "prompt_per_token_ms": 13.155,
+      "prompt_per_second": 76.0,
+      "predicted_n": 512,
+      "predicted_ms": 8178.7,
+      "predicted_per_token_ms": 16.556,
+      "predicted_per_second": 60.4,
+      "draft_n": 555,
+      "draft_n_accepted": 371
+    }
+  },
+  "elapsed_s": 9.624037599998701,
+  "finished_utc": "2026-11-04T21:08:57.375025+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 15101435904,
+    "percent": 55.6,
+    "used": 18880622592,
+    "free": 15101435904
+  },
+  "uncached": true
+}

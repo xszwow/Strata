@@ -1,227 +1,107 @@
 <h1 align="center">Strata · Ryzen AI Max+ 395 Windows Edition</h1>
-
-<p align="center"><b>在 128 GB 统一内存的 Ryzen AI Max+ 395 / Radeon 8060S 上运行 Qwen3.8 Flash-Next</b><br>
-Huihui UD-IQ4_XS · 原生 Q4 MTP · 262K 上下文实测 · Vulkan 视觉 · Codex / OpenAI / Anthropic API</p>
+<p align="center"><b>源码 0.2.10 · 引擎 0.1.56 · 更新于 2026-11-04</b><br>
+Huihui UD-IQ4_XS · 原生 Q4 MTP + 57K 草稿词表 · 262K 上下文 · Vulkan 视觉</p>
 
 <p align="center">
-<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md"><b>完整安装教程</b></a> ·
-<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#实测速度与适用范围">实测结果</a> ·
-<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg">TPS 数据图</a> ·
-<a href="bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json">测试数据 JSON</a> ·
-<a href="https://github.com/Niko1221/Strata">上游 Strata</a>
+<a href="docs/WINDOWS_RYZEN_AI_MAX395.md"><b>当前安装指南</b></a> ·
+<a href="deploy/windows-gfx1151/">部署工具</a> ·
+<a href="bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md">新版实测报告</a> ·
+<a href="bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/summary.json">测试数据</a> ·
+<a href="docs/BENCHMARK_ARCHIVE.md">历史归档</a>
 </p>
 
-这是 [`Niko1221/Strata`](https://github.com/Niko1221/Strata) 的社区 fork，专门整理和验证了 **Windows +
-Ryzen AI Max+ 395（Strix Halo / `gfx1151`）** 的本地部署。它不是只保存测试笔记：这个仓库包含所需源码修改、
-可移植安装脚本、模型来源与哈希、完整配置生成器，以及实际 API 测试结果。
+本仓库是 [Niko1221/Strata](https://github.com/Niko1221/Strata) 的社区 fork，维护 **Windows 11 + Ryzen AI Max+ 395 / Radeon 8060S（gfx1151）+ 128 GB 统一内存**上的本地部署。
+当前代码基于上游 **v0.2.10 / engine 0.1.56**，加入本 fork 的原生 Q4/Q8 MTP 支持与 Vulkan 高分辨率预热修正。
 
-English summary: this community fork provides a reproducible Windows deployment for Ryzen AI Max+ 395 with native
-Q4_0 MTP, Vulkan vision, 262K context and OpenAI-compatible APIs. See the
-[step-by-step guide](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md).
+The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K draft vocabulary. See the [Windows installation guide](docs/WINDOWS_RYZEN_AI_MAX395.md) and [current benchmark results](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md).
 
-如果这套配置帮你复现成功，欢迎给仓库点一个 **Star**；遇到硬件或部署差异，也欢迎带上驱动、内存和日志反馈。
+## 当前性能（2026-11-04 重新实测）
 
-## 2026-11-04 引擎升级：服务 0.2.10 / 引擎 0.1.56
+按首页原来的 10 月题目重测当前部署。四类吞吐题各 3 次、最多输出 512 tokens，temperature 0；代码与中文关闭思考，xhigh 开启。提示词缓存全部为 0。
 
-当前源码已更新到上游 v0.2.10，保留本 fork 的原生 Q4/Q8 MTP、可选 57K 草稿词表和 Vulkan 高分辨率预热补丁。
-同机对照后，日用选择 **Q4 MTP + 57K，spec 8 / spec-min-p 0.6，16K prefill**。配置生成器明确设置 `drafting: mtp`，并清除基础配置中的 DFlash2 参数。
+| 同题工作负载 | 10 月中位 TPS | 当前中位 TPS | 当前三次范围 | 相对历史变化 |
+| --- | ---: | ---: | ---: | ---: |
+| 代码 A：分块 SHA256 | 55.3 | **60.2** | 59.1～60.3 | +8.9% |
+| 代码 B：LRU cache | 51.8 | **62.4** | 62.0～62.8 | +20.5% |
+| xhigh 思考吞吐 | 52.0 | **60.4** | 59.7～60.4 | +16.2% |
+| 中文说明 | 31.2 | **38.5** | 38.3～38.9 | +23.4% |
+| **原权重加权调和平均** | **51.29** | **59.31** | — | **+15.6%** |
 
-| 同日固定请求，三次生成速度中位数 | 原 0.1.42 | 正式新版 |
-| --- | ---: | ---: |
-| 代码 | 52.0 TPS | 60.5 TPS |
-| 中文说明 | 33.5 TPS | 40.0 TPS |
-| 英文公式说明，关闭思考 | 47.3 TPS | 53.4 TPS |
+权重为代码 A / B 各 35%、xhigh 25%、中文 5%。这是跨日期、完整部署的同题速度对照，包含新版服务、引擎及 57K 词表等变化；不代表所有任务，也不代表质量同步提升。
 
-每次最多输出 256 tokens；这些是固定工作负载的速度测量，不是通用质量评分。
-8K / 32K / 64K 输入预填充分别从 13.56 / 33.55 / 57.87 秒缩短到 6.63 / 25.92 / 49.69 秒。
-最终 Q4 spec 8 配置已完成 **260,934-token 输入**，预填充 227.86 秒，三处校验码全部找回。
-工具解析固定语料由 88/164 提高到 164/164；完整代码、图片、缓存、Responses、Anthropic 和跳过思考另有验收。
-关闭思考的一道算术题在原版和新版均失败，已保留原始回复。DFlash2 在这组测试中出现额外算术失败，因此未选作默认。
+**完整质量有失败，已保留：**编辑距离、加权调度和 xhigh 各 2/2 通过；拓扑排序 0/2（输出含禁止的 import）；生产代码 smoke 也违反了禁止函数调用的要求。不能把这些失败样本写成“完整正确代码”的成绩。
 
-完整对照、构建哈希、验收边界和测试数据见 [本次升级报告](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/README.md)。
-[原版上游 README](README.upstream.md) 单独保留；下方 10 月的表格及 SVG 均为历史测量。
+新建的四类工具/Playwright 脚本题共 12 次，结构与要求检查通过，合并生成吞吐 **78.93 TPS**。由于旧工具 messages 未完整保留，不与历史 64.63 TPS 算同题提速；这些是输出检查，未执行真实浏览器任务。
 
-## 历史补充：57K 草稿词表与复用核验
+**长上下文与图片：**原 63,954-token 输入 prefill **51.16 秒**；原 260,934-token 输入 **233.72 秒**，三处校验码全部找回。
+近满上下文加图片的实际输入为 **260,791 tokens**，三处校验码与图片六行文字均通过。4K 金额表两次均为 **44/44**。
 
-补充发布 10 月 19 日、21 日的本机测试报告及结果数据，并为配置生成器加入可选的 `-UseHyf57K`。
-该选项使用仓库内附、经过 SHA-256 校验的 **56,919 项 MTP 草稿词表**，主模型分词器与完整词表不变。
-日用配置仍为 `spec 8 / spec-min-p 0.6`、`prompt-cache 6`，**跨会话内存缓存保持关闭：`--conversation-cache-mib 0`**。
+[完整本轮报告、逐项速度和失败说明](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md) · [汇总 JSON](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/summary.json) · [原始请求与回复](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/responses/)
 
-- 10 月 19 日同机对照中，57K 方案的代码、推理、中文三项等权调和平均吞吐比起始基线约高 **1.73%**；每题两次，未证明统计显著性或全面质量等价。
-- 10 月 21 日核验确认 HyF v4 分词资产与当前部署相同；2,032 组分词/回译检查通过。现有分词器优化和引擎代码已在本 fork 中，本次没有替换引擎。
-- 现有前缀缓存的合成请求首字延迟中位数为：首次 **5.770 秒**、重复 **0.139 秒**、连续追问 **0.321 秒**；切换独立会话后返回仍为 **5.764 秒**，符合跨会话缓存关闭的配置。
+此前用于选择 Q4 MTP / DFlash2 等方案的 256-token 升级对照保存在 [升级方案报告](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/README.md)，与本轮 512-token 同题复测分开。
 
-查看[报告、原始计时、来源与适用边界](bench/results/2026-10-21-community-ryzen-ai-max395-hyf-reuse/README.md)
-及[可选 57K 配置方法](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#可选启用已测的-57k-mtp-草稿词表)。
-下方原有性能表仍是此前的测试批次，不与本次题集混算。临时测试脚本不随本次更新发布。
+## 合入的优化与采用的配置
 
-## 这套版本解决了什么
+- 更新到新版 HIP 引擎与服务代码，引入工具调用解析和恢复、图片取消、提示词编码缓存及 Strix Halo 优化。
+- 将本 fork 的原生 **Q4_0 / Q8_0 MTP** 支持移植到新引擎，日用仍选择 Q4 MTP + 56,919 项草稿词表。
+- 配置生成器明确设置 `drafting: mtp`，清除基础配置中的 DFlash2 参数，并自动查找 hipBLASLt 运行库目录。
+- 保留 **spec 8 / spec-min-p 0.6、16K prefill、INT8 KV、262,144 总上下文**和关闭跨会话 RAM 停放的设置。
+- Vulkan 视觉继续支持约 1,024～8,192 image tokens；主模型保持 Huihui UD-IQ4_XS。
 
-- 在 Windows HIP 后端加入 MTP 专家的原生 `Q4_0` / `Q8_0` 布局支持；
-- 使用 Huihui Qwen3.8 Flash-Next `UD-IQ4_XS` 主模型；
-- 在 Windows 上构建独立 Vulkan 视觉编码器，并修正高于 4,096 image tokens 时的 GPU warm-up；
-- 固定并验证 `spec 8 / spec-min-p 0.6 / mtp-window 8192`；
-- 支持 262,144 tokens 总上下文、INT8 KV 和 6 份内存 prompt cache；
-- 开启 `codex_compaction_cache`，适合持续代码会话；
-- 提供 `/v1/chat/completions`、`/v1/responses` 和 `/v1/messages`；
-- 下载脚本支持断点续传、Hugging Face / 镜像切换，以及文件大小和 SHA-256 校验；
-- 本机路径运行时生成，不包含原作者电脑的盘符或用户名。
+DFlash2、DFlash2 + 57K、关闭 FP16 prefill、spec 4 + 32K 分块均有对照记录。本机这组中英混合任务选择 Q4 MTP + 57K；各候选的收益和失败样例见 [完整报告](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/README.md)。
 
-## 已验证硬件
-
-| 项目 | 实测环境 |
-| --- | --- |
-| CPU / APU | AMD Ryzen AI Max+ 395，16 核 32 线程 |
-| GPU | Radeon 8060S，`gfx1151` |
-| 内存 | 约 128 GB 统一内存 |
-| 系统 | Windows 11 |
-| 主模型 | Huihui Qwen3.8 Flash-Next Abliterated，Unsloth `UD-IQ4_XS` |
-| MTP | Strata runtime，原生 Q4_0 experts |
-| 视觉 | BF16 mmproj + Vulkan `strata-vision` |
-| 当前源码 / 引擎 | 0.2.10 / 0.1.56（本机 Q4 MTP 补丁） |
-| 同日对照基线 | 0.1.42 |
-
-其他 Radeon、内存容量或驱动版本可以尝试，但需要重新验证缓存规模和速度。
-
-## 历史性能（10 月测量）
-
-![Ryzen AI Max+ 395 实测 TPS 汇总，区分最终配置与早期容量测试](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg)
-
-**测试口径：**以下均为本仓库记录的测试结果，尚非第三方独立复测。常规任务 TPS 为最多输出 512 tokens 的三次中位数；`xhigh` 是测试用例标签，不代表已经与云端 Codex 的思考档位进行了同等条件对比。混合题 51.29 TPS 是预设权重（代码 A 35%、代码 B 35%、xhigh 25%、中文 5%）的**加权调和平均**，并非通用性能或质量评分。Codex 的 64.63 TPS 为四类固定工具轨迹、每类三次的**合并生成吞吐**，不包括所有实际代理任务的端到端耗时。
-
-
-下面是这台机器的 decode TPS；不同问题的 MTP 接受率、MoE 路由和输出长度不同，因此不能把单一峰值当成所有任务的
-固定速度。
-
-| 工作负载 | 实测结果 |
-| --- | ---: |
-| 代码生成 A，3 次中位数 | **55.3 TPS** |
-| 代码生成 B，3 次中位数 | **51.8 TPS** |
-| xhigh 长推理，3 次中位数 | **52.0 TPS** |
-| 中文长文，3 次中位数 | **31.2 TPS** |
-| 混合题加权调和平均 | **51.29 TPS** |
-| 完整且通过正确性检查的代码任务 | **52.0～58.2 TPS** |
-| 生产配置代码 smoke test | **59.7 TPS** |
-| Codex / Playwright 固定工具轨迹 | **61.94～67.96 TPS** |
-| 12 次 Codex 工具轨迹 micro-average | **64.63 TPS** |
-| 63,954-token 输入 prefill | **1,087.2 TPS** |
-| 260K 级输入 prefill（早期 Q2 MTP / 视觉专项，非当前 Q4 spec 8 正面对比） | **约 942～960 TPS** |
-
-**10 月这批数据的上下文验证边界：**当时的最终 Q4 MTP `spec 8 / spec-min-p 0.6` 配置有 63,954-token 输入测试（1,087.2 prefill TPS）。260,934-token 容量测试使用较早 `Q2 MTP / spec 4` 配置（960.3 prefill TPS）；260,881-token 含图片测试使用视觉专项配置（942.5 prefill TPS）。这证明相应测试当时可以处理接近 262K 的输入，不代表同一批 Q4 spec 8 的 260K 吞吐。11 月 4 日新版 Q4 spec 8 的近满上下文实测见上方新报告；尚无长期稳定性结论。两项 260K 试验分别只输出了 31 和 81 tokens。
-
-64.63 TPS 来自偏短、投机命中较好的固定工具任务，不代表中文、任意代码或长推理都能保持 60～65 TPS。完整页面还列出：
-
-- 每种题型的 3 次范围和 MTP 接受率；
-- temperature `0 / 0.3 / 0.6 / 1.0` 的重复测试；
-- 完整正确性测试与失败样本；
-- `lookup-chain 3` 对比：整体慢 0.85%，因此默认关闭；
-- 64K、260K 和带图片近满上下文结果；
-- 1,024 / 2,048 / 4,096 / 8,192 image-token 视觉精度、prefill、decode 和端到端等待。
-
-查看[完整测试表](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#实测速度与适用范围)或
-下载[结构化聚合数据](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json)。
-
-## 下载后怎么用
-
-仓库不包含约 95 GB 的模型权重，也不提交任何本机绝对路径。先安装 Git、Python 3.10+、CMake、Ninja、
-Visual Studio 2022 C++ Build Tools、当前 AMD 驱动和 LunarG Vulkan SDK，然后在 PowerShell 中执行：
+## 安装与启动
 
 ```powershell
 git clone https://github.com/xszwow/Strata.git
 Set-Location .\Strata
 ```
 
-接下来严格按照：
+按照 **[当前 Windows 安装指南](docs/WINDOWS_RYZEN_AI_MAX395.md)** 完成模型下载、构建本 fork HIP 引擎、准备 Q4 MTP、构建 Vulkan 视觉和生成本机配置。
+部署工具统一位于 **[deploy/windows-gfx1151](deploy/windows-gfx1151/)**。指南中的 `-UseHyf57K` 对应本次正式服务的实测配置。
 
-> **[Ryzen AI Max+ 395 完整安装教程：从模型下载到 API 可用](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md)**
+仓库提供源码、部署工具和测试数据。模型权重需按指南下载；使用本 fork 的构建产物才能得到这里测量的原生 Q4 MTP 支持。
 
-教程按顺序完成：
+## 当前日用参数
 
-1. 定义可自由更换的 `$DataRoot`；
-2. 断点续传并校验主模型和视觉 projector；
-3. 构建这个 fork 的 Windows HIP 引擎；
-4. 生成原生 Q4_0 MTP runtime；
-5. 构建 Windows Vulkan 视觉组件；
-6. 从安装器检测出的路径生成本机 JSON；
-7. 启动服务并检查 `/health` 和 `/v1/models`。
-
-不要直接使用上游旧预编译引擎搭配 Q4 MTP：它不包含这个 fork 的原生 Q4/Q8 MTP 支持。
-
-## 当前生产配置
-
-| 参数 | 值 |
+| 参数 | 当前值 |
 | --- | --- |
-| 总上下文 | 262,144 tokens |
-| 默认最大输出 | 由客户端请求控制；本机 Codex 使用 reasoning budget 8,192 |
-| KV | INT8 |
-| Prefill chunk | 16,384 |
-| Generation concurrency | 1 |
-| Worker pool | 8 |
-| Expert cache | 24,576 |
-| MTP | Q4_0、`spec 8`、`spec-min-p 0.6`、window 8,192 |
-| Sampling | temperature 0、top-p 0.95、top-k 20 |
-| Prompt cache | 6 个内存 checkpoint |
-| Codex compaction cache | 开启 |
-| Host conversation parking | 关闭 |
-| `lookup-chain` | 关闭 |
-| Vision | Vulkan GPU，1,024～8,192 image tokens |
+| 源码 / 引擎 | **0.2.10 / 0.1.56 + 本 fork MTP 补丁** |
+| 主模型 | Huihui Qwen3.8 Flash-Next UD-IQ4_XS |
+| 草稿器 | 原生 Q4_0 MTP，57K 草稿词表，`spec 8`，`spec-min-p 0.6`，window 8,192 |
+| 总上下文 / KV | 262,144 tokens / INT8 |
+| Prefill / 并发 | 16,384 / 1 个生成槽位 |
+| 专家驻留 / 内部 worker | 24,576 / 8 |
+| 采样 | temperature 0、top-p 0.95、top-k 20、seed 12345 |
+| 默认思考 | high，reasoning budget 8,192；客户端可覆盖 |
+| Prompt cache / Codex compaction cache | 6 份内存 checkpoint / 开启 |
+| 跨会话 RAM 停放 / lookup-chain | 关闭 / 关闭 |
+| 视觉 | Vulkan GPU，约 1,024～8,192 image tokens |
 
-## 接入 Codex 和其他客户端
+缓存位于内存，不能在服务重启后恢复 KV。262K 是单请求总容量，输入、思考和输出共同占用。
 
-服务启动后使用：
+## 接入与验证
 
-| 客户端协议 | 地址 |
+| 用途 | 本机地址 |
 | --- | --- |
+| 网页 | `http://127.0.0.1:8080` |
 | OpenAI base URL | `http://127.0.0.1:8080/v1` |
 | Chat Completions | `POST /v1/chat/completions` |
 | Responses / Codex | `POST /v1/responses` |
-| Anthropic-compatible | `http://127.0.0.1:8080/v1/messages` |
-| 浏览器界面 | `http://127.0.0.1:8080` |
+| Anthropic Messages | `POST /v1/messages` |
 
-默认只监听本机。不要把无 API key 的服务直接暴露到局域网或公网。
+先前升级验收涵盖代码、算术、工具调用、图片、前缀缓存和近满上下文；本轮按历史严格代码题复测发现上述约束失败，当前结论以两批报告的实际任务范围为准。
+工具解析固定语料为 **164/164**（旧版 88/164），这不等于模型的通用工具准确率。
+公网与 IVYUN 的验收来自额外部署的兼容层，详见报告中的适用范围。
 
-## 缓存边界
+已知限制仍保留：关闭思考的一道算术题在原版和新版均答错；Windows venv 启动链下的下载器退出测试也有失败。
+[原始回复与失败样例](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/) 和 [同步验证记录](bench/results/2026-11-04-community-ryzen-ai-max395-engine0156/sync-validation.json) 均可查阅。
 
-当前已经有：
+## 数据与历史记录
 
-- 内存 prompt cache；
-- 相同长前缀复用；
-- Codex compaction cache；
-- 图片嵌入缓存。
+本页展示 **2026-11-04 正式新版**的结果。10 月的速度表、旧性能图、词表与缓存对照保存在 [历史测试归档](docs/BENCHMARK_ARCHIVE.md)。
+旧测试输入、原始回复、日志和配置记录继续保留；临时测试执行脚本及本机旧运行文件已清理。
 
-当前没有：
-
-- 磁盘持久化 KV；
-- 跨 Strata 重启恢复 KV；
-- Halogen 风格的 256 GiB KV lineage；
-- 当前启用的 host RAM conversation parking。
-
-因此“262K 上下文”是单请求容量，不等于所有会话 KV 都能永久保存在磁盘。
-
-## 仓库中的复现材料
-
-| 文件 | 内容 |
-| --- | --- |
-| [完整部署教程](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md) | 环境、命令、验证与排错 |
-| [TPS 信息图](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/tps-infographic.svg) | 数据源对齐的 SVG 图片，分别标明早期配置与最终配置 |
-| [模型来源](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/models.json) | revision、大小和 SHA-256 |
-| [性能数据](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/performance-results.json) | 各题型、长上下文、温度和视觉聚合结果 |
-| [MTP manifest](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/mtp-source-manifest.json) | 31 个源张量的范围与哈希 |
-| [模型下载脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Get-Models.ps1) | 续传、镜像切换与校验 |
-| [Q4 MTP 脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Prepare-Q4Mtp.ps1) | 下载、打包、生成 runtime |
-| [视觉构建脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Build-Vision-Vulkan.ps1) | Windows Vulkan vision 构建 |
-| [配置生成器](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/New-LocalConfig.ps1) | 按本机实际路径生成 JSON |
-| [启动脚本](bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/Start-Local.ps1) | 启动兼容 API 服务 |
-
-## 与上游的关系
-
-本仓库是公开 fork，不冒充独立原创项目。通用 Strata 引擎、安装器、服务端、Web UI 和大量文档来自
-[`Niko1221/Strata`](https://github.com/Niko1221/Strata)。本 fork 主要维护 Ryzen AI Max+ 395 Windows 部署、原生
-Q4/Q8 MTP 支持、Vulkan 高 image-token warm-up，以及对应的复现脚本和测试记录。
-
-- 通用硬件和上游安装方式：[上游 README](https://github.com/Niko1221/Strata#readme)
-- Strata 技术细节：[docs/DETAILS.md](docs/DETAILS.md)
-- AMD HIP：[docs/AMD_HIP.md](docs/AMD_HIP.md)
-- 许可证：[MIT License](LICENSE)
-
-Qwen、Huihui、Unsloth、视觉 projector 和其他依赖仍分别受各自许可证与使用条款约束。模型权重不包含在本仓库中。
+上游通用安装与产品介绍见 [上游文档快照](README.upstream.md)；本 fork 的当前部署以本页和当前安装指南为准。
+引擎、服务和通用功能来自 [Niko1221/Strata](https://github.com/Niko1221/Strata)。本 fork 维护 Windows gfx1151 部署、原生 Q4/Q8 MTP、Vulkan 预热补丁及对应测试记录。
+代码采用 [MIT License](LICENSE)；模型及依赖分别遵守各自许可证。

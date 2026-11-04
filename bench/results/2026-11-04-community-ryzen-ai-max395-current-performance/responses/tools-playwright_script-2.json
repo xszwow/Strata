@@ -1,0 +1,98 @@
+{
+  "id": "tools-playwright_script-2",
+  "group": "tools",
+  "expected": {
+    "text_must_contain": [
+      "@playwright/test",
+      "8181/settings",
+      "Add MCP server",
+      "Local tools",
+      "9000/mcp",
+      "reload",
+      "toBeVisible"
+    ]
+  },
+  "historical_source": "Reconstructed from historical task names, saved responses and pinned source fixtures",
+  "same_historical_messages_and_parameters": false,
+  "comparability": "New equivalent task; original tool request messages were not retained.",
+  "started_utc": "2026-11-04T21:30:00.156810+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one complete TypeScript Playwright test using import { test, expect } from '@playwright/test'. Open http://localhost:8181/settings, click the button named Add MCP server, fill inputs labeled Name and URL with Local tools and http://127.0.0.1:9000/mcp, click Save, assert Local tools is visible, reload, and assert it is still visible. Use accessible locators. Output one fenced TypeScript block."
+      }
+    ],
+    "max_tokens": 512,
+    "temperature": 0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "strata_tune": {
+      "spec_min_p": 0.6
+    }
+  },
+  "request_sha256": "66e3bb711af90133eed8500124884f405fbd6aa12372f3d0a52444bc054fc1ba",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 13472899072,
+    "percent": 60.4,
+    "used": 20509159424,
+    "free": 13472899072
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-e102b67c68a34e98a8938873",
+    "object": "chat.completion",
+    "created": 1793827800,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```typescript\nimport { test, expect } from '@playwright/test';\n\ntest('add MCP server and verify persistence', async ({ page }) => {\n  await page.goto('http://localhost:8181/settings');\n\n  await page.getByRole('button', { name: 'Add MCP server' }).click();\n\n  await page.getByLabel('Name').fill('Local tools');\n  await page.getByLabel('URL').fill('http://127.0.0.1:9000/mcp');\n\n  await page.getByRole('button', { name: 'Save' }).click();\n\n  await expect(page.getByText('Local tools')).toBeVisible();\n\n  await page.reload();\n\n  await expect(page.getByText('Local tools')).toBeVisible();\n});\n```"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 109,
+      "completion_tokens": 168,
+      "total_tokens": 277,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 109,
+      "prompt_ms": 701.2,
+      "prompt_per_token_ms": 6.433,
+      "prompt_per_second": 155.4,
+      "predicted_n": 168,
+      "predicted_ms": 2285.3,
+      "predicted_per_token_ms": 13.603,
+      "predicted_per_second": 73.5,
+      "draft_n": 172,
+      "draft_n_accepted": 137
+    }
+  },
+  "elapsed_s": 2.995731599999999,
+  "finished_utc": "2026-11-04T21:30:03.150989+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 13495549952,
+    "percent": 60.3,
+    "used": 20486508544,
+    "free": 13495549952
+  },
+  "uncached": true
+}

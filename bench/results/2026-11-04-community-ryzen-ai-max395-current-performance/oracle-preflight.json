@@ -1,0 +1,34 @@
+{
+  "toposort": {
+    "reference_passed": {
+      "passed": true,
+      "test_cases": 84,
+      "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+    },
+    "wrong_answer_rejected": true
+  },
+  "edit_distance": {
+    "reference_passed": {
+      "passed": true,
+      "test_cases": 107,
+      "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+    },
+    "wrong_answer_rejected": true
+  },
+  "schedule_profit": {
+    "reference_passed": {
+      "passed": true,
+      "test_cases": 120,
+      "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+    },
+    "wrong_answer_rejected": true
+  },
+  "code-check": {
+    "reference_passed": {
+      "passed": true,
+      "test_cases": 11,
+      "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+    },
+    "wrong_answer_rejected": true
+  }
+}

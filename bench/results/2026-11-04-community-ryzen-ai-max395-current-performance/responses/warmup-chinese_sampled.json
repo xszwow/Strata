@@ -1,0 +1,88 @@
+{
+  "id": "warmup-chinese_sampled",
+  "group": "warmup",
+  "historical_source": "excluded warm-up",
+  "same_historical_messages_and_parameters": false,
+  "original_request_sha256": "8ce804bffc9eee9de875a915c9a22a434e19c77579da481bff5aa47e9670bc8a",
+  "baseline_decode_tps": null,
+  "started_utc": "2026-11-04T21:07:46.423644+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "用中文写一篇约600字的说明，解释为什么同一台电脑下载大文件时，速度会从15MB/s降到4MB/s，又可能恢复。依次解释Wi-Fi链路、公网拥塞、CDN节点、服务器限速和如何判断下载是否仍在继续。直接写正文，不要先列提纲。"
+      }
+    ],
+    "max_tokens": 128,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "f774399c8c4b4a903e376935192d9fff82d939bbabfd4f078165ab49c6208f7a",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 15032418304,
+    "percent": 55.8,
+    "used": 18949640192,
+    "free": 15032418304
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-75210eac422549ea813228db",
+    "object": "chat.completion",
+    "created": 1793826466,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网"
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 80,
+      "completion_tokens": 128,
+      "total_tokens": 208,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 80,
+      "prompt_ms": 602.0,
+      "prompt_per_token_ms": 7.525,
+      "prompt_per_second": 132.9,
+      "predicted_n": 128,
+      "predicted_ms": 3153.8,
+      "predicted_per_token_ms": 24.639,
+      "predicted_per_second": 40.6,
+      "draft_n": 114,
+      "draft_n_accepted": 61
+    }
+  },
+  "elapsed_s": 3.7720530000005965,
+  "finished_utc": "2026-11-04T21:07:50.196031+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 15071027200,
+    "percent": 55.7,
+    "used": 18911031296,
+    "free": 15071027200
+  },
+  "uncached": true
+}

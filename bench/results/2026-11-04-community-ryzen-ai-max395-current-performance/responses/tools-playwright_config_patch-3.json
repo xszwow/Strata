@@ -1,0 +1,131 @@
+{
+  "id": "tools-playwright_config_patch-3",
+  "group": "tools",
+  "expected": {
+    "tool": "apply_patch",
+    "must_contain": [
+      "firefox",
+      "Desktop Firefox",
+      "screenshot",
+      "only-on-failure"
+    ]
+  },
+  "historical_source": "Reconstructed from historical task names, saved responses and pinned source fixtures",
+  "same_historical_messages_and_parameters": false,
+  "comparability": "New equivalent task; original tool request messages were not retained.",
+  "started_utc": "2026-11-04T21:30:03.156590+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a coding assistant working only on the supplied synthetic fixture. For a requested edit, return one apply_patch tool call. Preserve unrelated code. The file content is provided in the conversation."
+      },
+      {
+        "role": "user",
+        "content": "Update playwright.config.ts: add a Firefox project using Desktop Firefox next to Chromium and set screenshot to only-on-failure in shared use. Keep trace and baseURL unchanged.\n\nimport { defineConfig, devices } from '@playwright/test';\n\nexport default defineConfig({\n\texpect: {\n\t\ttimeout: 5000\n\t},\n\tforbidOnly: !!process.env.CI,\n\tfullyParallel: true,\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: { ...devices['Desktop Chrome'] }\n\t\t}\n\t],\n\treporter: 'line',\n\tretries: process.env.CI ? 2 : 0,\n\ttestDir: 'tests/e2e',\n\ttestMatch: ['**/*.e2e.ts'],\n\ttimeout: 30000,\n\tuse: {\n\t\tbaseURL: 'http://localhost:8181',\n\t\ttrace: 'on-first-retry'\n\t},\n\twebServer: {\n\t\tcommand: 'npm run build && npx http-server ./dist -p 8181',\n\t\tport: 8181,\n\t\treuseExistingServer: !process.env.CI,\n\t\ttimeout: 120000\n\t},\n\tworkers: process.env.CI ? 1 : undefined\n});\n"
+      }
+    ],
+    "max_tokens": 512,
+    "temperature": 0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "apply_patch",
+          "description": "Apply an OpenAI-style patch to the supplied fixture file. Use *** Begin Patch, *** Update File or *** Add File, @@ hunks, and *** End Patch.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "patch": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "patch"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    ]
+  },
+  "request_sha256": "74cbdb64aecdbaa5aaabd7cb4a42f3507a17b68e1ae6fd48ec91ee1730e89ad7",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 13495558144,
+    "percent": 60.3,
+    "used": 20486500352,
+    "free": 13495558144
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-10d3ce8f2f8941bf9d7ae570",
+    "object": "chat.completion",
+    "created": 1793827803,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_5b2d0f5cc6b64e6292f74024",
+              "type": "function",
+              "function": {
+                "name": "apply_patch",
+                "arguments": "{\"patch\":\"*** Begin Patch\\n*** Update File: playwright.config.ts\\n@@\\n \\tprojects: [\\n \\t\\t{\\n \\t\\t\\tname: 'chromium',\\n \\t\\t\\tuse: { ...devices['Desktop Chrome'] }\\n+\\t\\t},\\n+\\t\\t{\\n+\\t\\t\\tname: 'firefox',\\n+\\t\\t\\tuse: { ...devices['Desktop Firefox'] }\\n \\t\\t}\\n \\t],\\n@@\\n \\tuse: {\\n \\t\\tbaseURL: 'http://localhost:8181',\\n+\\t\\tscreenshot: 'only-on-failure',\\n \\t\\ttrace: 'on-first-retry'\\n \\t},\\n*** End Patch\"}"
+              }
+            }
+          ]
+        },
+        "finish_reason": "tool_calls"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 621,
+      "completion_tokens": 160,
+      "total_tokens": 781,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 621,
+      "prompt_ms": 912.4,
+      "prompt_per_token_ms": 1.469,
+      "prompt_per_second": 680.6,
+      "predicted_n": 160,
+      "predicted_ms": 2054.9,
+      "predicted_per_token_ms": 12.843,
+      "predicted_per_second": 77.9,
+      "draft_n": 163,
+      "draft_n_accepted": 134
+    }
+  },
+  "elapsed_s": 2.9772776999998314,
+  "finished_utc": "2026-11-04T21:30:06.136058+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 13499944960,
+    "percent": 60.3,
+    "used": 20482113536,
+    "free": 13499944960
+  },
+  "uncached": true
+}

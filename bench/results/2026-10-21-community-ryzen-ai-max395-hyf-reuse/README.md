@@ -22,7 +22,7 @@ cab9ddf26b779bbfc2882371da6ace6c68820a2f037883c07aa955253b3b287e
 [MIT 许可证](https://github.com/hfan95091-coder/HyFengine-v3/blob/df922a8286e6c09e539ac9e8aa178f5294a30f83/LICENSE)，
 本仓库根目录保留同一许可证声明。
 
-复现方法见[安装教程的可选 57K 配置步骤](../2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md#可选启用已测的-57k-mtp-草稿词表)。
+复现方法见[安装教程的可选 57K 配置步骤](../../../docs/WINDOWS_RYZEN_AI_MAX395.md#本次实测的-57k-草稿词表)。
 `New-LocalConfig.ps1 -UseHyf57K` 是显式选项；省略时不改变基础配置的草稿词表选择。
 
 ## 10 月 19 日：草稿词表和参数对照

@@ -1,3 +1,5 @@
+> **Community fork: source 0.2.10 / engine 0.1.56 + native Q4 MTP.** See the [current fork overview](README.md) and [Windows gfx1151 installation guide](docs/WINDOWS_RYZEN_AI_MAX395.md). The upstream documentation below describes the general Strata product.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="apps/host/public/brand/strata-lockup-dark.svg">

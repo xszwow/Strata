@@ -153,8 +153,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8121,
-      "sha256": "6440736cf86214f87d3a5a846e237239cb2aeddff0cd982c8f6bdeea09c360eb"
+      "bytes": 8099,
+      "sha256": "fb9d5ebcb003316a19285f102593e8d1ab06a2937a27ad2b09bee585b7b508df"
     },
     {
       "path": "sync-validation.json",

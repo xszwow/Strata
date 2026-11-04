@@ -60,7 +60,7 @@ Linux 多卡切分、其他 GPU 后端、DeepSeek / 新模型与桌面 App UI �
 
 当前引擎来自上游 v0.2.10 / engine 0.1.56 加本 fork 原生 Q4/Q8 MTP 补丁。构建产物 SHA-256 为 `37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6`；源码摘要见 [构建记录](artifacts/native-build-manifest.json)。本轮只构建和实测 Windows HIP / gfx1151；其他 GPU 后端未在本机重建验证。
 
-安装步骤及配置生成器见 [安装教程](../2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/README.md)。使用 `-UseHyf57K` 可启用本次测量的词表。脚本固定 MTP 并移除 DFlash2 参数。不要直接用缺少本 fork 补丁的官方引擎加载这个 Q4 MTP runtime。
+安装步骤及配置生成器见 [安装教程](../../../docs/WINDOWS_RYZEN_AI_MAX395.md)。使用 `-UseHyf57K` 可启用本次测量的词表。脚本固定 MTP 并移除 DFlash2 参数。不要直接用缺少本 fork 补丁的官方引擎加载这个 Q4 MTP runtime。
 
 `inputs/` 保存合成长输入、静态提示词和测量条件；JSON 保存原始回复、失败样例、计时和配置。临时测试执行脚本、旧引擎和实验权重已按维护要求删除。此处本机路径和公网地址已替换为占位符，因此不是可直接启动的配置；`configuration_sha256` 等字段记录原始文件摘要，不是脱敏副本的摘要。不要把日志中的历史路径当作当前安装步骤。
 

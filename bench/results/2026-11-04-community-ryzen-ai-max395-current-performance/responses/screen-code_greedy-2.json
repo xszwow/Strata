@@ -1,0 +1,88 @@
+{
+  "id": "screen-code_greedy-2",
+  "group": "screen",
+  "historical_source": "optimization-temp0-finalist/results/finalists.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "db7b49d61a86dbb222526a017d134a337d55992d55db3f03d4f9a5eda843b593",
+  "baseline_decode_tps": 55.4,
+  "started_utc": "2026-11-04T21:08:29.810206+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function that reads a large file in chunks, calculates SHA256, compares it with an expected digest, and raises a useful exception if the file is missing or the digest is wrong. Include type hints, a docstring, a usage example, and a short explanation of why chunked reading is useful. Do not use external libraries."
+      }
+    ],
+    "max_tokens": 512,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "edf585643c4e9992c837b380df7083c21ffab0cd429979cf14e4b22d3ce59076",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 15000657920,
+    "percent": 55.9,
+    "used": 18981400576,
+    "free": 15000657920
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-659c1153873f45ee86c43ec5",
+    "object": "chat.completion",
+    "created": 1793826509,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n"
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 83,
+      "completion_tokens": 512,
+      "total_tokens": 595,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 83,
+      "prompt_ms": 623.4,
+      "prompt_per_token_ms": 7.511,
+      "prompt_per_second": 133.1,
+      "predicted_n": 512,
+      "predicted_ms": 8500.7,
+      "predicted_per_token_ms": 16.603,
+      "predicted_per_second": 60.2,
+      "draft_n": 610,
+      "draft_n_accepted": 391
+    }
+  },
+  "elapsed_s": 9.133357499998965,
+  "finished_utc": "2026-11-04T21:08:38.942881+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 14981758976,
+    "percent": 55.9,
+    "used": 19000299520,
+    "free": 14981758976
+  },
+  "uncached": true
+}

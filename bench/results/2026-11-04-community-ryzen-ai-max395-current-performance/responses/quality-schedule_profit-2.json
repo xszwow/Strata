@@ -1,0 +1,88 @@
+{
+  "id": "quality-schedule_profit-2",
+  "group": "quality",
+  "historical_source": "optimization/results/temp0-s8-p060-quality-20261012.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "722b1849245290146adefe6d32ea7e11a3c30c5794760ba473d833d4cd3d0d79",
+  "baseline_decode_tps": 54.6,
+  "started_utc": "2026-11-04T21:10:40.116750+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write ONLY one Python function schedule_profit(jobs: list[tuple[int, int, int]]) -> int. Each job is (start, end, profit), start < end; jobs may be unsorted or duplicate and profit may be negative. Find maximum total profit of non-overlapping jobs; end == next start is allowed, and choosing no jobs yields 0. Use weighted interval scheduling with O(n log n) time, your binary search inside this function, and O(n) memory. Do not mutate input. Use only builtins: no imports, helpers, classes, decorators, or I/O. Return the complete function in one fenced Python block."
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "max_tokens": 4096,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "cfcf38f5f6d3e89e4d557f20b98ae7d2f729bdc6caa14b844d5028aee0eb814b",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 14752591872,
+    "percent": 56.6,
+    "used": 19229466624,
+    "free": 14752591872
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-3b1f13c02c5040729024bafc",
+    "object": "chat.completion",
+    "created": 1793826640,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef schedule_profit(jobs: list[tuple[int, int, int]]) -> int:\n    if not jobs:\n        return 0\n    \n    # Sort jobs by end time (non-mutating)\n    sorted_jobs = sorted(jobs, key=lambda x: x[1])\n    n = len(sorted_jobs)\n    \n    # Extract end times for binary search\n    ends = [job[1] for job in sorted_jobs]\n    \n    # dp[i] represents the maximum profit considering jobs 0..i-1\n    # We use a list of size n+1 where dp[0] = 0 (no jobs considered)\n    dp = [0] * (n + 1)\n    \n    for i in range(1, n + 1):\n        start_i, end_i, profit_i = sorted_jobs[i - 1]\n        \n        # Binary search for the largest index j such that ends[j-1] <= start_i\n        # We want to find the rightmost job (0-indexed in sorted_jobs) whose end time <= start_i\n        # In terms of dp indices, if we find that job at position k (0-indexed in sorted_jobs),\n        # then dp[k+1] is the max profit considering jobs 0..k\n        \n        lo, hi = 0, i - 1  # search in [0, i-1] for the rightmost end <= start_i\n        best_idx = -1  # index in sorted_jobs (0-indexed) of the last compatible job\n        \n        while lo <= hi:\n            mid = (lo + hi) // 2\n            if ends[mid] <= start_i:\n                best_idx = mid\n                lo = mid + 1\n            else:\n                hi = mid - 1\n        \n        # If best_idx is -1, no compatible job exists, so we use dp[0] = 0\n        # Otherwise, we use dp[best_idx + 1] which is max profit up to and including job at best_idx\n        if best_idx == -1:\n            prev_profit = 0\n        else:\n            prev_profit = dp[best_idx + 1]\n        \n        include_profit = prev_profit + profit_i\n        exclude_profit = dp[i - 1]\n        \n        dp[i] = max(include_profit, exclude_profit)\n    \n    return dp[n]\n```"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 144,
+      "completion_tokens": 518,
+      "total_tokens": 662,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 144,
+      "prompt_ms": 429.3,
+      "prompt_per_token_ms": 2.981,
+      "prompt_per_second": 335.4,
+      "predicted_n": 518,
+      "predicted_ms": 8485.4,
+      "predicted_per_token_ms": 16.381,
+      "predicted_per_second": 61.0,
+      "draft_n": 572,
+      "draft_n_accepted": 393
+    }
+  },
+  "elapsed_s": 8.923355200000515,
+  "finished_utc": "2026-11-04T21:10:49.039563+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 14765170688,
+    "percent": 56.6,
+    "used": 19216887808,
+    "free": 14765170688
+  },
+  "uncached": true
+}

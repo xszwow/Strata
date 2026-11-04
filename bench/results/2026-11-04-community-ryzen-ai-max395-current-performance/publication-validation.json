@@ -1,0 +1,20 @@
+{
+  "five_deployment_scripts_powershell_parse": true,
+  "moved_preset_run": {
+    "passed": true,
+    "hyf57k_sha256_verified": true,
+    "repo_root_and_tuning_path_resolved": true,
+    "injected_dflash_flags_removed": true,
+    "drafting": "mtp"
+  },
+  "model_downloader_list_only_entries": 4,
+  "vision_dependency_lookup": {
+    "explicit_path": true,
+    "STRATA_GGML_DIR": true,
+    "default_build_hip_win_dependency_path": true,
+    "full_rebuild": false
+  },
+  "benchmark_runner_published": false,
+  "original_dataset_files_preserved": true,
+  "documentation_links_checked": 63
+}

@@ -1,0 +1,88 @@
+{
+  "id": "quality-edit_distance-2",
+  "group": "quality",
+  "historical_source": "optimization/results/temp0-s8-p060-quality-20261012.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "5a55b69543557779522ce966d7453acefdc14a9f19ad90a99af1d6026b73eda8",
+  "baseline_decode_tps": 58.6,
+  "started_utc": "2026-11-04T21:10:34.218832+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write ONLY one Python function edit_distance(a: str, b: str) -> int computing Levenshtein distance with insert/delete/substitute each cost 1. Handle empty and Unicode strings. Use O(min(len(a),len(b))) auxiliary memory and dynamic programming. Use only builtins: no imports, helpers, classes, decorators, or I/O. Return the complete function in one fenced Python block."
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "max_tokens": 4096,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "390c44e46035f560e6532e2f6b1d5dd87233ad58a733248ccbca6e96ecb7d957",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 14749294592,
+    "percent": 56.6,
+    "used": 19232763904,
+    "free": 14749294592
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-d2b40ad73e8c41a6a7ba05cf",
+    "object": "chat.completion",
+    "created": 1793826634,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef edit_distance(a: str, b: str) -> int:\n    # Ensure we use the shorter string for the DP array to minimize memory\n    if len(a) < len(b):\n        a, b = b, a\n    \n    m = len(a)\n    n = len(b)\n    \n    # If one string is empty, distance is the length of the other\n    if n == 0:\n        return m\n    \n    # Use only O(min(m, n)) space by keeping two rows (or one with careful update)\n    # We'll use a single array and update it in place with a temp variable for diagonal\n    prev = list(range(n + 1))\n    \n    for i in range(1, m + 1):\n        curr = [i] + [0] * n\n        for j in range(1, n + 1):\n            if a[i - 1] == b[j - 1]:\n                cost = 0\n            else:\n                cost = 1\n            # min of delete (prev[j] + 1), insert (curr[j-1] + 1), substitute (prev[j-1] + cost)\n            curr[j] = min(\n                prev[j] + 1,      # deletion from a\n                curr[j - 1] + 1,  # insertion into a\n                prev[j - 1] + cost  # substitution or match\n            )\n        prev = curr\n    \n    return prev[n]\n```"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 94,
+      "completion_tokens": 329,
+      "total_tokens": 423,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 94,
+      "prompt_ms": 666.9,
+      "prompt_per_token_ms": 7.095,
+      "prompt_per_second": 141.0,
+      "predicted_n": 329,
+      "predicted_ms": 5218.2,
+      "predicted_per_token_ms": 15.861,
+      "predicted_per_second": 63.0,
+      "draft_n": 355,
+      "draft_n_accepted": 253
+    }
+  },
+  "elapsed_s": 5.893928900000901,
+  "finished_utc": "2026-11-04T21:10:40.114058+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 14752595968,
+    "percent": 56.6,
+    "used": 19229462528,
+    "free": 14752595968
+  },
+  "uncached": true
+}

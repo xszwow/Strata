@@ -1,0 +1,9296 @@
+{
+  "context-260k": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": []
+  },
+  "context-64k": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": []
+  },
+  "context-nearfull-image": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": []
+  },
+  "quality-edit_distance-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "test_cases": 107,
+    "cases": [
+      {
+        "args": [
+          "",
+          ""
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "abc"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "abc",
+          ""
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "kitten",
+          "sitting"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫叶兰花",
+          "兰花枫叶"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "ab"
+        ],
+        "expected": 1999,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a",
+          "🙂b"
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫bcab枫c🙂枫🙂c",
+          ""
+        ],
+        "expected": 11,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂🙂ac枫🙂🙂",
+          "枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba枫bccccc🙂a",
+          "枫🙂枫枫🙂🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫c🙂bb",
+          "b枫🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a枫cc枫🙂c",
+          ""
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "🙂a🙂🙂🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫ba🙂",
+          "🙂枫c枫b"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂bb枫ca枫ba枫"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "c枫枫枫c枫枫bc",
+          "b枫ca🙂枫a枫aab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫aa🙂",
+          ""
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ccbc",
+          "abb🙂b枫a🙂bb枫"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂ba🙂ab🙂🙂aab",
+          "a枫🙂🙂🙂a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "ca枫bcca",
+          "a🙂ba🙂a枫枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb",
+          "b🙂aa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "🙂🙂a🙂bb枫a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂",
+          "abbabcb枫🙂a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b🙂cb枫b",
+          "🙂b🙂🙂b🙂a"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "🙂"
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂",
+          "abcb枫a"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫acbc🙂枫🙂c枫",
+          "baa"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂枫cbb",
+          "aac枫🙂b枫c🙂a"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "b🙂枫cb🙂枫枫b"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "ab",
+          ""
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂🙂ac🙂a",
+          "a枫bccb"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "a枫🙂b🙂🙂c"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbc枫枫",
+          "a🙂a"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "bc🙂a",
+          "cb"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "abb",
+          "caa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "acbaaabab",
+          "c枫枫枫🙂"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bcb🙂c",
+          "枫c枫cc枫🙂bab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂cc",
+          "c"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂acb枫🙂枫枫",
+          "cacbc枫枫枫枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "acc枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba",
+          "枫🙂🙂a枫b🙂b🙂ab"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "aba🙂🙂🙂bbaab",
+          "abbaa"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "b🙂🙂枫枫a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "c🙂枫bccb枫a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂",
+          "🙂枫"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂aaca🙂ca",
+          "c🙂枫c🙂c"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "caa",
+          "枫枫🙂c枫枫🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫枫🙂aa🙂cb🙂🙂",
+          "a🙂枫aabab"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂b枫bb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂🙂",
+          "ababc🙂a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂bbb🙂枫",
+          "b🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ac枫ccab",
+          "枫🙂🙂ac枫🙂b🙂🙂a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "枫cba枫ab枫c"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫b",
+          "b枫ca"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂c枫🙂🙂枫c枫",
+          "cabb"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫cc枫🙂",
+          "🙂c🙂bcbaabb🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂",
+          "c🙂aa枫🙂🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ac枫c🙂枫a🙂",
+          "aa🙂ba🙂a枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂枫abc🙂枫a",
+          "c枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫ba",
+          "aa"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫c枫c枫a🙂",
+          "c枫🙂🙂ba🙂c"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "bc🙂"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a🙂🙂c🙂ca",
+          "abbacb枫abc"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbcba",
+          "b🙂枫a枫枫🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂b",
+          "babab🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b🙂a🙂ccc",
+          "bbcba枫枫a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂",
+          ""
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂🙂acab枫",
+          "bbb"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂ac枫c枫枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "bba🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂b枫🙂🙂ac",
+          "枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫a",
+          "枫🙂b枫aa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "bcbc"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a",
+          "aaca枫🙂🙂cb"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a枫aa🙂",
+          "a枫a"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫bbaac枫a",
+          "b"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫c枫b🙂bc枫枫a",
+          "baccb枫a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "abcb枫🙂ab🙂",
+          "枫枫c🙂"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫aa🙂aa",
+          "aa🙂🙂b🙂🙂🙂枫🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "caa枫🙂b",
+          "b枫bb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "枫ca"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "c枫b"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫c",
+          "aa🙂ccc"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a",
+          "🙂🙂枫ccb枫c🙂"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂bc枫a🙂枫🙂枫",
+          "🙂枫acc"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "a枫cbaabc枫🙂"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫b",
+          "cb🙂ba🙂🙂c枫"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bcb枫cc枫ab",
+          "枫a🙂c枫b"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫bcb🙂枫cca",
+          "bca🙂🙂🙂c枫🙂ab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "枫b🙂bbb"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ca",
+          "🙂c🙂枫cc🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ccb枫b枫ca",
+          "枫c🙂a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂c🙂bbba",
+          "枫aa🙂🙂aba"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba",
+          "accabacc"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂",
+          "a🙂🙂a枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a",
+          "🙂c🙂aab🙂枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b枫枫",
+          "🙂🙂b枫枫bbc🙂🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a🙂枫🙂🙂ab🙂枫b",
+          "a🙂枫cb枫abcaa"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂枫🙂a枫🙂",
+          "🙂🙂acc🙂ac"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbc",
+          "枫abbc枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "bac枫枫b🙂c🙂b🙂",
+          "c🙂枫c枫a🙂"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂bb🙂cb枫c🙂",
+          "bbabcc🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂a枫🙂🙂abc枫a",
+          "🙂ab枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb",
+          "🙂🙂枫bacba🙂b"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫",
+          "🙂ab"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "cabba",
+          "cbb🙂abb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "abc枫枫",
+          "枫🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      }
+    ],
+    "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+  },
+  "quality-edit_distance-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "test_cases": 107,
+    "cases": [
+      {
+        "args": [
+          "",
+          ""
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "abc"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "abc",
+          ""
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "kitten",
+          "sitting"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫叶兰花",
+          "兰花枫叶"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "ab"
+        ],
+        "expected": 1999,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a",
+          "🙂b"
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫bcab枫c🙂枫🙂c",
+          ""
+        ],
+        "expected": 11,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂🙂ac枫🙂🙂",
+          "枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba枫bccccc🙂a",
+          "枫🙂枫枫🙂🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫c🙂bb",
+          "b枫🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a枫cc枫🙂c",
+          ""
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "🙂a🙂🙂🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫ba🙂",
+          "🙂枫c枫b"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂bb枫ca枫ba枫"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "c枫枫枫c枫枫bc",
+          "b枫ca🙂枫a枫aab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫aa🙂",
+          ""
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ccbc",
+          "abb🙂b枫a🙂bb枫"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂ba🙂ab🙂🙂aab",
+          "a枫🙂🙂🙂a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "ca枫bcca",
+          "a🙂ba🙂a枫枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb",
+          "b🙂aa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "🙂🙂a🙂bb枫a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂",
+          "abbabcb枫🙂a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b🙂cb枫b",
+          "🙂b🙂🙂b🙂a"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "🙂"
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂",
+          "abcb枫a"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫acbc🙂枫🙂c枫",
+          "baa"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂枫cbb",
+          "aac枫🙂b枫c🙂a"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "b🙂枫cb🙂枫枫b"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "ab",
+          ""
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂🙂ac🙂a",
+          "a枫bccb"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "a枫🙂b🙂🙂c"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbc枫枫",
+          "a🙂a"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "bc🙂a",
+          "cb"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "abb",
+          "caa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "acbaaabab",
+          "c枫枫枫🙂"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bcb🙂c",
+          "枫c枫cc枫🙂bab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂cc",
+          "c"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂acb枫🙂枫枫",
+          "cacbc枫枫枫枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "acc枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba",
+          "枫🙂🙂a枫b🙂b🙂ab"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "aba🙂🙂🙂bbaab",
+          "abbaa"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "b🙂🙂枫枫a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "c🙂枫bccb枫a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂",
+          "🙂枫"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂aaca🙂ca",
+          "c🙂枫c🙂c"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "caa",
+          "枫枫🙂c枫枫🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫枫🙂aa🙂cb🙂🙂",
+          "a🙂枫aabab"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂b枫bb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂🙂",
+          "ababc🙂a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂bbb🙂枫",
+          "b🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "ac枫ccab",
+          "枫🙂🙂ac枫🙂b🙂🙂a"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "枫cba枫ab枫c"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫b",
+          "b枫ca"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂c枫🙂🙂枫c枫",
+          "cabb"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫cc枫🙂",
+          "🙂c🙂bcbaabb🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂",
+          "c🙂aa枫🙂🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ac枫c🙂枫a🙂",
+          "aa🙂ba🙂a枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "b🙂枫abc🙂枫a",
+          "c枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫ba",
+          "aa"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫c枫c枫a🙂",
+          "c枫🙂🙂ba🙂c"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "bc🙂"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a🙂🙂c🙂ca",
+          "abbacb枫abc"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbcba",
+          "b🙂枫a枫枫🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂b",
+          "babab🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b🙂a🙂ccc",
+          "bbcba枫枫a枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂",
+          ""
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂🙂acab枫",
+          "bbb"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "b",
+          "🙂ac枫c枫枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "bba🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫🙂b枫🙂🙂ac",
+          "枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫a",
+          "枫🙂b枫aa"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "c",
+          "bcbc"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a",
+          "aaca枫🙂🙂cb"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a枫aa🙂",
+          "a枫a"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫bbaac枫a",
+          "b"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫c枫b🙂bc枫枫a",
+          "baccb枫a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "abcb枫🙂ab🙂",
+          "枫枫c🙂"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫aa🙂aa",
+          "aa🙂🙂b🙂🙂🙂枫🙂"
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          "caa枫🙂b",
+          "b枫bb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "a",
+          "枫ca"
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "c枫b"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "b枫c",
+          "aa🙂ccc"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫a",
+          "🙂🙂枫ccb枫c🙂"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂bc枫a🙂枫🙂枫",
+          "🙂枫acc"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "a枫cbaabc枫🙂"
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          "a枫b",
+          "cb🙂ba🙂🙂c枫"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "bcb枫cc枫ab",
+          "枫a🙂c枫b"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫枫bcb🙂枫cca",
+          "bca🙂🙂🙂c枫🙂ab"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "",
+          "枫b🙂bbb"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ca",
+          "🙂c🙂枫cc🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "ccb枫b枫ca",
+          "枫c🙂a"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂c🙂bbba",
+          "枫aa🙂🙂aba"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "ba",
+          "accabacc"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂",
+          "a🙂🙂a枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a",
+          "🙂c🙂aab🙂枫"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂b枫枫",
+          "🙂🙂b枫枫bbc🙂🙂"
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂a🙂枫🙂🙂ab🙂枫b",
+          "a🙂枫cb枫abcaa"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "🙂枫🙂a枫🙂",
+          "🙂🙂acc🙂ac"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "cbc",
+          "枫abbc枫"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "bac枫枫b🙂c🙂b🙂",
+          "c🙂枫c枫a🙂"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb🙂bb🙂cb枫c🙂",
+          "bbabcc🙂"
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          "a🙂a枫🙂🙂abc枫a",
+          "🙂ab枫"
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          "bb",
+          "🙂🙂枫bacba🙂b"
+        ],
+        "expected": 8,
+        "raises": null
+      },
+      {
+        "args": [
+          "枫",
+          "🙂ab"
+        ],
+        "expected": 3,
+        "raises": null
+      },
+      {
+        "args": [
+          "cabba",
+          "cbb🙂abb"
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          "abc枫枫",
+          "枫🙂"
+        ],
+        "expected": 4,
+        "raises": null
+      }
+    ],
+    "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+  },
+  "quality-schedule_profit-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "test_cases": 120,
+    "cases": [
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              12,
+              -10
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              7,
+              -10
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              16
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              7,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              5
+            ]
+          ]
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              14
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              -4
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              4,
+              7
+            ]
+          ]
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              16
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              2
+            ]
+          ]
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              6,
+              13
+            ],
+            [
+              8,
+              12,
+              0
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              -3
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              16
+            ],
+            [
+              8,
+              11,
+              5
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              8,
+              -3
+            ],
+            [
+              8,
+              9,
+              6
+            ]
+          ]
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              10
+            ],
+            [
+              8,
+              10,
+              7
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -6
+            ],
+            [
+              1,
+              6,
+              -7
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              -5
+            ],
+            [
+              4,
+              9,
+              19
+            ]
+          ]
+        ],
+        "expected": 19,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              10
+            ],
+            [
+              6,
+              8,
+              14
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              8
+            ],
+            [
+              8,
+              9,
+              13
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              8,
+              13,
+              8
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              -1
+            ],
+            [
+              1,
+              5,
+              13
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              7
+            ],
+            [
+              4,
+              9,
+              -4
+            ],
+            [
+              8,
+              9,
+              10
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              0,
+              4,
+              -5
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              4
+            ],
+            [
+              0,
+              2,
+              -2
+            ],
+            [
+              0,
+              1,
+              -2
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              -8
+            ],
+            [
+              4,
+              6,
+              16
+            ],
+            [
+              1,
+              5,
+              2
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              -4
+            ],
+            [
+              3,
+              6,
+              -4
+            ],
+            [
+              4,
+              8,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              -4
+            ],
+            [
+              5,
+              6,
+              -4
+            ],
+            [
+              5,
+              6,
+              -4
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              5,
+              9,
+              3
+            ],
+            [
+              1,
+              5,
+              -5
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              8
+            ],
+            [
+              1,
+              3,
+              7
+            ],
+            [
+              3,
+              8,
+              8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              2
+            ],
+            [
+              0,
+              2,
+              -2
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              -6
+            ],
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              6
+            ]
+          ]
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              4,
+              -5
+            ],
+            [
+              7,
+              8,
+              9
+            ],
+            [
+              2,
+              4,
+              -5
+            ]
+          ]
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              11
+            ],
+            [
+              7,
+              8,
+              10
+            ],
+            [
+              3,
+              6,
+              11
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              -10
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              7,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              13
+            ],
+            [
+              6,
+              7,
+              7
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              4,
+              5,
+              15
+            ]
+          ]
+        ],
+        "expected": 40,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              20
+            ],
+            [
+              9,
+              12,
+              14
+            ],
+            [
+              8,
+              10,
+              16
+            ],
+            [
+              4,
+              8,
+              20
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              10
+            ],
+            [
+              2,
+              7,
+              -6
+            ],
+            [
+              3,
+              6,
+              18
+            ],
+            [
+              8,
+              11,
+              9
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              -5
+            ],
+            [
+              9,
+              10,
+              9
+            ],
+            [
+              8,
+              13,
+              -5
+            ],
+            [
+              6,
+              7,
+              11
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              -10
+            ],
+            [
+              0,
+              2,
+              -9
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              0,
+              2,
+              -9
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              9,
+              9
+            ],
+            [
+              7,
+              11,
+              -4
+            ],
+            [
+              7,
+              9,
+              -4
+            ],
+            [
+              1,
+              2,
+              13
+            ]
+          ]
+        ],
+        "expected": 22,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              10,
+              -4
+            ],
+            [
+              4,
+              5,
+              8
+            ],
+            [
+              9,
+              14,
+              19
+            ],
+            [
+              9,
+              14,
+              19
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              10
+            ],
+            [
+              4,
+              7,
+              12
+            ],
+            [
+              4,
+              7,
+              12
+            ],
+            [
+              9,
+              12,
+              17
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              7,
+              8
+            ],
+            [
+              4,
+              5,
+              15
+            ],
+            [
+              5,
+              8,
+              -2
+            ],
+            [
+              5,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 23,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -6
+            ],
+            [
+              1,
+              2,
+              16
+            ],
+            [
+              0,
+              3,
+              -9
+            ],
+            [
+              0,
+              3,
+              17
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              7,
+              3
+            ],
+            [
+              8,
+              13,
+              14
+            ],
+            [
+              6,
+              9,
+              -3
+            ],
+            [
+              6,
+              10,
+              10
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              5
+            ],
+            [
+              2,
+              6,
+              -9
+            ],
+            [
+              9,
+              12,
+              18
+            ],
+            [
+              7,
+              8,
+              11
+            ],
+            [
+              7,
+              8,
+              11
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              14,
+              15
+            ],
+            [
+              3,
+              7,
+              11
+            ],
+            [
+              1,
+              3,
+              8
+            ],
+            [
+              8,
+              13,
+              -7
+            ],
+            [
+              3,
+              7,
+              11
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              4
+            ],
+            [
+              4,
+              8,
+              14
+            ],
+            [
+              9,
+              14,
+              -7
+            ],
+            [
+              4,
+              5,
+              14
+            ],
+            [
+              9,
+              14,
+              -7
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              7
+            ],
+            [
+              4,
+              5,
+              18
+            ],
+            [
+              3,
+              7,
+              -5
+            ],
+            [
+              0,
+              1,
+              20
+            ],
+            [
+              1,
+              5,
+              -3
+            ]
+          ]
+        ],
+        "expected": 45,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              -6
+            ],
+            [
+              8,
+              9,
+              4
+            ],
+            [
+              2,
+              4,
+              -2
+            ],
+            [
+              4,
+              7,
+              -4
+            ],
+            [
+              8,
+              9,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              -8
+            ],
+            [
+              0,
+              4,
+              18
+            ],
+            [
+              7,
+              10,
+              10
+            ],
+            [
+              9,
+              11,
+              -7
+            ],
+            [
+              9,
+              14,
+              -7
+            ]
+          ]
+        ],
+        "expected": 28,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              19
+            ],
+            [
+              2,
+              3,
+              9
+            ],
+            [
+              7,
+              12,
+              3
+            ],
+            [
+              8,
+              10,
+              10
+            ],
+            [
+              6,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              7,
+              8,
+              10
+            ],
+            [
+              8,
+              12,
+              -2
+            ],
+            [
+              7,
+              9,
+              18
+            ],
+            [
+              5,
+              9,
+              14
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              15
+            ],
+            [
+              0,
+              1,
+              17
+            ],
+            [
+              9,
+              13,
+              16
+            ],
+            [
+              0,
+              4,
+              15
+            ],
+            [
+              8,
+              11,
+              18
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              -8
+            ],
+            [
+              7,
+              12,
+              -6
+            ],
+            [
+              5,
+              10,
+              16
+            ],
+            [
+              3,
+              8,
+              -8
+            ],
+            [
+              2,
+              7,
+              -10
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              18
+            ],
+            [
+              2,
+              4,
+              18
+            ],
+            [
+              5,
+              10,
+              11
+            ],
+            [
+              5,
+              10,
+              11
+            ],
+            [
+              7,
+              8,
+              3
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              10,
+              1
+            ],
+            [
+              3,
+              5,
+              17
+            ],
+            [
+              3,
+              6,
+              14
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              6,
+              10,
+              1
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              -8
+            ],
+            [
+              6,
+              8,
+              17
+            ],
+            [
+              4,
+              5,
+              19
+            ],
+            [
+              8,
+              13,
+              -1
+            ],
+            [
+              9,
+              10,
+              -7
+            ],
+            [
+              9,
+              10,
+              2
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              -4
+            ],
+            [
+              2,
+              5,
+              1
+            ],
+            [
+              7,
+              11,
+              11
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              0,
+              4,
+              18
+            ],
+            [
+              4,
+              7,
+              14
+            ]
+          ]
+        ],
+        "expected": 43,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              4,
+              4
+            ],
+            [
+              6,
+              9,
+              10
+            ],
+            [
+              4,
+              9,
+              -8
+            ],
+            [
+              4,
+              9,
+              -8
+            ],
+            [
+              3,
+              7,
+              1
+            ],
+            [
+              4,
+              8,
+              17
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              -8
+            ],
+            [
+              9,
+              10,
+              5
+            ],
+            [
+              8,
+              10,
+              1
+            ],
+            [
+              2,
+              7,
+              -9
+            ],
+            [
+              2,
+              3,
+              -9
+            ],
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              10,
+              -6
+            ],
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              0,
+              3,
+              17
+            ],
+            [
+              0,
+              2,
+              16
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              2,
+              7,
+              -5
+            ],
+            [
+              7,
+              9,
+              13
+            ],
+            [
+              7,
+              9,
+              10
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              3,
+              7,
+              -1
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              11,
+              -7
+            ],
+            [
+              3,
+              4,
+              20
+            ],
+            [
+              8,
+              12,
+              15
+            ],
+            [
+              8,
+              10,
+              -5
+            ],
+            [
+              8,
+              13,
+              16
+            ],
+            [
+              8,
+              12,
+              15
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              5
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              0,
+              5,
+              12
+            ],
+            [
+              2,
+              7,
+              -2
+            ],
+            [
+              3,
+              8,
+              5
+            ],
+            [
+              4,
+              5,
+              15
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              8
+            ],
+            [
+              9,
+              10,
+              2
+            ],
+            [
+              4,
+              5,
+              12
+            ],
+            [
+              4,
+              5,
+              12
+            ],
+            [
+              4,
+              9,
+              -6
+            ],
+            [
+              5,
+              10,
+              11
+            ]
+          ]
+        ],
+        "expected": 23,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              -2
+            ],
+            [
+              4,
+              8,
+              -4
+            ],
+            [
+              6,
+              10,
+              18
+            ],
+            [
+              6,
+              11,
+              -5
+            ],
+            [
+              3,
+              4,
+              19
+            ],
+            [
+              2,
+              6,
+              9
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              3
+            ],
+            [
+              9,
+              13,
+              6
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              12,
+              1
+            ],
+            [
+              8,
+              11,
+              5
+            ],
+            [
+              7,
+              12,
+              1
+            ]
+          ]
+        ],
+        "expected": 12,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              0,
+              5,
+              13
+            ],
+            [
+              0,
+              4,
+              -3
+            ],
+            [
+              0,
+              4,
+              5
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              3,
+              -1
+            ],
+            [
+              1,
+              2,
+              19
+            ],
+            [
+              3,
+              7,
+              7
+            ],
+            [
+              5,
+              9,
+              17
+            ],
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              5,
+              9,
+              17
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              9,
+              -4
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              9,
+              10,
+              -9
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              9,
+              11,
+              14
+            ]
+          ]
+        ],
+        "expected": 30,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -5
+            ],
+            [
+              3,
+              8,
+              3
+            ],
+            [
+              2,
+              6,
+              -8
+            ],
+            [
+              2,
+              7,
+              -10
+            ],
+            [
+              1,
+              3,
+              10
+            ],
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              0,
+              5,
+              7
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              5,
+              -10
+            ],
+            [
+              6,
+              10,
+              -8
+            ],
+            [
+              5,
+              7,
+              20
+            ],
+            [
+              8,
+              13,
+              -4
+            ],
+            [
+              1,
+              3,
+              -10
+            ],
+            [
+              5,
+              7,
+              14
+            ],
+            [
+              7,
+              12,
+              -5
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              7
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              9,
+              10,
+              4
+            ],
+            [
+              4,
+              5,
+              -8
+            ],
+            [
+              9,
+              10,
+              16
+            ],
+            [
+              9,
+              14,
+              1
+            ]
+          ]
+        ],
+        "expected": 28,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              11
+            ],
+            [
+              4,
+              8,
+              11
+            ],
+            [
+              0,
+              1,
+              -7
+            ],
+            [
+              0,
+              5,
+              -8
+            ],
+            [
+              9,
+              11,
+              -7
+            ],
+            [
+              1,
+              5,
+              15
+            ],
+            [
+              1,
+              5,
+              -8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              4,
+              13
+            ],
+            [
+              6,
+              10,
+              3
+            ],
+            [
+              4,
+              8,
+              -5
+            ],
+            [
+              6,
+              10,
+              3
+            ],
+            [
+              4,
+              7,
+              -3
+            ],
+            [
+              5,
+              8,
+              15
+            ],
+            [
+              0,
+              1,
+              17
+            ]
+          ]
+        ],
+        "expected": 45,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              13
+            ],
+            [
+              0,
+              5,
+              18
+            ],
+            [
+              3,
+              8,
+              20
+            ],
+            [
+              9,
+              14,
+              12
+            ],
+            [
+              6,
+              7,
+              -3
+            ],
+            [
+              8,
+              12,
+              -1
+            ],
+            [
+              3,
+              8,
+              20
+            ]
+          ]
+        ],
+        "expected": 32,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              11,
+              5
+            ],
+            [
+              5,
+              8,
+              -8
+            ],
+            [
+              5,
+              7,
+              16
+            ],
+            [
+              7,
+              9,
+              11
+            ],
+            [
+              8,
+              11,
+              20
+            ],
+            [
+              3,
+              6,
+              13
+            ],
+            [
+              3,
+              8,
+              13
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              10,
+              -3
+            ],
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              7,
+              8,
+              20
+            ],
+            [
+              1,
+              4,
+              11
+            ],
+            [
+              3,
+              5,
+              17
+            ],
+            [
+              9,
+              11,
+              6
+            ]
+          ]
+        ],
+        "expected": 53,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              -3
+            ],
+            [
+              9,
+              13,
+              -6
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              5,
+              6,
+              -5
+            ],
+            [
+              8,
+              10,
+              6
+            ],
+            [
+              3,
+              8,
+              2
+            ],
+            [
+              4,
+              8,
+              18
+            ]
+          ]
+        ],
+        "expected": 24,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              9,
+              13,
+              2
+            ],
+            [
+              9,
+              14,
+              0
+            ],
+            [
+              2,
+              7,
+              14
+            ],
+            [
+              2,
+              5,
+              18
+            ],
+            [
+              5,
+              8,
+              10
+            ],
+            [
+              8,
+              12,
+              9
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              16
+            ],
+            [
+              4,
+              7,
+              -9
+            ],
+            [
+              7,
+              11,
+              9
+            ],
+            [
+              6,
+              8,
+              -3
+            ],
+            [
+              8,
+              13,
+              -8
+            ],
+            [
+              5,
+              7,
+              -6
+            ],
+            [
+              6,
+              10,
+              4
+            ],
+            [
+              9,
+              14,
+              13
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              6,
+              8,
+              -6
+            ],
+            [
+              5,
+              8,
+              11
+            ],
+            [
+              5,
+              9,
+              3
+            ],
+            [
+              3,
+              7,
+              -9
+            ],
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              14,
+              5
+            ],
+            [
+              8,
+              10,
+              -8
+            ],
+            [
+              2,
+              6,
+              20
+            ],
+            [
+              1,
+              5,
+              -1
+            ],
+            [
+              1,
+              5,
+              -1
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              2,
+              4,
+              9
+            ],
+            [
+              5,
+              7,
+              19
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              9,
+              11,
+              15
+            ],
+            [
+              9,
+              11,
+              15
+            ],
+            [
+              0,
+              3,
+              19
+            ],
+            [
+              9,
+              12,
+              2
+            ],
+            [
+              5,
+              10,
+              19
+            ],
+            [
+              7,
+              12,
+              5
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              6,
+              9,
+              17
+            ],
+            [
+              7,
+              9,
+              7
+            ],
+            [
+              6,
+              10,
+              1
+            ],
+            [
+              7,
+              9,
+              -8
+            ],
+            [
+              2,
+              6,
+              14
+            ],
+            [
+              1,
+              4,
+              12
+            ],
+            [
+              6,
+              11,
+              20
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              17
+            ],
+            [
+              2,
+              4,
+              4
+            ],
+            [
+              3,
+              6,
+              7
+            ],
+            [
+              9,
+              11,
+              14
+            ],
+            [
+              1,
+              3,
+              9
+            ],
+            [
+              7,
+              11,
+              5
+            ],
+            [
+              9,
+              11,
+              5
+            ],
+            [
+              2,
+              5,
+              -9
+            ]
+          ]
+        ],
+        "expected": 40,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              6,
+              3
+            ],
+            [
+              7,
+              10,
+              -7
+            ],
+            [
+              0,
+              4,
+              -10
+            ],
+            [
+              4,
+              5,
+              -1
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              4,
+              8,
+              -1
+            ],
+            [
+              9,
+              13,
+              5
+            ],
+            [
+              8,
+              9,
+              14
+            ]
+          ]
+        ],
+        "expected": 39,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -1
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              1,
+              5,
+              -2
+            ],
+            [
+              4,
+              9,
+              5
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              0,
+              2,
+              13
+            ],
+            [
+              2,
+              6,
+              -8
+            ],
+            [
+              2,
+              5,
+              -2
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              5,
+              -7
+            ],
+            [
+              9,
+              10,
+              6
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              5,
+              7,
+              17
+            ],
+            [
+              3,
+              6,
+              17
+            ],
+            [
+              5,
+              8,
+              8
+            ],
+            [
+              5,
+              8,
+              8
+            ]
+          ]
+        ],
+        "expected": 33,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -10
+            ],
+            [
+              2,
+              3,
+              14
+            ],
+            [
+              6,
+              8,
+              -2
+            ],
+            [
+              1,
+              4,
+              -2
+            ],
+            [
+              9,
+              11,
+              18
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              6,
+              -8
+            ],
+            [
+              5,
+              7,
+              5
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -2
+            ],
+            [
+              3,
+              4,
+              16
+            ],
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              5,
+              6,
+              -7
+            ],
+            [
+              5,
+              8,
+              19
+            ],
+            [
+              6,
+              7,
+              -9
+            ],
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              4,
+              7,
+              -5
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              5,
+              18
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              0,
+              3,
+              16
+            ],
+            [
+              5,
+              7,
+              -5
+            ],
+            [
+              7,
+              11,
+              8
+            ],
+            [
+              6,
+              11,
+              20
+            ],
+            [
+              7,
+              11,
+              8
+            ],
+            [
+              6,
+              7,
+              13
+            ]
+          ]
+        ],
+        "expected": 39,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              -10
+            ],
+            [
+              9,
+              11,
+              -8
+            ],
+            [
+              6,
+              9,
+              -7
+            ],
+            [
+              5,
+              7,
+              18
+            ],
+            [
+              7,
+              12,
+              2
+            ],
+            [
+              0,
+              4,
+              14
+            ],
+            [
+              8,
+              11,
+              -1
+            ],
+            [
+              9,
+              11,
+              -8
+            ],
+            [
+              7,
+              8,
+              -10
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              6,
+              19
+            ],
+            [
+              5,
+              7,
+              18
+            ],
+            [
+              9,
+              10,
+              7
+            ],
+            [
+              3,
+              7,
+              -8
+            ],
+            [
+              0,
+              3,
+              -1
+            ],
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              4,
+              8,
+              -8
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              -2
+            ],
+            [
+              9,
+              14,
+              18
+            ],
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              1,
+              6,
+              -10
+            ],
+            [
+              0,
+              5,
+              16
+            ],
+            [
+              2,
+              7,
+              4
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              9,
+              14,
+              18
+            ],
+            [
+              5,
+              8,
+              3
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              7,
+              4
+            ],
+            [
+              6,
+              9,
+              3
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              2,
+              7,
+              -4
+            ],
+            [
+              6,
+              10,
+              -6
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              8,
+              9,
+              11
+            ],
+            [
+              3,
+              6,
+              -8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              5,
+              2
+            ],
+            [
+              5,
+              10,
+              6
+            ],
+            [
+              4,
+              7,
+              18
+            ],
+            [
+              0,
+              1,
+              10
+            ],
+            [
+              5,
+              7,
+              -5
+            ],
+            [
+              0,
+              5,
+              2
+            ],
+            [
+              1,
+              6,
+              11
+            ],
+            [
+              9,
+              11,
+              20
+            ],
+            [
+              4,
+              7,
+              18
+            ]
+          ]
+        ],
+        "expected": 48,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              19
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              8,
+              9,
+              15
+            ],
+            [
+              8,
+              9,
+              15
+            ],
+            [
+              0,
+              2,
+              -9
+            ],
+            [
+              2,
+              4,
+              17
+            ],
+            [
+              9,
+              13,
+              7
+            ],
+            [
+              3,
+              6,
+              17
+            ],
+            [
+              4,
+              7,
+              18
+            ]
+          ]
+        ],
+        "expected": 60,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              8,
+              -5
+            ],
+            [
+              5,
+              10,
+              18
+            ],
+            [
+              0,
+              3,
+              12
+            ],
+            [
+              1,
+              6,
+              13
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              1,
+              6,
+              13
+            ],
+            [
+              1,
+              6,
+              -10
+            ],
+            [
+              9,
+              10,
+              -9
+            ],
+            [
+              8,
+              9,
+              -8
+            ]
+          ]
+        ],
+        "expected": 30,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              -6
+            ],
+            [
+              2,
+              3,
+              -3
+            ],
+            [
+              6,
+              7,
+              17
+            ],
+            [
+              7,
+              8,
+              4
+            ],
+            [
+              3,
+              8,
+              13
+            ],
+            [
+              9,
+              12,
+              18
+            ],
+            [
+              8,
+              9,
+              17
+            ],
+            [
+              9,
+              13,
+              17
+            ],
+            [
+              4,
+              6,
+              0
+            ]
+          ]
+        ],
+        "expected": 56,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              8,
+              12,
+              6
+            ],
+            [
+              3,
+              8,
+              20
+            ],
+            [
+              4,
+              8,
+              1
+            ],
+            [
+              6,
+              8,
+              -10
+            ],
+            [
+              2,
+              6,
+              -10
+            ],
+            [
+              2,
+              5,
+              7
+            ],
+            [
+              2,
+              6,
+              -9
+            ]
+          ]
+        ],
+        "expected": 31,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              -10
+            ],
+            [
+              8,
+              12,
+              18
+            ],
+            [
+              4,
+              5,
+              4
+            ],
+            [
+              6,
+              7,
+              -8
+            ],
+            [
+              6,
+              8,
+              -4
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              6,
+              4
+            ],
+            [
+              1,
+              2,
+              11
+            ],
+            [
+              4,
+              6,
+              1
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              13,
+              -9
+            ],
+            [
+              9,
+              10,
+              3
+            ],
+            [
+              2,
+              4,
+              17
+            ],
+            [
+              4,
+              7,
+              -3
+            ],
+            [
+              7,
+              12,
+              3
+            ],
+            [
+              0,
+              4,
+              14
+            ],
+            [
+              1,
+              5,
+              -2
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              1,
+              3,
+              16
+            ]
+          ]
+        ],
+        "expected": 31,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              13,
+              5
+            ],
+            [
+              6,
+              10,
+              -6
+            ],
+            [
+              7,
+              12,
+              13
+            ],
+            [
+              4,
+              9,
+              20
+            ],
+            [
+              9,
+              13,
+              -2
+            ],
+            [
+              8,
+              12,
+              -6
+            ],
+            [
+              8,
+              12,
+              3
+            ],
+            [
+              4,
+              7,
+              7
+            ],
+            [
+              2,
+              4,
+              17
+            ]
+          ]
+        ],
+        "expected": 42,
+        "raises": null
+      }
+    ],
+    "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+  },
+  "quality-schedule_profit-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "test_cases": 120,
+    "cases": [
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              12,
+              -10
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              7,
+              -10
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              16
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              7,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              5
+            ]
+          ]
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              14
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              -4
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              4,
+              7
+            ]
+          ]
+        ],
+        "expected": 7,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              16
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              2
+            ]
+          ]
+        ],
+        "expected": 2,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              6,
+              13
+            ],
+            [
+              8,
+              12,
+              0
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              -3
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              16
+            ],
+            [
+              8,
+              11,
+              5
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              8,
+              -3
+            ],
+            [
+              8,
+              9,
+              6
+            ]
+          ]
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              10
+            ],
+            [
+              8,
+              10,
+              7
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -6
+            ],
+            [
+              1,
+              6,
+              -7
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              -5
+            ],
+            [
+              4,
+              9,
+              19
+            ]
+          ]
+        ],
+        "expected": 19,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              10
+            ],
+            [
+              6,
+              8,
+              14
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              8
+            ],
+            [
+              8,
+              9,
+              13
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              8,
+              13,
+              8
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              -1
+            ],
+            [
+              1,
+              5,
+              13
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              7
+            ],
+            [
+              4,
+              9,
+              -4
+            ],
+            [
+              8,
+              9,
+              10
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              0,
+              4,
+              -5
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              4
+            ],
+            [
+              0,
+              2,
+              -2
+            ],
+            [
+              0,
+              1,
+              -2
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              -8
+            ],
+            [
+              4,
+              6,
+              16
+            ],
+            [
+              1,
+              5,
+              2
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              -4
+            ],
+            [
+              3,
+              6,
+              -4
+            ],
+            [
+              4,
+              8,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              -4
+            ],
+            [
+              5,
+              6,
+              -4
+            ],
+            [
+              5,
+              6,
+              -4
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              5,
+              9,
+              3
+            ],
+            [
+              1,
+              5,
+              -5
+            ]
+          ]
+        ],
+        "expected": 10,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              8
+            ],
+            [
+              1,
+              3,
+              7
+            ],
+            [
+              3,
+              8,
+              8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              2
+            ],
+            [
+              0,
+              2,
+              -2
+            ],
+            [
+              0,
+              2,
+              13
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              -6
+            ],
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              6
+            ]
+          ]
+        ],
+        "expected": 6,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              4,
+              -5
+            ],
+            [
+              7,
+              8,
+              9
+            ],
+            [
+              2,
+              4,
+              -5
+            ]
+          ]
+        ],
+        "expected": 9,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              6,
+              11
+            ],
+            [
+              7,
+              8,
+              10
+            ],
+            [
+              3,
+              6,
+              11
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              -10
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              7,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 14,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              13
+            ],
+            [
+              6,
+              7,
+              7
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              4,
+              5,
+              15
+            ]
+          ]
+        ],
+        "expected": 40,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              20
+            ],
+            [
+              9,
+              12,
+              14
+            ],
+            [
+              8,
+              10,
+              16
+            ],
+            [
+              4,
+              8,
+              20
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              10
+            ],
+            [
+              2,
+              7,
+              -6
+            ],
+            [
+              3,
+              6,
+              18
+            ],
+            [
+              8,
+              11,
+              9
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              -5
+            ],
+            [
+              9,
+              10,
+              9
+            ],
+            [
+              8,
+              13,
+              -5
+            ],
+            [
+              6,
+              7,
+              11
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              -10
+            ],
+            [
+              0,
+              2,
+              -9
+            ],
+            [
+              5,
+              7,
+              0
+            ],
+            [
+              0,
+              2,
+              -9
+            ]
+          ]
+        ],
+        "expected": 0,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              9,
+              9
+            ],
+            [
+              7,
+              11,
+              -4
+            ],
+            [
+              7,
+              9,
+              -4
+            ],
+            [
+              1,
+              2,
+              13
+            ]
+          ]
+        ],
+        "expected": 22,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              10,
+              -4
+            ],
+            [
+              4,
+              5,
+              8
+            ],
+            [
+              9,
+              14,
+              19
+            ],
+            [
+              9,
+              14,
+              19
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              10
+            ],
+            [
+              4,
+              7,
+              12
+            ],
+            [
+              4,
+              7,
+              12
+            ],
+            [
+              9,
+              12,
+              17
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              7,
+              8
+            ],
+            [
+              4,
+              5,
+              15
+            ],
+            [
+              5,
+              8,
+              -2
+            ],
+            [
+              5,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 23,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -6
+            ],
+            [
+              1,
+              2,
+              16
+            ],
+            [
+              0,
+              3,
+              -9
+            ],
+            [
+              0,
+              3,
+              17
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              7,
+              3
+            ],
+            [
+              8,
+              13,
+              14
+            ],
+            [
+              6,
+              9,
+              -3
+            ],
+            [
+              6,
+              10,
+              10
+            ]
+          ]
+        ],
+        "expected": 17,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              5
+            ],
+            [
+              2,
+              6,
+              -9
+            ],
+            [
+              9,
+              12,
+              18
+            ],
+            [
+              7,
+              8,
+              11
+            ],
+            [
+              7,
+              8,
+              11
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              14,
+              15
+            ],
+            [
+              3,
+              7,
+              11
+            ],
+            [
+              1,
+              3,
+              8
+            ],
+            [
+              8,
+              13,
+              -7
+            ],
+            [
+              3,
+              7,
+              11
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              4
+            ],
+            [
+              4,
+              8,
+              14
+            ],
+            [
+              9,
+              14,
+              -7
+            ],
+            [
+              4,
+              5,
+              14
+            ],
+            [
+              9,
+              14,
+              -7
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              7
+            ],
+            [
+              4,
+              5,
+              18
+            ],
+            [
+              3,
+              7,
+              -5
+            ],
+            [
+              0,
+              1,
+              20
+            ],
+            [
+              1,
+              5,
+              -3
+            ]
+          ]
+        ],
+        "expected": 45,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              -6
+            ],
+            [
+              8,
+              9,
+              4
+            ],
+            [
+              2,
+              4,
+              -2
+            ],
+            [
+              4,
+              7,
+              -4
+            ],
+            [
+              8,
+              9,
+              4
+            ]
+          ]
+        ],
+        "expected": 4,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              -8
+            ],
+            [
+              0,
+              4,
+              18
+            ],
+            [
+              7,
+              10,
+              10
+            ],
+            [
+              9,
+              11,
+              -7
+            ],
+            [
+              9,
+              14,
+              -7
+            ]
+          ]
+        ],
+        "expected": 28,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              19
+            ],
+            [
+              2,
+              3,
+              9
+            ],
+            [
+              7,
+              12,
+              3
+            ],
+            [
+              8,
+              10,
+              10
+            ],
+            [
+              6,
+              8,
+              -2
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              7,
+              8,
+              10
+            ],
+            [
+              8,
+              12,
+              -2
+            ],
+            [
+              7,
+              9,
+              18
+            ],
+            [
+              5,
+              9,
+              14
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              4,
+              15
+            ],
+            [
+              0,
+              1,
+              17
+            ],
+            [
+              9,
+              13,
+              16
+            ],
+            [
+              0,
+              4,
+              15
+            ],
+            [
+              8,
+              11,
+              18
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              -8
+            ],
+            [
+              7,
+              12,
+              -6
+            ],
+            [
+              5,
+              10,
+              16
+            ],
+            [
+              3,
+              8,
+              -8
+            ],
+            [
+              2,
+              7,
+              -10
+            ]
+          ]
+        ],
+        "expected": 16,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              18
+            ],
+            [
+              2,
+              4,
+              18
+            ],
+            [
+              5,
+              10,
+              11
+            ],
+            [
+              5,
+              10,
+              11
+            ],
+            [
+              7,
+              8,
+              3
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              10,
+              1
+            ],
+            [
+              3,
+              5,
+              17
+            ],
+            [
+              3,
+              6,
+              14
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              6,
+              10,
+              1
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10,
+              -8
+            ],
+            [
+              6,
+              8,
+              17
+            ],
+            [
+              4,
+              5,
+              19
+            ],
+            [
+              8,
+              13,
+              -1
+            ],
+            [
+              9,
+              10,
+              -7
+            ],
+            [
+              9,
+              10,
+              2
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              -4
+            ],
+            [
+              2,
+              5,
+              1
+            ],
+            [
+              7,
+              11,
+              11
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              0,
+              4,
+              18
+            ],
+            [
+              4,
+              7,
+              14
+            ]
+          ]
+        ],
+        "expected": 43,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              4,
+              4
+            ],
+            [
+              6,
+              9,
+              10
+            ],
+            [
+              4,
+              9,
+              -8
+            ],
+            [
+              4,
+              9,
+              -8
+            ],
+            [
+              3,
+              7,
+              1
+            ],
+            [
+              4,
+              8,
+              17
+            ]
+          ]
+        ],
+        "expected": 21,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              12,
+              -8
+            ],
+            [
+              9,
+              10,
+              5
+            ],
+            [
+              8,
+              10,
+              1
+            ],
+            [
+              2,
+              7,
+              -9
+            ],
+            [
+              2,
+              3,
+              -9
+            ],
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ],
+        "expected": 5,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              10,
+              -6
+            ],
+            [
+              1,
+              6,
+              10
+            ],
+            [
+              0,
+              3,
+              17
+            ],
+            [
+              0,
+              2,
+              16
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              2,
+              7,
+              -5
+            ],
+            [
+              7,
+              9,
+              13
+            ],
+            [
+              7,
+              9,
+              10
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              3,
+              7,
+              -1
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              11,
+              -7
+            ],
+            [
+              3,
+              4,
+              20
+            ],
+            [
+              8,
+              12,
+              15
+            ],
+            [
+              8,
+              10,
+              -5
+            ],
+            [
+              8,
+              13,
+              16
+            ],
+            [
+              8,
+              12,
+              15
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              8,
+              5
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              0,
+              5,
+              12
+            ],
+            [
+              2,
+              7,
+              -2
+            ],
+            [
+              3,
+              8,
+              5
+            ],
+            [
+              4,
+              5,
+              15
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              8,
+              8
+            ],
+            [
+              9,
+              10,
+              2
+            ],
+            [
+              4,
+              5,
+              12
+            ],
+            [
+              4,
+              5,
+              12
+            ],
+            [
+              4,
+              9,
+              -6
+            ],
+            [
+              5,
+              10,
+              11
+            ]
+          ]
+        ],
+        "expected": 23,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              -2
+            ],
+            [
+              4,
+              8,
+              -4
+            ],
+            [
+              6,
+              10,
+              18
+            ],
+            [
+              6,
+              11,
+              -5
+            ],
+            [
+              3,
+              4,
+              19
+            ],
+            [
+              2,
+              6,
+              9
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              3
+            ],
+            [
+              9,
+              13,
+              6
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              12,
+              1
+            ],
+            [
+              8,
+              11,
+              5
+            ],
+            [
+              7,
+              12,
+              1
+            ]
+          ]
+        ],
+        "expected": 12,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              0,
+              5,
+              13
+            ],
+            [
+              0,
+              4,
+              -3
+            ],
+            [
+              0,
+              4,
+              5
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              3,
+              -1
+            ],
+            [
+              1,
+              2,
+              19
+            ],
+            [
+              3,
+              7,
+              7
+            ],
+            [
+              5,
+              9,
+              17
+            ],
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              5,
+              9,
+              17
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              9,
+              -4
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              9,
+              10,
+              -9
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              9,
+              11,
+              14
+            ]
+          ]
+        ],
+        "expected": 30,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -5
+            ],
+            [
+              3,
+              8,
+              3
+            ],
+            [
+              2,
+              6,
+              -8
+            ],
+            [
+              2,
+              7,
+              -10
+            ],
+            [
+              1,
+              3,
+              10
+            ],
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              0,
+              5,
+              7
+            ]
+          ]
+        ],
+        "expected": 13,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              5,
+              -10
+            ],
+            [
+              6,
+              10,
+              -8
+            ],
+            [
+              5,
+              7,
+              20
+            ],
+            [
+              8,
+              13,
+              -4
+            ],
+            [
+              1,
+              3,
+              -10
+            ],
+            [
+              5,
+              7,
+              14
+            ],
+            [
+              7,
+              12,
+              -5
+            ]
+          ]
+        ],
+        "expected": 20,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              7,
+              7
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              9,
+              10,
+              4
+            ],
+            [
+              4,
+              5,
+              -8
+            ],
+            [
+              9,
+              10,
+              16
+            ],
+            [
+              9,
+              14,
+              1
+            ]
+          ]
+        ],
+        "expected": 28,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              11
+            ],
+            [
+              4,
+              8,
+              11
+            ],
+            [
+              0,
+              1,
+              -7
+            ],
+            [
+              0,
+              5,
+              -8
+            ],
+            [
+              9,
+              11,
+              -7
+            ],
+            [
+              1,
+              5,
+              15
+            ],
+            [
+              1,
+              5,
+              -8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              4,
+              13
+            ],
+            [
+              6,
+              10,
+              3
+            ],
+            [
+              4,
+              8,
+              -5
+            ],
+            [
+              6,
+              10,
+              3
+            ],
+            [
+              4,
+              7,
+              -3
+            ],
+            [
+              5,
+              8,
+              15
+            ],
+            [
+              0,
+              1,
+              17
+            ]
+          ]
+        ],
+        "expected": 45,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              5,
+              13
+            ],
+            [
+              0,
+              5,
+              18
+            ],
+            [
+              3,
+              8,
+              20
+            ],
+            [
+              9,
+              14,
+              12
+            ],
+            [
+              6,
+              7,
+              -3
+            ],
+            [
+              8,
+              12,
+              -1
+            ],
+            [
+              3,
+              8,
+              20
+            ]
+          ]
+        ],
+        "expected": 32,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              6,
+              11,
+              5
+            ],
+            [
+              5,
+              8,
+              -8
+            ],
+            [
+              5,
+              7,
+              16
+            ],
+            [
+              7,
+              9,
+              11
+            ],
+            [
+              8,
+              11,
+              20
+            ],
+            [
+              3,
+              6,
+              13
+            ],
+            [
+              3,
+              8,
+              13
+            ]
+          ]
+        ],
+        "expected": 36,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              10,
+              -3
+            ],
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              7,
+              8,
+              20
+            ],
+            [
+              1,
+              4,
+              11
+            ],
+            [
+              3,
+              5,
+              17
+            ],
+            [
+              9,
+              11,
+              6
+            ]
+          ]
+        ],
+        "expected": 53,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              6,
+              -3
+            ],
+            [
+              9,
+              13,
+              -6
+            ],
+            [
+              2,
+              5,
+              -2
+            ],
+            [
+              5,
+              6,
+              -5
+            ],
+            [
+              8,
+              10,
+              6
+            ],
+            [
+              3,
+              8,
+              2
+            ],
+            [
+              4,
+              8,
+              18
+            ]
+          ]
+        ],
+        "expected": 24,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              9,
+              13,
+              2
+            ],
+            [
+              9,
+              14,
+              0
+            ],
+            [
+              2,
+              7,
+              14
+            ],
+            [
+              2,
+              5,
+              18
+            ],
+            [
+              5,
+              8,
+              10
+            ],
+            [
+              8,
+              12,
+              9
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              16
+            ],
+            [
+              4,
+              7,
+              -9
+            ],
+            [
+              7,
+              11,
+              9
+            ],
+            [
+              6,
+              8,
+              -3
+            ],
+            [
+              8,
+              13,
+              -8
+            ],
+            [
+              5,
+              7,
+              -6
+            ],
+            [
+              6,
+              10,
+              4
+            ],
+            [
+              9,
+              14,
+              13
+            ]
+          ]
+        ],
+        "expected": 29,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              6,
+              8,
+              -6
+            ],
+            [
+              5,
+              8,
+              11
+            ],
+            [
+              5,
+              9,
+              3
+            ],
+            [
+              3,
+              7,
+              -9
+            ],
+            [
+              8,
+              9,
+              0
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              14,
+              5
+            ],
+            [
+              8,
+              10,
+              -8
+            ],
+            [
+              2,
+              6,
+              20
+            ],
+            [
+              1,
+              5,
+              -1
+            ],
+            [
+              1,
+              5,
+              -1
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              2,
+              4,
+              9
+            ],
+            [
+              5,
+              7,
+              19
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              9,
+              11,
+              15
+            ],
+            [
+              9,
+              11,
+              15
+            ],
+            [
+              0,
+              3,
+              19
+            ],
+            [
+              9,
+              12,
+              2
+            ],
+            [
+              5,
+              10,
+              19
+            ],
+            [
+              7,
+              12,
+              5
+            ]
+          ]
+        ],
+        "expected": 38,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              6,
+              9,
+              17
+            ],
+            [
+              7,
+              9,
+              7
+            ],
+            [
+              6,
+              10,
+              1
+            ],
+            [
+              7,
+              9,
+              -8
+            ],
+            [
+              2,
+              6,
+              14
+            ],
+            [
+              1,
+              4,
+              12
+            ],
+            [
+              6,
+              11,
+              20
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              17
+            ],
+            [
+              2,
+              4,
+              4
+            ],
+            [
+              3,
+              6,
+              7
+            ],
+            [
+              9,
+              11,
+              14
+            ],
+            [
+              1,
+              3,
+              9
+            ],
+            [
+              7,
+              11,
+              5
+            ],
+            [
+              9,
+              11,
+              5
+            ],
+            [
+              2,
+              5,
+              -9
+            ]
+          ]
+        ],
+        "expected": 40,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              6,
+              3
+            ],
+            [
+              7,
+              10,
+              -7
+            ],
+            [
+              0,
+              4,
+              -10
+            ],
+            [
+              4,
+              5,
+              -1
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              4,
+              8,
+              -1
+            ],
+            [
+              9,
+              13,
+              5
+            ],
+            [
+              8,
+              9,
+              14
+            ]
+          ]
+        ],
+        "expected": 39,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -1
+            ],
+            [
+              3,
+              7,
+              0
+            ],
+            [
+              1,
+              5,
+              -2
+            ],
+            [
+              4,
+              9,
+              5
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              0,
+              2,
+              13
+            ],
+            [
+              2,
+              6,
+              -8
+            ],
+            [
+              2,
+              5,
+              -2
+            ]
+          ]
+        ],
+        "expected": 18,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              5,
+              -7
+            ],
+            [
+              9,
+              10,
+              6
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              5,
+              7,
+              17
+            ],
+            [
+              3,
+              6,
+              17
+            ],
+            [
+              5,
+              8,
+              8
+            ],
+            [
+              5,
+              8,
+              8
+            ]
+          ]
+        ],
+        "expected": 33,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              -10
+            ],
+            [
+              2,
+              3,
+              14
+            ],
+            [
+              6,
+              8,
+              -2
+            ],
+            [
+              1,
+              4,
+              -2
+            ],
+            [
+              9,
+              11,
+              18
+            ],
+            [
+              4,
+              7,
+              0
+            ],
+            [
+              4,
+              6,
+              -8
+            ],
+            [
+              5,
+              7,
+              5
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              9,
+              -2
+            ],
+            [
+              3,
+              4,
+              16
+            ],
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              5,
+              6,
+              -7
+            ],
+            [
+              5,
+              8,
+              19
+            ],
+            [
+              6,
+              7,
+              -9
+            ],
+            [
+              3,
+              5,
+              -7
+            ],
+            [
+              4,
+              7,
+              -5
+            ]
+          ]
+        ],
+        "expected": 35,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              5,
+              18
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              0,
+              3,
+              16
+            ],
+            [
+              5,
+              7,
+              -5
+            ],
+            [
+              7,
+              11,
+              8
+            ],
+            [
+              6,
+              11,
+              20
+            ],
+            [
+              7,
+              11,
+              8
+            ],
+            [
+              6,
+              7,
+              13
+            ]
+          ]
+        ],
+        "expected": 39,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              4,
+              8,
+              -10
+            ],
+            [
+              9,
+              11,
+              -8
+            ],
+            [
+              6,
+              9,
+              -7
+            ],
+            [
+              5,
+              7,
+              18
+            ],
+            [
+              7,
+              12,
+              2
+            ],
+            [
+              0,
+              4,
+              14
+            ],
+            [
+              8,
+              11,
+              -1
+            ],
+            [
+              9,
+              11,
+              -8
+            ],
+            [
+              7,
+              8,
+              -10
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              5,
+              10,
+              0
+            ],
+            [
+              5,
+              6,
+              19
+            ],
+            [
+              5,
+              7,
+              18
+            ],
+            [
+              9,
+              10,
+              7
+            ],
+            [
+              3,
+              7,
+              -8
+            ],
+            [
+              0,
+              3,
+              -1
+            ],
+            [
+              8,
+              11,
+              8
+            ],
+            [
+              4,
+              8,
+              -8
+            ]
+          ]
+        ],
+        "expected": 27,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              12,
+              -2
+            ],
+            [
+              9,
+              14,
+              18
+            ],
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              1,
+              6,
+              -10
+            ],
+            [
+              0,
+              5,
+              16
+            ],
+            [
+              2,
+              7,
+              4
+            ],
+            [
+              9,
+              10,
+              0
+            ],
+            [
+              9,
+              14,
+              18
+            ],
+            [
+              5,
+              8,
+              3
+            ]
+          ]
+        ],
+        "expected": 37,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              7,
+              4
+            ],
+            [
+              6,
+              9,
+              3
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              7,
+              12,
+              0
+            ],
+            [
+              2,
+              7,
+              -4
+            ],
+            [
+              6,
+              10,
+              -6
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              8,
+              9,
+              11
+            ],
+            [
+              3,
+              6,
+              -8
+            ]
+          ]
+        ],
+        "expected": 15,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              5,
+              2
+            ],
+            [
+              5,
+              10,
+              6
+            ],
+            [
+              4,
+              7,
+              18
+            ],
+            [
+              0,
+              1,
+              10
+            ],
+            [
+              5,
+              7,
+              -5
+            ],
+            [
+              0,
+              5,
+              2
+            ],
+            [
+              1,
+              6,
+              11
+            ],
+            [
+              9,
+              11,
+              20
+            ],
+            [
+              4,
+              7,
+              18
+            ]
+          ]
+        ],
+        "expected": 48,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              11,
+              19
+            ],
+            [
+              0,
+              4,
+              20
+            ],
+            [
+              8,
+              9,
+              15
+            ],
+            [
+              8,
+              9,
+              15
+            ],
+            [
+              0,
+              2,
+              -9
+            ],
+            [
+              2,
+              4,
+              17
+            ],
+            [
+              9,
+              13,
+              7
+            ],
+            [
+              3,
+              6,
+              17
+            ],
+            [
+              4,
+              7,
+              18
+            ]
+          ]
+        ],
+        "expected": 60,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              8,
+              -5
+            ],
+            [
+              5,
+              10,
+              18
+            ],
+            [
+              0,
+              3,
+              12
+            ],
+            [
+              1,
+              6,
+              13
+            ],
+            [
+              2,
+              7,
+              6
+            ],
+            [
+              1,
+              6,
+              13
+            ],
+            [
+              1,
+              6,
+              -10
+            ],
+            [
+              9,
+              10,
+              -9
+            ],
+            [
+              8,
+              9,
+              -8
+            ]
+          ]
+        ],
+        "expected": 30,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              13,
+              -6
+            ],
+            [
+              2,
+              3,
+              -3
+            ],
+            [
+              6,
+              7,
+              17
+            ],
+            [
+              7,
+              8,
+              4
+            ],
+            [
+              3,
+              8,
+              13
+            ],
+            [
+              9,
+              12,
+              18
+            ],
+            [
+              8,
+              9,
+              17
+            ],
+            [
+              9,
+              13,
+              17
+            ],
+            [
+              4,
+              6,
+              0
+            ]
+          ]
+        ],
+        "expected": 56,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              0,
+              5,
+              -1
+            ],
+            [
+              8,
+              12,
+              6
+            ],
+            [
+              3,
+              8,
+              20
+            ],
+            [
+              4,
+              8,
+              1
+            ],
+            [
+              6,
+              8,
+              -10
+            ],
+            [
+              2,
+              6,
+              -10
+            ],
+            [
+              2,
+              5,
+              7
+            ],
+            [
+              2,
+              6,
+              -9
+            ]
+          ]
+        ],
+        "expected": 31,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              8,
+              9,
+              -10
+            ],
+            [
+              8,
+              12,
+              18
+            ],
+            [
+              4,
+              5,
+              4
+            ],
+            [
+              6,
+              7,
+              -8
+            ],
+            [
+              6,
+              8,
+              -4
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              6,
+              4
+            ],
+            [
+              1,
+              2,
+              11
+            ],
+            [
+              4,
+              6,
+              1
+            ]
+          ]
+        ],
+        "expected": 34,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              13,
+              -9
+            ],
+            [
+              9,
+              10,
+              3
+            ],
+            [
+              2,
+              4,
+              17
+            ],
+            [
+              4,
+              7,
+              -3
+            ],
+            [
+              7,
+              12,
+              3
+            ],
+            [
+              0,
+              4,
+              14
+            ],
+            [
+              1,
+              5,
+              -2
+            ],
+            [
+              7,
+              11,
+              14
+            ],
+            [
+              1,
+              3,
+              16
+            ]
+          ]
+        ],
+        "expected": 31,
+        "raises": null
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              13,
+              5
+            ],
+            [
+              6,
+              10,
+              -6
+            ],
+            [
+              7,
+              12,
+              13
+            ],
+            [
+              4,
+              9,
+              20
+            ],
+            [
+              9,
+              13,
+              -2
+            ],
+            [
+              8,
+              12,
+              -6
+            ],
+            [
+              8,
+              12,
+              3
+            ],
+            [
+              4,
+              7,
+              7
+            ],
+            [
+              2,
+              4,
+              17
+            ]
+          ]
+        ],
+        "expected": 42,
+        "raises": null
+      }
+    ],
+    "oracle": "independent exhaustive/reference cases; deterministic random seed 20261104"
+  },
+  "quality-toposort-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 12, in <module>\n    assert not isinstance(n, (ast.Import, ast.ImportFrom, ast.With, ast.AsyncWith, ast.ClassDef, ast.Global, ast.Nonlocal, ast.AsyncFunctionDef, ast.Await, ast.Yield, ast.YieldFrom)), type(n).__name__\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Import\n"
+  },
+  "quality-toposort-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 12, in <module>\n    assert not isinstance(n, (ast.Import, ast.ImportFrom, ast.With, ast.AsyncWith, ast.ClassDef, ast.Global, ast.Nonlocal, ast.AsyncFunctionDef, ast.Await, ast.Yield, ast.YieldFrom)), type(n).__name__\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Import\n"
+  },
+  "quality-xhigh-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Exact arithmetic final answer 234168; JSON sum required for quality prompt"
+  },
+  "quality-xhigh-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Exact arithmetic final answer 234168; JSON sum required for quality prompt"
+  },
+  "screen-chinese_sampled-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-chinese_sampled-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-chinese_sampled-3": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_greedy-1": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_greedy-2": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_greedy-3": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_sampled-1": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_sampled-2": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-code_sampled-3": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-xhigh_throughput-1": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-xhigh_throughput-2": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "screen-xhigh_throughput-3": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "smoke-code-check": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": false,
+    "error": "Traceback (most recent call last):\n  File \"<PUBLIC_WORKSPACE>\\work\\current-perf-20261104\\oracle.py\", line 6, in <module>\n    assert sum(isinstance(n, ast.FunctionDef) for n in ast.walk(tree)) == 1, 'Nested helpers are outside this oracle'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Nested helpers are outside this oracle\n"
+  },
+  "smoke-xhigh": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "check": "Exact arithmetic final answer 234168; JSON sum required for quality prompt"
+  },
+  "tools-playwright_config_patch-1": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-playwright_config_patch-2": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-playwright_config_patch-3": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-playwright_script-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "Playwright script required steps and normal completion; browser actions not executed"
+  },
+  "tools-playwright_script-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "Playwright script required steps and normal completion; browser actions not executed"
+  },
+  "tools-playwright_script-3": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "Playwright script required steps and normal completion; browser actions not executed"
+  },
+  "tools-tool_followup_patch-1": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-tool_followup_patch-2": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-tool_followup_patch-3": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-unit_test_patch-1": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-unit_test_patch-2": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "tools-unit_test_patch-3": {
+    "finish_reason": "tool_calls",
+    "uncached": true,
+    "passed": true,
+    "missing": [],
+    "check": "One structured apply_patch call, JSON arguments, patch envelope and required edit markers; not a browser end-to-end run"
+  },
+  "vision-chinese-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": []
+  },
+  "vision-chinese-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "missing": []
+  },
+  "vision-ledger8192-1": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "correct_rows": 44,
+    "expected_rows": 44,
+    "read_rows": 44
+  },
+  "vision-ledger8192-2": {
+    "finish_reason": "stop",
+    "uncached": true,
+    "passed": true,
+    "correct_rows": 44,
+    "expected_rows": 44,
+    "read_rows": 44
+  },
+  "warmup-chinese_sampled": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  },
+  "warmup-code_greedy": {
+    "finish_reason": "length",
+    "uncached": true,
+    "passed": true,
+    "check": "Throughput sample only; length termination is not complete-task quality"
+  }
+}

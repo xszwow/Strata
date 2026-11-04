@@ -1,0 +1,132 @@
+{
+  "id": "tools-unit_test_patch-2",
+  "group": "tools",
+  "expected": {
+    "tool": "apply_patch",
+    "must_contain": [
+      "URLSearchParams",
+      "urlsearchparams",
+      "Uint8Array",
+      "toString",
+      "4"
+    ]
+  },
+  "historical_source": "Reconstructed from historical task names, saved responses and pinned source fixtures",
+  "same_historical_messages_and_parameters": false,
+  "comparability": "New equivalent task; original tool request messages were not retained.",
+  "started_utc": "2026-11-04T21:29:50.963414+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a coding assistant working only on the supplied synthetic fixture. For a requested edit, return one apply_patch tool call. Preserve unrelated code. The file content is provided in the conversation."
+      },
+      {
+        "role": "user",
+        "content": "Update request-helpers.test.ts by adding two tests to summarizeRequestBody: URLSearchParams with foo=bar has kind urlsearchparams and size params.toString().length; Uint8Array([1,2,3,4]) has kind Uint8Array and size 4.\n\nimport { describe, it, expect } from 'vitest';\nimport { summarizeRequestBody } from './request-helpers';\ndescribe('summarizeRequestBody', () => {\n  it('returns arraybuffer kind with size', () => {\n    expect(summarizeRequestBody(new ArrayBuffer(8))).toEqual({ kind: 'arraybuffer', size: 8 });\n  });\n});\n"
+      }
+    ],
+    "max_tokens": 512,
+    "temperature": 0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "apply_patch",
+          "description": "Apply an OpenAI-style patch to the supplied fixture file. Use *** Begin Patch, *** Update File or *** Add File, @@ hunks, and *** End Patch.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "patch": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "patch"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    ]
+  },
+  "request_sha256": "79ce4d89c37ee65b831eb53a2f062987b6b06e58cc06ee5c182c54177f82902d",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 13321498624,
+    "percent": 60.8,
+    "used": 20660559872,
+    "free": 13321498624
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-70b70db651484d8fb9f9fc52",
+    "object": "chat.completion",
+    "created": 1793827790,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "id": "call_e534819b25f948b58b2b7841",
+              "type": "function",
+              "function": {
+                "name": "apply_patch",
+                "arguments": "{\"patch\":\"*** Begin Patch\\n*** Update File: request-helpers.test.ts\\n@@\\n describe('summarizeRequestBody', () => {\\n   it('returns arraybuffer kind with size', () => {\\n     expect(summarizeRequestBody(new ArrayBuffer(8))).toEqual({ kind: 'arraybuffer', size: 8 });\\n   });\\n+\\n+  it('returns urlsearchparams kind with serialized size', () => {\\n+    const params = new URLSearchParams({ foo: 'bar' });\\n+    expect(summarizeRequestBody(params)).toEqual({\\n+      kind: 'urlsearchparams',\\n+      size: params.toString().length,\\n+    });\\n+  });\\n+\\n+  it('returns Uint8Array kind with byte length', () => {\\n+    expect(summarizeRequestBody(new Uint8Array([1, 2, 3, 4]))).toEqual({\\n+      kind: 'Uint8Array',\\n+      size: 4,\\n+    });\\n+  });\\n });\\n*** End Patch\"}"
+              }
+            }
+          ]
+        },
+        "finish_reason": "tool_calls"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 467,
+      "completion_tokens": 247,
+      "total_tokens": 714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 467,
+      "prompt_ms": 768.9,
+      "prompt_per_token_ms": 1.646,
+      "prompt_per_second": 607.4,
+      "predicted_n": 247,
+      "predicted_ms": 2966.3,
+      "predicted_per_token_ms": 12.009,
+      "predicted_per_second": 83.3,
+      "draft_n": 237,
+      "draft_n_accepted": 211
+    }
+  },
+  "elapsed_s": 3.746300800001336,
+  "finished_utc": "2026-11-04T21:29:54.707566+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 13312098304,
+    "percent": 60.8,
+    "used": 20669960192,
+    "free": 13312098304
+  },
+  "uncached": true
+}

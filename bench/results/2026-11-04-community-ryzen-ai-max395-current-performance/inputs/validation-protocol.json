@@ -1,0 +1,14 @@
+{
+  "code_constraints": "One pure function, no imports/classes/decorators/I/O/helpers; code-check prompt additionally prohibits function calls and loops. Reject before executing if constraints fail.",
+  "execution": "Only restricted builtins and list/dict/set methods; isolated child attached to Windows Job Object, 256 MiB, 7-second limit.",
+  "algorithm_oracles": {
+    "toposort": "84 deterministic cases; exhaustive permutations establish smallest valid order, cycle detection and no input mutation.",
+    "edit_distance": "107 cases; independent full-matrix Levenshtein reference, Unicode, empty/asymmetric inputs, mutation check.",
+    "schedule_profit": "120 cases; exhaustive subsets of up to nine jobs, overlap and duplicate/negative profit cases, mutation check.",
+    "sum_multiples": "11 arithmetic formula inputs, including zero and 1,000,000."
+  },
+  "code_manual_review": "Both edit_distance replies are identical and use two rows of the shorter string; both schedule_profit replies are identical and use sorted end times, binary search and O(n) DP. Toposort contains forbidden import heapq; sum_multiples contains a nested helper and forbidden calls.",
+  "tool_validation": "Structured tool name/JSON/patch envelope and required edit markers, or required Playwright script steps plus normal finish. No generated tool calls executed on the real workspace and no browser task end-to-end claim.",
+  "context": "Exact three markers; verify prompt_n and cache_n=0.",
+  "vision": "Chinese six-line expected strings; 44 ledger amounts checked in exact order; normal completion."
+}

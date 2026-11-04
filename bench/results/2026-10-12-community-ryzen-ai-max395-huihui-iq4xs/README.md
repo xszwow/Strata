@@ -1,270 +1,18 @@
-# Ryzen AI Max+ 395：Huihui IQ4_XS + Q4 MTP + 视觉完整部署
+# 历史测试归档：2026 年 10 月 Ryzen AI Max+ 395
 
-这是一套在 **Windows 11、AMD Ryzen AI Max+ 395、Radeon 8060S（`gfx1151`）、约 128 GB
-统一内存**上实测过的 Strata 配置。目标是让 Codex、浏览器自动化、代码项目和长上下文会话能够直接使用：
+本目录保留 10 月测试的原始数据、模型来源、图片和报告。下方速度、配置和限制属于对应历史批次。
+**当前版本为源码 0.2.10 / 引擎 0.1.56。** 安装说明已迁至 [当前安装指南](../../../docs/WINDOWS_RYZEN_AI_MAX395.md)，安装脚本位于 [deploy/windows-gfx1151](../../../deploy/windows-gfx1151/)。
 
-- Huihui Qwen3.8 Flash-Next `UD-IQ4_XS` 主模型；
-- 原生 `Q4_0` MTP，`spec 8 / spec-min-p 0.6 / window 8192`；
-- 262K 总上下文、INT8 KV、6 份内存 prompt cache；
-- Windows Vulkan 视觉编码器，单图 1,024～8,192 image tokens；
-- OpenAI Chat Completions、Responses、Anthropic Messages 兼容接口；
-- `codex_compaction_cache` 已开启。
-
-本仓库**不包含约 95 GB 的模型文件**。下面的脚本会把模型放到你指定的数据目录，所有本机路径都在运行时计算，
-没有写死原作者电脑的盘符或用户名。模型仓库、不可变 revision、文件大小和 SHA-256 则是有意固定的，保证下载到
-与实测相同的权重；下载站点可以切换。
-
-> 这不是官方 Strata 的通用一键安装页，而是这个 fork 的可复现部署。要使用原生 Q4 MTP 和 Windows
-> Vulkan 视觉，必须克隆本 fork 并按顺序执行。当前 `main` 已包含所述补丁，无需指定历史功能分支。
-
-当前安装步骤对应 **源码 0.2.10 / 引擎 0.1.56 + 本 fork Q4 MTP 补丁**。下方原有性能表是 10 月的历史记录；[11 月升级对照](../2026-11-04-community-ryzen-ai-max395-engine0156/README.md) 包含新版速度、近满上下文和失败样例。
-
-## 1. 准备条件
-
-推荐与实测机器尽量一致：
-
-| 项目 | 要求 |
-| --- | --- |
-| 系统 | 64 位 Windows 10/11；实测为 Windows 11 |
-| 处理器 / GPU | Ryzen AI Max+ 395 / Radeon 8060S，`gfx1151` |
-| 内存 | 128 GB 统一内存档；约 125 GiB 可用 |
-| 磁盘 | NVMe SSD，开始前至少留出 150 GB 空间 |
-| AMD 驱动 | 当前版本 AMD Software: Adrenalin Edition |
-| 构建工具 | Git、Python 3.10+、CMake、Ninja、Visual Studio 2022 Build Tools 的“使用 C++ 的桌面开发”工作负载 |
-| 视觉组件 | [LunarG Vulkan SDK](https://vulkan.lunarg.com/sdk/home#windows)，安装后重新打开终端 |
-| 虚拟内存 | 建议保持“系统管理”，或手动给足 64 GB 以上 pagefile，避免 Windows commit limit 不足 |
-
-其他 Radeon、内存容量或驱动版本可以尝试，但缓存规模、稳定性和 TPS 需要重新验证，不能直接套用本文的速度结论。
-
-## 2. 克隆这个分支并定义目录
-
-在 PowerShell 中运行：
-
-```powershell
-git clone https://github.com/xszwow/Strata.git
-Set-Location .\Strata
-
-$RepoRoot = (Get-Location).Path
-$DataRoot = Join-Path (Split-Path $RepoRoot -Parent) 'Strata-data-huihui'
-$Guide = Join-Path $RepoRoot 'bench\results\2026-10-12-community-ryzen-ai-max395-huihui-iq4xs'
-```
-
-`$DataRoot` 只是默认示例：要把 100 GB 以上的数据放到别的 SSD，改这一行即可，后续命令不需要再改路径。
-
-## 3. 下载并校验主模型和视觉 projector
-
-直连 Hugging Face：
-
-```powershell
-& "$Guide\Get-Models.ps1" -DataRoot $DataRoot
-```
-
-中国大陆网络可改用镜像；如果 Clash 更稳定，也可以保留默认站点并让 PowerShell 走你的系统代理：
-
-```powershell
-& "$Guide\Get-Models.ps1" -DataRoot $DataRoot -Endpoint 'https://hf-mirror.com'
-```
-
-脚本使用 `.part` 临时文件并支持断点续传。每个文件下载后都会核对大小和 SHA-256；中断后重新运行同一条命令即可。
-只想先看 URL、目标路径和哈希而不下载，可加 `-ListOnly`。
-
-下载结果位于：
-
-```text
-<DataRoot>\models\huihui-ud-iq4-xs\*.gguf
-<DataRoot>\models\vision\mmproj-Qwen3.8-Flash-Next-BF16.gguf
-```
-
-## 4. 构建并安装这个分支的 HIP 引擎
-
-原生 Q4 MTP 是这个 fork 的源码改动，不能用上游旧的预编译引擎代替。在仓库根目录运行：
-
-```powershell
-& .\tools\hip\build_windows.bat
-```
-
-首次构建会下载私有 ROCm/TheRock 构建环境，大约占 7 GB，并生成：
-
-```text
-dist\strata-windows-x64-hip.zip
-```
-
-然后让 Strata 用本地 GGUF 和刚构建的引擎完成基础安装。此步骤会创建 `.venv`、准备主模型 pack，并生成一份
-基础 JSON 配置；视觉先选 `no`，稍后换成本分支的 Vulkan 视觉组件：
-
-```powershell
-$MainModelDir = Join-Path $DataRoot 'models\huihui-ud-iq4-xs'
-
-& .\START-HERE.bat `
-  --backend hip `
-  --prebuilt .\dist\ `
-  --family unsloth `
-  --model UD-IQ4_XS `
-  --context 262144 `
-  --vision no `
-  --drafter mtp `
-  --gguf-dir $MainModelDir `
-  --data-dir $DataRoot `
-  --no-start `
-  --yes
-```
-
-如果 Windows 阻止本地编译出的程序运行，在“Windows 安全中心 → 应用和浏览器控制”中查看拦截记录；不要从未知来源
-下载同名可执行文件替换它。
-
-## 5. 制作原生 Q4_0 MTP
-
-默认使用 Hugging Face 的 range request，只下载原始 Qwen checkpoint 中 MTP 所需的张量，不会下载整个
-BF16 模型：
-
-```powershell
-& "$Guide\Prepare-Q4Mtp.ps1" -DataRoot $DataRoot
-```
-
-需要镜像时，先在当前 PowerShell 会话设置端点：
-
-```powershell
-$env:HF_ENDPOINT = 'https://hf-mirror.com'
-& "$Guide\Prepare-Q4Mtp.ps1" -DataRoot $DataRoot
-Remove-Item Env:HF_ENDPOINT
-```
-
-镜像必须正确支持 HTTP Range。脚本会核对 31 个源张量，并依次运行 `mtp_pack.py --experts q4_0` 和
-`mtp_rt.py`。完成目录是：
-
-```text
-<DataRoot>\models\strata\mtp-rt-q4_0
-```
-
-其中必须有 `dense.bin`、`dense.txt`、`draft_vocab.bin`、`experts.bin` 和 `experts.txt`。这里不能换成单个
-llama.cpp MTP GGUF。
-
-## 6. 构建 Windows Vulkan 视觉组件
-
-安装 Vulkan SDK 后，打开 **Developer PowerShell for VS 2022**，进入同一个仓库根目录，再运行：
-
-```powershell
-& "$Guide\Build-Vision-Vulkan.ps1" -Jobs 12
-```
-
-默认输出：
-
-```text
-build-vision-vulkan\bin\strata-vision.exe
-```
-
-这个 fork 包含高 image-token cap 的 GPU warm-up 修正。若不需要看图，可以跳过本节，但生成配置时仍需去掉
-`--vision` 和 `vision` 对象；当前自动配置脚本按“启用视觉”生成。
-
-## 7. 生成不含硬编码路径的本机配置
-
-下面会自动选取第 4 步刚生成、最近修改的基础配置，并将所有路径解析为你电脑上的实际位置：
-
-```powershell
-$BaseConfig = Get-ChildItem $RepoRoot -Filter 'strata-*.json' |
-  Where-Object { $_.Name -notlike '*.shared-settings.json' -and $_.Name -ne 'strata-huihui-iq4xs-q4mtp.json' } |
-  Sort-Object LastWriteTime -Descending |
-  Select-Object -First 1
-
-if (-not $BaseConfig) { throw '没有找到 START-HERE.bat 生成的基础配置' }
-
-$MtpRuntime = Join-Path $DataRoot 'models\strata\mtp-rt-q4_0'
-$VisionExe = Join-Path $RepoRoot 'build-vision-vulkan\bin\strata-vision.exe'
-$VisionMmproj = Join-Path $DataRoot 'models\vision\mmproj-Qwen3.8-Flash-Next-BF16.gguf'
-$Config = Join-Path $RepoRoot 'strata-huihui-iq4xs-q4mtp.json'
-
-& "$Guide\New-LocalConfig.ps1" `
-  -BaseConfig $BaseConfig.FullName `
-  -MtpRuntime $MtpRuntime `
-  -VisionExe $VisionExe `
-  -VisionMmproj $VisionMmproj `
-  -OutputPath $Config
-```
-
-如果仓库里原本就装了多个模型，不要依赖“最近修改”；把 `$BaseConfig` 手动设为本次
-`UD-IQ4_XS` 安装生成的 JSON 文件即可。
-
-生成结果保留基础配置里的 HIP 引擎、tokenizer 和主模型路径，同时写入这组已测参数：
-
-| 参数 | 值 |
-| --- | --- |
-| 上下文 / KV | 262,144 / INT8 |
-| 并发生成 | 1（8 个 worker 是内部 worker pool，不是 8 路满速并发） |
-| Prefill chunk | 16,384 |
-| Expert cache | 24,576 |
-| Prompt cache | 6 个内存 checkpoint |
-| Host conversation parking | 关闭，`0 MiB` |
-| MTP | Q4_0、`spec 8`、`spec-min-p 0.6`、window 8,192 |
-| Sampling | temperature 0、top-p 0.95、top-k 20、seed 12345 |
-| Codex compaction cache | 开启 |
-| `lookup-chain` | 关闭；实测真实工具轨迹平均慢约 0.85% |
-| Vision | Vulkan GPU，1,024～8,192 image tokens，16 threads |
-
-### 可选：启用已测的 57K MTP 草稿词表
-
-10 月 19 日日用配置启用了 HyF 的 56,919 项草稿词表；11 月 4 日将同一文件及来源记录补充到本仓库。
-要复现这一选择，在第 7 步的配置生成命令中加入 `-UseHyf57K`：
-
-```powershell
-& "$Guide\New-LocalConfig.ps1" `
-  -BaseConfig $BaseConfig.FullName `
-  -MtpRuntime $MtpRuntime `
-  -VisionExe $VisionExe `
-  -VisionMmproj $VisionMmproj `
-  -OutputPath $Config `
-  -UseHyf57K
-```
-
-配置生成器固定 `drafting: mtp`，移除基础配置的 DFlash2 参数，并保留单路会话设置。
-
-脚本会校验内附词表的大小与 SHA-256，再写入 `--mtp-draft-vocab` 的本机路径。该文件仅影响 MTP 草稿头，
-不会替换主模型 tokenizer；`spec 8 / 0.6`、`prompt-cache 6` 和 `--conversation-cache-mib 0` 保持原值。
-不加此选项时保留基础配置的词表选择；如果基础配置已含 `--mtp-draft-vocab`，省略开关不会将它移除。
-需要恢复 MTP runtime 自带词表时，请从生成配置的 `args` 中移除 `--mtp-draft-vocab` 及紧随的路径，再重启服务。
-
-同机小样本对照的三项均衡吞吐约提升 1.73%，并未验证全面质量等价，不能当作其他模型或硬件的默认推荐。
-查看[完整报告、结果数据和文件来源](../2026-10-21-community-ryzen-ai-max395-hyf-reuse/README.md)。
-
-## 8. 启动、检查和接入
-
-启动服务：
-
-```powershell
-& "$Guide\Start-Local.ps1" -ConfigPath $Config
-```
-
-看到服务 ready 后，新开一个 PowerShell 检查：
-
-```powershell
-Invoke-RestMethod 'http://127.0.0.1:8080/health' | ConvertTo-Json -Depth 8
-Invoke-RestMethod 'http://127.0.0.1:8080/v1/models' | ConvertTo-Json -Depth 8
-```
-
-`/health` 应显示 `status: ok`、`loaded: true`、`images: true` 和 `max_context: 262144`。浏览器页面是
-<http://127.0.0.1:8080>，停止服务按 `Ctrl+C`。
-
-应用或 Codex 的连接参数：
-
-| 项目 | 值 |
-| --- | --- |
-| OpenAI base URL | `http://127.0.0.1:8080/v1` |
-| Chat Completions | `POST /v1/chat/completions` |
-| Responses / Codex | `POST /v1/responses` |
-| Anthropic-compatible | `http://127.0.0.1:8080/v1/messages` |
-| API key | 仅限本机监听时可填任意非空字符串 |
-| Model | `huihui-qwen3.8-flash-next-iq4-xs` |
-
-不要把无 API key 的 `127.0.0.1` 服务直接暴露到局域网或公网。需要远程访问时，请按主文档配置 `--host` 和
-强 API key。
+[11 月 4 日新版对照报告](../2026-11-04-community-ryzen-ai-max395-engine0156/README.md) · [全部本机测试归档](../../../docs/BENCHMARK_ARCHIVE.md)
 
 ## 实测速度与适用范围
 
 ![Strata Ryzen AI Max+ 395 TPS 数据图](tps-infographic.svg)
 
-**统计与复现边界：**数据是当前仓库发布的聚合测试记录，尚非第三方独立复测。`xhigh` 为测试用例标签，不是云端模型同名推理档位的等价证明。综合 51.29 TPS 是按代码 A 35%、代码 B 35%、xhigh 25%、中文 5% 计算的加权调和平均；Codex 64.63 TPS 是固定短工具轨迹的合并生成吞吐，不能当作任意 Codex 工程任务的端到端速度。近 260K 的测试属于不同阶段的容量或视觉专项验证，并非最终 Q4 spec 8 配置在 260K 下的等条件速度证明。当前记录的长上下文任务每项只生成 31～81 tokens，尚未验证 260K 输入后长时间连续生成的表现。
+**统计与复现边界：**数据是当时仓库发布的聚合测试记录，尚非第三方独立复测。`xhigh` 为测试用例标签，不是云端模型同名推理档位的等价证明。综合 51.29 TPS 是按代码 A 35%、代码 B 35%、xhigh 25%、中文 5% 计算的加权调和平均；Codex 64.63 TPS 是固定短工具轨迹的合并生成吞吐，不能当作任意 Codex 工程任务的端到端速度。近 260K 的测试属于不同阶段的容量或视觉专项验证，并非最终 Q4 spec 8 配置在 260K 下的等条件速度证明。当时记录的长上下文任务每项只生成 31～81 tokens，尚未验证 260K 输入后长时间连续生成的表现。
 
 
-这里分别报告 **prefill（新输入处理）**和 **decode（生成输出）**。除非另有说明，下面的当前配置成绩均使用
+这里分别报告 **prefill（新输入处理）**和 **decode（生成输出）**。除非另有说明，下面的当时配置成绩均使用
 Q4 MTP、`spec 8`、`spec-min-p 0.6`、temperature 0、prefill 16,384；完整聚合数据保存在
 [`performance-results.json`](performance-results.json)。同配置电脑也会受内存频率、BIOS、驱动、后台程序、散热和
 prompt 内容影响，以下数字不是速度保证。
@@ -319,11 +67,11 @@ prompt 内容影响，以下数字不是速度保证。
 
 | 输入规模与配置 | Prefill TPS | Decode TPS | 总等待 | 结果 |
 | --- | ---: | ---: | ---: | --- |
-| 63,954 tokens，当前 `spec 8 / 0.6` | **1,087.2** | 38.4（31 tokens） | 59.69 秒 | 3 个标记全部找回 |
+| 63,954 tokens，当时 `spec 8 / 0.6` | **1,087.2** | 38.4（31 tokens） | 59.69 秒 | 3 个标记全部找回 |
 | 260,934 tokens，较早 `spec 4 / Q2 MTP` 容量验证 | **960.3** | 43.7（31 tokens） | 272.59 秒 | 3 个标记全部找回 |
 | 260,881 tokens + 图片，最终视觉配置 | **942.5** | 50.5（81 tokens） | 278.61 秒 | 3 个标记和图片六行文字全部正确 |
 
-第二、三行属于较早配置或视觉专项验证，只证明容量与当时的实测速度，不能冒充当前 `spec 8 / 0.6` 的正面对比。
+第二、三行属于较早配置或视觉专项验证，只证明容量与当时的实测速度，不能冒充当时 `spec 8 / 0.6` 的正面对比。
 视觉近满上下文的相同请求第二次复用了 260,874 tokens，只新读 7 tokens，总等待约 1.89 秒。
 
 <details>
@@ -372,51 +120,15 @@ Codex 短工具题的 64.63 TPS 当成所有任务的持续速度。
 - `codex_compaction_cache: true` 可复用匹配的 Codex compaction。一次受控 smoke test 中，2,410 个输入 token
   复用了 2,383 个，耗时 1.046 秒；关闭时为 3.328 秒；
 - 没有磁盘持久化 KV，也不能在 Strata 重启后恢复 KV；
-- host RAM conversation parking 当前关闭；
+- host RAM conversation parking 当时关闭；
 - 这些设置不会创建 Halogen 风格的 256 GiB 磁盘 KV lineage。
 
-## 常见问题
+## 保留的数据
 
-### 报错不支持 Q4 MTP，或 `experts.txt` 缺失
-
-确认使用的是本 fork 自己构建的 `dist\strata-windows-x64-hip.zip`，不要被 `START-HERE.bat` 换回上游旧引擎。
-然后重新运行第 5 步；脚本会验证 Q4 runtime 的 5 个必需文件。
-
-### `/health` 中 `images` 是 `false`
-
-检查 `build-vision-vulkan\bin\strata-vision.exe` 和 mmproj 是否存在，然后重新执行第 7 步生成配置。视觉组件必须
-用 Vulkan SDK 构建，不能拿通用 Windows HIP 包里缺失或旧的视觉程序代替。
-
-### 下载慢或断开
-
-主模型脚本可以在 `huggingface.co` 与 `hf-mirror.com` 间切换，并会保留 `.part`。MTP 下载使用 HTTP Range；
-若镜像不支持正确的 206/`Content-Range`，请改回 Hugging Face 并通过 Clash 代理访问。
-
-### 启动时内存不足或系统卡死
-
-关闭大型浏览器、游戏和其他 GPU 程序，检查 pagefile 与 Windows commit limit。这里是统一内存机器，模型、KV、GPU
-分配和系统进程共享同一池内存，“显存看起来还有”不等于 commit 一定足够。
-
-### 有多个 JSON，不知道该启动哪个
-
-本文最终配置固定命名为 `strata-huihui-iq4xs-q4mtp.json`。`Start-Local.ps1` 默认也寻找这个文件；第 4 步生成的
-基础 JSON 只用于保留安装器检测出的引擎和模型路径。
-
-## 文件与来源记录
-
-| 文件 | 用途 |
+| 文件 | 内容 |
 | --- | --- |
-| [`Get-Models.ps1`](Get-Models.ps1) | 可换 endpoint、可续传、带 SHA-256 的主模型与 mmproj 下载器 |
-| [`Prepare-Q4Mtp.ps1`](Prepare-Q4Mtp.ps1) | 下载并验证 MTP 张量，打包原生 Q4_0 runtime |
-| [`Build-Vision-Vulkan.ps1`](Build-Vision-Vulkan.ps1) | 构建 Windows Vulkan 视觉组件 |
-| [`New-LocalConfig.ps1`](New-LocalConfig.ps1) | 从本机基础配置生成生产配置，不携带原作者绝对路径 |
-| [`Start-Local.ps1`](Start-Local.ps1) | 启动 OpenAI/Anthropic 兼容服务 |
-| [`models.json`](models.json) | 模型 revision、大小、哈希和产物哈希 |
-| [`mtp-source-manifest.json`](mtp-source-manifest.json) | 31 个 BF16 MTP 源张量的范围与哈希 |
-| [`codex-compaction-cache.json`](codex-compaction-cache.json) | compaction cache smoke test 原始记录 |
-| [`performance-results.json`](performance-results.json) | 不同题型、工具调用、温度、长上下文与视觉测试的聚合数据 |
-
-主要权重来自
-[`huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF`](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF)，
-MTP 源张量来自
-[`Qwen/Qwen3.8-Flash-Next`](https://huggingface.co/Qwen/Qwen3.8-Flash-Next)。各模型和源仓库的许可证仍然适用。
+| [performance-results.json](performance-results.json) | 历史速度、温度、上下文与视觉数据 |
+| [tps-infographic.svg](tps-infographic.svg) | 对应本批数据的历史信息图 |
+| [codex-compaction-cache.json](codex-compaction-cache.json) | 当时的缓存测试记录 |
+| [models.json](models.json) | 沿用至当前部署的主模型与视觉文件来源 |
+| [mtp-source-manifest.json](mtp-source-manifest.json) | MTP 源张量范围与哈希 |

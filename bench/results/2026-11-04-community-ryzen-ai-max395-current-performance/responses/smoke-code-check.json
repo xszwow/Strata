@@ -1,0 +1,86 @@
+{
+  "id": "smoke-code-check",
+  "group": "smoke",
+  "historical_source": "results/temp0-s8-p060-production-smoke-20261012.json",
+  "same_historical_messages_and_parameters": true,
+  "original_request_sha256": "0334c2d49283dbf0f125926f26fc9abc78c831202b1bfde6f2141cf97acc88ec",
+  "baseline_decode_tps": 59.7,
+  "started_utc": "2026-11-04T21:11:07.158061+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "max_tokens": 2048,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "temperature": 0.0,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write ONLY a Python function sum_multiples(n: int) -> int that returns the sum of integers from 1 through n inclusive divisible by 3 or 5, counting duplicates once. Use arithmetic formulas, no loops, comprehensions, imports, function calls, or exponentiation. Use // for integer division. Return 0 for n=0. Output the function in one fenced Python code block."
+      }
+    ]
+  },
+  "request_sha256": "4a3b47379cec2c833ca7190e61c0e41c24d71d339ccda5e0e8c9df4bd817040d",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 14753640448,
+    "percent": 56.6,
+    "used": 19228418048,
+    "free": 14753640448
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-5517beae40674d18a3e8ff83",
+    "object": "chat.completion",
+    "created": 1793826667,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\ndef sum_multiples(n: int) -> int:\n    if n <= 0:\n        return 0\n    # Sum of multiples of k up to n: k * m * (m + 1) // 2 where m = n // k\n    def _sum_mult(k):\n        m = n // k\n        return k * m * (m + 1) // 2\n    sum3 = _sum_mult(3)\n    sum5 = _sum_mult(5)\n    sum15 = _sum_mult(15)\n    return sum3 + sum5 - sum15\n```"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 93,
+      "completion_tokens": 139,
+      "total_tokens": 232,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 93,
+      "prompt_ms": 656.8,
+      "prompt_per_token_ms": 7.062,
+      "prompt_per_second": 141.6,
+      "predicted_n": 139,
+      "predicted_ms": 1929.2,
+      "predicted_per_token_ms": 13.879,
+      "predicted_per_second": 72.1,
+      "draft_n": 148,
+      "draft_n_accepted": 113
+    }
+  },
+  "elapsed_s": 2.5956867999993847,
+  "finished_utc": "2026-11-04T21:11:09.757606+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 14773678080,
+    "percent": 56.5,
+    "used": 19208380416,
+    "free": 14773678080
+  },
+  "uncached": true
+}

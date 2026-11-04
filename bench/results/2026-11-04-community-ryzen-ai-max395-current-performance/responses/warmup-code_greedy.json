@@ -1,0 +1,88 @@
+{
+  "id": "warmup-code_greedy",
+  "group": "warmup",
+  "historical_source": "excluded warm-up",
+  "same_historical_messages_and_parameters": false,
+  "original_request_sha256": "657be46376f9686072ba62099c7c31edfa75b50373bfef09b43f7d9df597cd9c",
+  "baseline_decode_tps": null,
+  "started_utc": "2026-11-04T21:07:43.668187+00:00",
+  "request": {
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function that reads a large file in chunks, calculates SHA256, compares it with an expected digest, and raises a useful exception if the file is missing or the digest is wrong. Include type hints, a docstring, a usage example, and a short explanation of why chunked reading is useful. Do not use external libraries."
+      }
+    ],
+    "max_tokens": 128,
+    "seed": 12345,
+    "cache_prompt": false,
+    "strata_checkpoint": false,
+    "stream": false,
+    "temperature": 0.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "strata_tune": {
+      "spec_min_p": 0.6
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "request_sha256": "a2fc96512829fc24420aab5e137f2ed39c863976bd605e675ea1e5cc07412f1b",
+  "memory_before": {
+    "total": 33982058496,
+    "available": 14910279680,
+    "percent": 56.1,
+    "used": 19071778816,
+    "free": 14910279680
+  },
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-d7a64eea5be942cd8bb21ca4",
+    "object": "chat.completion",
+    "created": 1793826463,
+    "model": "qwen3.8-flash-next-iq4-xs",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This"
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 83,
+      "completion_tokens": 128,
+      "total_tokens": 211,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 83,
+      "prompt_ms": 626.5,
+      "prompt_per_token_ms": 7.548,
+      "prompt_per_second": 132.5,
+      "predicted_n": 128,
+      "predicted_ms": 2114.9,
+      "predicted_per_token_ms": 16.523,
+      "predicted_per_second": 60.5,
+      "draft_n": 162,
+      "draft_n_accepted": 97
+    }
+  },
+  "elapsed_s": 2.7527230999985477,
+  "finished_utc": "2026-11-04T21:07:46.421733+00:00",
+  "memory_after": {
+    "total": 33982058496,
+    "available": 15032422400,
+    "percent": 55.8,
+    "used": 18949636096,
+    "free": 15032422400
+  },
+  "uncached": true
+}

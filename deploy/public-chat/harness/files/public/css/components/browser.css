@@ -1,0 +1,260 @@
+.browser-steps {
+  margin: 8px 0 16px;
+  min-width: 0;
+}
+.session-tasks {
+  margin: 8px 0 16px;
+  font-size: 13px;
+}
+.session-tasks ul {
+  padding-left: 20px;
+}
+.session-tasks li {
+  margin: 6px 0;
+  overflow-wrap: anywhere;
+}
+.browser-process {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.browser-process-history {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 8px 0 16px;
+}
+.browser-process-turn + .browser-process-turn {
+  margin-top: 8px;
+}
+.browser-process-label {
+  font-size: 11px;
+  font-weight: 550;
+  margin: 8px 0 4px;
+  color: #969696;
+}
+.browser-process-text {
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.browser-process .browser-step {
+  font-size: 14px;
+  padding: 0;
+}
+/* Direct CSS translation of llama b11530 CollapsibleContentBlock.svelte:
+   py-1.5 pr-1, gap-2, text-sm/font-medium, icon h-3.5, pl-1.5/pl-4/pb-2/my-2.
+   See LLAMA-UI-SOURCE.md for the exact component-to-adapter mapping. */
+.browser-process-turn {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.llama-process-block.browser-step {
+  display: block;
+}
+.llama-process-block > summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 4px 6px 0;
+  text-align: left;
+  cursor: pointer;
+  list-style: none;
+  min-width: 0;
+  line-height: 20px;
+}
+.llama-process-block > summary::-webkit-details-marker {
+  display: none;
+}
+.llama-process-block > summary > svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: #73737399;
+}
+.llama-process-block > summary > svg[data-icon="lightbulb"] {
+  width: 14px;
+  height: 14px;
+}
+.llama-block-title {
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #171717cc;
+  overflow-wrap: anywhere;
+}
+.llama-block-subtitle {
+  font-size: 12px;
+  font-style: italic;
+  color: #737373b3;
+}
+.llama-process-block > summary::after {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin: 5px 4px 0 auto;
+  border-right: 1.5px solid #73737399;
+  border-bottom: 1.5px solid #73737399;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition:
+    opacity 150ms,
+    transform 150ms;
+}
+.llama-process-block[open] > summary::after {
+  transform: rotate(225deg);
+}
+.llama-process-block:hover > summary::after,
+.llama-process-block:focus-within > summary::after {
+  opacity: 1;
+}
+.llama-process-block > summary:focus-visible {
+  outline: 2px solid #737373;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.llama-block-body {
+  min-width: 0;
+  margin: 8px 0 8px 6px;
+  padding: 0 0 8px 16px;
+  border-left: 1px solid #73737333;
+}
+.llama-block-body .browser-process-text {
+  font-size: 13px;
+  line-height: 1.625;
+}
+.reasoning-content.is-streaming {
+  max-height: 28rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-right: 0.25rem;
+}
+.browser-tool-detail + .browser-tool-detail {
+  margin-top: 16px;
+}
+.browser-tool-detail .browser-process-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #737373b3;
+  margin: 0 0 6px;
+}
+.ai-message .browser-tool-detail pre {
+  font:
+    12px/1.625 ui-monospace,
+    Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 22rem;
+  overflow: auto;
+  margin: 0;
+  padding: 8px;
+  background: #f5f5f5;
+  color: #262626;
+  border-radius: 4px;
+}
+.browser-step > summary > .llama-block-title {
+  flex-shrink: 0;
+}
+.generation-processing {
+  width: 100%;
+  max-width: 48rem;
+  font-size: 14px;
+  line-height: 20px;
+  color: #737373;
+}
+.generation-processing[data-position="top"] {
+  margin-top: 24px;
+}
+.generation-processing[data-position="bottom"] {
+  margin-top: 16px;
+}
+.llama-shimmer {
+  /* Original light-theme tokens and shimmer rule from llama UI app.css. */
+  --muted-foreground: oklch(0.556 0 0);
+  --foreground: oklch(0.145 0 0);
+  background: linear-gradient(
+    90deg,
+    var(--muted-foreground),
+    var(--foreground),
+    var(--muted-foreground)
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  animation: llama-shimmer 1s linear infinite;
+}
+@keyframes llama-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .llama-shimmer {
+    animation: none;
+  }
+}
+.ai-message > .content-div[hidden] {
+  display: none;
+}
+.browser-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--muted);
+}
+.browser-step-error {
+  color: var(--danger);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.browser-step-error > .llama-block-title,
+.browser-step-error > svg {
+  color: var(--danger);
+}
+.browser-live {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 12px 0 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.browser-live-activity {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.browser-live img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.browser-live-placeholder {
+  padding: 24px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}

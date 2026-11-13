@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>IVYUN 助手</title>
+        <link rel="stylesheet" href="vendor/css/atom-one-dark.min.css" />
+        <link rel="stylesheet" href="vendor/css/katex.min.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components/buttons.css" />
+        <link rel="stylesheet" href="css/components/messages.css" />
+        <link rel="stylesheet" href="css/components/message-actions.css" />
+        <link rel="stylesheet" href="css/components/browser.css" />
+        <link rel="stylesheet" href="css/components/artifacts.css" />
+        <link rel="stylesheet" href="css/components/tables.css" />
+        <link rel="stylesheet" href="css/components/composer.css" />
+        <link rel="stylesheet" href="css/components/code.css" />
+        <link rel="stylesheet" href="css/components/math.css" />
+        <link rel="stylesheet" href="css/components/mermaid.css" />
+        <link rel="stylesheet" href="css/components/svg.css" />
+        <link rel="stylesheet" href="css/components/charts.css" />
+        <link rel="stylesheet" href="css/components/history-panel.css" />
+        <link rel="stylesheet" href="css/components/file-upload.css" />
+        <link rel="stylesheet" href="css/components/overlay.css" />
+        <link rel="stylesheet" href="css/components/toast.css" />
+        <script defer src="vendor/js/marked.umd.js"></script>
+        <script defer src="vendor/js/purify.min.js"></script>
+        <script defer src="vendor/js/remend.min.js"></script>
+        <script defer src="vendor/js/idb.min.js"></script>
+        <script defer src="js/core/chart-contract.js"></script>
+        <script defer src="js/config/prompts.js"></script>
+        <script defer src="js/core/state.js"></script>
+        <script defer src="js/core/chat-records.js?v=20261018-recovery"></script>
+        <script defer src="js/core/sse.js"></script>
+        <script defer src="js/core/dependencies.js"></script>
+        <script defer src="js/core/safe-svg.js"></script>
+        <script defer src="js/core/llama-processing.js"></script>
+        <script defer src="js/core/composer-protocol.js"></script>
+        <script defer src="js/core/llama-icons.js"></script>
+        <script defer src="js/core/api-client.js?v=20261018-recovery"></script>
+        <script defer src="js/core/browser-protocol.js?v=20261018-budget200"></script>
+        <script defer src="js/core/browser-view.js?v=20261018-budget200"></script>
+        <script defer src="js/core/composer.js?v=20261018-recovery"></script>
+        <script defer src="js/utils/clipboard.js"></script>
+        <script defer src="js/utils/toast.js"></script>
+        <script defer src="js/utils/export.js"></script>
+        <script defer src="js/core/ui.js?v=20261018-recovery"></script>
+        <script defer src="js/core/message-actions.js?v=20261018-recovery"></script>
+        <script defer src="js/core/message-editor.js"></script>
+        <script defer src="js/core/artifacts.js"></script>
+        <script defer src="js/core/svg-artifacts.js"></script>
+        <script defer src="js/core/chart-recovery.js"></script>
+        <script defer src="js/processors/markdown-processor.js"></script>
+        <script defer src="js/handlers/chart-handler.js"></script>
+        <script defer src="js/handlers/mermaid-handler.js"></script>
+        <script defer src="js/handlers/mermaid-overlay.js"></script>
+        <script defer src="js/handlers/file-handler.js"></script>
+        <script defer src="js/handlers/chat-layout.js"></script>
+        <script defer src="js/managers/history-manager.js?v=20261018-recovery"></script>
+        <script defer src="js/handlers/message-handler.js?v=20261018-recovery"></script>
+        <script defer src="js/main.js?v=20261018-recovery"></script>
+    </head>
+    <body class="chat-app">
+        <button
+            id="history-btn"
+            class="icon-button sidebar-toggle"
+            aria-label="打开历史记录"
+            aria-expanded="false"
+            aria-controls="history-panel"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 3v18" />
+            </svg>
+        </button>
+        <main class="chat-container" id="chat-container" aria-label="对话内容"></main>
+        <footer class="input-area">
+            <div class="input-container">
+                <div class="composer-attachment" id="composer-attachment" hidden>
+                    <button class="composer-control" id="preview-btn" aria-label="预览附件">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M6 3h8l4 4v14H6z M14 3v5h5M9 12h6M9 16h6" /></svg
+                        ><span id="attachment-name"></span>
+                    </button>
+                    <button class="composer-control" id="remove-file-button" aria-label="移除附件">
+                        <svg data-llama-icon="x" aria-hidden="true"></svg>
+                    </button>
+                </div>
+                <textarea id="user-input" aria-label="消息" placeholder="发送消息…" rows="1"></textarea>
+                <div class="composer-toolbar">
+                    <input type="file" id="file-input" class="file-input" accept=".docx,.xlsx,.xls,.pdf" />
+                    <button
+                        class="composer-control composer-add"
+                        id="upload-btn"
+                        aria-label="上传文件"
+                        title="添加 Word、Excel 或 PDF"
+                    >
+                        <svg data-llama-icon="plus" aria-hidden="true"></svg>
+                    </button>
+                    <div class="composer-tools">
+                        <div class="composer-model-tools">
+                            <button
+                                class="composer-control"
+                                id="context-button"
+                                aria-label="上下文窗口"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                                aria-controls="composer-panel"
+                            >
+                                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                    <circle class="context-track" cx="16" cy="16" r="11" stroke-width="3" />
+                                    <circle
+                                        id="context-ring"
+                                        cx="16"
+                                        cy="16"
+                                        r="11"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </button>
+                            <button
+                                class="composer-control composer-reasoning"
+                                id="reasoning-button"
+                                aria-label="推理强度"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                                aria-controls="composer-panel"
+                            >
+                                <svg data-llama-icon="lightbulb" aria-hidden="true"></svg
+                                ><span id="reasoning-label"></span>
+                            </button>
+                            <button
+                                class="composer-control composer-model"
+                                id="model-button"
+                                aria-label="当前模型"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                                aria-controls="composer-panel"
+                            >
+                                <svg data-llama-icon="package" aria-hidden="true"></svg
+                                ><span id="model-name">读取模型…</span>
+                            </button>
+                        </div>
+                        <button
+                            class="composer-control composer-submit"
+                            id="send-button"
+                            aria-label="发送"
+                            disabled
+                        >
+                            <svg data-llama-icon="arrow-up" aria-hidden="true"></svg>
+                        </button>
+                        <button
+                            class="composer-control composer-submit"
+                            id="stop-button"
+                            style="display: none"
+                            aria-label="停止生成"
+                        >
+                            <svg data-llama-icon="square" aria-hidden="true"></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <dialog
+            id="composer-panel"
+            popover="auto"
+            class="composer-panel"
+            aria-labelledby="composer-panel-title"
+        ></dialog>
+        <dialog class="mermaid-overlay" id="mermaid-overlay" aria-labelledby="viewer-title">
+            <div class="mermaid-large">
+                <header class="viewer-header">
+                    <div class="viewer-heading">
+                        <h2 id="viewer-title">图表</h2>
+                        <p id="viewer-description">拖动查看 · 滚轮或双指缩放</p>
+                    </div>
+                    <div class="viewer-header-actions">
+                        <div id="viewer-actions"></div>
+                        <button
+                            class="icon-button close-btn"
+                            onclick="closeMermaidOverlay()"
+                            aria-label="关闭全屏"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="m6 6 12 12M6 18 18 6" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <div class="mermaid-content" tabindex="0" aria-label="图表查看区"></div>
+                <div class="zoom-controls">
+                    <button class="zoom-btn" onclick="adjustZoom(-0.2)" aria-label="缩小">−</button
+                    ><span class="zoom-level" aria-live="polite">100%</span>
+                    <button class="zoom-btn" onclick="adjustZoom(0.2)" aria-label="放大">+</button>
+                    <button class="fit-view-btn" onclick="fitDiagram()">适应屏幕</button
+                    ><button class="reset-view-btn" onclick="resetZoom()" title="重置为原始大小">100%</button>
+                </div>
+            </div>
+        </dialog>
+        <div class="history-overlay" id="history-overlay"></div>
+        <aside class="history-panel" id="history-panel" aria-label="历史记录" inert>
+            <div class="history-header">
+                <h2>你的对话</h2>
+                <button class="icon-button history-close" aria-label="关闭历史记录">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="m6 6 12 12M6 18 18 6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="history-tools">
+                <button class="new-chat-btn">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 5v14M5 12h14" /></svg
+                    >新建对话</button
+                ><button class="icon-button danger-btn" title="清空历史" aria-label="清空历史">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 10v7M14 10v7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="history-content"><div class="chat-list"></div></div>
+            <div class="history-account">
+                <span id="free-quota" class="free-quota" title="剩余免费对话次数"></span>
+                <button
+                    id="settings-btn"
+                    class="text-button"
+                    onclick="location.href = 'settings.html'"
+                    aria-label="设置"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M9 4h6l1 3 3 1v8l-3 1-1 3H9l-1-3-3-1V8l3-1z M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0"
+                        /></svg
+                    ><span>设置</span>
+                </button>
+            </div>
+        </aside>
+        <div class="file-progress" role="progressbar" aria-label="文件处理中">
+            <div class="file-progress-bar"></div>
+        </div>
+        <div class="file-preview-overlay"></div>
+        <section class="file-preview" role="dialog" aria-label="附件预览">
+            <button class="file-preview-close" aria-label="关闭附件预览">×</button>
+            <div class="file-preview-content"></div>
+        </section>
+    </body>
+</html>

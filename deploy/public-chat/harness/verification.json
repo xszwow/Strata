@@ -1,0 +1,148 @@
+{
+  "test": "isolated application using production Qwen, synthetic data",
+  "results": [
+    {
+      "label": "ordinary-question",
+      "http": 200,
+      "done": true,
+      "answer": "42",
+      "taskUpdates": 0,
+      "taskList": [],
+      "errors": []
+    },
+    {
+      "label": "generic-plan",
+      "http": 200,
+      "done": true,
+      "answer": "已记录 3 项待办：\n\n1. **MAT-482** — 材料调研（未开始，等待你补充材料）\n2. **采购说明** — 材料确定后撰写，预算上限 900 元\n3. **对比图** — 最后绘制，单位为千克\n\n未查询网页。等你补充材料后我再继续。",
+      "taskUpdates": 1,
+      "taskList": [
+        {
+          "id": "MAT-482",
+          "title": "材料调研（代号 MAT-482）",
+          "status": "pending",
+          "note": "尚未开始，等待用户补充材料"
+        },
+        {
+          "id": "procure-note",
+          "title": "撰写采购说明",
+          "status": "pending",
+          "note": "前置条件：材料确定后进行；预算上限 900 元"
+        },
+        {
+          "id": "compare-chart",
+          "title": "绘制对比图",
+          "status": "pending",
+          "note": "单位为千克"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "recall-after-110-turns",
+      "http": 200,
+      "done": true,
+      "answer": "- 代号：MAT-482\n- 预算上限：900 元\n- 图表单位：千克",
+      "taskUpdates": 0,
+      "taskList": [
+        {
+          "id": "MAT-482",
+          "title": "材料调研（代号 MAT-482）",
+          "status": "pending",
+          "note": "尚未开始，等待用户补充材料"
+        },
+        {
+          "id": "procure-note",
+          "title": "撰写采购说明",
+          "status": "pending",
+          "note": "前置条件：材料确定后进行；预算上限 900 元"
+        },
+        {
+          "id": "compare-chart",
+          "title": "绘制对比图",
+          "status": "pending",
+          "note": "单位为千克"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "public": {
+    "assets": [
+      {
+        "asset": "chat.html",
+        "sha256": "3366f453f77332eae7dc6213cb12fbf729dc2c71db8d693aa584e16e27dd3807",
+        "http": 200
+      },
+      {
+        "asset": "js/core/api-client.js",
+        "sha256": "ec0581a0bd965a2011414f67edaa0682e6046b03156657143422b4d771605eee",
+        "http": 200
+      },
+      {
+        "asset": "js/handlers/message-handler.js",
+        "sha256": "4e6a5e88c923f7013849ec9a2bd7fef257535212bb6f820180ca0620b9a8815a",
+        "http": 200
+      },
+      {
+        "asset": "js/config/prompts.js",
+        "sha256": "2102ff1608508a35a90a691c68ce43c9403a7a1d426b3db7a37fc9fdef5c6466",
+        "http": 200
+      },
+      {
+        "asset": "js/core/browser-view.js",
+        "sha256": "32f82e9d882c30450b3511473689e0cf5cbcd6a5bb0c4c1240c2cf8fea536bbf",
+        "http": 200
+      },
+      {
+        "asset": "js/core/browser-protocol.js",
+        "sha256": "ba901ff906c960429ba4c25f602c802130f1ca4dff14ba31120c83e541897fc7",
+        "http": 200
+      }
+    ],
+    "tasks": [
+      {
+        "id": "PUB-731-doc",
+        "title": "整理产品说明（目标客户：学校，编号 PUB-731）",
+        "status": "pending",
+        "note": "预算上限 700 元；用户尚未提供资料，等待中"
+      },
+      {
+        "id": "PUB-731-chart",
+        "title": "根据收到的资料制作对比图",
+        "status": "pending",
+        "note": "依赖 PUB-731-doc 的资料；资料到达后再选图表类型（比较优先柱状图）"
+      }
+    ],
+    "replayIdentical": true,
+    "recallAfter110Turns": "- 目标客户：学校\n- 编号：PUB-731\n- 预算：上限 700 元\n\n未操作网页。",
+    "revision": "f0d1d5ad41670908",
+    "modelContext": 262144
+  },
+  "validation": {
+    "automatedTestsPassed": 100,
+    "mobileReconnectChecks": 1,
+    "userMessageActionsChecks": 10,
+    "artifactFlowChecks": 6,
+    "javascriptFiles": 106,
+    "assetReferences": 139,
+    "sqliteRecoveryAfterStreamExpiry": true
+  },
+  "limits": {
+    "taskListItems": 32,
+    "serverRecoveryHours": 24,
+    "fullConversationStorage": "browser IndexedDB"
+  },
+  "largeHistory": {
+    "batches": 45,
+    "operationsPerBatch": 200,
+    "totalOperations": 9000,
+    "beforeCharacters": 935212,
+    "afterCharacters": 116103,
+    "httpCharacterLimit": 150000,
+    "retainedOlderOperations": 561,
+    "omittedOlderOperations": 8239,
+    "latestBatchKeptInRecentMessages": 200,
+    "rawHistoryUnchanged": true
+  }
+}

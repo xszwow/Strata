@@ -1,0 +1,57 @@
+{
+    "name": "ivyun-chart-assistant",
+    "version": "2.0.0",
+    "description": "智慧AI后端服务器",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js",
+        "postinstall": "node scripts/vendor.js",
+        "test": "node --test tests/backend.test.js tests/composer.test.js tests/prompts.test.js tests/conversation-memory.test.js tests/task-list.test.js",
+        "test:memory": "node --test tests/conversation-memory.test.js tests/task-list.test.js tests/task-resume-browser.test.js && node tests/conversation-memory-browser.test.js",
+        "test:browser": "node tests/browser.test.js",
+        "test:stream-resume": "node --test tests/chat-streams.test.js tests/chat-stream-budget.test.js && node tests/chat-streams-browser.test.js",
+        "test:browser-budget": "node --test tests/generation-limits.test.js tests/chat-stream-budget.test.js && node tests/browser-budget.test.js",
+        "test:accounts": "node tests/account-pages.test.js",
+        "test:history-startup": "node --test tests/chat-records.test.js && node tests/history-startup.test.js && node tests/history-delete.test.js",
+        "test:browser-process": "node tests/browser-process.test.js && node tests/browser-operation-labels.test.js",
+        "test:processing": "node --test tests/processing.test.js && node tests/processing-browser.test.js && node tests/processing-browser.test.js --browser",
+        "test:browser-tools": "node --test tests/browser-agent.test.js tests/browser-observation.test.js tests/browser-context.test.js tests/browser-optimization.test.js tests/browser-event-stream.test.js && node tests/browser-ui.test.js && node tests/browser-first-frame.test.js && node tests/browser-reload.test.js",
+        "check": "node scripts/check.js",
+        "format": "prettier --write \"*.js\" \"routes/*.js\" \"middleware/*.js\" \"scripts/*.js\" \"tests/*.js\" \"../public/js/**/*.js\"",
+        "build:vendor": "node scripts/vendor.js",
+        "test:migration": "node tests/migration.test.js",
+        "test:ui": "node tests/ui.test.js",
+        "test:tables": "node tests/table-longtext.test.js",
+        "test:model-status": "node --test tests/model-lifecycle.test.js && node tests/model-status-browser.test.js",
+        "test:composer": "node tests/composer-browser.test.js",
+        "test:layout": "node tests/chat-layout.test.js",
+        "test:prompts": "node --test tests/prompts.test.js && node tests/prompt-browser.test.js",
+        "test:artifacts": "node tests/artifact-flow.test.js",
+        "test:svg": "node tests/svg-rendering.test.js",
+        "bench:app": "node tests/app-benchmark.js",
+        "bench:stream": "node tests/stream-benchmark.js",
+        "test:messages": "node tests/message-actions.test.js && node tests/user-message-actions.test.js"
+    },
+    "dependencies": {
+        "@panzoom/panzoom": "4.6.2",
+        "bcryptjs": "^2.4.3",
+        "dompurify": "^3.4.17",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "idb": "8.0.4",
+        "jsonwebtoken": "^9.0.2",
+        "katex": "0.16.9",
+        "marked": "^18.1.1",
+        "remend": "1.4.0"
+    },
+    "devDependencies": {
+        "esbuild": "0.28.2",
+        "playwright": "^1.64.0",
+        "prettier": "^3.9.10"
+    },
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "packageManager": "pnpm@11.25.0"
+}

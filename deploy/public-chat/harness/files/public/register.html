@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>注册 · IVYUN 助手</title>
+    <link rel="icon" type="image/svg+xml" href="images/brand/ivyun-cloud.svg" />
+    <link rel="stylesheet" href="css/pages/account-base.css" />
+    <link rel="stylesheet" href="css/components/auth.css" />
+  </head>
+  <body class="auth-page" data-account-page="register">
+    <header class="account-header">
+      <span class="brand-lockup"
+        ><img
+          src="images/brand/ivyun-logo.svg"
+          alt="IVYUN 艾维云"
+          width="132"
+          height="44"
+        /><span class="brand-product">助手</span></span
+      ><a class="header-link" href="login.html"
+        >登录账号<svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 6 6 6-6 6" /></svg
+      ></a>
+    </header>
+    <p class="mobile-brand-line">AI 模型用得起，AI 应用能落地。</p>
+    <main class="auth-layout">
+      <section class="brand-story" aria-label="IVYUN 品牌主张">
+        <img
+          class="brand-symbol"
+          src="images/brand/ivyun-cloud.svg"
+          alt=""
+          width="244"
+          height="186"
+        />
+        <h1>AI 模型用得起，<br /><span>AI 应用能落地。</span></h1>
+        <p>IVYUN 助手<br />回答问题、分析资料，也能生成图表。</p>
+        <div class="brand-capabilities">
+          <span>梳理流程</span><span>整理表格</span><span>呈现数据</span>
+        </div>
+      </section>
+      <section class="auth-card" aria-labelledby="form-title">
+        <p class="eyebrow">IVYUN · 助手</p>
+        <h2 id="form-title">创建你的账号</h2>
+        <p class="auth-description">注册后即可开始对话。</p>
+        <div class="notice auth-error" id="error-msg" role="alert"></div>
+        <div
+          class="notice auth-success"
+          id="success-msg"
+          role="status"
+          aria-live="polite"
+        ></div>
+        <form class="auth-form" id="register-form">
+          <div class="field">
+            <label for="username">用户名</label
+            ><input
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              autocapitalize="none"
+              spellcheck="false"
+              placeholder="设置一个用户名，3–20 个字符"
+              required
+              minlength="3"
+              maxlength="20"
+            />
+          </div>
+          <div class="field">
+            <label for="password">密码</label>
+            <div class="password-field">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="设置密码，至少 6 个字符"
+                autocomplete="new-password"
+                required
+                maxlength="256"
+              /><button
+                class="password-toggle"
+                type="button"
+                data-toggle-password="password"
+                aria-label="显示密码"
+                aria-pressed="false"
+              >
+                显示
+              </button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">确认密码</label>
+            <div class="password-field">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="再次输入密码"
+                autocomplete="new-password"
+                required
+                maxlength="256"
+              /><button
+                class="password-toggle"
+                type="button"
+                data-toggle-password="confirmPassword"
+                aria-label="显示确认密码"
+                aria-pressed="false"
+              >
+                显示
+              </button>
+            </div>
+          </div>
+          <details class="invite-option">
+            <summary>我有邀请码（选填）</summary>
+            <div class="field">
+              <label for="inviteCode">邀请码</label
+              ><input
+                type="text"
+                id="inviteCode"
+                name="inviteCode"
+                placeholder="输入邀请码"
+                maxlength="64"
+                autocomplete="off"
+                autocapitalize="characters"
+              />
+              <p class="field-hint">可获得额外额度，以注册结果为准。</p>
+            </div>
+          </details>
+          <button type="submit" class="primary-button" id="submit-btn">
+            创建账号
+          </button>
+        </form>
+        <p class="auth-footer">已经有账号？<a href="login.html">去登录</a></p>
+      </section>
+    </main>
+    <footer class="account-footer">IVYUN 艾维云 · 助手</footer>
+    <script src="js/pages/account.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>账号设置 · IVYUN 助手</title>
+    <link rel="icon" type="image/svg+xml" href="images/brand/ivyun-cloud.svg" />
+    <link rel="stylesheet" href="css/pages/account-base.css" />
+    <link rel="stylesheet" href="css/pages/settings.css" />
+  </head>
+  <body data-account-page="settings">
+    <header class="account-header">
+      <a href="chat.html" aria-label="返回 IVYUN 助手"
+        ><span class="brand-lockup"
+          ><img
+            src="images/brand/ivyun-logo.svg"
+            alt="IVYUN 艾维云"
+            width="132"
+            height="44"
+          /><span class="brand-product">助手</span></span
+        ></a
+      ><a class="header-link" href="chat.html"
+        >返回对话<svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 6 6 6-6 6" /></svg
+      ></a>
+    </header>
+    <div class="settings-layout">
+      <nav class="settings-nav" aria-label="设置导航">
+        <p class="eyebrow">设置</p>
+        <a href="#account" aria-current="page"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="8" r="3.5" />
+            <path d="M5 21v-2a7 7 0 0 1 14 0v2" /></svg
+          >账号与额度</a
+        >
+        <a href="#api"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="8" cy="15" r="5" />
+            <path d="m12 11 8-8m-3 3 3 3m-6 0 3 3" /></svg
+          >API 密钥</a
+        >
+        <a href="#support"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3h.01" /></svg
+          >帮助与支持</a
+        >
+        <p class="settings-brand-note">
+          <strong>IVYUN 艾维云</strong><br />AI 模型用得起，<br />AI
+          应用能落地。
+        </p>
+      </nav>
+      <main>
+        <div class="notice auth-error" id="error-msg" role="alert"></div>
+        <div
+          class="notice auth-success"
+          id="success-msg"
+          role="status"
+          aria-live="polite"
+        ></div>
+        <button type="button" id="retry-profile" class="text-button" hidden>
+          重新加载账号信息
+        </button>
+
+        <div class="settings-heading">
+          <div>
+            <h1 id="settings-title">账号</h1>
+            <p>管理你的账号、对话额度与 API 密钥。</p>
+          </div>
+          <a class="settings-close" href="chat.html" aria-label="关闭设置">×</a>
+        </div>
+        <section
+          class="settings-section"
+          id="account"
+          aria-labelledby="account-title"
+        >
+          <h2 class="section-title" id="account-title">账号与额度</h2>
+          <div class="account-panel">
+            <div class="profile-row">
+              <div class="profile-avatar">
+                <img
+                  src="images/brand/ivyun-cloud.svg"
+                  alt=""
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="user-details">
+                <div class="username" id="username">正在加载…</div>
+                <div class="join-date" id="join-date">IVYUN 助手账号</div>
+              </div>
+              <button
+                type="button"
+                class="text-button danger-link"
+                id="logout-btn"
+              >
+                退出登录
+              </button>
+            </div>
+            <div class="usage-grid">
+              <div class="usage-item">
+                <div class="usage-label">剩余对话额度</div>
+                <div class="usage-value">
+                  <span id="free-messages">—</span
+                  ><span class="usage-unit">次</span>
+                </div>
+                <p class="usage-detail">额度内可直接开始对话</p>
+              </div>
+              <div class="usage-item">
+                <div class="usage-label">API 密钥</div>
+                <div class="usage-state" id="api-status">
+                  <span class="status-dot"></span
+                  ><span id="status-text">检查中…</span>
+                </div>
+                <p class="usage-detail" id="key-preview">用于额度之外的对话</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="settings-section" id="api" aria-labelledby="api-title">
+          <div class="api-panel">
+            <div class="panel-heading">
+              <h2 id="api-title">连接你的 API 密钥</h2>
+              <span class="optional-label">可选</span>
+            </div>
+            <p class="section-description">
+              有剩余额度时可以直接使用。添加有效密钥后，也可通过密钥继续对话。
+            </p>
+            <form id="api-form">
+              <div class="field">
+                <label for="apiKey">API 密钥</label>
+                <div class="password-field">
+                  <input
+                    type="password"
+                    id="apiKey"
+                    name="apiKey"
+                    autocomplete="off"
+                    spellcheck="false"
+                    maxlength="4096"
+                    placeholder="输入你的 API 密钥"
+                  /><button
+                    type="button"
+                    class="password-toggle"
+                    data-toggle-password="apiKey"
+                    aria-label="显示 API 密钥"
+                    aria-pressed="false"
+                  >
+                    显示
+                  </button>
+                </div>
+                <p class="field-hint">保存前会验证密钥是否可用。</p>
+              </div>
+              <div class="button-row">
+                <button type="submit" class="primary-button" id="save-btn">
+                  验证并保存</button
+                ><button
+                  type="button"
+                  class="text-button danger-link"
+                  id="delete-btn"
+                  hidden
+                >
+                  移除密钥
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="settings-section" id="support">
+          <details class="support-panel">
+            <summary>需要更多额度或使用帮助？</summary>
+            <div class="support-content">
+              <img
+                src="images/wechat-qr.png"
+                alt="添加微信咨询的二维码"
+                width="112"
+                height="112"
+              />
+              <div>
+                <p><strong>扫码联系支持</strong></p>
+                <p>购买次数请备注「购买次数」。</p>
+                <p>10 次 ¥9.9 · 20 次 ¥16.9 · 50 次 ¥29.9</p>
+                <p>企业用户：API Key，阿里云同价 + 5% 服务费。</p>
+              </div>
+            </div>
+          </details>
+          <p class="settings-note">
+            IVYUN 艾维云 · AI 模型用得起，AI 应用能落地。
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="js/pages/account.js"></script>
+  </body>
+</html>

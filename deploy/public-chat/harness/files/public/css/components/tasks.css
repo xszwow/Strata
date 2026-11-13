@@ -1,19 +1,29 @@
-.conversation-tasks { position: relative; max-width: var(--reading-width); margin: 0 auto 6px; }
+.conversation-tasks { position: relative; height: 46px; max-width: var(--reading-width); margin: 0 auto 6px; }
 .conversation-tasks[hidden], .task-panel[hidden] { display: none; }
-.task-entry {
-    pointer-events: auto;
+.task-card {
+    position: absolute;
+    inset: auto 0 0;
     display: flex;
+    flex-direction: column-reverse;
+    pointer-events: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 1px 3px #0000000d;
+    overflow: hidden;
+}
+.task-entry {
+    display: flex;
+    flex: none;
     align-items: center;
     gap: 10px;
     width: 100%;
     min-height: 44px;
     margin: 0;
     padding: 10px 16px;
-    border: 1px solid #e5e5e5;
-    border-radius: 16px;
-    background: #fafafaf0;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: #525252;
     font-size: 13px;
     text-align: left;
@@ -26,21 +36,12 @@
 .task-entry-chevron { transition: transform 140ms ease; }
 .task-entry[aria-expanded='true'] .task-entry-chevron { transform: rotate(180deg); }
 .task-panel {
-    position: absolute;
-    inset: auto 0 calc(100% + 6px);
     display: flex;
     flex-direction: column;
-    pointer-events: auto;
-    border: 1px solid #e5e5e5;
-    border-radius: 16px;
-    background: #fff;
+    min-height: 0;
+    border-bottom: 1px solid #eeeeee;
     color: #262626;
-    box-shadow: 0 -4px 24px #00000012;
-    overflow: hidden;
-    transform-origin: bottom;
 }
-.task-panel:not([hidden]) { animation: task-rise 140ms ease-out; }
-@keyframes task-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 .task-panel-list {
     min-height: 0;
     max-height: max(0px, min(360px, calc(var(--app-height, 100dvh) - var(--composer-height, 180px) - 16px)));
@@ -61,6 +62,6 @@
 .task-item-title { font-size: 14px; line-height: 22px; overflow-wrap: anywhere; }
 .task-item-status { flex: none; font-size: 11px; color: #737373; }
 .task-item-note { margin: 5px 0 0; font-size: 12px; line-height: 20px; color: #737373; overflow-wrap: anywhere; white-space: pre-wrap; }
-.task-entry:focus-visible { outline: 2px solid #737373; outline-offset: 2px; }
+.task-entry:focus-visible { outline: 2px solid #737373; outline-offset: -3px; }
 .task-panel-list:focus-visible { outline: 2px solid #737373; outline-offset: -3px; border-radius: 14px; }
-@media (prefers-reduced-motion: reduce) { .task-panel:not([hidden]) { animation: none; } .task-entry-chevron { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .task-entry-chevron { transition: none; } }

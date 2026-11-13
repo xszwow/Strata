@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-11-13T19:43:32.956Z",
+  "checkedAt": "2026-11-13T19:49:34.990Z",
   "data": "synthetic procurement checklist; real public Qwen and UI",
-  "revision": "f5c95052c2537a2f",
+  "revision": "56343f6a61d61779",
   "assets": [
     {
       "asset": "chat.html",
-      "sha256": "492b53ce575bdfebf5e61347c40787078ea556dbb33299761739f19a4f0a50d6",
+      "sha256": "2dbc840a44930a2693a3517fe929faa5cedf311398e9204c6456f6982cffba2a",
       "http": 200
     },
     {
@@ -15,7 +15,7 @@
     },
     {
       "asset": "css/components/tasks.css",
-      "sha256": "71369a4ff38733aaeb7a7b112443d7b5c50fdcd989b1f037ee0b56e6616fa86d",
+      "sha256": "f95e1058bd34ff0c76470247b2e0b467c9f7274092a03cb02f35368a7f5c1f0a",
       "http": 200
     },
     {
@@ -37,7 +37,7 @@
   "checks": [
     "six deployed assets match the local source",
     "real Qwen task_update creates a collapsed one-line entry",
-    "list opens upward without moving the trigger or blocking the composer",
+    "one card expands upward with joined list and progress row, a fixed bottom edge and usable composer",
     "reload restores open panel and tasks without resubmitting",
     "the same control toggles expand and collapse",
     "sending with the list expanded works and completion remains visible",
@@ -64,7 +64,6 @@
   ],
   "errors": [],
   "success": true,
-  "interaction": "upward disclosure anchored above the composer; one expand/collapse control; no modal or height modes",
   "localValidation": {
     "taskUIAndGenerationRecoveryTestsPassed": 12,
     "layoutBrowserChecksPassed": 12,
@@ -93,13 +92,16 @@
       "send while expanded",
       "short list uses content height",
       "long list fits space above multiline composer",
-      "retired height preference migration"
+      "retired height preference migration",
+      "single shared card border and background; joined list and progress row grow from the same fixed bottom edge"
     ]
   },
+  "interaction": "one task card owns list and progress row; the same card expands upward from a fixed bottom edge; one expand/collapse control",
   "sourceFiles": 40,
   "screenshots": [
     "images/task-entry-mobile.png",
-    "images/task-sheet-mobile.png"
+    "images/task-sheet-mobile.png",
+    "images/task-card.png"
   ],
-  "publishedAt": "2026-11-13T19:44:13.862516+00:00"
+  "publishedAt": "2026-11-13T19:50:19.747008+00:00"
 }

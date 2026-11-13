@@ -83,7 +83,7 @@ test('saved tool events drive the entry; reload restores its panel; completion r
     } finally { await s.close(); }
 });
 
-test('upward disclosure has one fixed toggle, keeps the composer usable, and isolates conversations', async () => {
+test('one task card expands upward with a fixed toggle, usable composer, and isolated conversations', async () => {
     const s = await setup('task-ui-layout');
     const { page } = s;
     const positions = () => page.evaluate(() => {
@@ -113,11 +113,19 @@ test('upward disclosure has one fixed toggle, keeps the composer usable, and iso
         await frame(page);
         await page.evaluate(() => { document.getElementById('chat-container').scrollTop = 300; });
         const initial = await positions();
+        const compact = await page.locator('#task-card').boundingBox();
         await page.locator('#task-entry').click();
         await frame(page);
         assert.deepEqual(await positions(), initial, 'opening upward must not move the trigger, composer or reading position');
         const panel = await page.locator('#task-panel').boundingBox();
-        assert.ok(panel.y < initial.entry.y && panel.y + panel.height <= initial.entry.y - 4);
+        assert.ok(panel.y < initial.entry.y && Math.abs(panel.y + panel.height - initial.entry.y) < 1, 'list and progress row meet with no gap');
+        const card = await page.locator('#task-card').boundingBox();
+        assert.equal(card.x, compact.x);
+        assert.equal(card.width, compact.width);
+        assert.equal(card.y + card.height, compact.y + compact.height, 'the same card grows upward from its fixed bottom edge');
+        assert.ok(card.y < compact.y && Math.abs(card.height - compact.height - panel.height) < 1);
+        assert.equal(await page.locator('#task-card > #task-entry').count(), 1);
+        assert.equal(await page.locator('#task-card > #task-panel').count(), 1);
         assert.equal(await page.locator('#conversation-tasks button').count(), 1, 'only one expand/collapse control');
         assert.equal(await page.locator('#task-panel').evaluate(node => node.tagName), 'SECTION');
         assert.equal(await page.locator(':modal').count(), 0);
@@ -158,7 +166,7 @@ test('upward disclosure has one fixed toggle, keeps the composer usable, and iso
             await frame(page);
             assert.deepEqual(await positions(), closed);
             const bounds = await page.locator('#task-panel').boundingBox();
-            assert.ok(bounds.y >= 0 && bounds.y + bounds.height < closed.entry.y);
+            assert.ok(bounds.y >= 0 && Math.abs(bounds.y + bounds.height - closed.entry.y) < 1);
             assert.equal(await page.locator('#task-panel').evaluate(node => node.scrollWidth > node.clientWidth), false);
             await page.locator('#user-input').fill('line\n'.repeat(8));
             await page.locator('#user-input').dispatchEvent('input');
@@ -179,7 +187,7 @@ test('upward disclosure has one fixed toggle, keeps the composer usable, and iso
         await frame(page);
         const panned = await page.locator('#task-panel').boundingBox();
         const entry = await page.locator('#task-entry').boundingBox();
-        assert.ok(panned.y >= 96 && panned.y + panned.height < entry.y);
+        assert.ok(panned.y >= 96 && Math.abs(panned.y + panned.height - entry.y) < 1);
         await page.evaluate(() => {
             delete visualViewport.height;
             delete visualViewport.offsetTop;

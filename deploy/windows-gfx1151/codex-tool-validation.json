@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-12",
+  "scope": "Recorded Responses API checks on the deployed Qwen configuration",
+  "undeclared_tool_calls": "call",
+  "cases": [
+    {
+      "case": "office-initial",
+      "input_tokens": 28515,
+      "raw_xml": false,
+      "calls": [
+        {
+          "name": "functions.exec",
+          "type": "custom_tool_call",
+          "bytes": 508,
+          "input_sha256": "cfa51d0f6e93bb8cf2930fc108f72d31fe65e320408895d54c2263e2c9f85956",
+          "javascript_parses": true,
+          "uses_web__run": true,
+          "uses_exec_command": false,
+          "inspects_ALL_TOOLS": false
+        }
+      ]
+    },
+    {
+      "case": "office-after-correction",
+      "input_tokens": 28638,
+      "raw_xml": false,
+      "calls": [
+        {
+          "name": "functions.exec",
+          "type": "custom_tool_call",
+          "bytes": 316,
+          "input_sha256": "12ee1c933589800e38ea4eff4e80b6a89a17f3fa99593f26eb96dd216c267623",
+          "javascript_parses": true,
+          "uses_web__run": true,
+          "uses_exec_command": false,
+          "inspects_ALL_TOOLS": false
+        }
+      ]
+    },
+    {
+      "case": "office-after-unavailable-account",
+      "input_tokens": 29415,
+      "raw_xml": false,
+      "calls": [
+        {
+          "name": "functions.exec",
+          "type": "custom_tool_call",
+          "bytes": 500,
+          "input_sha256": "13bf4d694073bf4fefc8d2306f5e0710a6bcfead7ebf590e59fc6721ab37c7f0",
+          "javascript_parses": true,
+          "uses_web__run": false,
+          "uses_exec_command": true,
+          "inspects_ALL_TOOLS": false
+        }
+      ]
+    }
+  ],
+  "client_roundtrip": {
+    "completed": true,
+    "matched_fresh_tool_result": true,
+    "answer_had_xml": false
+  },
+  "parser_replay": [
+    {
+      "sample": 1,
+      "chunk_size": 1,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": false
+    },
+    {
+      "sample": 1,
+      "chunk_size": 7,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": false
+    },
+    {
+      "sample": 1,
+      "chunk_size": 251,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": false
+    },
+    {
+      "sample": 2,
+      "chunk_size": 1,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": true
+    },
+    {
+      "sample": 2,
+      "chunk_size": 7,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": true
+    },
+    {
+      "sample": 2,
+      "chunk_size": 1861,
+      "tool": "functions.exec",
+      "type": "custom_tool_call",
+      "js_syntax_ok": true
+    },
+    {
+      "sample": 3,
+      "chunk_size": 1,
+      "tool": "tools=web__run",
+      "type": "function_call"
+    },
+    {
+      "sample": 3,
+      "chunk_size": 7,
+      "tool": "tools=web__run",
+      "type": "function_call"
+    },
+    {
+      "sample": 3,
+      "chunk_size": 95,
+      "tool": "tools=web__run",
+      "type": "function_call"
+    }
+  ]
+}

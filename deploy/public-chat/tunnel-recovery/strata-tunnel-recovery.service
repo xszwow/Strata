@@ -1,0 +1,12 @@
+[Unit]
+Description=Release a confirmed stale Strata reverse SSH forward
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /opt/strata-public/check_tunnel.py
+TimeoutStartSec=55
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+CapabilityBoundingSet=CAP_SYS_PTRACE CAP_DAC_READ_SEARCH CAP_KILL

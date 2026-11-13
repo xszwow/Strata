@@ -1,5 +1,5 @@
 <h1 align="center">Strata · Ryzen AI Max+ 395 Windows Edition</h1>
-<p align="center"><b>源码 0.2.10 · 引擎 0.1.56 · 更新于 2026-11-04</b><br>
+<p align="center"><b>源码 0.2.10 · 引擎 0.1.56 · 更新于 2026-11-13</b><br>
 Huihui UD-IQ4_XS · 原生 Q4 MTP + 57K 草稿词表 · 262K 上下文 · Vulkan 视觉</p>
 
 <p align="center">
@@ -14,6 +14,11 @@ Huihui UD-IQ4_XS · 原生 Q4 MTP + 57K 草稿词表 · 262K 上下文 · Vulkan
 当前代码基于上游 **v0.2.10 / engine 0.1.56**，加入本 fork 的原生 Q4/Q8 MTP 支持与 Vulkan 高分辨率预热修正。
 
 The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K draft vocabulary. See the [Windows installation guide](docs/WINDOWS_RYZEN_AI_MAX395.md) and [current benchmark results](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md).
+
+## 11 月 13 日修复
+
+- Codex 接入本地 Qwen 时，Responses 接口按本次工具声明处理 `functions.exec` 与旧的 `exec_command` 历史。流式解析器可从部分写错的工具标签中恢复调用。Windows 预设采用实测的 `undeclared_tool_calls: "call"`，由客户端处理无法识别的调用。[设置与实测数据](deploy/windows-gfx1151/README.md#codex-工具调用)
+- 公网 IVYUN 网页在发送前或回答收尾时点击停止，可以继续发送下一问。部署包还包含 Linux 反向 SSH 隧道占用旧端口时的恢复程序。[网页补丁、部署说明与验证数据](deploy/public-chat/)
 
 ## 当前性能（2026-11-04 重新实测）
 

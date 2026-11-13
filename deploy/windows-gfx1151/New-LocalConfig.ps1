@@ -150,6 +150,7 @@ Set-Property $config 'parallel' 1
 Set-Property $config 'drafting' 'mtp'
 Set-Property $config 'mtp' $true
 Set-Property $config 'tool_call_recovery' $true
+Set-Property $config 'undeclared_tool_calls' 'call'
 Set-Property $config 'reasoning_close_retry' $true
 Set-Property $config 'codex_compaction_cache' $true
 Set-Property $config 'reasoning_effort' 'high'

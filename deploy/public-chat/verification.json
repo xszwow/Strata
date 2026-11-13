@@ -1,0 +1,110 @@
+{
+  "verifiedDate": "2026-11-12",
+  "timezone": "America/Los_Angeles",
+  "scope": "Public IVYUN chat Stop/next-question state and dedicated SSH reverse tunnel recovery",
+  "fixes": [
+    {
+      "file": "public/js/core/api-client.js",
+      "behavior": "An already-aborted fresh generation finishes locally before POST. An already-aborted resumed generation sends cancellation for its existing ID and preserves an unconfirmed cancellation on failure.",
+      "sha256": "d2c4f30af47747f89a0012a15c0326ef001f59e30de8c4278a2703e91ff1262c"
+    },
+    {
+      "file": "public/js/handlers/message-handler.js",
+      "behavior": "Record completion of the model stream before rendering/chart postprocessing so a later Stop does not leave a completed generation pending.",
+      "sha256": "30f80b3ee08a6dc2bf8a8c1357516eadb7c541940371d21aa1297ec4237c1d22"
+    },
+    {
+      "file": "tunnel-recovery/check_tunnel.py",
+      "behavior": "After 30 seconds without SSH payload, require three unanswered application probes on the same dedicated listener/socket with unchanged received-byte count. Release only that pinned process. A working SSH response aborts recovery.",
+      "sha256": "d14663e650c04a7552a6adb5db3df508f65af590fac83f111c2cbcfccd9b6ad4"
+    }
+  ],
+  "regression": {
+    "files": [
+      "server/tests/chat-streams.test.js",
+      "server/tests/generation-recovery-browser.test.js"
+    ],
+    "passed": 22,
+    "failed": 0,
+    "preFixReproduction": "Stop during generation-ID persistence produced status reconnecting instead of aborted.",
+    "specificCases": [
+      "Stop during initial save then send next question",
+      "Stop after DONE during postprocessing",
+      "Already-aborted resumed generation, reachable and unreachable cancellation",
+      "Offline Stop retries original cancellation",
+      "Disconnect/replay keeps one inference and one tool action"
+    ]
+  },
+  "isolatedFaultTests": {
+    "environment": "Linux transient systemd services with PrivateNetwork=yes, loopback-only SSH server/client and synthetic HTTP endpoint",
+    "cases": [
+      {
+        "name": "SSH application stalled while TCP still acknowledged",
+        "oldCheckLeftListener": true,
+        "newCheckRecovered": true,
+        "secondsToReplacementHTTP": 53.6
+      },
+      {
+        "name": "SSH transport packets lost on isolated loopback",
+        "newCheckRecovered": true,
+        "secondsToReplacementHTTP": 53.9
+      },
+      {
+        "name": "Local gateway unavailable but SSH responding",
+        "listenerPreserved": true
+      },
+      {
+        "name": "SSH resumed during failed-probe confirmation",
+        "listenerPreserved": true
+      },
+      {
+        "name": "Deployed checker running with production service capabilities and protection settings",
+        "newCheckRecovered": true,
+        "secondsToReplacementHTTP": 53.7
+      }
+    ],
+    "timingScope": "Measured isolated checker and replacement SSH client. Production also includes the timer phase, Windows reconnect backoff and network availability.",
+    "testHarnessCorrection": "The first gateway-only negative check waited for 30 seconds of SSH inactivity, which was interrupted by normal SSH keepalives. A follow-up test forced checker eligibility inside the isolated process and verified that an SSH response to the failed application probe preserves the listener."
+  },
+  "publicVerification": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "firstQuestionStopped": true,
+    "nextQuestionCompleted": true,
+    "unexpectedReconnectsBeforeInjectedReaderFailure": 0,
+    "secondGenerationPOSTs": 1,
+    "resumeAfterCursors": [
+      7,
+      7
+    ],
+    "events": 157,
+    "eventsConsecutive": true,
+    "doneReceived": true,
+    "contentMatchesFullReplay": true,
+    "characters": 230,
+    "pageErrors": [],
+    "faultScope": "Only the synthetic browser reader was disconnected and its context set offline. Production SSH was not interrupted for this test.",
+    "publishedAssetsVerified": [
+      "js/core/api-client.js identity",
+      "js/core/api-client.js gzip",
+      "js/handlers/message-handler.js identity",
+      "js/handlers/message-handler.js gzip"
+    ],
+    "anonymousTasksStatus": 401
+  },
+  "deployment": {
+    "staticRevision": "54f6ea8e1f094da3",
+    "staticReleaseVerified": true,
+    "guardInstalled": "/opt/strata-public/check_tunnel.py",
+    "timer": "strata-tunnel-recovery.timer",
+    "enabled": true,
+    "active": true,
+    "serviceResult": "success",
+    "serviceExitStatus": 0,
+    "intervalAfterServiceSeconds": 10,
+    "modelStateAtFinalCheck": "idle"
+  },
+  "causality": "The incident logs correlated a lost public stream with a stalled SSH listener. The additional Stop-during-save race was independently reproduced, without claiming it caused that specific earlier incident."
+}

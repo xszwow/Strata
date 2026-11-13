@@ -1,0 +1,10 @@
+[Unit]
+Description=Check the dedicated Strata reverse SSH forward
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=10s
+AccuracySec=2s
+
+[Install]
+WantedBy=timers.target

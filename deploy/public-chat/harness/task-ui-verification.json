@@ -1,21 +1,26 @@
 {
-  "checkedAt": "2026-11-13T20:04:20.656Z",
+  "checkedAt": "2026-11-13T20:29:44.894Z",
   "data": "synthetic procurement checklist; real public Qwen and UI",
-  "revision": "8d74dddf29f87d11",
+  "revision": "78a5594c6c968004",
   "assets": [
     {
       "asset": "chat.html",
-      "sha256": "c38a0e53861049ee94f228582fcd65a884dcebdb596dcb27de3b685ee3afa5ae",
+      "sha256": "b918fe5e7c832028d37ea20acfeb2d9e96944cff2edbcb382f68ff47d6dbac43",
       "http": 200
     },
     {
       "asset": "js/core/task-view.js",
-      "sha256": "41588505cb12340a1fd99258dde17af0a88a63747e7d6264b3b5ded871576843",
+      "sha256": "50de6370edaa4cf9138022da2451c66751c92a1ad087dc27629d9a9e42ea53b5",
       "http": 200
     },
     {
       "asset": "css/components/tasks.css",
-      "sha256": "dcd0c112aeb265a1b8a150c6f608737e98184025e2f1e938fc60ae640b22cc34",
+      "sha256": "f6d5cb3737991e21b1d7ecdec131a91c6b30c51c7748c18bb4ca2c50ebe1aa08",
+      "http": 200
+    },
+    {
+      "asset": "css/components/composer.css",
+      "sha256": "bec1126d37db0302301918b6653e03c39d17a7fe0c2cdc117334bec479bf9b88",
       "http": 200
     },
     {
@@ -55,10 +60,12 @@
     }
   ],
   "checks": [
-    "ten deployed assets match the local source",
+    "eleven deployed assets match the local source; original input CSS is byte-identical",
     "real Qwen task_update creates a collapsed one-line entry",
-    "one card expands upward with joined list and progress row, a fixed bottom edge and usable composer",
+    "compact rear task card expands upward behind the unchanged original input, with a downward collapse arrow",
     "reload restores open panel and tasks without resubmitting",
+    "switching to a new conversation and reloading never leaks tasks; returning to history restores its own state",
+    "closing and reopening the public page restores tasks and disclosure without another generation",
     "rendering leaves persisted conversation and timestamps unchanged",
     "the same control toggles expand and collapse",
     "sending with the list expanded works and completion remains visible",
@@ -85,15 +92,106 @@
       "note": "等用户发送文件再继续"
     }
   ],
+  "geometry": {
+    "originalInput": {
+      "x": 8,
+      "y": 749,
+      "width": 374,
+      "height": 87
+    },
+    "collapsedEntry": {
+      "x": 23,
+      "y": 718,
+      "width": 344,
+      "height": 30
+    },
+    "collapsedStack": {
+      "x": 8,
+      "y": 717,
+      "width": 374,
+      "height": 119
+    },
+    "overlap": 32,
+    "rearInsetPerSide": 14
+  },
   "errors": [],
   "success": true,
-  "interaction": "single task card in normal composer flow; pure snapshot-derived state; preference normalization at record boundary; view refresh never persists",
+  "interaction": "compact narrower task card behind the original input; 32px overlap, 30px disclosure; upward expansion; direct downward collapse arrow",
   "localValidation": {
-    "taskStateRecordsAndBrowserTestsPassed": 12,
-    "generationRecoveryAndContextTestsPassed": 25,
-    "messageActionChecksPassed": 10,
-    "layoutBrowserChecksPassed": 12,
-    "javascriptFilesChecked": 110,
+    "checksPassed": 46,
+    "groups": [
+      {
+        "log": "task-stack-recovery.log",
+        "passed": 20,
+        "checks": [
+          "task display preferences normalize at the record boundary without rewriting stored input",
+          "legacy decoding normalizes display fields without changing persisted source",
+          "interrupted message and branch states are recovered only when loading",
+          "unsupported records are rejected at the data boundary rather than reaching renderers",
+          "saved unfinished generation remains resumable after reload without marking tool actions aborted",
+          "mobile reload and leaving the page recover the original generation and tool result without a second action",
+          "offline beyond the old retry budget, switching chats, and online recovery preserve the same task",
+          "switching conversations keeps two existing generations; a third draft is retained without starting a rejected task",
+          "slow task discovery locks repeated clicks and sends only to the original chat after a switch",
+          "editing the draft during task discovery preserves the new text without sending old text",
+          "offline Stop stays pending until acknowledged, then cancels the same task on reconnection",
+          "Stop while saving a new generation leaves the next question ready to send",
+          "Stop after DONE during postprocessing does not leave a completed generation pending",
+          "closing before compaction or after a write resumes the same task and never repeats the write",
+          "one committed snapshot feeds model context, live progress and historical counts",
+          "clearing or changing branches never falls back to a stale task snapshot",
+          "presentation is read-only and distinguishes waiting, running, stopping and interrupted work",
+          "saved tool events drive the entry; reload restores its panel; completion retires on next send",
+          "one task card expands upward with a fixed toggle, usable composer, and isolated conversations",
+          "invalid or partial task calls stay hidden; stop retains tasks and clearing closes the panel"
+        ]
+      },
+      {
+        "log": "task-stack-lifecycle.log",
+        "passed": 3,
+        "checks": [
+          "history navigation isolates identical task IDs, disclosure and scrolling; reads never rewrite records",
+          "renderer crash and full browser restart restore committed tasks and both disclosure states from disk",
+          "background task updates survive closing and reopening the page without leaking into the selected conversation or replaying a tool"
+        ]
+      },
+      {
+        "log": "task-stack-layout.log",
+        "passed": 12,
+        "checks": [
+          "320px message scroll and boundary gestures leave composer anchored",
+          "320px multiline draft, attachment and textarea scroll preserve layout",
+          "320px keyboard, visual viewport pan, zoom and orientation",
+          "390px message scroll and boundary gestures leave composer anchored",
+          "390px multiline draft, attachment and textarea scroll preserve layout",
+          "390px keyboard, visual viewport pan, zoom and orientation",
+          "768px message scroll and boundary gestures leave composer anchored",
+          "768px multiline draft, attachment and textarea scroll preserve layout",
+          "768px keyboard, visual viewport pan, zoom and orientation",
+          "1440px message scroll and boundary gestures leave composer anchored",
+          "1440px multiline draft, attachment and textarea scroll preserve layout",
+          "1440px keyboard, visual viewport pan, zoom and orientation"
+        ]
+      },
+      {
+        "log": "task-stack-composer.log",
+        "passed": 11,
+        "checks": [
+          "compact composer starts at one line, grows with text and shrinks after clearing on every screen",
+          "Llama default shows only the bulb, model and compact two-row composer",
+          "only sidebar trigger remains outside chat; quota, settings and new chat stay in sidebar",
+          "desktop reasoning uses nonmodal source-style dropdown; High appears only after selection",
+          "reasoning selection keeps draft and attachment, supports keyboard navigation and persists per chat",
+          "real usage reaches gauge, is stored on assistant and counts cached input once",
+          "current and cumulative usage differ and regenerated branches inherit effort",
+          "attachment chip previews, removes and enables sending without typed text",
+          "320/390/768/1440px controls stay inside composer with long model name and Max selected",
+          "phone reasoning opens a reachable bottom sheet and desktop panel stays on screen",
+          "new request does not reuse previous metrics; stop and background chat isolation still work"
+        ]
+      }
+    ],
+    "javascriptFilesChecked": 111,
     "localAssetReferencesChecked": 142,
     "viewportWidths": [
       320,
@@ -101,29 +199,22 @@
       768,
       1440
     ],
-    "keyboardCoverage": "Chromium viewport resizing and simulated VisualViewport height / offsetTop; no physical iOS or Android device test",
-    "coverage": [
-      "committed snapshots shared by model context and UI",
-      "pure state derivation",
-      "legacy preference normalization without rewriting original storage",
-      "view refresh leaves stored conversation and timestamps unchanged",
-      "fresh plans start collapsed",
-      "cleared tasks and branches do not fall back to stale snapshots",
-      "shared card boundary and fixed bottom controls",
-      "actual control height reserves space after text scaling",
-      "multiline input and keyboard viewport",
-      "sending and stopping while expanded",
-      "reload and interrupted generation recovery",
-      "history keeps completed snapshots",
-      "progress and disclosure preserve chat and list scroll"
-    ]
+    "restartCoverage": "A local Chromium renderer was crashed with CDP Page.crash after records committed. The persistent browser context was fully closed and relaunched from the same disk profile, without reinjecting authentication or conversation state. Collapsed state was also checked after immediate reload and another full relaunch.",
+    "backgroundCoverage": "The page closed with A generating while B was selected. On reopening, A resumed by its original generation ID, B stayed unchanged, and returning to A displayed its updated tasks. One task_update and one final model answer were observed; no replayed generation.",
+    "keyboardCoverage": "Chromium viewport resizing and simulated VisualViewport height / offsetTop; no physical iOS or Android device test"
   },
-  "sourceFiles": 45,
+  "originalInputCssSha256": "bec1126d37db0302301918b6653e03c39d17a7fe0c2cdc117334bec479bf9b88",
+  "sourceFiles": 47,
   "componentContract": "files/TASK-UI.md",
   "screenshots": [
     "images/task-entry-mobile.png",
     "images/task-sheet-mobile.png",
-    "images/task-card.png"
+    "images/task-card.png",
+    "images/task-stack-collapsed.png"
   ],
-  "publishedAt": "2026-11-13T20:05:13.139903+00:00"
+  "limits": [
+    "Full history remains in the same browser IndexedDB; it is not automatically synchronized between devices.",
+    "Crash recovery assertions cover committed records, not data that was never saved."
+  ],
+  "publishedAt": "2026-11-13T20:31:10.560839+00:00"
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-11-13",
   "files": {
-    "README.md": "6d4a8bc386672ee642879fa18e026c3a532f6416618677faf85897ae60d54640",
-    "server/package.json": "010ed1f46bcd4cf07685a53c868dc69def4318006e5d3a220ce54fc4333b39af",
+    "README.md": "a157f8815a4ad9bdfbf788a83faf8c1e365ca73a0d6619ab67b3090945326527",
+    "server/package.json": "e3ebeab2bf108344bdbca42e9f3822e4fab0bc2f5d042c64245e3b9c2894d15b",
     "server/task-list.js": "6a4db5d454686cbba2a384c051cba48edba2d97db7d5a4a883b1572169c07118",
     "server/browser-agent.js": "cd7424fa20dce68c4c238580741b56c446bc9c6b88a4e0a3153e93d1036f4312",
     "server/browser-context.js": "12663489f889c1f125e46ed7de4f30da843397779c5570cc0109bd11adfcb377",
@@ -23,7 +23,7 @@
     "server/tests/generation-recovery-browser.test.js": "1efdc8251ddebe0ab1220d99409946fb7093756186d7da7748821e1ead00d625",
     "server/tests/fixture.js": "aab9196e4eb0c72b55daad9e54f9e04f81e8728454d141fb9a36976187bbac4f",
     "server/tests/browser-fixture.js": "b4df5575215358b751161fa9da4e48341734bf6f718d6fd0b441dea715eb70e0",
-    "public/chat.html": "c38a0e53861049ee94f228582fcd65a884dcebdb596dcb27de3b685ee3afa5ae",
+    "public/chat.html": "b918fe5e7c832028d37ea20acfeb2d9e96944cff2edbcb382f68ff47d6dbac43",
     "public/login.html": "769956248788638c2af1153e0ad2b4e54d7ea883a05ca4a9de5bd0ccc3959a7d",
     "public/register.html": "224fc9b3e0a566cc12d6e52d8e987d10c6bf1fbedaeb06445861576082860e1f",
     "public/settings.html": "b71c7d069b2fa2dea4f56e62bd66c444238a946e6b355e82f9e59131e9543d51",
@@ -37,14 +37,16 @@
     "public/js/core/ui.js": "751e19163b74846386bfbab103d05b29a724c4c716d4daae766bf2038ff0af0c",
     "public/js/handlers/message-handler.js": "39d6b3828500fcc76d6c4b4ce82ba7741cb2ba1f4af2ddd9744d3e5e6a568ab7",
     "public/js/pages/account.js": "73e39a2160a61925bfc04230723374695e0043143b5bdeb39ad36387504d4955",
-    "public/js/core/task-view.js": "41588505cb12340a1fd99258dde17af0a88a63747e7d6264b3b5ded871576843",
-    "public/css/components/tasks.css": "dcd0c112aeb265a1b8a150c6f608737e98184025e2f1e938fc60ae640b22cc34",
+    "public/js/core/task-view.js": "50de6370edaa4cf9138022da2451c66751c92a1ad087dc27629d9a9e42ea53b5",
+    "public/css/components/tasks.css": "f6d5cb3737991e21b1d7ecdec131a91c6b30c51c7748c18bb4ca2c50ebe1aa08",
     "public/js/main.js": "d441206b15aa8066c39fc7b66e3815e7ed8b0e67845c1867a839ddafac43aa5b",
-    "server/tests/task-ui-browser.test.js": "a10fd3fcf58d44f937083a5fe4ebd4902bd62d9f8df251afe788c8071663b361",
+    "server/tests/task-ui-browser.test.js": "7235903297fa6d0b32c59845cb71ca89871e7f763bb215f2fa82b72e6c8a61cd",
     "public/js/core/task-state.js": "c0e6679f8d917f01cd28d056f9bad2d37f742928014e6c0d7fa712c96c7968a8",
     "public/js/handlers/chat-layout.js": "c5749d64c58c46b41d8c6e2a259f25247113de5e6e073f9fcb4cf51562721054",
     "server/tests/task-state.test.js": "0e0923a7046ff4234737c31f0a3582c5b3e5a49e0201719fec6188fd37fca330",
     "server/tests/chat-records.test.js": "6ab9945c01eba2c4e9940453520fea30d0e412404739c9821771a69591d68efe",
-    "TASK-UI.md": "b294f32737961d960193d7aee7c3adfbe3623530125e74233d8cde7bdc2cc5b7"
+    "TASK-UI.md": "68d160be1b9184580f50be591796bbb208cf9c088b7f3d7180a113140679872d",
+    "server/tests/composer-browser.test.js": "5a2888ac756a4b6c0c95009105384345d3357bd5a33846a57b71ddab9b387e7a",
+    "server/tests/task-lifecycle-browser.test.js": "0e0b210cdc8969163e261631d7c079fabf14b8a89cfdfc78ca2cd09efc37fba2"
   }
 }

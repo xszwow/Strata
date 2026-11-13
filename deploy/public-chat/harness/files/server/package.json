@@ -9,7 +9,7 @@
         "postinstall": "node scripts/vendor.js",
         "test": "node --test tests/backend.test.js tests/composer.test.js tests/prompts.test.js tests/conversation-memory.test.js tests/task-list.test.js",
         "test:memory": "node --test tests/conversation-memory.test.js tests/task-list.test.js tests/task-resume-browser.test.js && node tests/conversation-memory-browser.test.js",
-        "test:tasks-ui": "node --test tests/task-state.test.js tests/chat-records.test.js tests/task-ui-browser.test.js tests/task-resume-browser.test.js",
+        "test:tasks-ui": "node --test tests/task-state.test.js tests/chat-records.test.js tests/task-ui-browser.test.js tests/task-resume-browser.test.js tests/task-lifecycle-browser.test.js",
         "test:browser": "node tests/browser.test.js",
         "test:stream-resume": "node --test tests/chat-streams.test.js tests/chat-stream-budget.test.js && node tests/chat-streams-browser.test.js",
         "test:browser-budget": "node --test tests/generation-limits.test.js tests/chat-stream-budget.test.js && node tests/browser-budget.test.js",

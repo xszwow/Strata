@@ -5,6 +5,7 @@ const TaskView = {
     this.entry = document.getElementById('task-entry');
     this.label = document.getElementById('task-entry-label');
     this.action = document.getElementById('task-entry-action');
+    this.chevron = this.entry.querySelector('.task-entry-chevron path');
     this.panel = document.getElementById('task-panel');
     this.list = document.getElementById('task-panel-list');
     this.scrollPositions = new WeakMap();
@@ -40,6 +41,7 @@ const TaskView = {
     this.panel.hidden = model.mode !== 'expanded';
     this.entry.setAttribute('aria-expanded', String(model.mode === 'expanded'));
     this.action.textContent = model.mode === 'expanded' ? '收起' : '展开';
+    this.chevron.setAttribute('d', model.mode === 'expanded' ? 'm7 10 5 5 5-5' : 'm7 14 5-5 5 5');
     if (model.visible) {
       if (this.label.textContent !== model.text) this.label.textContent = model.text;
       this.entry.title = model.text;

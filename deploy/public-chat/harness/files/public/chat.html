@@ -94,110 +94,112 @@
         </button>
         <main class="chat-container" id="chat-container" aria-label="对话内容"></main>
         <footer class="input-area">
-            <div id="conversation-tasks" class="conversation-tasks" hidden>
-                <div id="task-card" class="task-card">
-                    <button type="button" id="task-entry" class="task-entry" aria-expanded="false" aria-controls="task-panel">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 2 2 4-4M12 6h9M3 13h2M8 13h13M3 20h2M8 20h13" /></svg>
-                        <span id="task-entry-label" aria-live="polite" aria-atomic="true"></span>
-                        <span id="task-entry-action">展开</span>
-                        <svg class="task-entry-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 14 5-5 5 5" /></svg>
-                    </button>
-                    <section id="task-panel" class="task-panel" data-composer-expansion aria-label="本次会话待办" hidden>
-                        <ul id="task-panel-list" class="task-panel-list" aria-label="待办清单" tabindex="0"></ul>
-                    </section>
+            <div class="composer-stack">
+                <div id="conversation-tasks" class="conversation-tasks" hidden>
+                    <div id="task-card" class="task-card">
+                        <button type="button" id="task-entry" class="task-entry" aria-expanded="false" aria-controls="task-panel">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 2 2 4-4M12 6h9M3 13h2M8 13h13M3 20h2M8 20h13" /></svg>
+                            <span id="task-entry-label" aria-live="polite" aria-atomic="true"></span>
+                            <span id="task-entry-action">展开</span>
+                            <svg class="task-entry-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 14 5-5 5 5" /></svg>
+                        </button>
+                        <section id="task-panel" class="task-panel" data-composer-expansion aria-label="本次会话待办" hidden>
+                            <ul id="task-panel-list" class="task-panel-list" aria-label="待办清单" tabindex="0"></ul>
+                        </section>
+                    </div>
                 </div>
-            </div>
-            <div class="input-container">
-                <div class="composer-attachment" id="composer-attachment" hidden>
-                    <button class="composer-control" id="preview-btn" aria-label="预览附件">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.7"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
+                <div class="input-container">
+                    <div class="composer-attachment" id="composer-attachment" hidden>
+                        <button class="composer-control" id="preview-btn" aria-label="预览附件">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M6 3h8l4 4v14H6z M14 3v5h5M9 12h6M9 16h6" /></svg
+                            ><span id="attachment-name"></span>
+                        </button>
+                        <button class="composer-control" id="remove-file-button" aria-label="移除附件">
+                            <svg data-llama-icon="x" aria-hidden="true"></svg>
+                        </button>
+                    </div>
+                    <textarea id="user-input" aria-label="消息" placeholder="发送消息…" rows="1"></textarea>
+                    <div class="composer-toolbar">
+                        <input type="file" id="file-input" class="file-input" accept=".docx,.xlsx,.xls,.pdf" />
+                        <button
+                            class="composer-control composer-add"
+                            id="upload-btn"
+                            aria-label="上传文件"
+                            title="添加 Word、Excel 或 PDF"
                         >
-                            <path d="M6 3h8l4 4v14H6z M14 3v5h5M9 12h6M9 16h6" /></svg
-                        ><span id="attachment-name"></span>
-                    </button>
-                    <button class="composer-control" id="remove-file-button" aria-label="移除附件">
-                        <svg data-llama-icon="x" aria-hidden="true"></svg>
-                    </button>
-                </div>
-                <textarea id="user-input" aria-label="消息" placeholder="发送消息…" rows="1"></textarea>
-                <div class="composer-toolbar">
-                    <input type="file" id="file-input" class="file-input" accept=".docx,.xlsx,.xls,.pdf" />
-                    <button
-                        class="composer-control composer-add"
-                        id="upload-btn"
-                        aria-label="上传文件"
-                        title="添加 Word、Excel 或 PDF"
-                    >
-                        <svg data-llama-icon="plus" aria-hidden="true"></svg>
-                    </button>
-                    <div class="composer-tools">
-                        <div class="composer-model-tools">
+                            <svg data-llama-icon="plus" aria-hidden="true"></svg>
+                        </button>
+                        <div class="composer-tools">
+                            <div class="composer-model-tools">
+                                <button
+                                    class="composer-control"
+                                    id="context-button"
+                                    aria-label="上下文窗口"
+                                    aria-haspopup="dialog"
+                                    aria-expanded="false"
+                                    aria-controls="composer-panel"
+                                >
+                                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                        <circle class="context-track" cx="16" cy="16" r="11" stroke-width="3" />
+                                        <circle
+                                            id="context-ring"
+                                            cx="16"
+                                            cy="16"
+                                            r="11"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="composer-control composer-reasoning"
+                                    id="reasoning-button"
+                                    aria-label="推理强度"
+                                    aria-haspopup="dialog"
+                                    aria-expanded="false"
+                                    aria-controls="composer-panel"
+                                >
+                                    <svg data-llama-icon="lightbulb" aria-hidden="true"></svg
+                                    ><span id="reasoning-label"></span>
+                                </button>
+                                <button
+                                    class="composer-control composer-model"
+                                    id="model-button"
+                                    aria-label="当前模型"
+                                    aria-haspopup="dialog"
+                                    aria-expanded="false"
+                                    aria-controls="composer-panel"
+                                >
+                                    <svg data-llama-icon="package" aria-hidden="true"></svg
+                                    ><span id="model-name">读取模型…</span>
+                                </button>
+                            </div>
                             <button
-                                class="composer-control"
-                                id="context-button"
-                                aria-label="上下文窗口"
-                                aria-haspopup="dialog"
-                                aria-expanded="false"
-                                aria-controls="composer-panel"
+                                class="composer-control composer-submit"
+                                id="send-button"
+                                aria-label="发送"
+                                disabled
                             >
-                                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                    <circle class="context-track" cx="16" cy="16" r="11" stroke-width="3" />
-                                    <circle
-                                        id="context-ring"
-                                        cx="16"
-                                        cy="16"
-                                        r="11"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                    />
-                                </svg>
+                                <svg data-llama-icon="arrow-up" aria-hidden="true"></svg>
                             </button>
                             <button
-                                class="composer-control composer-reasoning"
-                                id="reasoning-button"
-                                aria-label="推理强度"
-                                aria-haspopup="dialog"
-                                aria-expanded="false"
-                                aria-controls="composer-panel"
+                                class="composer-control composer-submit"
+                                id="stop-button"
+                                style="display: none"
+                                aria-label="停止生成"
                             >
-                                <svg data-llama-icon="lightbulb" aria-hidden="true"></svg
-                                ><span id="reasoning-label"></span>
-                            </button>
-                            <button
-                                class="composer-control composer-model"
-                                id="model-button"
-                                aria-label="当前模型"
-                                aria-haspopup="dialog"
-                                aria-expanded="false"
-                                aria-controls="composer-panel"
-                            >
-                                <svg data-llama-icon="package" aria-hidden="true"></svg
-                                ><span id="model-name">读取模型…</span>
+                                <svg data-llama-icon="square" aria-hidden="true"></svg>
                             </button>
                         </div>
-                        <button
-                            class="composer-control composer-submit"
-                            id="send-button"
-                            aria-label="发送"
-                            disabled
-                        >
-                            <svg data-llama-icon="arrow-up" aria-hidden="true"></svg>
-                        </button>
-                        <button
-                            class="composer-control composer-submit"
-                            id="stop-button"
-                            style="display: none"
-                            aria-label="停止生成"
-                        >
-                            <svg data-llama-icon="square" aria-hidden="true"></svg>
-                        </button>
                     </div>
                 </div>
             </div>

@@ -128,6 +128,13 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
         assert.equal(card.width, compact.width);
         assert.equal(card.y + card.height, compact.y + compact.height, 'the same card grows upward from its fixed bottom edge');
         assert.ok(card.y < compact.y && Math.abs(card.height - compact.height - panel.height) < 1);
+        const front = await page.locator('.input-container').boundingBox();
+        const overlap = card.y + card.height - front.y;
+        assert.ok(overlap >= 30 && overlap <= 34, 'front input covers only the padded lower portion of the smaller back card');
+        assert.ok(card.width < front.width - 20, 'back card is visibly narrower than the original input');
+        assert.ok(initial.entry.y + initial.entry.height <= front.y, 'progress and toggle stay clear of the front input');
+        assert.equal(await page.locator('.input-container').evaluate(node => getComputedStyle(node).borderRadius), '32px');
+        assert.equal(await page.locator('.input-container > #user-input').count(), 1, 'original input structure remains intact');
         assert.equal(await page.locator('#task-card > #task-entry').count(), 1);
         assert.equal(await page.locator('#task-card > #task-panel').count(), 1);
         // Text sizing is a layout input, not a duplicated fixed-height spacer.
@@ -137,7 +144,7 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
         await frame(page);
         const largerEntry = await page.locator('#task-entry').boundingBox();
         const inputBox = await page.locator('#user-input').boundingBox();
-        assert.ok(largerEntry.height > 46 && largerEntry.y + largerEntry.height < inputBox.y);
+        assert.ok(largerEntry.height > initial.entry.height && largerEntry.y + largerEntry.height < inputBox.y);
         assert.ok((await page.locator('#conversation-tasks').boundingBox()).height >= largerEntry.height, 'normal flow must reserve the actual control height');
         await page.locator('#task-entry').evaluate(node => { node.style.removeProperty('font-size'); node.style.removeProperty('line-height'); });
         await frame(page);
@@ -176,7 +183,7 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
             await page.waitForFunction(() => Math.abs(document.body.getBoundingClientRect().height - visualViewport.height) < 1);
             await frame(page);
             const closed = await positions();
-            assert.ok(closed.entry.height >= 44 && closed.entry.height <= 46);
+            assert.ok(closed.entry.height >= 30 && closed.entry.height <= 32);
             assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
             await page.locator('#task-entry').click();
             await frame(page);

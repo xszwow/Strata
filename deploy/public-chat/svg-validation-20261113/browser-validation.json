@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-13T13:05:16.438Z",
+  "browser": "157.0.8103.51",
+  "checks": [
+    "stream waits for the closing fence, then renders SVG and following text",
+    "gradient, internal use, clip path and stylesheet survive in the rendered image",
+    "source toggles, copies and downloads without rewriting the model output",
+    "SVG and PNG downloads contain usable graphics",
+    "390px preview, viewer zoom, fit and close",
+    "1440px preview, viewer zoom, fit and close",
+    "history reload restores the SVG without a new model request",
+    "XML SVG works, ordinary XML and raw HTML remain text, IDs and CSS stay isolated",
+    "active content, external resources and CSS imports are removed from downloadable SVG",
+    "missing namespace, dimensions and safe animation remain renderable",
+    "invalid and oversized SVG preserve source and do not block later content",
+    "stop in a partial SVG then send another question completes without reconnecting",
+    "ordinary, unknown-language and unlabelled code copy exact text on phone and desktop",
+    "streaming code copies the current prefix then the completed code",
+    "no browser exceptions or external SVG requests"
+  ],
+  "errors": [],
+  "external": []
+}

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-11-13T13:06:53.258Z",
+  "revision": "78e571395892170f",
+  "browser": "157.0.8103.51",
+  "prompt": "请只输出两个完整代码块：第一个是 svg，画一个宽480高240的SVG，viewBox=\"0 0 480 240\"，浅蓝背景、两个紫色圆角矩形和连接线，下方写“SVG 接入成功”；第二个是 javascript，内容为 console.log(\"复制测试\");。不要省略，不要调用工具，不要额外解释。",
+  "response": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 240\">\n  <rect x=\"0\" y=\"0\" width=\"480\" height=\"240\" fill=\"#e6f2ff\"/>\n  <rect x=\"40\" y=\"70\" width=\"150\" height=\"60\" rx=\"12\" ry=\"12\" fill=\"#8a63d2\"/>\n  <rect x=\"290\" y=\"70\" width=\"150\" height=\"60\" rx=\"12\" ry=\"12\" fill=\"#8a63d2\"/>\n  <line x1=\"190\" y1=\"100\" x2=\"290\" y2=\"100\" stroke=\"#5b3fa8\" stroke-width=\"3\"/>\n  <text x=\"240\" y=\"200\" text-anchor=\"middle\" font-size=\"20\" fill=\"#333333\">SVG 接入成功</text>\n</svg>\n```\n\n```javascript\nconsole.log(\"复制测试\");\n```",
+  "checks": [
+    "public static assets match the tested local files",
+    "real model stream renders SVG and a code copy button",
+    "public code copy preserves the actual generated text",
+    "public SVG source toggle, fullscreen and download work",
+    "public reload restores both features without generating again"
+  ],
+  "errors": []
+}

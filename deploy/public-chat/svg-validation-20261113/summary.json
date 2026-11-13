@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-13",
+  "scope": "IVYUN SVG and ordinary code block actions",
+  "implementation": "Shared Artifacts.card, menu, icon, mobile action visibility, and DiagramOverlay/Panzoom.",
+  "staticRevision": "78e571395892170f",
+  "validation": {
+    "svgAndCodeBrowser": 15,
+    "existingUi": 15,
+    "existingArtifactFlow": 6,
+    "promptsAndStopRecovery": 29,
+    "publicLive": 5,
+    "failed": 0,
+    "javascriptSyntaxFiles": 103,
+    "localAssetReferences": 139,
+    "patchApplyAndResultHash": true
+  },
+  "limits": [
+    "SVG/XML fenced SVG only; bare HTML remains escaped.",
+    "256 KiB per SVG. Scripts, foreignObject, external images, fonts and URLs are removed.",
+    "PNG export is capped at 4096 pixels per side and 16 million pixels.",
+    "Chromium desktop and phone viewport/touch simulation; no physical iOS Safari run."
+  ],
+  "sha256NormalizedUtf8Lf": {
+    "public/chat.html": "ed169185746f59d2ef3a962fe8520191f70ca10254a67b83e75ea84e530b85d9",
+    "public/js/core/artifacts.js": "05b71b4e1cec89ca6c53f63502263e220d026b77745000b483464a25c1689d99",
+    "public/js/core/svg-artifacts.js": "e20801ff458ad79548d66c171e633e2a06c6fdaa8861911b1ef53d12fb605740",
+    "public/js/processors/markdown-processor.js": "8f38718b7b0a8e2694ec6099fdb0c94308f12929ab61919474d419919d26a1d8",
+    "public/js/handlers/mermaid-overlay.js": "f6227feb4d6ef9b5b9437d0d91ef919a6a94591060664ecece5cf4bf03ab9b21",
+    "public/js/config/prompts.js": "7b01fb0df0ced2a5cc8e96ffec9abb92c1e415fcd7838a219cb16354cd2258f6",
+    "public/css/components/code.css": "c9c5b3275a7d5fec5c59fe1cdaff1feb82bb23b954cf4a478e439e3bd7af742b",
+    "public/css/components/svg.css": "f297cda56abea12f08fcc69d0d921a5e6d0e34d841de7d5534ac4d4b495977f9",
+    "server/package.json": "2911b9e780909510454df7f4ea88b8d24f6254892ce53c5813ced9148c2f5a30",
+    "server/tests/svg-rendering.test.js": "da1f69988b59ec48a5ecbae49f1aa18197c0f1ebacb9b288336bbac82383ce8f"
+  },
+  "cleanup": {
+    "deletedFiles": 20,
+    "deletedBytes": 5606893,
+    "verifiedAbsent": true,
+    "scope": [
+      "temporary SVG build/verification workspace",
+      "superseded static archive from this task"
+    ],
+    "retained": [
+      "test results and screenshots",
+      "permanent browser regression",
+      "active static archive"
+    ]
+  }
+}

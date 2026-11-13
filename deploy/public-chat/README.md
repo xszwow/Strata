@@ -1,6 +1,27 @@
-# 公网聊天停止与续传修复
+# 公网 IVYUN 网页与隧道维护
 
 此目录对应单独部署的 IVYUN 聊天前端和 Linux 反向 SSH 转发。网页补丁适用于已有按任务编号进行取消、保存和事件续传的 IVYUN 版本。Strata 自带网页有独立的前端。
+
+## SVG 预览与代码块复制（2026-11-13）
+
+[ivyun-svg-code-actions.patch](ivyun-svg-code-actions.patch) 补齐模型输出的 SVG 预览和普通代码块复制。SVG 和代码块都调用现有的 `Artifacts.card`，使用 Mermaid 的图内悬浮操作栏与手机交互；SVG 的放大查看也复用同一套 `DiagramOverlay` 和 Panzoom。没有增加顶栏或独立的悬浮按钮布局。
+
+SVG 的右上角菜单提供源码查看、复制、SVG 下载、PNG 导出和原始源码文本下载。支持 `svg` 围栏，以及内容以 SVG 开始的 `xml` 围栏。普通代码块在右上角显示复制图标，支持流式生成期间复制当前内容。手机上与 Mermaid 一样，滑动或滚动时显示操作按钮，闲置后淡出。
+
+在已有 IVYUN 项目根目录应用并检查：
+
+```sh
+git apply --check /path/to/ivyun-svg-code-actions.patch
+git apply /path/to/ivyun-svg-code-actions.patch
+cd server
+npm run test:svg
+npm run test:ui
+npm run test:artifacts
+node --test tests/prompts.test.js tests/chat-streams.test.js tests/generation-recovery-browser.test.js
+npm run check
+```
+
+发布完整 `public/` 并更新预压缩资源，刷新网页后生效。本次是前端更新，模型服务无需重启。[测试范围、限制与公网截图](svg-validation-20261113/README.md)
 
 ## 更新 IVYUN 网页
 

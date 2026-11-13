@@ -26,3 +26,5 @@
 ```
 
 三个真实长上下文样本都返回了结构化 `functions.exec`，输入通过 JavaScript 语法检查，一次客户端往返收到对应的工具结果。单独回放旧输出时，仍有一个样本的输入无法通过语法检查，另一个样本在 `"call"` 模式下保留了未知工具名。[实测与回放记录](codex-tool-validation.json)
+
+11 月 13 日追加了两项上游协议修复。多工具强制调用使用完整的工具调用开头，由模型继续生成函数标签。Anthropic 并行结果按 `tool_use_id` 恢复顺序，再交给模型模板。真实 Qwen 对照中，四组倒序工具结果从全部配错变为全部正确。六个强制调用任务覆盖两种接口和两种返回格式，修复前后均为 24/24。测试使用现有 0.1.56 引擎、Q4 MTP 和温度 0。[请求、回复及合并后检查](tool-protocol-validation-20261113/summary.json) · [上游 #4828](https://github.com/Niko1221/Strata/pull/4828) · [上游 #4832](https://github.com/Niko1221/Strata/pull/4832)

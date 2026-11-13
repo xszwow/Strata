@@ -1,0 +1,132 @@
+{
+  "run": 1395,
+  "failures": [],
+  "errors": [],
+  "skipped": [
+    {
+      "test": "test_sdk_streaming_through_the_alias (serve.test_anthropic_base_url.AnthropicBase.test_sdk_streaming_through_the_alias)",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "test_sdk_with_the_old_v1_address_works_through_the_alias (serve.test_anthropic_base_url.AnthropicBase.test_sdk_with_the_old_v1_address_works_through_the_alias)",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "test_sdk_with_the_root_address_works (serve.test_anthropic_base_url.AnthropicBase.test_sdk_with_the_root_address_works)",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "test_on (serve.test_cache_drop.CacheDrop.test_on)",
+      "reason": "POSIX only"
+    },
+    {
+      "test": "test_constant_cost (serve.test_detok.Detok.test_constant_cost)",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "test_random_ids_and_broken_bytes (serve.test_detok.Detok.test_random_ids_and_broken_bytes)",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "test_text_with_split_characters (serve.test_detok.Detok.test_text_with_split_characters)",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "test_pack_vocab (serve.test_detok.HeapBpe.test_pack_vocab)",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "test_speed_pack (serve.test_detok.HeapBpe.test_speed_pack)",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "test_the_real_tokenizer_makes_the_ids_llama_cpp_made (serve.test_dsv41.Tokenizer.test_the_real_tokenizer_makes_the_ids_llama_cpp_made)",
+      "reason": "STRATA_DSV41_PACK (the pack's tokenizer folder) not set"
+    },
+    {
+      "test": "test_a_child_started_on_a_request_thread_outlives_that_thread_but_not_the_server (serve.test_lifeline.Lifeline.test_a_child_started_on_a_request_thread_outlives_that_thread_but_not_the_server)",
+      "reason": "PR_SET_PDEATHSIG is Linux"
+    },
+    {
+      "test": "test_the_portable_watcher_ends_the_child_when_the_server_is_killed (serve.test_lifeline.Lifeline.test_the_portable_watcher_ends_the_child_when_the_server_is_killed)",
+      "reason": "the portable watcher is the POSIX path"
+    },
+    {
+      "test": "test_the_watcher_token_does_not_change_with_the_child_state (serve.test_lifeline.Lifeline.test_the_watcher_token_does_not_change_with_the_child_state)",
+      "reason": "the portable watcher is the POSIX path"
+    },
+    {
+      "test": "test_ready_timeout_on_lazy_load_answers_the_request (serve.test_ready_timeout.ReadyTimeout.test_ready_timeout_on_lazy_load_answers_the_request)",
+      "reason": "the .cmd wrapper keeps the pipe open after the kill (only the wrapper dies), so the close of its stdout waits for the sleeping child; a real engine is one process"
+    },
+    {
+      "test": "test_ready_timeout_on_restart_answers_the_request (serve.test_ready_timeout.ReadyTimeout.test_ready_timeout_on_restart_answers_the_request)",
+      "reason": "the .cmd wrapper keeps the pipe open after the kill (only the wrapper dies), so the close of its stdout waits for the sleeping child; a real engine is one process"
+    },
+    {
+      "test": "test_a_memfd_arena_warns_when_the_engines_will_not_all_fit (serve.test_replicas.SharedArena.test_a_memfd_arena_warns_when_the_engines_will_not_all_fit)",
+      "reason": "Linux memfd"
+    },
+    {
+      "test": "test_a_memfd_is_not_limited_by_dev_shm_and_is_closed_at_the_end (serve.test_replicas.SharedArena.test_a_memfd_is_not_limited_by_dev_shm_and_is_closed_at_the_end)",
+      "reason": "Linux memfd"
+    },
+    {
+      "test": "test_the_cpu_and_ram_sampler_closes_its_files (serve.test_resource_warnings.Closed.test_the_cpu_and_ram_sampler_closes_its_files)",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "test_the_cpu_topology_closes_its_files (serve.test_resource_warnings.Closed.test_the_cpu_topology_closes_its_files)",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "test_the_hip_probes_close_their_files (serve.test_resource_warnings.Closed.test_the_hip_probes_close_their_files)",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "test_a_text_answer_that_breaks_the_schema_fails_as_without_tools (serve.test_responses.JsonFormatWithTools.test_a_text_answer_that_breaks_the_schema_fails_as_without_tools)",
+      "reason": "the schema check needs jsonschema"
+    },
+    {
+      "test": "test_a_silent_exit_is_retried_without_claiming_the_gpu_runtime (serve.test_server.StartCrashReported.test_a_silent_exit_is_retried_without_claiming_the_gpu_runtime)",
+      "reason": "signals"
+    },
+    {
+      "test": "test_sigill_is_reported_not_retried (serve.test_server.StartCrashReported.test_sigill_is_reported_not_retried)",
+      "reason": "signals"
+    },
+    {
+      "test": "test_the_runtimes_own_failure_is_named (serve.test_server.StartCrashReported.test_the_runtimes_own_failure_is_named)",
+      "reason": "signals"
+    },
+    {
+      "test": "test_restore_of_a_link_reaches_the_engine_which_decides (serve.test_slots.Slots.test_restore_of_a_link_reaches_the_engine_which_decides)",
+      "reason": "symlinks need privileges on Windows"
+    },
+    {
+      "test": "test_invalid_generation_is_an_error_and_never_streams_content (serve.test_structured.Structured.test_invalid_generation_is_an_error_and_never_streams_content)",
+      "reason": "jsonschema is not installed"
+    },
+    {
+      "test": "test_invalid_schema_is_400_and_local_refs_work (serve.test_structured.Structured.test_invalid_schema_is_400_and_local_refs_work)",
+      "reason": "jsonschema is not installed"
+    },
+    {
+      "test": "test_real_encoder_failure_retries_and_reaps_each_child (serve.test_vision_elastic_http.EncoderFailureHTTP.test_real_encoder_failure_retries_and_reaps_each_child)",
+      "reason": "child reaping is checked through /proc"
+    },
+    {
+      "test": "test_history_in_chrome (serve.test_web_history.InABrowser.test_history_in_chrome)",
+      "reason": "set WEBTEST_MODULES (a folder with node_modules/puppeteer-core) to run the browser tests"
+    },
+    {
+      "test": "test_a_link_out_of_the_folder_is_refused (serve.test_web_i18n.WhatTheServerHandsOut.test_a_link_out_of_the_folder_is_refused)",
+      "reason": "symlinks need a privilege here"
+    },
+    {
+      "test": "test_sandbox_in_chrome (serve.test_web_preview.InABrowser.test_sandbox_in_chrome)",
+      "reason": "set WEBTEST_MODULES (a folder with node_modules/puppeteer-core) to run the browser tests"
+    }
+  ],
+  "winjob": "Run separately with the Windows console decoding mode."
+}

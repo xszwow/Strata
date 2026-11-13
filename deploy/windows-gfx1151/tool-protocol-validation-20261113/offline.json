@@ -1,0 +1,21 @@
+{
+  "permutations": 152,
+  "incorrectAssociationsBefore": 148,
+  "incorrectAssociationsAfter": 0,
+  "alreadyOrderedUnchanged": true,
+  "requestsNotMutated": true,
+  "privateCallIdsRemoved": true,
+  "forcedChoiceControls": [
+    "auto",
+    "none",
+    "required",
+    {
+      "type": "function",
+      "function": {
+        "name": "trial_a"
+      }
+    }
+  ],
+  "changedPrefixBefore": "<tool_call>\n<function=",
+  "changedPrefixAfter": "<tool_call>\n"
+}

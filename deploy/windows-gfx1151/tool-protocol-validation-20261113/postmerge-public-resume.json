@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-11-13T09:13:03.025043+00:00",
+  "checks": [
+    {
+      "name": "public_login",
+      "passed": true
+    },
+    {
+      "name": "initial_stream",
+      "passed": true
+    },
+    {
+      "name": "received_numbered_content",
+      "passed": true
+    },
+    {
+      "name": "resume_status",
+      "passed": true
+    },
+    {
+      "name": "contiguous_event_sequence",
+      "passed": true,
+      "receivedEvents": 114,
+      "resumedAfter": 2
+    },
+    {
+      "name": "completion_marker",
+      "passed": true
+    },
+    {
+      "name": "complete_answer_after_disconnect",
+      "passed": true,
+      "numberCount": 60
+    },
+    {
+      "name": "duplicate_post_replays_completed_task",
+      "passed": true
+    },
+    {
+      "name": "only_one_model_generation",
+      "passed": true,
+      "modelRequests": 1,
+      "state": "idle"
+    },
+    {
+      "name": "resume_requires_authentication",
+      "passed": true
+    },
+    {
+      "name": "missing_generation_does_not_restart",
+      "passed": true
+    },
+    {
+      "name": "published_js/core/api-client.js",
+      "passed": true
+    },
+    {
+      "name": "published_js/core/sse.js",
+      "passed": true
+    },
+    {
+      "name": "published_js/core/browser-view.js",
+      "passed": true
+    }
+  ],
+  "success": true
+}

@@ -38,3 +38,6 @@ bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/** -text
 # The Linux service and the patch distributed to IVYUN use LF on every checkout.
 deploy/public-chat/tunnel-recovery/* text eol=lf
 deploy/public-chat/*.patch text eol=lf
+
+# Protocol test inputs and responses retain the archived byte hashes.
+deploy/windows-gfx1151/tool-protocol-validation-20261113/** -text whitespace=cr-at-eol

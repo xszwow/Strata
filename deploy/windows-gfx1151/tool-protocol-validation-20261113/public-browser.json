@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "stoppedFirstAnswer": true,
+  "nextQuestionCompleted": true,
+  "unexpectedReconnects": 0,
+  "generationPosts": 2,
+  "cancellationPosts": 1,
+  "pageErrors": []
+}

@@ -17,6 +17,7 @@ The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K
 
 ## 11 月 13 日修复
 
+- 合入上游 #4828 和 #4832，修正多工具强制调用的提示前缀，并按 `tool_use_id` 对齐 Anthropic 并行工具结果。真实 Qwen 对照中，结果倒序返回从 0/4 正确变为 4/4，强制调用前后均为 24/24。[测试输入、原始回复与合并后验收](deploy/windows-gfx1151/tool-protocol-validation-20261113/summary.json)
 - Codex 接入本地 Qwen 时，Responses 接口按本次工具声明处理 `functions.exec` 与旧的 `exec_command` 历史。流式解析器可从部分写错的工具标签中恢复调用。Windows 预设采用实测的 `undeclared_tool_calls: "call"`，由客户端处理无法识别的调用。[设置与实测数据](deploy/windows-gfx1151/README.md#codex-工具调用)
 - 公网 IVYUN 网页在发送前或回答收尾时点击停止，可以继续发送下一问。部署包还包含 Linux 反向 SSH 隧道占用旧端口时的恢复程序。[网页补丁、部署说明与验证数据](deploy/public-chat/)
 

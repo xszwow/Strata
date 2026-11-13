@@ -1,0 +1,3706 @@
+[
+  {
+    "id": "force-0-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Find product AX-17. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  },
+  {
+    "id": "force-0-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Find product AX-17. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  },
+  {
+    "id": "force-0-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Find product AX-17. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  },
+  {
+    "id": "force-0-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Find product AX-17. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  },
+  {
+    "id": "force-1-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Check inventory for SKU BX-28. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_stock",
+      "arguments": {
+        "sku": "BX-28"
+      }
+    }
+  },
+  {
+    "id": "force-1-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Check inventory for SKU BX-28. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_stock",
+      "arguments": {
+        "sku": "BX-28"
+      }
+    }
+  },
+  {
+    "id": "force-1-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Check inventory for SKU BX-28. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_stock",
+      "arguments": {
+        "sku": "BX-28"
+      }
+    }
+  },
+  {
+    "id": "force-1-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Check inventory for SKU BX-28. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_stock",
+      "arguments": {
+        "sku": "BX-28"
+      }
+    }
+  },
+  {
+    "id": "force-2-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Retrieve the current price for SKU CX-39. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_price",
+      "arguments": {
+        "sku": "CX-39"
+      }
+    }
+  },
+  {
+    "id": "force-2-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Retrieve the current price for SKU CX-39. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_price",
+      "arguments": {
+        "sku": "CX-39"
+      }
+    }
+  },
+  {
+    "id": "force-2-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Retrieve the current price for SKU CX-39. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_price",
+      "arguments": {
+        "sku": "CX-39"
+      }
+    }
+  },
+  {
+    "id": "force-2-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Retrieve the current price for SKU CX-39. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_price",
+      "arguments": {
+        "sku": "CX-39"
+      }
+    }
+  },
+  {
+    "id": "force-3-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up customer CUST-731. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_customer",
+      "arguments": {
+        "customer_id": "CUST-731"
+      }
+    }
+  },
+  {
+    "id": "force-3-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up customer CUST-731. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_customer",
+      "arguments": {
+        "customer_id": "CUST-731"
+      }
+    }
+  },
+  {
+    "id": "force-3-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up customer CUST-731. Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_customer",
+      "arguments": {
+        "customer_id": "CUST-731"
+      }
+    }
+  },
+  {
+    "id": "force-3-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up customer CUST-731. Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_customer",
+      "arguments": {
+        "customer_id": "CUST-731"
+      }
+    }
+  },
+  {
+    "id": "force-4-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看订单 ORD-619 的详情。 Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_order",
+      "arguments": {
+        "order_id": "ORD-619"
+      }
+    }
+  },
+  {
+    "id": "force-4-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看订单 ORD-619 的详情。 Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_order",
+      "arguments": {
+        "order_id": "ORD-619"
+      }
+    }
+  },
+  {
+    "id": "force-4-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看订单 ORD-619 的详情。 Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_order",
+      "arguments": {
+        "order_id": "ORD-619"
+      }
+    }
+  },
+  {
+    "id": "force-4-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看订单 ORD-619 的详情。 Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_order",
+      "arguments": {
+        "order_id": "ORD-619"
+      }
+    }
+  },
+  {
+    "id": "force-5-openai-json",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看北京的天气。 Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_weather",
+      "arguments": {
+        "city": "北京"
+      }
+    }
+  },
+  {
+    "id": "force-5-openai-sse",
+    "kind": "forced",
+    "route": "openai",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看北京的天气。 Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "reasoning_effort": "none",
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_product",
+            "description": "Synthetic test fixture. Return the requested lookup_product.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_stock",
+            "description": "Synthetic test fixture. Return the requested lookup_stock.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_price",
+            "description": "Synthetic test fixture. Return the requested lookup_price.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sku"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_customer",
+            "description": "Synthetic test fixture. Return the requested lookup_customer.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "customer_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "customer_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_order",
+            "description": "Synthetic test fixture. Return the requested lookup_order.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "order_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "order_id"
+              ]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trial_lookup_weather",
+            "description": "Synthetic test fixture. Return the requested lookup_weather.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_weather",
+      "arguments": {
+        "city": "北京"
+      }
+    }
+  },
+  {
+    "id": "force-5-anthropic-json",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看北京的天气。 Use the appropriate tool."
+        }
+      ],
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_weather",
+      "arguments": {
+        "city": "北京"
+      }
+    }
+  },
+  {
+    "id": "force-5-anthropic-sse",
+    "kind": "forced",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 300,
+      "temperature": 0,
+      "seed": 12345,
+      "messages": [
+        {
+          "role": "user",
+          "content": "查看北京的天气。 Use the appropriate tool."
+        }
+      ],
+      "stream": true,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "any"
+      },
+      "tools": [
+        {
+          "name": "trial_lookup_product",
+          "description": "Synthetic test fixture. Return the requested lookup_product.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_stock",
+          "description": "Synthetic test fixture. Return the requested lookup_stock.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_price",
+          "description": "Synthetic test fixture. Return the requested lookup_price.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sku"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_customer",
+          "description": "Synthetic test fixture. Return the requested lookup_customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_order",
+          "description": "Synthetic test fixture. Return the requested lookup_order.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id"
+            ]
+          }
+        },
+        {
+          "name": "trial_lookup_weather",
+          "description": "Synthetic test fixture. Return the requested lookup_weather.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_weather",
+      "arguments": {
+        "city": "北京"
+      }
+    }
+  },
+  {
+    "id": "results-2-ordered",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"C7D8E321\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"47DDF1E9\"}"
+            }
+          ]
+        }
+      ],
+      "stream": false
+    },
+    "expected": {
+      "customer_code": "C7D8E321",
+      "warehouse_code": "47DDF1E9"
+    }
+  },
+  {
+    "id": "results-2-reversed",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"47DDF1E9\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"C7D8E321\"}"
+            }
+          ]
+        }
+      ],
+      "stream": false
+    },
+    "expected": {
+      "customer_code": "C7D8E321",
+      "warehouse_code": "47DDF1E9"
+    }
+  },
+  {
+    "id": "results-3-ordered",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"8FD69F71\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"AF6BB817\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"D75BD1BB\"}"
+            }
+          ]
+        }
+      ],
+      "stream": true
+    },
+    "expected": {
+      "customer_code": "8FD69F71",
+      "warehouse_code": "AF6BB817",
+      "shipment_code": "D75BD1BB"
+    }
+  },
+  {
+    "id": "results-3-reversed",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"D75BD1BB\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"AF6BB817\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"8FD69F71\"}"
+            }
+          ]
+        }
+      ],
+      "stream": true
+    },
+    "expected": {
+      "customer_code": "8FD69F71",
+      "warehouse_code": "AF6BB817",
+      "shipment_code": "D75BD1BB"
+    }
+  },
+  {
+    "id": "results-4-ordered",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_invoice_code",
+          "description": "Synthetic test fixture. Return the requested invoice_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code, invoice_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_invoice_code",
+              "name": "trial_invoice_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"45D57553\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"72ADBEBE\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"22CFEA41\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_invoice_code",
+              "content": "{\"value\": \"B8E4FC1D\"}"
+            }
+          ]
+        }
+      ],
+      "stream": false
+    },
+    "expected": {
+      "customer_code": "45D57553",
+      "warehouse_code": "72ADBEBE",
+      "shipment_code": "22CFEA41",
+      "invoice_code": "B8E4FC1D"
+    }
+  },
+  {
+    "id": "results-4-reversed",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_invoice_code",
+          "description": "Synthetic test fixture. Return the requested invoice_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code, invoice_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_invoice_code",
+              "name": "trial_invoice_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_invoice_code",
+              "content": "{\"value\": \"B8E4FC1D\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"22CFEA41\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"72ADBEBE\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"45D57553\"}"
+            }
+          ]
+        }
+      ],
+      "stream": false
+    },
+    "expected": {
+      "customer_code": "45D57553",
+      "warehouse_code": "72ADBEBE",
+      "shipment_code": "22CFEA41",
+      "invoice_code": "B8E4FC1D"
+    }
+  },
+  {
+    "id": "results-5-ordered",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_invoice_code",
+          "description": "Synthetic test fixture. Return the requested invoice_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_supplier_code",
+          "description": "Synthetic test fixture. Return the requested supplier_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code, invoice_code, supplier_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_invoice_code",
+              "name": "trial_invoice_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_supplier_code",
+              "name": "trial_supplier_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"BC16AF95\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"0ADD48D0\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"1B0DF92F\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_invoice_code",
+              "content": "{\"value\": \"B3D03CB1\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_supplier_code",
+              "content": "{\"value\": \"7A10E253\"}"
+            }
+          ]
+        }
+      ],
+      "stream": true
+    },
+    "expected": {
+      "customer_code": "BC16AF95",
+      "warehouse_code": "0ADD48D0",
+      "shipment_code": "1B0DF92F",
+      "invoice_code": "B3D03CB1",
+      "supplier_code": "7A10E253"
+    }
+  },
+  {
+    "id": "results-5-reversed",
+    "kind": "results",
+    "route": "anthropic",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "max_tokens": 240,
+      "temperature": 0,
+      "seed": 12345,
+      "thinking": {
+        "type": "disabled"
+      },
+      "tool_choice": {
+        "type": "none"
+      },
+      "system": "This is a synthetic read-only test. Associate each tool result with its tool call ID. Return only the JSON object requested.",
+      "tools": [
+        {
+          "name": "trial_customer_code",
+          "description": "Synthetic test fixture. Return the requested customer_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_warehouse_code",
+          "description": "Synthetic test fixture. Return the requested warehouse_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_shipment_code",
+          "description": "Synthetic test fixture. Return the requested shipment_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_invoice_code",
+          "description": "Synthetic test fixture. Return the requested invoice_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        },
+        {
+          "name": "trial_supplier_code",
+          "description": "Synthetic test fixture. Return the requested supplier_code.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up record-42. Return one JSON object with exactly these keys: customer_code, warehouse_code, shipment_code, invoice_code, supplier_code. Use only the values returned by the matching tools."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "fixture_customer_code",
+              "name": "trial_customer_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_warehouse_code",
+              "name": "trial_warehouse_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_shipment_code",
+              "name": "trial_shipment_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_invoice_code",
+              "name": "trial_invoice_code",
+              "input": {
+                "query": "record-42"
+              }
+            },
+            {
+              "type": "tool_use",
+              "id": "fixture_supplier_code",
+              "name": "trial_supplier_code",
+              "input": {
+                "query": "record-42"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_supplier_code",
+              "content": "{\"value\": \"7A10E253\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_invoice_code",
+              "content": "{\"value\": \"B3D03CB1\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_shipment_code",
+              "content": "{\"value\": \"1B0DF92F\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_warehouse_code",
+              "content": "{\"value\": \"0ADD48D0\"}"
+            },
+            {
+              "type": "tool_result",
+              "tool_use_id": "fixture_customer_code",
+              "content": "{\"value\": \"BC16AF95\"}"
+            }
+          ]
+        }
+      ],
+      "stream": true
+    },
+    "expected": {
+      "customer_code": "BC16AF95",
+      "warehouse_code": "0ADD48D0",
+      "shipment_code": "1B0DF92F",
+      "invoice_code": "B3D03CB1",
+      "supplier_code": "7A10E253"
+    }
+  },
+  {
+    "id": "codex-json",
+    "kind": "codex",
+    "route": "responses",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "input": "Use the supplied function to look up AX-17.",
+      "max_output_tokens": 300,
+      "temperature": 0,
+      "reasoning": {
+        "effort": "none"
+      },
+      "stream": false,
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "name": "trial_lookup_product",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  },
+  {
+    "id": "codex-sse",
+    "kind": "codex",
+    "route": "responses",
+    "request": {
+      "model": "qwen3.8-flash-next-iq4-xs",
+      "input": "Use the supplied function to look up AX-17.",
+      "max_output_tokens": 300,
+      "temperature": 0,
+      "reasoning": {
+        "effort": "none"
+      },
+      "stream": true,
+      "tool_choice": "required",
+      "tools": [
+        {
+          "type": "function",
+          "name": "trial_lookup_product",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "name": "trial_lookup_product",
+      "arguments": {
+        "query": "AX-17"
+      }
+    }
+  }
+]

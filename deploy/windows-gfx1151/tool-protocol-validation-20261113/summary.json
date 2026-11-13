@@ -1,0 +1,289 @@
+{
+  "date": "2026-11-13",
+  "model": "Huihui Qwen3.8-Flash-Next UD-IQ4_XS",
+  "engine": "0.1.56 with native Q4 MTP and 57K vocabulary",
+  "method": "Two upstream Python function changes only; baseline/patched HTTP requests alternated AB/BA within the same resident model. Temperature 0, seed 12345, no thinking. Synthetic tools were never executed.",
+  "requests": 68,
+  "forceChoice": {
+    "source": "https://github.com/Niko1221/Strata/pull/4828",
+    "uniqueTasks": 6,
+    "protocols": [
+      "OpenAI Chat Completions",
+      "Anthropic Messages"
+    ],
+    "formats": [
+      "JSON",
+      "SSE"
+    ],
+    "declaredTools": [
+      3,
+      6
+    ],
+    "beforePassed": 24,
+    "afterPassed": 24,
+    "observedSuccessRateBenefit": false
+  },
+  "parallelResults": {
+    "source": "https://github.com/Niko1221/Strata/pull/4832",
+    "toolCounts": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "ordered": {
+      "beforePassed": 4,
+      "afterPassed": 4,
+      "total": 4
+    },
+    "reversed": {
+      "beforePassed": 0,
+      "afterPassed": 4,
+      "total": 4
+    },
+    "offlinePermutations": 152,
+    "incorrectAssociationsBefore": 148,
+    "incorrectAssociationsAfter": 0,
+    "observedBenefit": "Correct association of returned values with the matching tool calls."
+  },
+  "codexResponsesControl": {
+    "beforePassed": 2,
+    "afterPassed": 2,
+    "total": 2,
+    "formats": [
+      "JSON",
+      "SSE"
+    ]
+  },
+  "regression": {
+    "run": 105,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "modules": [
+      "serve.test_tool_routes",
+      "serve.test_responses",
+      "serve.test_tool_call_envelope",
+      "serve.test_tool_name_space",
+      "serve.test_tool_name_alias",
+      "serve.test_tool_call_unclosed",
+      "serve.test_tool_corpus",
+      "serve.test_history_tools",
+      "serve.test_chat_tool_results"
+    ]
+  },
+  "limits": [
+    "Small synthetic dataset, six forced-choice tasks reused across two protocols and output formats.",
+    "Greedy local preset only. Upstream temperature 0.7 reproduction was not replayed.",
+    "No full Codex or Claude Code UI session in this experiment.",
+    "No engine 0.1.59 performance test. Request latency includes different prefix-cache states and cannot establish speed gains."
+  ],
+  "recommendation": {
+    "4832": "Adopt for Anthropic/Claude Code parallel tools. A deterministic mapping error was reproduced and removed.",
+    "4828": "No measured extra reliability in this local preset. Retain as an optional protocol maintenance fix rather than claiming a measured local success-rate gain."
+  },
+  "originalConfigurationAndFrontendUnchanged": true,
+  "mergeDecision": {
+    "4828": "Merged after the protocol regression suite passed. Local greedy A/B remained 24/24 on each side.",
+    "4832": "Merged after reproducing and fixing wrong associations of parallel results."
+  },
+  "postMerge": {
+    "serviceTests": {
+      "run": 1398,
+      "passed": 1367,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 31,
+      "skipReasons": {
+        "the anthropic package is not installed": 3,
+        "POSIX only": 1,
+        "no pack tokenizer here": 5,
+        "STRATA_DSV41_PACK (the pack's tokenizer folder) not set": 1,
+        "PR_SET_PDEATHSIG is Linux": 1,
+        "the portable watcher is the POSIX path": 2,
+        "the .cmd wrapper keeps the pipe open after the kill (only the wrapper dies), so the close of its stdout waits for the sleeping child; a real engine is one process": 2,
+        "Linux memfd": 2,
+        "reads /proc and /sys": 3,
+        "the schema check needs jsonschema": 1,
+        "signals": 3,
+        "symlinks need privileges on Windows": 1,
+        "jsonschema is not installed": 2,
+        "child reaping is checked through /proc": 1,
+        "set WEBTEST_MODULES (a folder with node_modules/puppeteer-core) to run the browser tests": 2,
+        "symlinks need a privilege here": 1
+      },
+      "windowsProcessTests": "3 passed using the Windows console decoding mode"
+    },
+    "targetedTests": {
+      "run": 20,
+      "passed": 20,
+      "includedInServiceTests": true
+    },
+    "frontendRecoveryTests": {
+      "run": 22,
+      "passed": 22
+    },
+    "localCompatibilityTests": {
+      "uiAdapter": 3,
+      "codexRouting": 9,
+      "passed": 12
+    },
+    "realModel": {
+      "protocolCasesPassed": 34,
+      "protocolCasesTotal": 34,
+      "codexCasesPassed": 8,
+      "codexCasesTotal": 8,
+      "codexChecks": [
+        {
+          "case": "history-replay-1",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "history-replay-2",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "additional-tools",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "history-high-reasoning",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "history-stream",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "no-tool-needed",
+          "passed": true,
+          "javascriptSyntax": []
+        },
+        {
+          "case": "different-command",
+          "passed": true,
+          "javascriptSyntax": [
+            true
+          ]
+        },
+        {
+          "case": "direct-function",
+          "passed": true,
+          "javascriptSyntax": []
+        }
+      ]
+    },
+    "publicBrowser": {
+      "passed": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stoppedFirstAnswer": true,
+      "nextQuestionCompleted": true,
+      "unexpectedReconnects": 0,
+      "generationPosts": 2,
+      "cancellationPosts": 1,
+      "pageErrors": []
+    },
+    "publicResume": {
+      "checkedAt": "2026-11-13T09:13:03.025043+00:00",
+      "checks": [
+        {
+          "name": "public_login",
+          "passed": true
+        },
+        {
+          "name": "initial_stream",
+          "passed": true
+        },
+        {
+          "name": "received_numbered_content",
+          "passed": true
+        },
+        {
+          "name": "resume_status",
+          "passed": true
+        },
+        {
+          "name": "contiguous_event_sequence",
+          "passed": true,
+          "receivedEvents": 114,
+          "resumedAfter": 2
+        },
+        {
+          "name": "completion_marker",
+          "passed": true
+        },
+        {
+          "name": "complete_answer_after_disconnect",
+          "passed": true,
+          "numberCount": 60
+        },
+        {
+          "name": "duplicate_post_replays_completed_task",
+          "passed": true
+        },
+        {
+          "name": "only_one_model_generation",
+          "passed": true,
+          "modelRequests": 1,
+          "state": "idle"
+        },
+        {
+          "name": "resume_requires_authentication",
+          "passed": true
+        },
+        {
+          "name": "missing_generation_does_not_restart",
+          "passed": true
+        },
+        {
+          "name": "published_js/core/api-client.js",
+          "passed": true
+        },
+        {
+          "name": "published_js/core/sse.js",
+          "passed": true
+        },
+        {
+          "name": "published_js/core/browser-view.js",
+          "passed": true
+        }
+      ],
+      "success": true
+    },
+    "deployment": {
+      "deployed": true,
+      "canonicalConfigurationUnchanged": true,
+      "nativeEngineUnchanged": true,
+      "frontendSha256": "baa799433075a820e3aca8d42fcf31cab237f28d1e0487e50c8498af5f47b244",
+      "matchesRepositoryFrontend": true
+    }
+  },
+  "deploymentState": "Both protocol fixes are installed in the normal production frontend and active after a managed restart.",
+  "dataSha256": {
+    "live-runs.json": "70d2c949e552b32a2ad13e9cd3960ab475cc88fd8a4598e0af64577c9f5e30ae",
+    "merged-serve-tests.json": "fccba06602d64ebf90c33390510c9026748c321f926962661b6894df47c73999",
+    "offline.json": "6eaffda53095c6acf32de954d9e9f7f51d7abb2e9b47eba1278c9c0a06fdefef",
+    "postmerge-live.json": "efd9e30a04028cad586c651810a38ab3459ad22d6b97561bb8fc7cc9456c9cc4",
+    "postmerge-public-resume.json": "6abec08acdec2ceb1304254409adb05957904748e374fc6c4729e5747d3d61ec",
+    "public-browser.json": "1922891612e0d0140363b5cf49e85b5f24e48fd1b8a8d9a3a62ef035d6345a19",
+    "requests.json": "12691216e0e19dde0b164cb3144fc249f64e83907c3fea3abac8f387d01d9516"
+  }
+}

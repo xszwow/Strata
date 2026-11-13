@@ -1,21 +1,21 @@
 {
-  "checkedAt": "2026-11-13T19:34:16.282Z",
+  "checkedAt": "2026-11-13T19:43:32.956Z",
   "data": "synthetic procurement checklist; real public Qwen and UI",
-  "revision": "ef82951313a7dd4b",
+  "revision": "f5c95052c2537a2f",
   "assets": [
     {
       "asset": "chat.html",
-      "sha256": "b820f67c11acdc049dad8e4efb7005c1d649f0f01210380f792a7aa8eedd0343",
+      "sha256": "492b53ce575bdfebf5e61347c40787078ea556dbb33299761739f19a4f0a50d6",
       "http": 200
     },
     {
       "asset": "js/core/task-view.js",
-      "sha256": "bf798b9153c98f0b45c419dfbb46c99cb6e883ad29d07363bb2bd12f868f0ab4",
+      "sha256": "b500fad7bfe973c380cd6891f55c2368a202de040125dc71aa8db7f81f726289",
       "http": 200
     },
     {
       "asset": "css/components/tasks.css",
-      "sha256": "7e82d3651524f31aaaf6225e51de2a6b2b46fc995089ba9d8277d29cbc68ade2",
+      "sha256": "71369a4ff38733aaeb7a7b112443d7b5c50fdcd989b1f037ee0b56e6616fa86d",
       "http": 200
     },
     {
@@ -30,15 +30,17 @@
     },
     {
       "asset": "js/main.js",
-      "sha256": "14a1172832550a029f30c1d24ba21b484d9bd25fb2340e6943832c19ee738c59",
+      "sha256": "d441206b15aa8066c39fc7b66e3815e7ed8b0e67845c1867a839ddafac43aa5b",
       "http": 200
     }
   ],
   "checks": [
     "six deployed assets match the local source",
     "real Qwen task_update creates a collapsed one-line entry",
+    "list opens upward without moving the trigger or blocking the composer",
     "reload restores open panel and tasks without resubmitting",
-    "completion is visible for the current turn",
+    "the same control toggles expand and collapse",
+    "sending with the list expanded works and completion remains visible",
     "next question hides completed entry and retains historical checklist"
   ],
   "replies": [
@@ -62,10 +64,9 @@
   ],
   "errors": [],
   "success": true,
+  "interaction": "upward disclosure anchored above the composer; one expand/collapse control; no modal or height modes",
   "localValidation": {
-    "taskUIIntegrationScenariosPassed": 3,
-    "taskAndGenerationRecoveryTestsPassed": 11,
-    "messageActionChecksPassed": 10,
+    "taskUIAndGenerationRecoveryTestsPassed": 12,
     "layoutBrowserChecksPassed": 12,
     "javascriptFilesChecked": 108,
     "localAssetReferencesChecked": 141,
@@ -79,16 +80,20 @@
     "coverage": [
       "committed task events only",
       "invalid and partial tool parameters stay hidden",
-      "stop preserves saved tasks",
-      "clear closes entry and panel",
-      "reload restores panel without execution",
+      "stop accessible with list open",
+      "clear hides entry and list",
+      "reload restores state without execution",
       "conversation and branch isolation",
       "completion hides on next question",
-      "history keeps completed checklist",
-      "progress updates preserve chat/list scroll positions",
-      "keyboard focus cycle and Escape",
-      "backdrop close",
-      "drag handle expansion"
+      "history retains completed checklist",
+      "progress and disclosure preserve chat/entry/composer positions",
+      "list scroll survives collapse and updates",
+      "Tab proceeds from toggle to list to composer",
+      "Escape in list collapses it",
+      "send while expanded",
+      "short list uses content height",
+      "long list fits space above multiline composer",
+      "retired height preference migration"
     ]
   },
   "sourceFiles": 40,
@@ -96,5 +101,5 @@
     "images/task-entry-mobile.png",
     "images/task-sheet-mobile.png"
   ],
-  "publishedAt": "2026-11-13T19:36:28.429828+00:00"
+  "publishedAt": "2026-11-13T19:44:13.862516+00:00"
 }

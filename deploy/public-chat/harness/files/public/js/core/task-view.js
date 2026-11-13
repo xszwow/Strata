@@ -1,55 +1,22 @@
 // Conversation UI reads committed snapshots only; it never changes or runs tasks.
 const TaskView = {
   init() {
+    this.container = document.getElementById('conversation-tasks');
     this.entry = document.getElementById('task-entry');
     this.label = document.getElementById('task-entry-label');
+    this.action = document.getElementById('task-entry-action');
     this.panel = document.getElementById('task-panel');
     this.list = document.getElementById('task-panel-list');
-    this.summary = document.getElementById('task-panel-summary');
-    this.expand = document.getElementById('task-panel-expand');
-    this.entry.onclick = () => this.setOpen(true);
-    document.getElementById('task-panel-close').onclick = () => this.setOpen(false);
-    this.expand.onclick = () => this.setExpanded(!this.panel.classList.contains('is-expanded'));
-    this.panel.addEventListener('cancel', event => {
-      event.preventDefault();
-      this.setOpen(false);
-    });
-    this.panel.addEventListener('keydown', event => {
-      if (event.key !== 'Tab') return;
-      const targets = [...this.panel.querySelectorAll('button, [tabindex="0"]')];
-      const next = event.shiftKey ? targets.at(-1) : targets[0];
-      const edge = event.shiftKey ? targets[0] : targets.at(-1);
-      if (document.activeElement === edge) {
+    this.entry.onclick = () => this.setOpen(this.panel.hidden);
+    // This is a disclosure anchored to the composer, not a modal. Tab can
+    // continue through the list to the input, and outside interaction stays live.
+    this.container.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !this.panel.hidden) {
         event.preventDefault();
-        next.focus({ preventScroll: true });
+        event.stopPropagation();
+        this.setOpen(false);
       }
     });
-    const outside = event => {
-      const rect = this.panel.getBoundingClientRect();
-      return event.clientX < rect.left || event.clientX > rect.right ||
-        event.clientY < rect.top || event.clientY > rect.bottom;
-    };
-    this.panel.addEventListener('pointerdown', event => { this.backdropDown = outside(event); });
-    this.panel.addEventListener('click', event => {
-      if (this.backdropDown && outside(event)) this.setOpen(false);
-      this.backdropDown = false;
-    });
-    const handle = document.getElementById('task-panel-handle');
-    handle.addEventListener('pointerdown', event => {
-      this.drag = { id: event.pointerId, y: event.clientY };
-      handle.setPointerCapture(event.pointerId);
-    });
-    handle.addEventListener('pointerup', event => {
-      if (this.drag?.id !== event.pointerId) return;
-      const distance = event.clientY - this.drag.y;
-      this.drag = null;
-      if (distance < -32) this.setExpanded(true);
-      if (distance > 32) {
-        if (this.panel.classList.contains('is-expanded')) this.setExpanded(false);
-        else this.setOpen(false);
-      }
-    });
-    handle.addEventListener('pointercancel', () => { this.drag = null; });
   },
   snapshot(chat) {
     const messages = chat?.messages || [];
@@ -78,40 +45,46 @@ const TaskView = {
     if (!this.entry) return;
     const chat = AppState.currentChat;
     const state = this.snapshot(chat);
+    if (!this.panel.hidden) this.listScroll = this.list.scrollTop;
+    // Retain the open preference from the previous UI, retire its height mode.
+    if (chat?.taskPanel && Object.hasOwn(chat.taskPanel, 'expanded')) {
+      chat.taskPanel = { open: chat.taskPanel.open === true };
+      void historyManager.persist(chat);
+    }
     if (this.chatId !== chat?.id) {
-      if (this.panel.open) this.panel.close();
+      this.panel.hidden = true;
       this.chatId = chat?.id;
       this.list.replaceChildren();
+      this.listScroll = 0;
       this.resetScroll = true;
     }
+    this.container.hidden = !state;
     this.entry.hidden = !state;
     if (!state) {
-      if (this.panel.open) this.panel.close();
+      if (this.panel.contains(document.activeElement)) document.getElementById('user-input').focus({ preventScroll: true });
+      this.panel.hidden = true;
       this.entry.setAttribute('aria-expanded', 'false');
       if (chat?.taskPanel?.open) {
-        chat.taskPanel = { ...chat.taskPanel, open: false };
+        chat.taskPanel = { open: false };
         void historyManager.persist(chat);
       }
       return;
     }
     if (this.label.textContent !== state.text) this.label.textContent = state.text;
     this.entry.title = state.text;
-    this.summary.textContent = '已完成 ' + state.completed + ' / ' + state.items.length;
     this.renderItems(state.items);
-    this.panel.classList.toggle('is-expanded', chat.taskPanel?.expanded === true);
-    this.expand.textContent = chat.taskPanel?.expanded ? '半屏' : '展开';
-    this.expand.setAttribute('aria-label', chat.taskPanel?.expanded ? '恢复半屏待办面板' : '展开待办面板');
     const open = chat.taskPanel?.open === true;
     this.entry.setAttribute('aria-expanded', String(open));
-    if (open && !this.panel.open) this.panel.showModal();
-    if (this.panel.open && this.resetScroll) {
+    this.action.textContent = open ? '收起' : '展开';
+    this.panel.hidden = !open;
+    if (open) this.list.scrollTop = this.listScroll || 0;
+    if (open && this.resetScroll) {
       this.list.scrollTop = 0;
       this.resetScroll = false;
     }
-    if (!open && this.panel.open) this.panel.close();
   },
   renderItems(items) {
-    const scroll = this.list.scrollTop;
+    const scroll = this.panel.hidden ? this.listScroll || 0 : this.list.scrollTop;
     const nodes = new Map([...this.list.children].map(node => [node.dataset.taskId, node]));
     const labels = { pending: '待处理', in_progress: '进行中', waiting: '待跟进', completed: '已完成' };
     items.forEach((item, index) => {
@@ -136,20 +109,14 @@ const TaskView = {
     });
     for (const node of nodes.values()) node.remove();
     this.list.scrollTop = scroll;
+    this.listScroll = scroll;
   },
   setOpen(open) {
     const chat = AppState.currentChat;
     if (!chat || !this.snapshot(chat)) return;
-    chat.taskPanel = { ...chat.taskPanel, open };
+    chat.taskPanel = { open };
     this.refresh();
     if (!open) this.entry.focus({ preventScroll: true });
-    void historyManager.persist(chat);
-  },
-  setExpanded(expanded) {
-    const chat = AppState.currentChat;
-    if (!chat || !this.panel.open) return;
-    chat.taskPanel = { ...chat.taskPanel, expanded };
-    this.refresh();
     void historyManager.persist(chat);
   },
 };

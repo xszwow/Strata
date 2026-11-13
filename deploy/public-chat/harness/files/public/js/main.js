@@ -159,7 +159,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.addEventListener("keydown", (e) => {
       if (
         e.key === "Escape" &&
-        !document.getElementById("task-panel").open &&
         !document.querySelector(":popover-open") &&
         !document.getElementById("composer-panel").open
       ) {

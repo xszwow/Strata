@@ -9,7 +9,7 @@ async function setup(name) {
     const f = await browserFixture();
     const browser = await chromium.launch({ headless: true,
         ...(!fs.existsSync(chromium.executablePath()) ? { channel: 'chrome' } : {}) });
-    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
     const user = await f.register(name);
     await context.addInitScript(user => {
         localStorage.setItem('token', user.token);
@@ -52,17 +52,23 @@ test('saved tool events drive the entry; reload restores its panel; completion r
         assert.equal(await page.locator('#task-entry').isVisible(), false);
         await send(page, '记录采购任务');
         assert.equal(await page.locator('#task-entry-label').textContent(), '1/3 · 等待跟进 · 确认采购预算');
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), false);
+        assert.equal(await page.locator('#task-panel').isVisible(), false);
         await page.locator('#task-entry').click();
         assert.equal(await page.locator('#task-panel-list li').count(), 3);
+        assert.ok((await page.locator('#task-panel').boundingBox()).height < 310, 'short lists use content height');
+        assert.equal(await page.locator('#task-entry-action').textContent(), '收起');
+        assert.equal(await page.locator('#task-entry').getAttribute('aria-expanded'), 'true');
+        assert.equal(await page.locator('#task-entry').evaluate(node => node === document.activeElement), true);
         await page.waitForFunction(async () => (await historyManager.db.get('chats', [historyManager.userId, AppState.currentChat.id])).taskPanel?.open);
         await page.reload();
         await ready(page);
-        await page.waitForFunction(() => document.getElementById('task-panel').open);
+        await page.waitForFunction(() => !document.getElementById('task-panel').hidden);
         assert.equal(calls, 2, 'opening and restoring the panel never executes a model/tool call');
-        await page.keyboard.press('Escape');
+        await page.locator('#task-entry').click();
         assert.equal(await page.locator('#task-entry').evaluate(node => node === document.activeElement), true);
+        await page.locator('#task-entry').click();
         await send(page, '预算已确认，全部完成');
+        assert.equal(await page.locator('#task-panel').isVisible(), true, 'the next question can be sent while the list is open');
         assert.equal(await page.locator('#task-entry-label').textContent(), '3/3 · 已完成');
         await send(page, '谢谢');
         assert.equal(await page.locator('#task-entry').isVisible(), false);
@@ -77,9 +83,16 @@ test('saved tool events drive the entry; reload restores its panel; completion r
     } finally { await s.close(); }
 });
 
-test('mobile sheet stays within the viewport, preserves reading position, and isolates conversations', async () => {
+test('upward disclosure has one fixed toggle, keeps the composer usable, and isolates conversations', async () => {
     const s = await setup('task-ui-layout');
     const { page } = s;
+    const positions = () => page.evaluate(() => {
+        const rect = id => {
+            const r = document.getElementById(id).getBoundingClientRect();
+            return { x: r.x, y: r.y, width: r.width, height: r.height };
+        };
+        return { entry: rect('task-entry'), input: rect('user-input'), chatScroll: document.getElementById('chat-container').scrollTop };
+    });
     try {
         const ids = await page.evaluate(async () => {
             const chat = AppState.currentChat;
@@ -99,51 +112,64 @@ test('mobile sheet stays within the viewport, preserves reading position, and is
         });
         await frame(page);
         await page.evaluate(() => { document.getElementById('chat-container').scrollTop = 300; });
+        const initial = await positions();
         await page.locator('#task-entry').click();
-        const half = await page.locator('#task-panel').boundingBox();
-        assert.ok(half.height > 400 && half.height < 530);
-        await page.locator('#task-panel-expand').click();
-        assert.ok((await page.locator('#task-panel').boundingBox()).height > half.height + 150);
+        await frame(page);
+        assert.deepEqual(await positions(), initial, 'opening upward must not move the trigger, composer or reading position');
+        const panel = await page.locator('#task-panel').boundingBox();
+        assert.ok(panel.y < initial.entry.y && panel.y + panel.height <= initial.entry.y - 4);
+        assert.equal(await page.locator('#conversation-tasks button').count(), 1, 'only one expand/collapse control');
+        assert.equal(await page.locator('#task-panel').evaluate(node => node.tagName), 'SECTION');
+        assert.equal(await page.locator(':modal').count(), 0);
         await page.locator('#task-panel-list').evaluate(node => { node.scrollTop = 420; });
-        const before = await page.evaluate(() => ({ chat: document.getElementById('chat-container').scrollTop, list: document.getElementById('task-panel-list').scrollTop }));
+        const before = await page.locator('#task-panel-list').evaluate(node => node.scrollTop);
         await page.evaluate(() => {
             const chat = AppState.currentChat;
             BrowserView.event(chat, chat.messages.at(-1), { type: 'task-list', items: chat.messages.at(-1).taskList.map((item, i) => i === 31 ? { ...item, note: '收到最新确认' } : item) });
         });
-        await frame(page);
-        assert.deepEqual(await page.evaluate(() => ({ chat: document.getElementById('chat-container').scrollTop, list: document.getElementById('task-panel-list').scrollTop })), before);
-        await page.locator('#task-panel-close').click();
-        await page.evaluate(() => document.getElementById('chat-container').scrollTop = 300);
+        assert.equal(await page.locator('#task-panel-list').evaluate(node => node.scrollTop), before);
+        assert.deepEqual(await positions(), initial);
+        await page.locator('#user-input').fill('可以一边查看任务，一边继续输入');
+        assert.equal(await page.locator('#task-panel').isVisible(), true, 'typing outside the list does not close it');
+        assert.equal(await page.locator('#send-button').isEnabled(), true);
+        await page.locator('#user-input').fill('');
+        await page.locator('#task-entry').focus();
+        await page.keyboard.press('Tab');
+        assert.equal(await page.locator('#task-panel-list').evaluate(node => node === document.activeElement), true);
+        await page.keyboard.press('Tab');
+        assert.equal(await page.locator('#user-input').evaluate(node => node === document.activeElement), true, 'no modal focus trap');
+        await page.locator('#task-entry').click();
+        assert.equal(await page.locator('#task-entry-action').textContent(), '展开');
         await page.evaluate(() => {
             const chat = AppState.currentChat;
             BrowserView.event(chat, chat.messages.at(-1), { type: 'task-list', items: chat.messages.at(-1).taskList.map((item, i) => i === 0 ? { ...item, note: '确认完成' } : item) });
         });
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), false, 'updates must not reopen the panel');
-        assert.equal(await page.locator('#chat-container').evaluate(node => node.scrollTop), 300);
+        assert.equal(await page.locator('#task-panel').isVisible(), false, 'updates must not reopen the list');
+        await page.locator('#task-entry').click();
+        assert.equal(await page.locator('#task-panel-list').evaluate(node => node.scrollTop), before, 'collapse and updates retain list position');
+        await page.locator('#task-entry').click();
         for (const width of [320, 390, 768, 1440]) {
-            await page.setViewportSize({ width, height: 844 });
-            await page.locator('#user-input').focus();
             await page.setViewportSize({ width, height: 410 });
             await frame(page);
-            const box = await page.locator('#task-entry').boundingBox();
-            assert.ok(box.height >= 44 && box.height <= 46, 'entry remains one line with keyboard-sized viewport');
-            assert.ok(box.y >= 0 && box.y + box.height < 410);
+            const closed = await positions();
+            assert.ok(closed.entry.height >= 44 && closed.entry.height <= 46);
             assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
             await page.locator('#task-entry').click();
             await frame(page);
-            const panel = await page.locator('#task-panel').boundingBox();
-            assert.ok(panel.y >= -1 && panel.y + panel.height <= 411);
+            assert.deepEqual(await positions(), closed);
+            const bounds = await page.locator('#task-panel').boundingBox();
+            assert.ok(bounds.y >= 0 && bounds.y + bounds.height < closed.entry.y);
             assert.equal(await page.locator('#task-panel').evaluate(node => node.scrollWidth > node.clientWidth), false);
-            // Native modal traps focus; the composer cannot receive keystrokes behind it.
-            for (let i = 0; i < 5; i++) {
-                await page.keyboard.press('Tab');
-                assert.equal(await page.evaluate(() => document.getElementById('task-panel').contains(document.activeElement)), true);
-            }
-            await page.keyboard.press('Escape');
+            await page.locator('#user-input').fill('line\n'.repeat(8));
+            await page.locator('#user-input').dispatchEvent('input');
+            await frame(page);
+            const multiline = await page.locator('#task-panel').boundingBox();
+            assert.ok(multiline.y >= 0, 'multiline composer leaves the list in the available space');
+            await page.locator('#user-input').fill('');
+            await page.locator('#task-entry').click();
         }
         await page.setViewportSize({ width: 390, height: 844 });
         await page.locator('#task-entry').click();
-        // Simulate mobile keyboard panning separately from layout-viewport resizing.
         await page.evaluate(() => {
             Object.defineProperty(visualViewport, 'height', { configurable: true, value: 460 });
             Object.defineProperty(visualViewport, 'offsetTop', { configurable: true, value: 96 });
@@ -152,7 +178,8 @@ test('mobile sheet stays within the viewport, preserves reading position, and is
         });
         await frame(page);
         const panned = await page.locator('#task-panel').boundingBox();
-        assert.ok(panned.y >= 96 && Math.abs(panned.y + panned.height - 556) < 2);
+        const entry = await page.locator('#task-entry').boundingBox();
+        assert.ok(panned.y >= 96 && panned.y + panned.height < entry.y);
         await page.evaluate(() => {
             delete visualViewport.height;
             delete visualViewport.offsetTop;
@@ -161,29 +188,29 @@ test('mobile sheet stays within the viewport, preserves reading position, and is
         await frame(page);
         await page.evaluate(id => historyManager.select(id), ids.second);
         assert.equal(await page.locator('#task-entry').isVisible(), false);
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), false);
+        assert.equal(await page.locator('#task-panel').isVisible(), false);
         await page.evaluate(id => historyManager.select(id), ids.first);
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), true);
+        assert.equal(await page.locator('#task-panel').isVisible(), true);
+        // Preferences from the retired half/full-screen UI migrate to just open/closed.
+        await page.evaluate(async () => {
+            AppState.currentChat.taskPanel = { open: true, expanded: true };
+            await historyManager.save(AppState.currentChat);
+        });
+        await page.reload();
+        await ready(page);
+        assert.equal(await page.locator('#task-panel').isVisible(), true);
+        assert.deepEqual(await page.evaluate(() => AppState.currentChat.taskPanel), { open: true });
         const out = path.resolve(__dirname, '../test-results/task-ui');
         fs.mkdirSync(out, { recursive: true });
-        await page.locator('#task-panel-expand').click();
-        await page.screenshot({ path: path.join(out, 'mobile-sheet.png') });
-        await page.mouse.click(10, 40);
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), false);
-        await page.screenshot({ path: path.join(out, 'mobile-entry.png') });
-        await page.locator('#task-entry').click();
-        const handle = await page.locator('#task-panel-handle').boundingBox();
-        await page.mouse.move(handle.x + handle.width / 2, handle.y + 12);
-        await page.mouse.down();
-        await page.mouse.move(handle.x + handle.width / 2, handle.y - 100);
-        await page.mouse.up();
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.classList.contains('is-expanded')), true);
+        await page.screenshot({ path: path.join(out, 'mobile-expanded.png') });
+        await page.locator('#task-panel-list').focus();
         await page.keyboard.press('Escape');
+        assert.equal(await page.locator('#task-entry').evaluate(node => node === document.activeElement), true);
+        await page.screenshot({ path: path.join(out, 'mobile-entry.png') });
         for (const [status, label] of [['aborted', '已暂停'], ['error', '已中断'], ['complete', '等待跟进']]) {
             await page.evaluate(status => { AppState.currentChat.messages.at(-1).status = status; UI.updateControls(); }, status);
             assert.match(await page.locator('#task-entry-label').textContent(), new RegExp(label));
         }
-        // Moving to a branch without the snapshot removes the conversation entry.
         await page.evaluate(() => { AppState.currentChat.messages = [AppState.currentChat.messages[0]]; UI.renderChat(); });
         assert.equal(await page.locator('#task-entry').isVisible(), false);
         assert.deepEqual(s.errors, []);
@@ -222,12 +249,13 @@ test('invalid or partial task calls stay hidden; stop retains tasks and clearing
         releasePartial();
         await page.locator('#task-entry').waitFor({ state: 'visible' });
         assert.match(await page.locator('#task-entry-label').textContent(), /进行中/);
+        await page.locator('#task-entry').click();
         await page.locator('#stop-button').click();
         await settled(page);
         assert.match(await page.locator('#task-entry-label').textContent(), /已暂停/);
         assert.equal(await page.locator('#send-button').isVisible(), true);
         releaseFinal();
-        await page.locator('#task-entry').click();
+        assert.equal(await page.locator('#task-panel').isVisible(), true, 'stop stays accessible while the list is open');
         await page.evaluate(() => {
             const chat = AppState.currentChat;
             const message = AppState.newMessage('assistant', '已清空待办');
@@ -236,7 +264,7 @@ test('invalid or partial task calls stay hidden; stop retains tasks and clearing
             BrowserView.event(chat, message, { type: 'task-list', items: [] });
         });
         assert.equal(await page.locator('#task-entry').isVisible(), false);
-        assert.equal(await page.locator('#task-panel').evaluate(node => node.open), false);
+        assert.equal(await page.locator('#task-panel').isVisible(), false);
         assert.equal(await page.locator('.session-tasks li').count(), 1, 'historical saved list survives clearing');
         assert.deepEqual(s.errors, []);
     } finally { releasePartial(); releaseFinal(); await s.close(); }

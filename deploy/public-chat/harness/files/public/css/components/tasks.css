@@ -1,12 +1,13 @@
+.conversation-tasks { position: relative; max-width: var(--reading-width); margin: 0 auto 6px; }
+.conversation-tasks[hidden], .task-panel[hidden] { display: none; }
 .task-entry {
     pointer-events: auto;
     display: flex;
     align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: var(--reading-width);
     min-height: 44px;
-    margin: 0 auto 6px;
+    margin: 0;
     padding: 10px 16px;
     border: 1px solid #e5e5e5;
     border-radius: 16px;
@@ -21,34 +22,35 @@
 .task-entry:hover { background: #f0f0f0; }
 .task-entry svg { width: 16px; height: 16px; flex: none; }
 #task-entry-label { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#task-entry-action { flex: none; font-size: 12px; }
+.task-entry-chevron { transition: transform 140ms ease; }
+.task-entry[aria-expanded='true'] .task-entry-chevron { transform: rotate(180deg); }
 .task-panel {
-    position: fixed;
-    inset: auto 0 max(0px, calc(100% - var(--app-top, 0px) - var(--app-height, 100dvh)));
-    margin: 0 auto;
-    padding: 0 0 env(safe-area-inset-bottom);
-    width: min(100%, 640px);
-    max-width: 100%;
-    height: calc(var(--app-height, 100dvh) * 0.56);
-    max-height: calc(var(--app-height, 100dvh) - 16px);
+    position: absolute;
+    inset: auto 0 calc(100% + 6px);
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
     border: 1px solid #e5e5e5;
-    border-bottom: 0;
-    border-radius: 24px 24px 0 0;
+    border-radius: 16px;
     background: #fff;
     color: #262626;
-    box-shadow: 0 -8px 40px #00000018;
+    box-shadow: 0 -4px 24px #00000012;
     overflow: hidden;
+    transform-origin: bottom;
 }
-.task-panel[open] { display: flex; flex-direction: column; }
-.task-panel.is-expanded { height: calc(var(--app-height, 100dvh) * 0.90); }
-.task-panel::backdrop { background: #0005; }
-.task-panel-handle { flex: none; height: 22px; touch-action: none; cursor: ns-resize; }
-.task-panel-handle::after { content: ''; display: block; width: 36px; height: 4px; border-radius: 4px; background: #d4d4d4; margin: 10px auto 0; }
-.task-panel-header { display: flex; align-items: center; gap: 8px; padding: 0 16px 12px 24px; border-bottom: 1px solid #f0f0f0; flex: none; }
-.task-panel-heading { flex: 1; min-width: 0; }
-.task-panel-heading h2 { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; }
-.task-panel-heading p { margin: 2px 0 0; color: #737373; font-size: 12px; }
-.task-panel .composer-control { min-width: 44px; min-height: 44px; font-size: 13px; }
-.task-panel-list { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; list-style: none; padding: 8px 24px 20px; margin: 0; }
+.task-panel:not([hidden]) { animation: task-rise 140ms ease-out; }
+@keyframes task-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.task-panel-list {
+    min-height: 0;
+    max-height: max(0px, min(360px, calc(var(--app-height, 100dvh) - var(--composer-height, 180px) - 16px)));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    list-style: none;
+    padding: 0 16px;
+    margin: 0;
+}
 .task-panel-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f2f2f2; }
 .task-panel-list li:last-child { border-bottom: 0; }
 .task-status-mark { flex: none; width: 18px; height: 18px; margin-top: 2px; border: 1.5px solid #c9c9c9; border-radius: 50%; font-size: 12px; line-height: 15px; text-align: center; color: #737373; }
@@ -59,4 +61,6 @@
 .task-item-title { font-size: 14px; line-height: 22px; overflow-wrap: anywhere; }
 .task-item-status { flex: none; font-size: 11px; color: #737373; }
 .task-item-note { margin: 5px 0 0; font-size: 12px; line-height: 20px; color: #737373; overflow-wrap: anywhere; white-space: pre-wrap; }
-.task-entry:focus-visible, .task-panel button:focus-visible { outline: 2px solid #737373; outline-offset: 2px; }
+.task-entry:focus-visible { outline: 2px solid #737373; outline-offset: 2px; }
+.task-panel-list:focus-visible { outline: 2px solid #737373; outline-offset: -3px; border-radius: 14px; }
+@media (prefers-reduced-motion: reduce) { .task-panel:not([hidden]) { animation: none; } .task-entry-chevron { transition: none; } }

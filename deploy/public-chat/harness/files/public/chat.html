@@ -93,11 +93,17 @@
         </button>
         <main class="chat-container" id="chat-container" aria-label="对话内容"></main>
         <footer class="input-area">
-            <button type="button" id="task-entry" class="task-entry" hidden aria-haspopup="dialog" aria-expanded="false" aria-controls="task-panel">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 2 2 4-4M12 6h9M3 13h2M8 13h13M3 20h2M8 20h13" /></svg>
-                <span id="task-entry-label" aria-live="polite" aria-atomic="true"></span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 14 5-5 5 5" /></svg>
-            </button>
+            <div id="conversation-tasks" class="conversation-tasks" hidden>
+                <button type="button" id="task-entry" class="task-entry" hidden aria-expanded="false" aria-controls="task-panel">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 2 2 4-4M12 6h9M3 13h2M8 13h13M3 20h2M8 20h13" /></svg>
+                    <span id="task-entry-label" aria-live="polite" aria-atomic="true"></span>
+                    <span id="task-entry-action">展开</span>
+                    <svg class="task-entry-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 14 5-5 5 5" /></svg>
+                </button>
+                <section id="task-panel" class="task-panel" aria-label="本次会话待办" hidden>
+                    <ul id="task-panel-list" class="task-panel-list" aria-label="待办清单" tabindex="0"></ul>
+                </section>
+            </div>
             <div class="input-container">
                 <div class="composer-attachment" id="composer-attachment" hidden>
                     <button class="composer-control" id="preview-btn" aria-label="预览附件">
@@ -193,15 +199,6 @@
                 </div>
             </div>
         </footer>
-        <dialog id="task-panel" class="task-panel" aria-labelledby="task-panel-title" aria-describedby="task-panel-summary">
-            <div id="task-panel-handle" class="task-panel-handle" aria-hidden="true"></div>
-            <header class="task-panel-header">
-                <div class="task-panel-heading"><h2 id="task-panel-title">本次会话待办</h2><p id="task-panel-summary"></p></div>
-                <button type="button" id="task-panel-expand" class="composer-control" aria-label="展开待办面板">展开</button>
-                <button type="button" id="task-panel-close" class="composer-control" aria-label="关闭待办面板" autofocus><svg data-llama-icon="x" aria-hidden="true"></svg></button>
-            </header>
-            <ul id="task-panel-list" class="task-panel-list" aria-label="待办清单" tabindex="0"></ul>
-        </dialog>
         <dialog
             id="composer-panel"
             popover="auto"

@@ -7,86 +7,50 @@ const TaskView = {
     this.action = document.getElementById('task-entry-action');
     this.panel = document.getElementById('task-panel');
     this.list = document.getElementById('task-panel-list');
-    this.entry.onclick = () => this.setOpen(this.panel.hidden);
-    // This is a disclosure anchored to the composer, not a modal. Tab can
-    // continue through the list to the input, and outside interaction stays live.
+    this.scrollPositions = new WeakMap();
+    this.entry.onclick = () => this.setOpen(this.model?.mode !== 'expanded');
     this.container.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !this.panel.hidden) {
+      if (event.key === 'Escape' && this.model?.mode === 'expanded') {
         event.preventDefault();
         event.stopPropagation();
         this.setOpen(false);
       }
     });
   },
-  snapshot(chat) {
-    const messages = chat?.messages || [];
-    const index = messages.findLastIndex(message => message.role === 'assistant' && Array.isArray(message.taskList));
-    const items = messages[index]?.taskList || [];
-    if (!items.length) return null;
-    const completed = items.filter(item => item.status === 'completed').length;
-    // A completed plan remains in its message, but leaves the composer on the next question.
-    if (completed === items.length && messages.slice(index + 1).some(message => message.role === 'user')) return null;
-    const latest = messages.findLast(message => message.role === 'assistant');
-    const running = AppState.operations.has(chat.id) || !!GenerationRecovery.pending(chat);
-    const current = items.find(item => item.status === 'in_progress') ||
-      items.find(item => item.status === 'waiting') || items.find(item => item.status !== 'completed');
-    let text = '已完成';
-    if (current) {
-      let state = current.status === 'waiting' ? '等待跟进' : current.status === 'in_progress'
-        ? (running ? '进行中' : '待继续') : '待处理';
-      if (!running && latest?.status === 'aborted') state = '已暂停';
-      if (!running && latest?.status === 'error') state = '已中断';
-      if (latest?.generation?.stopRequested && running) state = '正在停止';
-      text = state + ' · ' + current.title;
-    }
-    return { items, completed, text: completed + '/' + items.length + ' · ' + text };
+  scrollFor(chat) {
+    if (!this.scrollPositions.has(chat)) this.scrollPositions.set(chat, new Map());
+    return this.scrollPositions.get(chat);
   },
   refresh() {
     if (!this.entry) return;
+    // Rendering has no persistence effects. Remember only transient scroll in
+    // this view, keyed by the owning conversation and plan, never globally.
+    if (this.owner && this.model?.mode === 'expanded')
+      this.scrollFor(this.owner).set(this.model.scope, this.list.scrollTop);
     const chat = AppState.currentChat;
-    const state = this.snapshot(chat);
-    if (!this.panel.hidden) this.listScroll = this.list.scrollTop;
-    // Retain the open preference from the previous UI, retire its height mode.
-    if (chat?.taskPanel && Object.hasOwn(chat.taskPanel, 'expanded')) {
-      chat.taskPanel = { open: chat.taskPanel.open === true };
-      void historyManager.persist(chat);
+    const model = TaskState.view(chat, {
+      running: AppState.operations.has(chat?.id) || !!GenerationRecovery.pending(chat),
+    });
+    const changedOwner = this.owner !== chat || this.model?.scope !== model.scope;
+    const hadListFocus = this.panel.contains(document.activeElement);
+    if (changedOwner) this.list.replaceChildren();
+    this.owner = chat;
+    this.model = model;
+    this.container.hidden = model.mode === 'hidden';
+    this.panel.hidden = model.mode !== 'expanded';
+    this.entry.setAttribute('aria-expanded', String(model.mode === 'expanded'));
+    this.action.textContent = model.mode === 'expanded' ? '收起' : '展开';
+    if (model.visible) {
+      if (this.label.textContent !== model.text) this.label.textContent = model.text;
+      this.entry.title = model.text;
+      this.renderItems(model.items);
+      if (model.mode === 'expanded') this.list.scrollTop = this.scrollFor(chat).get(model.scope) || 0;
     }
-    if (this.chatId !== chat?.id) {
-      this.panel.hidden = true;
-      this.chatId = chat?.id;
-      this.list.replaceChildren();
-      this.listScroll = 0;
-      this.resetScroll = true;
-    }
-    this.container.hidden = !state;
-    this.entry.hidden = !state;
-    if (!state) {
-      if (this.panel.contains(document.activeElement)) document.getElementById('user-input').focus({ preventScroll: true });
-      this.panel.hidden = true;
-      this.entry.setAttribute('aria-expanded', 'false');
-      if (chat?.taskPanel?.open) {
-        chat.taskPanel = { open: false };
-        void historyManager.persist(chat);
-      }
-      return;
-    }
-    if (this.label.textContent !== state.text) this.label.textContent = state.text;
-    this.entry.title = state.text;
-    this.renderItems(state.items);
-    const open = chat.taskPanel?.open === true;
-    this.entry.setAttribute('aria-expanded', String(open));
-    this.action.textContent = open ? '收起' : '展开';
-    this.panel.hidden = !open;
-    if (open) this.list.scrollTop = this.listScroll || 0;
-    if (open && this.resetScroll) {
-      this.list.scrollTop = 0;
-      this.resetScroll = false;
-    }
+    if (hadListFocus && (changedOwner || model.mode !== 'expanded'))
+      (model.visible ? this.entry : document.getElementById('user-input')).focus({ preventScroll: true });
   },
   renderItems(items) {
-    const scroll = this.panel.hidden ? this.listScroll || 0 : this.list.scrollTop;
     const nodes = new Map([...this.list.children].map(node => [node.dataset.taskId, node]));
-    const labels = { pending: '待处理', in_progress: '进行中', waiting: '待跟进', completed: '已完成' };
     items.forEach((item, index) => {
       let row = nodes.get(item.id);
       nodes.delete(item.id);
@@ -103,18 +67,38 @@ const TaskView = {
       };
       set('.task-status-mark', item.status === 'completed' ? '✓' : item.status === 'waiting' ? '–' : '');
       set('.task-item-title', item.title);
-      set('.task-item-status', labels[item.status] || '待处理');
+      set('.task-item-status', TaskState.labels[item.status] || '待处理');
       set('.task-item-note', item.note || '').hidden = !item.note;
       if (this.list.children[index] !== row) this.list.insertBefore(row, this.list.children[index] || null);
     });
     for (const node of nodes.values()) node.remove();
-    this.list.scrollTop = scroll;
-    this.listScroll = scroll;
+  },
+  renderHistory(items, body) {
+    let details = body.querySelector(":scope > .session-tasks");
+    if (!items?.length) { details?.remove(); return; }
+    if (details?.taskList === items) return;
+    if (!details) {
+      details = document.createElement("details");
+      details.className = "session-tasks llama-process-block";
+      body.prepend(details);
+    }
+    details.taskList = items;
+    const summary = document.createElement("summary");
+    summary.textContent = "待办 · 已完成 " + TaskState.completed(items) + "/" + items.length;
+    const list = document.createElement("ul");
+    for (const item of items) {
+      const row = document.createElement("li");
+      row.textContent = [TaskState.labels[item.status], item.title, item.note].filter(Boolean).join(" · ");
+      list.append(row);
+    }
+    details.replaceChildren(summary, list);
   },
   setOpen(open) {
     const chat = AppState.currentChat;
-    if (!chat || !this.snapshot(chat)) return;
-    chat.taskPanel = { open };
+    const { visible, scope } = TaskState.read(chat?.messages);
+    if (!chat || !visible) return;
+    // User interaction is the sole writer of the disclosure preference.
+    chat.taskPanel = { open, scope };
     this.refresh();
     if (!open) this.entry.focus({ preventScroll: true });
     void historyManager.persist(chat);

@@ -287,7 +287,7 @@ const BrowserView = {
     // A tool call can start after the last timings event; update the footer on
     // phase changes too, so the previous round's TPS cannot linger by a tool.
     MessageActions.update(chat.id, message);
-    this.renderTasks(message.taskList, body);
+    TaskView.renderHistory(message.taskList, body);
     const steps = (message.browserSteps || []).filter((step) =>
       BrowserProtocol.displayTool(step.name),
     );
@@ -463,27 +463,6 @@ const BrowserView = {
       }
     }
     this.place();
-  },
-  renderTasks(items, body) {
-    let details = body.querySelector(":scope > .session-tasks");
-    if (!items?.length) { details?.remove(); return; }
-    if (details?.taskList === items) return;
-    if (!details) {
-      details = document.createElement("details");
-      details.className = "session-tasks llama-process-block";
-      body.prepend(details);
-    }
-    details.taskList = items;
-    const summary = document.createElement("summary");
-    summary.textContent = "待办 · 已完成 " + items.filter(item => item.status === "completed").length + "/" + items.length;
-    const list = document.createElement("ul");
-    const labels = { pending: "待处理", in_progress: "进行中", waiting: "待跟进", completed: "已完成" };
-    for (const item of items) {
-      const row = document.createElement("li");
-      row.textContent = [labels[item.status], item.title, item.note].filter(Boolean).join(" · ");
-      list.append(row);
-    }
-    details.replaceChildren(summary, list);
   },
   event(chat, message, event) {
     let changed = false;

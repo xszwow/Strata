@@ -1,5 +1,6 @@
 // Persistence boundary: legacy records enter AppState only after decoding.
 // Reading never rewrites IndexedDB. Unsupported records remain available for export.
+const RecordTasks = typeof module !== "undefined" ? require("./task-state") : TaskState;
 const ChatRecords = {
   version: 1,
   object(value, field) {
@@ -128,6 +129,7 @@ const ChatRecords = {
     chat.messages = this.array(chat.messages, "消息列表").map((message) =>
       this.message(message, recover),
     );
+    if (chat.taskPanel != null) chat.taskPanel = RecordTasks.preference(chat.taskPanel, chat.messages);
     if (chat.messageBranches != null) {
       this.object(chat.messageBranches, "消息版本");
       for (const versions of Object.values(chat.messageBranches))

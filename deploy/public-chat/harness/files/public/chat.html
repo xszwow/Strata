@@ -39,6 +39,7 @@
         <script defer src="js/core/chart-contract.js"></script>
         <script defer src="js/config/prompts.js"></script>
         <script defer src="js/core/state.js"></script>
+        <script defer src="js/core/task-state.js"></script>
         <script defer src="js/core/chat-records.js?v=20261018-recovery"></script>
         <script defer src="js/core/sse.js"></script>
         <script defer src="js/core/dependencies.js"></script>
@@ -95,13 +96,13 @@
         <footer class="input-area">
             <div id="conversation-tasks" class="conversation-tasks" hidden>
                 <div id="task-card" class="task-card">
-                    <button type="button" id="task-entry" class="task-entry" hidden aria-expanded="false" aria-controls="task-panel">
+                    <button type="button" id="task-entry" class="task-entry" aria-expanded="false" aria-controls="task-panel">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 2 2 4-4M12 6h9M3 13h2M8 13h13M3 20h2M8 20h13" /></svg>
                         <span id="task-entry-label" aria-live="polite" aria-atomic="true"></span>
                         <span id="task-entry-action">展开</span>
                         <svg class="task-entry-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 14 5-5 5 5" /></svg>
                     </button>
-                    <section id="task-panel" class="task-panel" aria-label="本次会话待办" hidden>
+                    <section id="task-panel" class="task-panel" data-composer-expansion aria-label="本次会话待办" hidden>
                         <ul id="task-panel-list" class="task-panel-list" aria-label="待办清单" tabindex="0"></ul>
                     </section>
                 </div>

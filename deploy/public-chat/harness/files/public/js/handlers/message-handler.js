@@ -88,7 +88,7 @@ async function generateReply(chat, assistant, context, { resume = false } = {}) 
       signal: operation.controller.signal,
       reasoningEffort: assistant.reasoningEffort,
       browserContext: { conversationId: chat.id, messageId: assistant.id,
-        taskList: history.findLast(m => m.role === "assistant" && Array.isArray(m.taskList))?.taskList || [],
+        taskList: TaskState.read(history).items,
         previousRuns: history
           .filter(m => m.role === "assistant" && ["error", "aborted", "reconnecting"].includes(m.status) && m.generation?.id)
           .slice(-16).map(m => m.generation.id) },

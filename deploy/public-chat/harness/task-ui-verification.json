@@ -1,26 +1,26 @@
 {
-  "checkedAt": "2026-11-13T19:49:34.990Z",
+  "checkedAt": "2026-11-13T20:04:20.656Z",
   "data": "synthetic procurement checklist; real public Qwen and UI",
-  "revision": "56343f6a61d61779",
+  "revision": "8d74dddf29f87d11",
   "assets": [
     {
       "asset": "chat.html",
-      "sha256": "2dbc840a44930a2693a3517fe929faa5cedf311398e9204c6456f6982cffba2a",
+      "sha256": "c38a0e53861049ee94f228582fcd65a884dcebdb596dcb27de3b685ee3afa5ae",
       "http": 200
     },
     {
       "asset": "js/core/task-view.js",
-      "sha256": "b500fad7bfe973c380cd6891f55c2368a202de040125dc71aa8db7f81f726289",
+      "sha256": "41588505cb12340a1fd99258dde17af0a88a63747e7d6264b3b5ded871576843",
       "http": 200
     },
     {
       "asset": "css/components/tasks.css",
-      "sha256": "f95e1058bd34ff0c76470247b2e0b467c9f7274092a03cb02f35368a7f5c1f0a",
+      "sha256": "dcd0c112aeb265a1b8a150c6f608737e98184025e2f1e938fc60ae640b22cc34",
       "http": 200
     },
     {
       "asset": "js/core/browser-view.js",
-      "sha256": "565bf67f41578ea7160f660b08d57f8bcf3f903bbe24b0baa94b0dd41a8f8f3b",
+      "sha256": "917b55fef737b7426dd8cce734bc99c310d34010b1f86c2e7f12a915ce7e6523",
       "http": 200
     },
     {
@@ -32,21 +32,44 @@
       "asset": "js/main.js",
       "sha256": "d441206b15aa8066c39fc7b66e3815e7ed8b0e67845c1867a839ddafac43aa5b",
       "http": 200
+    },
+    {
+      "asset": "js/core/task-state.js",
+      "sha256": "c0e6679f8d917f01cd28d056f9bad2d37f742928014e6c0d7fa712c96c7968a8",
+      "http": 200
+    },
+    {
+      "asset": "js/core/chat-records.js",
+      "sha256": "9b0d2b3edb4adf766e4a4d2d8474cafd3c7f417595e8e785f219c57ea1c56918",
+      "http": 200
+    },
+    {
+      "asset": "js/handlers/message-handler.js",
+      "sha256": "39d6b3828500fcc76d6c4b4ce82ba7741cb2ba1f4af2ddd9744d3e5e6a568ab7",
+      "http": 200
+    },
+    {
+      "asset": "js/handlers/chat-layout.js",
+      "sha256": "c5749d64c58c46b41d8c6e2a259f25247113de5e6e073f9fcb4cf51562721054",
+      "http": 200
     }
   ],
   "checks": [
-    "six deployed assets match the local source",
+    "ten deployed assets match the local source",
     "real Qwen task_update creates a collapsed one-line entry",
     "one card expands upward with joined list and progress row, a fixed bottom edge and usable composer",
     "reload restores open panel and tasks without resubmitting",
+    "rendering leaves persisted conversation and timestamps unchanged",
     "the same control toggles expand and collapse",
     "sending with the list expanded works and completion remains visible",
-    "next question hides completed entry and retains historical checklist"
+    "next question hides completed entry and retains historical checklist",
+    "a new plan starts collapsed instead of inheriting completed plan state"
   ],
   "replies": [
     "已保存两个事项：\n\n- **scope** 确认采购范围 — completed（用户已确认需要比较三种规格）\n- **sample** 等待样例文件 — waiting（等用户发送文件再继续）\n\n未操作浏览器。",
     "已更新：\n\n- **scope** 确认采购范围 — completed\n- **sample** 等待样例文件 — completed（用户已提供并核对完样例文件）\n\n两个事项均已完成，未操作浏览器。",
-    "好的"
+    "好的",
+    "已添加新事项，旧的已完成事项保留：\n\n- **scope** 确认采购范围 — completed\n- **sample** 等待样例文件 — completed\n- **next-doc** 等待第二份资料 — waiting（等待用户补充材料）\n\n未操作浏览器。"
   ],
   "tasks": [
     {
@@ -64,11 +87,14 @@
   ],
   "errors": [],
   "success": true,
+  "interaction": "single task card in normal composer flow; pure snapshot-derived state; preference normalization at record boundary; view refresh never persists",
   "localValidation": {
-    "taskUIAndGenerationRecoveryTestsPassed": 12,
+    "taskStateRecordsAndBrowserTestsPassed": 12,
+    "generationRecoveryAndContextTestsPassed": 25,
+    "messageActionChecksPassed": 10,
     "layoutBrowserChecksPassed": 12,
-    "javascriptFilesChecked": 108,
-    "localAssetReferencesChecked": 141,
+    "javascriptFilesChecked": 110,
+    "localAssetReferencesChecked": 142,
     "viewportWidths": [
       320,
       390,
@@ -77,31 +103,27 @@
     ],
     "keyboardCoverage": "Chromium viewport resizing and simulated VisualViewport height / offsetTop; no physical iOS or Android device test",
     "coverage": [
-      "committed task events only",
-      "invalid and partial tool parameters stay hidden",
-      "stop accessible with list open",
-      "clear hides entry and list",
-      "reload restores state without execution",
-      "conversation and branch isolation",
-      "completion hides on next question",
-      "history retains completed checklist",
-      "progress and disclosure preserve chat/entry/composer positions",
-      "list scroll survives collapse and updates",
-      "Tab proceeds from toggle to list to composer",
-      "Escape in list collapses it",
-      "send while expanded",
-      "short list uses content height",
-      "long list fits space above multiline composer",
-      "retired height preference migration",
-      "single shared card border and background; joined list and progress row grow from the same fixed bottom edge"
+      "committed snapshots shared by model context and UI",
+      "pure state derivation",
+      "legacy preference normalization without rewriting original storage",
+      "view refresh leaves stored conversation and timestamps unchanged",
+      "fresh plans start collapsed",
+      "cleared tasks and branches do not fall back to stale snapshots",
+      "shared card boundary and fixed bottom controls",
+      "actual control height reserves space after text scaling",
+      "multiline input and keyboard viewport",
+      "sending and stopping while expanded",
+      "reload and interrupted generation recovery",
+      "history keeps completed snapshots",
+      "progress and disclosure preserve chat and list scroll"
     ]
   },
-  "interaction": "one task card owns list and progress row; the same card expands upward from a fixed bottom edge; one expand/collapse control",
-  "sourceFiles": 40,
+  "sourceFiles": 45,
+  "componentContract": "files/TASK-UI.md",
   "screenshots": [
     "images/task-entry-mobile.png",
     "images/task-sheet-mobile.png",
     "images/task-card.png"
   ],
-  "publishedAt": "2026-11-13T19:50:19.747008+00:00"
+  "publishedAt": "2026-11-13T20:05:13.139903+00:00"
 }

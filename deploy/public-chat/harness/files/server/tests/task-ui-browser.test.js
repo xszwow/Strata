@@ -46,6 +46,7 @@ test('saved tool events drive the entry; reload restores its panel; completion r
         calls++;
         if (calls === 1) return complete(res, { content: '我会记录这些待办。', tool: 'task_update', args: { items } });
         if (calls === 3) return complete(res, { tool: 'task_update', args: { items: items.map(item => ({ ...item, status: 'completed' })) } });
+        if (calls === 6) return complete(res, { tool: 'task_update', args: { items } });
         return complete(res, { content: '已处理，请查看本次会话待办。' });
     };
     try {
@@ -79,6 +80,9 @@ test('saved tool events drive the entry; reload restores its panel; completion r
         await page.reload();
         await ready(page);
         assert.equal(await page.locator('#task-entry').isVisible(), false);
+        await send(page, '开始下一份采购计划');
+        assert.equal(await page.locator('#task-entry').isVisible(), true);
+        assert.equal(await page.locator('#task-panel').isVisible(), false, 'new plan must not inherit the completed plan expansion');
         assert.deepEqual(s.errors, []);
     } finally { await s.close(); }
 });
@@ -126,6 +130,17 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
         assert.ok(card.y < compact.y && Math.abs(card.height - compact.height - panel.height) < 1);
         assert.equal(await page.locator('#task-card > #task-entry').count(), 1);
         assert.equal(await page.locator('#task-card > #task-panel').count(), 1);
+        // Text sizing is a layout input, not a duplicated fixed-height spacer.
+        await page.locator('#task-entry').evaluate(node => {
+            node.style.fontSize = '24px'; node.style.lineHeight = '36px';
+        });
+        await frame(page);
+        const largerEntry = await page.locator('#task-entry').boundingBox();
+        const inputBox = await page.locator('#user-input').boundingBox();
+        assert.ok(largerEntry.height > 46 && largerEntry.y + largerEntry.height < inputBox.y);
+        assert.ok((await page.locator('#conversation-tasks').boundingBox()).height >= largerEntry.height, 'normal flow must reserve the actual control height');
+        await page.locator('#task-entry').evaluate(node => { node.style.removeProperty('font-size'); node.style.removeProperty('line-height'); });
+        await frame(page);
         assert.equal(await page.locator('#conversation-tasks button').count(), 1, 'only one expand/collapse control');
         assert.equal(await page.locator('#task-panel').evaluate(node => node.tagName), 'SECTION');
         assert.equal(await page.locator(':modal').count(), 0);
@@ -158,6 +173,7 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
         await page.locator('#task-entry').click();
         for (const width of [320, 390, 768, 1440]) {
             await page.setViewportSize({ width, height: 410 });
+            await page.waitForFunction(() => Math.abs(document.body.getBoundingClientRect().height - visualViewport.height) < 1);
             await frame(page);
             const closed = await positions();
             assert.ok(closed.entry.height >= 44 && closed.entry.height <= 46);
@@ -201,13 +217,24 @@ test('one task card expands upward with a fixed toggle, usable composer, and iso
         assert.equal(await page.locator('#task-panel').isVisible(), true);
         // Preferences from the retired half/full-screen UI migrate to just open/closed.
         await page.evaluate(async () => {
-            AppState.currentChat.taskPanel = { open: true, expanded: true };
-            await historyManager.save(AppState.currentChat);
+            await historyManager.db.put('chats', { ...structuredClone(AppState.currentChat), taskPanel: { open: true, expanded: true } });
         });
         await page.reload();
         await ready(page);
         assert.equal(await page.locator('#task-panel').isVisible(), true);
-        assert.deepEqual(await page.evaluate(() => AppState.currentChat.taskPanel), { open: true });
+        const preferences = await page.evaluate(() => AppState.currentChat.taskPanel);
+        assert.equal(preferences.open, true);
+        assert.equal(typeof preferences.scope, 'string');
+        assert.equal(Object.hasOwn(preferences, 'expanded'), false);
+        const readOnly = await page.evaluate(async () => {
+            const chat = AppState.currentChat;
+            const before = JSON.stringify(await historyManager.db.get('chats', [historyManager.userId, chat.id]));
+            for (let i = 0; i < 5; i++) { UI.updateControls(); TaskView.refresh(); }
+            const after = JSON.stringify(await historyManager.db.get('chats', [historyManager.userId, chat.id]));
+            return { unchanged: before === after, rawLegacyPreference: JSON.parse(after).taskPanel };
+        });
+        assert.equal(readOnly.unchanged, true, 'rendering cannot rewrite IndexedDB or timestamps');
+        assert.deepEqual(readOnly.rawLegacyPreference, { open: true, expanded: true });
         const out = path.resolve(__dirname, '../test-results/task-ui');
         fs.mkdirSync(out, { recursive: true });
         await page.screenshot({ path: path.join(out, 'mobile-expanded.png') });

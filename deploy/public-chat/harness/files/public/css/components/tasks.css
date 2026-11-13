@@ -1,8 +1,6 @@
-.conversation-tasks { position: relative; height: 46px; max-width: var(--reading-width); margin: 0 auto 6px; }
+.conversation-tasks { max-width: var(--reading-width); margin: 0 auto 6px; }
 .conversation-tasks[hidden], .task-panel[hidden] { display: none; }
 .task-card {
-    position: absolute;
-    inset: auto 0 0;
     display: flex;
     flex-direction: column-reverse;
     pointer-events: auto;
@@ -28,7 +26,6 @@
     font-size: 13px;
     text-align: left;
 }
-.task-entry[hidden] { display: none; }
 .task-entry:hover { background: #f0f0f0; }
 .task-entry svg { width: 16px; height: 16px; flex: none; }
 #task-entry-label { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }

@@ -1,0 +1,100 @@
+{
+  "checkedAt": "2026-11-13T19:34:16.282Z",
+  "data": "synthetic procurement checklist; real public Qwen and UI",
+  "revision": "ef82951313a7dd4b",
+  "assets": [
+    {
+      "asset": "chat.html",
+      "sha256": "b820f67c11acdc049dad8e4efb7005c1d649f0f01210380f792a7aa8eedd0343",
+      "http": 200
+    },
+    {
+      "asset": "js/core/task-view.js",
+      "sha256": "bf798b9153c98f0b45c419dfbb46c99cb6e883ad29d07363bb2bd12f868f0ab4",
+      "http": 200
+    },
+    {
+      "asset": "css/components/tasks.css",
+      "sha256": "7e82d3651524f31aaaf6225e51de2a6b2b46fc995089ba9d8277d29cbc68ade2",
+      "http": 200
+    },
+    {
+      "asset": "js/core/browser-view.js",
+      "sha256": "565bf67f41578ea7160f660b08d57f8bcf3f903bbe24b0baa94b0dd41a8f8f3b",
+      "http": 200
+    },
+    {
+      "asset": "js/core/ui.js",
+      "sha256": "751e19163b74846386bfbab103d05b29a724c4c716d4daae766bf2038ff0af0c",
+      "http": 200
+    },
+    {
+      "asset": "js/main.js",
+      "sha256": "14a1172832550a029f30c1d24ba21b484d9bd25fb2340e6943832c19ee738c59",
+      "http": 200
+    }
+  ],
+  "checks": [
+    "six deployed assets match the local source",
+    "real Qwen task_update creates a collapsed one-line entry",
+    "reload restores open panel and tasks without resubmitting",
+    "completion is visible for the current turn",
+    "next question hides completed entry and retains historical checklist"
+  ],
+  "replies": [
+    "已保存两个事项：\n\n- **scope** 确认采购范围 — completed（用户已确认需要比较三种规格）\n- **sample** 等待样例文件 — waiting（等用户发送文件再继续）\n\n未操作浏览器。",
+    "已更新：\n\n- **scope** 确认采购范围 — completed\n- **sample** 等待样例文件 — completed（用户已提供并核对完样例文件）\n\n两个事项均已完成，未操作浏览器。",
+    "好的"
+  ],
+  "tasks": [
+    {
+      "id": "scope",
+      "title": "确认采购范围",
+      "status": "completed",
+      "note": "用户已确认需要比较三种规格"
+    },
+    {
+      "id": "sample",
+      "title": "等待样例文件",
+      "status": "waiting",
+      "note": "等用户发送文件再继续"
+    }
+  ],
+  "errors": [],
+  "success": true,
+  "localValidation": {
+    "taskUIIntegrationScenariosPassed": 3,
+    "taskAndGenerationRecoveryTestsPassed": 11,
+    "messageActionChecksPassed": 10,
+    "layoutBrowserChecksPassed": 12,
+    "javascriptFilesChecked": 108,
+    "localAssetReferencesChecked": 141,
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "keyboardCoverage": "Chromium viewport resizing and simulated VisualViewport height / offsetTop; no physical iOS or Android device test",
+    "coverage": [
+      "committed task events only",
+      "invalid and partial tool parameters stay hidden",
+      "stop preserves saved tasks",
+      "clear closes entry and panel",
+      "reload restores panel without execution",
+      "conversation and branch isolation",
+      "completion hides on next question",
+      "history keeps completed checklist",
+      "progress updates preserve chat/list scroll positions",
+      "keyboard focus cycle and Escape",
+      "backdrop close",
+      "drag handle expansion"
+    ]
+  },
+  "sourceFiles": 40,
+  "screenshots": [
+    "images/task-entry-mobile.png",
+    "images/task-sheet-mobile.png"
+  ],
+  "publishedAt": "2026-11-13T19:36:28.429828+00:00"
+}

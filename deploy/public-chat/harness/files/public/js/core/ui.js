@@ -150,6 +150,7 @@ const UI = {
     return wrapper;
   },
   updateControls() {
+    TaskView.refresh();
     const running = AppState.operations.has(AppState.currentChatId) || !!GenerationRecovery.pending(AppState.currentChat);
     document.getElementById("send-button").style.display = running
       ? "none"

@@ -489,6 +489,7 @@ const BrowserView = {
     let changed = false;
     if (event.type === "task-list" && Array.isArray(event.items)) {
       message.taskList = event.items;
+      if (AppState.currentChatId === chat.id) TaskView.refresh();
       changed = true;
     }
     if (event.type === "turn-start" && Number.isInteger(event.id)) {

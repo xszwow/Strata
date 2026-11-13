@@ -2,7 +2,7 @@
 
 多步骤任务可以保存待办，再次提问和历史压缩后重新载入。工具失败当轮返回模型供修正，较早的失败尝试在压缩时省略参数与报错。结果不明的写操作保留待核验提示，继续前需要检查实际状态。
 
-本更新适用于已有浏览器桥接、IndexedDB 会话、生成编号和事件续传的 IVYUN 应用。此目录的 `files/` 提供 36 个源码和测试文件，目录结构与 IVYUN 项目根目录一致。源码校验值在 [manifest.json](manifest.json)。其中包括此前尚未单独发布的工具参数校验、执行回执持久化和历史上下文传递改动。
+本更新适用于已有浏览器桥接、IndexedDB 会话、生成编号和事件续传的 IVYUN 应用。此目录的 `files/` 提供 40 个源码和测试文件，目录结构与 IVYUN 项目根目录一致。源码校验值在 [manifest.json](manifest.json)。其中包括此前尚未单独发布的工具参数校验、执行回执持久化和历史上下文传递改动。
 
 ## 安装到已有 IVYUN
 
@@ -21,6 +21,7 @@ foreach ($entry in $manifest.files.PSObject.Properties) {
 Copy-Item -Path (Join-Path $harnessPackage 'files/*') -Destination $ivyunApp -Recurse
 Set-Location (Join-Path $ivyunApp 'server')
 node --test tests/task-list.test.js tests/task-resume-browser.test.js tests/conversation-memory.test.js tests/browser-context.test.js
+npm run test:tasks-ui
 npm run check
 ```
 
@@ -36,6 +37,19 @@ npm run check
 - 服务端任务恢复副本保留 24 小时。服务重启后原事件流不可续传时，客户端取回该任务已提交的待办并显示中断状态，后续由用户继续提问。完整聊天历史仍在原浏览器。
 
 任务跨压缩保留和计划重新载入参考 Claude Code 的公开说明。本项目使用上述轻量待办接口和已有 Strata 浏览器执行循环。[Claude Code 任务列表](https://code.claude.com/docs/en/interactive-mode#task-list) · [压缩与上下文](https://code.claude.com/docs/en/context-window)
+
+## 会话待办界面
+
+输入框上方只有一行进度，普通问答没有清单时不显示。入口读取当前会话分支中最近一次已保存的 `task_update` 清单；正在接收的参数、保存失败和模型口头计划都不会创建入口。
+
+- 点击打开底部半屏清单，可点「展开」或向上拖动顶部把手扩展。长清单在面板内部滚动，关闭按钮、遮罩和 Escape 均可收起；键盘焦点在面板内循环，关闭后返回入口。
+- 进度更新只修改清单和进度文字，不自动展开面板，也不移动用户阅读的位置。输入键盘弹起后入口仍保持一行，长标题截断显示。
+- 未完成和等待事项跨轮保留，停止显示「已暂停」，出错显示「已中断」。完成后当轮保留完成数量，下次发送新问题时入口隐藏，历史消息中的清单仍可展开。
+- 展开/收起及面板高度偏好随当前浏览器中的会话保存，切换会话各自恢复；刷新打开详情不会重新调用模型或工具。清空待办时关闭入口和面板。
+
+2026-11-13 新增 3 个浏览器集成场景通过，另复查任务/生成恢复 11 项、消息操作 10 项和布局 12 项。覆盖 320、390、768、1440px 宽度、键盘高度与 VisualViewport 平移、长清单滚动、无效和分片工具调用、停止、刷新、会话隔离和完成后隐藏。检查通过 108 个 JavaScript 文件和 141 个静态引用。手机交互使用 Chromium 仿真，未做 iOS/Android 真机验收。
+
+公网实际 Qwen 的清单创建、完成、下一轮隐藏和刷新恢复结果，以及已部署文件校验值见 [task-ui-verification.json](task-ui-verification.json)。截图：[单行入口](images/task-entry-mobile.png) · [半屏清单](images/task-sheet-mobile.png)。
 
 ## 验证范围
 

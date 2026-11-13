@@ -1,0 +1,20 @@
+{
+  "upstream_commit": "6e31946cbe28f4edd22c00835055c49013869542",
+  "built_for": "Windows gfx1151 HIP",
+  "sha256": "52a3e0d073342ff6cc102a1a0c948a189c055d78b6f6db2397dbd99ff8496519",
+  "source_sha256": {
+    "include/strata/prefill/kernels.hpp": "cec37bb65e6d70d15c4b0235eff1952fcf88ffa7068b97ac3cfca005bbc4ec4a",
+    "include/strata/prefill/moe_fused_iq.hpp": "e8ce4b380f3997d6ed8bc9b5a3bef0b1304fb4583af2ce041e4dca92d95af615",
+    "src/core/arch_defaults.cpp": "a7e121d3e9975f1fa04938958434ff9b13a4007f082b11762a8bb56bac6cdd61",
+    "src/core/arch_defaults_test.cpp": "094ffcdf137d5bbde91b56b2d8baef603bb6989e3ea5819db5b1d8b14883b591",
+    "src/prefill/kernels.cu": "2d59ee426b77927f11498cdb6cc42b4133dde712b1f443f56cf4eac64645abac",
+    "src/prefill/moe_f16_common.cuh": "a2ddc5a8f894e23738878e904bca1e606b6cddb8049cf8973daa939590fbf6dd",
+    "src/prefill/moe_f16_kq.cu": "0c3f944c5d19ef578140c3b2f1a3b51690b2a99bf779259d4e5f8cb1e33fcdc4",
+    "src/prefill/moe_f16_kq.hpp": "b62715c32d3cd8bed32bb00c61ef0ffc395e3b247dc472f5f39db54ee6f85bcd",
+    "src/prefill/moe_fused_iq.cu": "4dc249a7079b051f0964906eaa8266bf1818ec77fc5969cecfa540c0c4411563",
+    "src/prefill/prefill.cpp": "34874d9f7fbbb87851e50a2d6af76e77f8b2ca436c791b576c70cb024b032eee"
+  },
+  "default_enabled_on": "Windows gfx1151",
+  "env": "STRATA_PF_DM16=1",
+  "validation": "2026-11-13-community-ryzen-ai-max395-dm16"
+}

@@ -21,6 +21,10 @@ The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K
 - Codex 接入本地 Qwen 时，Responses 接口按本次工具声明处理 `functions.exec` 与旧的 `exec_command` 历史。流式解析器可从部分写错的工具标签中恢复调用。Windows 预设采用实测的 `undeclared_tool_calls: "call"`，由客户端处理无法识别的调用。[设置与实测数据](deploy/windows-gfx1151/README.md#codex-工具调用)
 - 公网 IVYUN 网页在发送前或回答收尾时点击停止，可以继续发送下一问。部署包还包含 Linux 反向 SSH 隧道占用旧端口时的恢复程序。[网页补丁、部署说明与验证数据](deploy/public-chat/)
 
+## 11 月 13 日长输入优化
+
+本机 Q4 MTP 对照中，8K 输入预填充从 6.42 秒降至 6.31 秒，32K 从 25.82 秒降至 25.47 秒。代码和中文的输出 TPS 基本持平。已在此 Windows gfx1151 配置启用 `STRATA_PF_DM16`。[逐项对照和部署验收](bench/results/2026-11-13-community-ryzen-ai-max395-dm16/README.md)
+
 ## 当前性能（2026-11-04 重新实测）
 
 按首页原来的 10 月题目重测当前部署。四类吞吐题各 3 次、最多输出 512 tokens，temperature 0；代码与中文关闭思考，xhigh 开启。提示词缓存全部为 0。

@@ -41,3 +41,6 @@ deploy/public-chat/*.patch text eol=lf
 
 # Protocol test inputs and responses retain the archived byte hashes.
 deploy/windows-gfx1151/tool-protocol-validation-20261113/** -text whitespace=cr-at-eol
+
+# Preserve the byte hashes of the DM16 benchmark inputs and results.
+bench/results/2026-11-13-community-ryzen-ai-max395-dm16/** -text

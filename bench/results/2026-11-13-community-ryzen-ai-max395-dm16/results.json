@@ -1,0 +1,2706 @@
+{
+  "summary": {
+    "base_commit": "ab99d274bf8dca8a4a760a92d7e237a26212a0c6",
+    "upstream_commit": "6e31946cbe28f4edd22c00835055c49013869542",
+    "candidate_sha256": "69c6b9c562a1a18b21e17e2b9f2481b307146c2fb0899fe3c31c4b71f1ee1d40",
+    "production_sha256": "37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6",
+    "blocks": [
+      {
+        "block": "1-off",
+        "flag": 0,
+        "health": "ok",
+        "marker": []
+      },
+      {
+        "block": "2-on",
+        "flag": 1,
+        "health": "ok",
+        "marker": [
+          "benchmark: fused DM16 rows active at layer 0, chunk 8312 tokens"
+        ]
+      },
+      {
+        "block": "3-on",
+        "flag": 1,
+        "health": "ok",
+        "marker": [
+          "benchmark: fused DM16 rows active at layer 0, chunk 8312 tokens"
+        ]
+      },
+      {
+        "block": "4-off",
+        "flag": 0,
+        "health": "ok",
+        "marker": []
+      }
+    ],
+    "metrics": {
+      "8k": {
+        "prompt_ms": {
+          "by_block": {
+            "1-off": 6432.0,
+            "2-on": 6322.25,
+            "3-on": 6309.75,
+            "4-off": 6409.3
+          },
+          "off": {
+            "n": 4,
+            "median": 6421.5,
+            "range": [
+              6369.8,
+              6469.8
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 6310.65,
+            "range": [
+              6277.8,
+              6364.9
+            ]
+          },
+          "delta_pct": -1.726,
+          "pair_deltas_pct": [
+            -1.706,
+            -1.553
+          ]
+        },
+        "prompt_per_second": {
+          "by_block": {
+            "1-off": 1292.5,
+            "2-on": 1314.9499999999998,
+            "3-on": 1317.5,
+            "4-off": 1297.1
+          },
+          "off": {
+            "n": 4,
+            "median": 1294.6,
+            "range": [
+              1284.9,
+              1305.1
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 1317.3,
+            "range": [
+              1306.1,
+              1324.2
+            ]
+          },
+          "delta_pct": 1.753,
+          "pair_deltas_pct": [
+            1.737,
+            1.573
+          ]
+        },
+        "predicted_per_second": {
+          "by_block": {
+            "1-off": 60.849999999999994,
+            "2-on": 58.65,
+            "3-on": 58.75,
+            "4-off": 61.8
+          },
+          "off": {
+            "n": 4,
+            "median": 61.45,
+            "range": [
+              60.3,
+              62.1
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 58.75,
+            "range": [
+              58.3,
+              59.0
+            ]
+          },
+          "delta_pct": -4.394,
+          "pair_deltas_pct": [
+            -3.615,
+            -4.935
+          ]
+        },
+        "prompt_tokens": [
+          8313
+        ],
+        "cache_tokens": [
+          0
+        ],
+        "text_hashes": {
+          "1-off": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "2-on": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "3-on": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "4-off": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          }
+        }
+      },
+      "32k": {
+        "prompt_ms": {
+          "by_block": {
+            "1-off": 25859.35,
+            "2-on": 25467.9,
+            "3-on": 25448.800000000003,
+            "4-off": 25771.0
+          },
+          "off": {
+            "n": 4,
+            "median": 25824.3,
+            "range": [
+              25698.9,
+              25913.2
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 25465.6,
+            "range": [
+              25418.2,
+              25484.0
+            ]
+          },
+          "delta_pct": -1.389,
+          "pair_deltas_pct": [
+            -1.514,
+            -1.25
+          ]
+        },
+        "prompt_per_second": {
+          "by_block": {
+            "1-off": 1271.85,
+            "2-on": 1291.4,
+            "3-on": 1292.35,
+            "4-off": 1276.1999999999998
+          },
+          "off": {
+            "n": 4,
+            "median": 1273.55,
+            "range": [
+              1269.2,
+              1279.8
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 1291.5,
+            "range": [
+              1290.6,
+              1293.9
+            ]
+          },
+          "delta_pct": 1.409,
+          "pair_deltas_pct": [
+            1.537,
+            1.265
+          ]
+        },
+        "predicted_per_second": {
+          "by_block": {
+            "1-off": 53.0,
+            "2-on": 56.400000000000006,
+            "3-on": 56.25,
+            "4-off": 53.75
+          },
+          "off": {
+            "n": 4,
+            "median": 53.45,
+            "range": [
+              52.5,
+              54.1
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 56.3,
+            "range": [
+              56.1,
+              56.6
+            ]
+          },
+          "delta_pct": 5.332,
+          "pair_deltas_pct": [
+            6.415,
+            4.651
+          ]
+        },
+        "prompt_tokens": [
+          32889
+        ],
+        "cache_tokens": [
+          0
+        ],
+        "text_hashes": {
+          "1-off": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "2-on": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "3-on": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          },
+          "4-off": {
+            "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd": 2
+          }
+        }
+      },
+      "code": {
+        "prompt_ms": {
+          "by_block": {
+            "1-off": 627.2,
+            "2-on": 617.6,
+            "3-on": 615.05,
+            "4-off": 618.05
+          },
+          "off": {
+            "n": 4,
+            "median": 619.85,
+            "range": [
+              616.9,
+              633.9
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 616.6500000000001,
+            "range": [
+              613.4,
+              618.6
+            ]
+          },
+          "delta_pct": -0.516,
+          "pair_deltas_pct": [
+            -1.531,
+            -0.485
+          ]
+        },
+        "prompt_per_second": {
+          "by_block": {
+            "1-off": 132.35000000000002,
+            "2-on": 134.39999999999998,
+            "3-on": 134.95,
+            "4-off": 134.25
+          },
+          "off": {
+            "n": 4,
+            "median": 133.9,
+            "range": [
+              130.9,
+              134.5
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 134.6,
+            "range": [
+              134.2,
+              135.3
+            ]
+          },
+          "delta_pct": 0.523,
+          "pair_deltas_pct": [
+            1.549,
+            0.521
+          ]
+        },
+        "predicted_per_second": {
+          "by_block": {
+            "1-off": 59.7,
+            "2-on": 60.25,
+            "3-on": 60.15,
+            "4-off": 59.95
+          },
+          "off": {
+            "n": 4,
+            "median": 59.9,
+            "range": [
+              59.5,
+              60.0
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 60.2,
+            "range": [
+              60.0,
+              60.4
+            ]
+          },
+          "delta_pct": 0.501,
+          "pair_deltas_pct": [
+            0.921,
+            0.334
+          ]
+        },
+        "prompt_tokens": [
+          83
+        ],
+        "cache_tokens": [
+          0
+        ],
+        "text_hashes": {
+          "1-off": {
+            "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3": 2
+          },
+          "2-on": {
+            "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3": 2
+          },
+          "3-on": {
+            "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3": 2
+          },
+          "4-off": {
+            "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3": 2
+          }
+        }
+      },
+      "chinese": {
+        "prompt_ms": {
+          "by_block": {
+            "1-off": 624.3,
+            "2-on": 625.1,
+            "3-on": 628.1500000000001,
+            "4-off": 626.8
+          },
+          "off": {
+            "n": 4,
+            "median": 624.3,
+            "range": [
+              622.3,
+              631.3
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 628.1500000000001,
+            "range": [
+              620.5,
+              629.7
+            ]
+          },
+          "delta_pct": 0.617,
+          "pair_deltas_pct": [
+            0.128,
+            0.215
+          ]
+        },
+        "prompt_per_second": {
+          "by_block": {
+            "1-off": 128.15,
+            "2-on": 127.95,
+            "3-on": 127.35,
+            "4-off": 127.65
+          },
+          "off": {
+            "n": 4,
+            "median": 128.15,
+            "range": [
+              126.7,
+              128.6
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 127.35,
+            "range": [
+              127.0,
+              128.9
+            ]
+          },
+          "delta_pct": -0.624,
+          "pair_deltas_pct": [
+            -0.156,
+            -0.235
+          ]
+        },
+        "predicted_per_second": {
+          "by_block": {
+            "1-off": 38.599999999999994,
+            "2-on": 38.75,
+            "3-on": 38.55,
+            "4-off": 38.6
+          },
+          "off": {
+            "n": 4,
+            "median": 38.6,
+            "range": [
+              38.4,
+              38.8
+            ]
+          },
+          "on": {
+            "n": 4,
+            "median": 38.650000000000006,
+            "range": [
+              38.5,
+              38.8
+            ]
+          },
+          "delta_pct": 0.13,
+          "pair_deltas_pct": [
+            0.389,
+            -0.13
+          ]
+        },
+        "prompt_tokens": [
+          80
+        ],
+        "cache_tokens": [
+          0
+        ],
+        "text_hashes": {
+          "1-off": {
+            "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a": 2
+          },
+          "2-on": {
+            "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a": 2
+          },
+          "3-on": {
+            "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a": 2
+          },
+          "4-off": {
+            "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a": 2
+          }
+        }
+      }
+    },
+    "checks": {
+      "1-off": {
+        "passed": 12,
+        "total": 12,
+        "failed_tasks": []
+      },
+      "2-on": {
+        "passed": 12,
+        "total": 12,
+        "failed_tasks": []
+      },
+      "3-on": {
+        "passed": 12,
+        "total": 12,
+        "failed_tasks": []
+      },
+      "4-off": {
+        "passed": 12,
+        "total": 12,
+        "failed_tasks": []
+      }
+    },
+    "restored": {
+      "loaded": true,
+      "images": true,
+      "config_matches": true,
+      "engine_matches": true,
+      "tool_passed": true
+    },
+    "error": null
+  },
+  "post_deployment": {
+    "engine_sha256": "52a3e0d073342ff6cc102a1a0c948a189c055d78b6f6db2397dbd99ff8496519",
+    "previous_sha256": "37dc9ac37def7a5bc04ff61b91780254da406ff54d8b8bbd271047a00f6d76d6",
+    "checks": [
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "8k",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 8313,
+          "prompt_ms": 6433.0,
+          "prompt_per_token_ms": 0.774,
+          "prompt_per_second": 1292.2,
+          "predicted_n": 128,
+          "predicted_ms": 2405.8,
+          "predicted_per_token_ms": 18.795,
+          "predicted_per_second": 53.2,
+          "draft_n": 154,
+          "draft_n_accepted": 98
+        },
+        "elapsed_s": 8.859,
+        "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+        "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+        "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+        "calls": [],
+        "usage": {
+          "prompt_tokens": 8313,
+          "completion_tokens": 128,
+          "total_tokens": 8441,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "32k",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 32889,
+          "prompt_ms": 25343.1,
+          "prompt_per_token_ms": 0.771,
+          "prompt_per_second": 1297.7,
+          "predicted_n": 128,
+          "predicted_ms": 2289.0,
+          "predicted_per_token_ms": 17.883,
+          "predicted_per_second": 55.9,
+          "draft_n": 144,
+          "draft_n_accepted": 95
+        },
+        "elapsed_s": 27.692,
+        "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+        "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+        "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+        "calls": [],
+        "usage": {
+          "prompt_tokens": 32889,
+          "completion_tokens": 128,
+          "total_tokens": 33017,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "code",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 83,
+          "prompt_ms": 621.8,
+          "prompt_per_token_ms": 7.492,
+          "prompt_per_second": 133.5,
+          "predicted_n": 512,
+          "predicted_ms": 8540.2,
+          "predicted_per_token_ms": 16.68,
+          "predicted_per_second": 60.0,
+          "draft_n": 613,
+          "draft_n_accepted": 391
+        },
+        "elapsed_s": 9.171,
+        "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+        "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+        "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+        "calls": [],
+        "usage": {
+          "prompt_tokens": 83,
+          "completion_tokens": 512,
+          "total_tokens": 595,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "chinese",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 80,
+          "prompt_ms": 627.2,
+          "prompt_per_token_ms": 7.84,
+          "prompt_per_second": 127.6,
+          "predicted_n": 424,
+          "predicted_ms": 11251.7,
+          "predicted_per_token_ms": 26.537,
+          "predicted_per_second": 37.7,
+          "draft_n": 383,
+          "draft_n_accepted": 195
+        },
+        "elapsed_s": 11.888,
+        "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+        "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+        "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+        "calls": [],
+        "usage": {
+          "prompt_tokens": 80,
+          "completion_tokens": 424,
+          "total_tokens": 504,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "force-0-openai-json",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 8643,
+          "prompt_ms": 6896.5,
+          "prompt_per_token_ms": 0.798,
+          "prompt_per_second": 1253.2,
+          "predicted_n": 28,
+          "predicted_ms": 526.5,
+          "predicted_per_token_ms": 18.804,
+          "predicted_per_second": 53.2,
+          "draft_n": 37,
+          "draft_n_accepted": 21
+        },
+        "elapsed_s": 7.459,
+        "request_sha256": "ae429c9f484f0aa061ac0399f974e2d189fe11f1353d2377c54ca405353320d2",
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content": "",
+        "calls": [
+          {
+            "name": "trial_lookup_product",
+            "arguments": {
+              "query": "AX-17"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 8643,
+          "completion_tokens": 28,
+          "total_tokens": 8671,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "force-5-openai-json",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 8804,
+          "prompt_ms": 7265.9,
+          "prompt_per_token_ms": 0.825,
+          "prompt_per_second": 1211.7,
+          "predicted_n": 26,
+          "predicted_ms": 564.3,
+          "predicted_per_token_ms": 21.704,
+          "predicted_per_second": 46.1,
+          "draft_n": 27,
+          "draft_n_accepted": 19
+        },
+        "elapsed_s": 7.865,
+        "request_sha256": "be383866873144007b145ee709da543b8430b01e0a6efe597eb271575000230e",
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content": "",
+        "calls": [
+          {
+            "name": "trial_lookup_weather",
+            "arguments": {
+              "city": "北京"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 8804,
+          "completion_tokens": 26,
+          "total_tokens": 8830,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "codex-json",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 267,
+          "prompt_ms": 605.0,
+          "prompt_per_token_ms": 2.266,
+          "prompt_per_second": 441.3,
+          "predicted_n": 30,
+          "predicted_ms": 476.8,
+          "predicted_per_token_ms": 15.893,
+          "predicted_per_second": 62.9,
+          "draft_n": 33,
+          "draft_n_accepted": 24
+        },
+        "elapsed_s": 1.093,
+        "request_sha256": "5e72633091b0c11874a757ef5c8da6c74d759026f2dd71f0456e786650969809",
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content": "",
+        "calls": [
+          {
+            "id": "fc_076fbe5a7564468baf3417a5969591fe",
+            "type": "function_call",
+            "status": "completed",
+            "call_id": "call_899ff2bfc72b4605b89f0bc7",
+            "name": "trial_lookup_product",
+            "arguments": "{\"query\":\"AX-17\"}"
+          }
+        ],
+        "usage": {
+          "input_tokens": 267,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 30,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 297
+        }
+      },
+      {
+        "block": "production-final",
+        "repeat": 1,
+        "workload": "history",
+        "passed": true,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 513,
+          "prompt_ms": 864.0,
+          "prompt_per_token_ms": 1.684,
+          "prompt_per_second": 593.8,
+          "predicted_n": 39,
+          "predicted_ms": 527.4,
+          "predicted_per_token_ms": 13.523,
+          "predicted_per_second": 73.9,
+          "draft_n": 40,
+          "draft_n_accepted": 32
+        },
+        "elapsed_s": 1.411,
+        "request_sha256": "f190c7f1c665ff580d4109ac0f8bd9ebeedc7584da302437acba235a4b71a5e9",
+        "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content": "",
+        "calls": [
+          {
+            "id": "ctc_b9550f0246814c1cb4b60ab4fce1ed42",
+            "type": "custom_tool_call",
+            "status": "completed",
+            "call_id": "call_d5e5bd3b37424a75a5b560c7",
+            "name": "exec",
+            "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+            "namespace": "functions"
+          }
+        ],
+        "usage": {
+          "input_tokens": 513,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 39,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 552
+        }
+      },
+      {
+        "workload": "context-64k",
+        "passed": true,
+        "content": "CHECK_A = ORCHID7319\nCHECK_B = MAPLE2846\nCHECK_C = CEDAR9052",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 63954,
+          "prompt_ms": 49869.4,
+          "prompt_per_token_ms": 0.78,
+          "prompt_per_second": 1282.4,
+          "predicted_n": 31,
+          "predicted_ms": 679.2,
+          "predicted_per_token_ms": 21.91,
+          "predicted_per_second": 45.6,
+          "draft_n": 40,
+          "draft_n_accepted": 21
+        }
+      },
+      {
+        "workload": "vision-chinese-1",
+        "passed": true,
+        "content": "幻X 本地模型测试\n工单编号：XIA-5297\n错误位置：第 17 行\n缓存容量：2048\n处理状态：等待重试\n校验短语：枫叶与兰花",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1085,
+          "prompt_ms": 1346.4,
+          "prompt_per_token_ms": 1.241,
+          "prompt_per_second": 805.9,
+          "predicted_n": 50,
+          "predicted_ms": 962.0,
+          "predicted_per_token_ms": 19.24,
+          "predicted_per_second": 52.0,
+          "draft_n": 74,
+          "draft_n_accepted": 38
+        }
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "loaded": true,
+      "images": true,
+      "public_compat": "llama-ui-v1"
+    },
+    "flag": "1",
+    "normal_config": true,
+    "idle_after": true,
+    "deployed": true
+  },
+  "methods": {
+    "order": [
+      "off",
+      "on",
+      "on",
+      "off"
+    ],
+    "cold_process_per_block": true,
+    "warmup_excluded": true,
+    "temperature": 0,
+    "seed": 12345,
+    "cache_prompt": false,
+    "q4_mtp": true,
+    "draft_vocab": 56919,
+    "spec": 8,
+    "prefill_chunk": 16384,
+    "context": 262144
+  },
+  "samples": [
+    {
+      "block": "1-off",
+      "repeat": "warmup",
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6496.6,
+        "prompt_per_token_ms": 0.781,
+        "prompt_per_second": 1279.6,
+        "predicted_n": 128,
+        "predicted_ms": 2269.5,
+        "predicted_per_token_ms": 17.73,
+        "predicted_per_second": 56.4,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.806,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6394.2,
+        "prompt_per_token_ms": 0.769,
+        "prompt_per_second": 1300.1,
+        "predicted_n": 128,
+        "predicted_ms": 2122.6,
+        "predicted_per_token_ms": 16.583,
+        "predicted_per_second": 60.3,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.548,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25913.2,
+        "prompt_per_token_ms": 0.788,
+        "prompt_per_second": 1269.2,
+        "predicted_n": 128,
+        "predicted_ms": 2439.8,
+        "predicted_per_token_ms": 19.061,
+        "predicted_per_second": 52.5,
+        "draft_n": 157,
+        "draft_n_accepted": 94
+      },
+      "elapsed_s": 28.422,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 633.9,
+        "prompt_per_token_ms": 7.637,
+        "prompt_per_second": 130.9,
+        "predicted_n": 512,
+        "predicted_ms": 8603.9,
+        "predicted_per_token_ms": 16.804,
+        "predicted_per_second": 59.5,
+        "draft_n": 613,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.247,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 625.5,
+        "prompt_per_token_ms": 7.819,
+        "prompt_per_second": 127.9,
+        "predicted_n": 424,
+        "predicted_ms": 10938.8,
+        "predicted_per_token_ms": 25.799,
+        "predicted_per_second": 38.8,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.573,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 2,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 623.1,
+        "prompt_per_token_ms": 7.789,
+        "prompt_per_second": 128.4,
+        "predicted_n": 424,
+        "predicted_ms": 11054.6,
+        "predicted_per_token_ms": 26.072,
+        "predicted_per_second": 38.4,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.706,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 2,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 620.5,
+        "prompt_per_token_ms": 7.476,
+        "prompt_per_second": 133.8,
+        "predicted_n": 512,
+        "predicted_ms": 8553.5,
+        "predicted_per_token_ms": 16.706,
+        "predicted_per_second": 59.9,
+        "draft_n": 610,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.182,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 2,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25805.5,
+        "prompt_per_token_ms": 0.785,
+        "prompt_per_second": 1274.5,
+        "predicted_n": 128,
+        "predicted_ms": 2391.0,
+        "predicted_per_token_ms": 18.68,
+        "predicted_per_second": 53.5,
+        "draft_n": 157,
+        "draft_n_accepted": 94
+      },
+      "elapsed_s": 28.222,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 2,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6469.8,
+        "prompt_per_token_ms": 0.778,
+        "prompt_per_second": 1284.9,
+        "predicted_n": 128,
+        "predicted_ms": 2084.9,
+        "predicted_per_token_ms": 16.288,
+        "predicted_per_second": 61.4,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.585,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "force-0-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8643,
+        "prompt_ms": 6727.9,
+        "prompt_per_token_ms": 0.778,
+        "prompt_per_second": 1284.7,
+        "predicted_n": 28,
+        "predicted_ms": 436.0,
+        "predicted_per_token_ms": 15.571,
+        "predicted_per_second": 64.2,
+        "draft_n": 30,
+        "draft_n_accepted": 22
+      },
+      "elapsed_s": 7.189,
+      "request_sha256": "ae429c9f484f0aa061ac0399f974e2d189fe11f1353d2377c54ca405353320d2",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_product",
+          "arguments": {
+            "query": "AX-17"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8643,
+        "completion_tokens": 28,
+        "total_tokens": 8671,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "force-5-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8804,
+        "prompt_ms": 6861.8,
+        "prompt_per_token_ms": 0.779,
+        "prompt_per_second": 1283.0,
+        "predicted_n": 26,
+        "predicted_ms": 449.8,
+        "predicted_per_token_ms": 17.3,
+        "predicted_per_second": 57.8,
+        "draft_n": 25,
+        "draft_n_accepted": 19
+      },
+      "elapsed_s": 7.334,
+      "request_sha256": "be383866873144007b145ee709da543b8430b01e0a6efe597eb271575000230e",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_weather",
+          "arguments": {
+            "city": "北京"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8804,
+        "completion_tokens": 26,
+        "total_tokens": 8830,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "codex-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 267,
+        "prompt_ms": 601.3,
+        "prompt_per_token_ms": 2.252,
+        "prompt_per_second": 444.0,
+        "predicted_n": 30,
+        "predicted_ms": 422.4,
+        "predicted_per_token_ms": 14.08,
+        "predicted_per_second": 71.0,
+        "draft_n": 30,
+        "draft_n_accepted": 24
+      },
+      "elapsed_s": 1.032,
+      "request_sha256": "5e72633091b0c11874a757ef5c8da6c74d759026f2dd71f0456e786650969809",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "fc_a42bd18e42564f9c8ad1fba138ba4eee",
+          "type": "function_call",
+          "status": "completed",
+          "call_id": "call_c1f6043b02e849389af1a4c8",
+          "name": "trial_lookup_product",
+          "arguments": "{\"query\":\"AX-17\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 267,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 30,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 297
+      }
+    },
+    {
+      "block": "1-off",
+      "repeat": 1,
+      "workload": "history",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 513,
+        "prompt_ms": 857.4,
+        "prompt_per_token_ms": 1.671,
+        "prompt_per_second": 598.3,
+        "predicted_n": 39,
+        "predicted_ms": 452.0,
+        "predicted_per_token_ms": 11.59,
+        "predicted_per_second": 86.3,
+        "draft_n": 35,
+        "draft_n_accepted": 33
+      },
+      "elapsed_s": 1.321,
+      "request_sha256": "f190c7f1c665ff580d4109ac0f8bd9ebeedc7584da302437acba235a4b71a5e9",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "ctc_ecdfd63a43f94596bd700286a10ae90b",
+          "type": "custom_tool_call",
+          "status": "completed",
+          "call_id": "call_1bc5121a646049f1b13464ad",
+          "name": "exec",
+          "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+          "namespace": "functions"
+        }
+      ],
+      "usage": {
+        "input_tokens": 513,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 39,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 552
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": "warmup",
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6531.9,
+        "prompt_per_token_ms": 0.786,
+        "prompt_per_second": 1272.7,
+        "predicted_n": 128,
+        "predicted_ms": 2398.8,
+        "predicted_per_token_ms": 18.741,
+        "predicted_per_second": 53.4,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.975,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6279.6,
+        "prompt_per_token_ms": 0.755,
+        "prompt_per_second": 1323.8,
+        "predicted_n": 128,
+        "predicted_ms": 2168.8,
+        "predicted_per_token_ms": 16.944,
+        "predicted_per_second": 59.0,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.463,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25484.0,
+        "prompt_per_token_ms": 0.775,
+        "prompt_per_second": 1290.6,
+        "predicted_n": 128,
+        "predicted_ms": 2276.5,
+        "predicted_per_token_ms": 17.785,
+        "predicted_per_second": 56.2,
+        "draft_n": 144,
+        "draft_n_accepted": 95
+      },
+      "elapsed_s": 27.809,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 618.6,
+        "prompt_per_token_ms": 7.453,
+        "prompt_per_second": 134.2,
+        "predicted_n": 512,
+        "predicted_ms": 8512.4,
+        "predicted_per_token_ms": 16.626,
+        "predicted_per_second": 60.1,
+        "draft_n": 613,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.159,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 629.7,
+        "prompt_per_token_ms": 7.871,
+        "prompt_per_second": 127.0,
+        "predicted_n": 424,
+        "predicted_ms": 10948.2,
+        "predicted_per_token_ms": 25.821,
+        "predicted_per_second": 38.7,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.609,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 2,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 620.5,
+        "prompt_per_token_ms": 7.756,
+        "prompt_per_second": 128.9,
+        "predicted_n": 424,
+        "predicted_ms": 10929.3,
+        "predicted_per_token_ms": 25.777,
+        "predicted_per_second": 38.8,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.557,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 2,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 616.6,
+        "prompt_per_token_ms": 7.429,
+        "prompt_per_second": 134.6,
+        "predicted_n": 512,
+        "predicted_ms": 8471.7,
+        "predicted_per_token_ms": 16.546,
+        "predicted_per_second": 60.4,
+        "draft_n": 610,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.116,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 2,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25451.8,
+        "prompt_per_token_ms": 0.774,
+        "prompt_per_second": 1292.2,
+        "predicted_n": 128,
+        "predicted_ms": 2263.2,
+        "predicted_per_token_ms": 17.681,
+        "predicted_per_second": 56.6,
+        "draft_n": 146,
+        "draft_n_accepted": 95
+      },
+      "elapsed_s": 27.741,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 2,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6364.9,
+        "prompt_per_token_ms": 0.766,
+        "prompt_per_second": 1306.1,
+        "predicted_n": 128,
+        "predicted_ms": 2194.7,
+        "predicted_per_token_ms": 17.146,
+        "predicted_per_second": 58.3,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.588,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "force-0-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8643,
+        "prompt_ms": 6611.8,
+        "prompt_per_token_ms": 0.765,
+        "prompt_per_second": 1307.2,
+        "predicted_n": 28,
+        "predicted_ms": 517.5,
+        "predicted_per_token_ms": 18.482,
+        "predicted_per_second": 54.1,
+        "draft_n": 37,
+        "draft_n_accepted": 21
+      },
+      "elapsed_s": 7.162,
+      "request_sha256": "ae429c9f484f0aa061ac0399f974e2d189fe11f1353d2377c54ca405353320d2",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_product",
+          "arguments": {
+            "query": "AX-17"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8643,
+        "completion_tokens": 28,
+        "total_tokens": 8671,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "force-5-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8804,
+        "prompt_ms": 6707.8,
+        "prompt_per_token_ms": 0.762,
+        "prompt_per_second": 1312.5,
+        "predicted_n": 26,
+        "predicted_ms": 475.6,
+        "predicted_per_token_ms": 18.292,
+        "predicted_per_second": 54.7,
+        "draft_n": 27,
+        "draft_n_accepted": 19
+      },
+      "elapsed_s": 7.219,
+      "request_sha256": "be383866873144007b145ee709da543b8430b01e0a6efe597eb271575000230e",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_weather",
+          "arguments": {
+            "city": "北京"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8804,
+        "completion_tokens": 26,
+        "total_tokens": 8830,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "codex-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 267,
+        "prompt_ms": 597.9,
+        "prompt_per_token_ms": 2.239,
+        "prompt_per_second": 446.6,
+        "predicted_n": 30,
+        "predicted_ms": 440.1,
+        "predicted_per_token_ms": 14.67,
+        "predicted_per_second": 68.2,
+        "draft_n": 33,
+        "draft_n_accepted": 24
+      },
+      "elapsed_s": 1.047,
+      "request_sha256": "5e72633091b0c11874a757ef5c8da6c74d759026f2dd71f0456e786650969809",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "fc_2dadc863a0a74b9987fc12c69d8b7002",
+          "type": "function_call",
+          "status": "completed",
+          "call_id": "call_d8d76d57a94844fb8683f3d7",
+          "name": "trial_lookup_product",
+          "arguments": "{\"query\":\"AX-17\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 267,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 30,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 297
+      }
+    },
+    {
+      "block": "2-on",
+      "repeat": 1,
+      "workload": "history",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 513,
+        "prompt_ms": 842.4,
+        "prompt_per_token_ms": 1.642,
+        "prompt_per_second": 609.0,
+        "predicted_n": 39,
+        "predicted_ms": 455.6,
+        "predicted_per_token_ms": 11.682,
+        "predicted_per_second": 85.6,
+        "draft_n": 35,
+        "draft_n_accepted": 33
+      },
+      "elapsed_s": 1.309,
+      "request_sha256": "f190c7f1c665ff580d4109ac0f8bd9ebeedc7584da302437acba235a4b71a5e9",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "ctc_d84b553361ec4d17bdcf1190920cde23",
+          "type": "custom_tool_call",
+          "status": "completed",
+          "call_id": "call_d46f805410e1436b916d5cac",
+          "name": "exec",
+          "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+          "namespace": "functions"
+        }
+      ],
+      "usage": {
+        "input_tokens": 513,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 39,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 552
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": "warmup",
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6432.1,
+        "prompt_per_token_ms": 0.774,
+        "prompt_per_second": 1292.4,
+        "predicted_n": 128,
+        "predicted_ms": 2407.2,
+        "predicted_per_token_ms": 18.806,
+        "predicted_per_second": 53.2,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.883,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6277.8,
+        "prompt_per_token_ms": 0.755,
+        "prompt_per_second": 1324.2,
+        "predicted_n": 128,
+        "predicted_ms": 2170.7,
+        "predicted_per_token_ms": 16.959,
+        "predicted_per_second": 59.0,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.48,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25479.4,
+        "prompt_per_token_ms": 0.775,
+        "prompt_per_second": 1290.8,
+        "predicted_n": 128,
+        "predicted_ms": 2268.7,
+        "predicted_per_token_ms": 17.724,
+        "predicted_per_second": 56.4,
+        "draft_n": 144,
+        "draft_n_accepted": 95
+      },
+      "elapsed_s": 27.807,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 616.7,
+        "prompt_per_token_ms": 7.43,
+        "prompt_per_second": 134.6,
+        "predicted_n": 512,
+        "predicted_ms": 8527.7,
+        "predicted_per_token_ms": 16.656,
+        "predicted_per_second": 60.0,
+        "draft_n": 613,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.152,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 627.1,
+        "prompt_per_token_ms": 7.839,
+        "prompt_per_second": 127.6,
+        "predicted_n": 424,
+        "predicted_ms": 11007.9,
+        "predicted_per_token_ms": 25.962,
+        "predicted_per_second": 38.5,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.643,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 2,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 629.2,
+        "prompt_per_token_ms": 7.865,
+        "prompt_per_second": 127.1,
+        "predicted_n": 424,
+        "predicted_ms": 10996.2,
+        "predicted_per_token_ms": 25.934,
+        "predicted_per_second": 38.6,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.633,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 2,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 613.4,
+        "prompt_per_token_ms": 7.39,
+        "prompt_per_second": 135.3,
+        "predicted_n": 512,
+        "predicted_ms": 8494.1,
+        "predicted_per_token_ms": 16.59,
+        "predicted_per_second": 60.3,
+        "draft_n": 610,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.133,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 2,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25418.2,
+        "prompt_per_token_ms": 0.773,
+        "prompt_per_second": 1293.9,
+        "predicted_n": 128,
+        "predicted_ms": 2281.9,
+        "predicted_per_token_ms": 17.827,
+        "predicted_per_second": 56.1,
+        "draft_n": 149,
+        "draft_n_accepted": 95
+      },
+      "elapsed_s": 27.741,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 2,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6341.7,
+        "prompt_per_token_ms": 0.763,
+        "prompt_per_second": 1310.8,
+        "predicted_n": 128,
+        "predicted_ms": 2189.2,
+        "predicted_per_token_ms": 17.103,
+        "predicted_per_second": 58.5,
+        "draft_n": 154,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.544,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "force-0-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8643,
+        "prompt_ms": 6594.1,
+        "prompt_per_token_ms": 0.763,
+        "prompt_per_second": 1310.7,
+        "predicted_n": 28,
+        "predicted_ms": 518.6,
+        "predicted_per_token_ms": 18.521,
+        "predicted_per_second": 54.0,
+        "draft_n": 37,
+        "draft_n_accepted": 21
+      },
+      "elapsed_s": 7.134,
+      "request_sha256": "ae429c9f484f0aa061ac0399f974e2d189fe11f1353d2377c54ca405353320d2",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_product",
+          "arguments": {
+            "query": "AX-17"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8643,
+        "completion_tokens": 28,
+        "total_tokens": 8671,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "force-5-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8804,
+        "prompt_ms": 6728.9,
+        "prompt_per_token_ms": 0.764,
+        "prompt_per_second": 1308.4,
+        "predicted_n": 26,
+        "predicted_ms": 453.1,
+        "predicted_per_token_ms": 17.427,
+        "predicted_per_second": 57.4,
+        "draft_n": 27,
+        "draft_n_accepted": 19
+      },
+      "elapsed_s": 7.216,
+      "request_sha256": "be383866873144007b145ee709da543b8430b01e0a6efe597eb271575000230e",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_weather",
+          "arguments": {
+            "city": "北京"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8804,
+        "completion_tokens": 26,
+        "total_tokens": 8830,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "codex-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 267,
+        "prompt_ms": 607.3,
+        "prompt_per_token_ms": 2.275,
+        "prompt_per_second": 439.7,
+        "predicted_n": 30,
+        "predicted_ms": 449.2,
+        "predicted_per_token_ms": 14.973,
+        "predicted_per_second": 66.8,
+        "draft_n": 33,
+        "draft_n_accepted": 24
+      },
+      "elapsed_s": 1.087,
+      "request_sha256": "5e72633091b0c11874a757ef5c8da6c74d759026f2dd71f0456e786650969809",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "fc_a84b3cc755324913821a331f356edfe2",
+          "type": "function_call",
+          "status": "completed",
+          "call_id": "call_31b55d564193401ab5acb4f6",
+          "name": "trial_lookup_product",
+          "arguments": "{\"query\":\"AX-17\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 267,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 30,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 297
+      }
+    },
+    {
+      "block": "3-on",
+      "repeat": 1,
+      "workload": "history",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 513,
+        "prompt_ms": 846.0,
+        "prompt_per_token_ms": 1.649,
+        "prompt_per_second": 606.4,
+        "predicted_n": 39,
+        "predicted_ms": 450.6,
+        "predicted_per_token_ms": 11.554,
+        "predicted_per_second": 86.6,
+        "draft_n": 35,
+        "draft_n_accepted": 33
+      },
+      "elapsed_s": 1.307,
+      "request_sha256": "f190c7f1c665ff580d4109ac0f8bd9ebeedc7584da302437acba235a4b71a5e9",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "ctc_e4b70cd62da2429dbb2504af8976b439",
+          "type": "custom_tool_call",
+          "status": "completed",
+          "call_id": "call_45160230992f45db943ed0d4",
+          "name": "exec",
+          "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+          "namespace": "functions"
+        }
+      ],
+      "usage": {
+        "input_tokens": 513,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 39,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 552
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": "warmup",
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6745.0,
+        "prompt_per_token_ms": 0.811,
+        "prompt_per_second": 1232.5,
+        "predicted_n": 128,
+        "predicted_ms": 2276.3,
+        "predicted_per_token_ms": 17.784,
+        "predicted_per_second": 56.2,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 9.04,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6369.8,
+        "prompt_per_token_ms": 0.766,
+        "prompt_per_second": 1305.1,
+        "predicted_n": 128,
+        "predicted_ms": 2082.2,
+        "predicted_per_token_ms": 16.267,
+        "predicted_per_second": 61.5,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.464,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25843.1,
+        "prompt_per_token_ms": 0.786,
+        "prompt_per_second": 1272.6,
+        "predicted_n": 128,
+        "predicted_ms": 2399.0,
+        "predicted_per_token_ms": 18.742,
+        "predicted_per_second": 53.4,
+        "draft_n": 157,
+        "draft_n_accepted": 94
+      },
+      "elapsed_s": 28.284,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 619.2,
+        "prompt_per_token_ms": 7.46,
+        "prompt_per_second": 134.0,
+        "predicted_n": 512,
+        "predicted_ms": 8537.9,
+        "predicted_per_token_ms": 16.676,
+        "predicted_per_second": 60.0,
+        "draft_n": 613,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.182,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 631.3,
+        "prompt_per_token_ms": 7.891,
+        "prompt_per_second": 126.7,
+        "predicted_n": 424,
+        "predicted_ms": 10975.6,
+        "predicted_per_token_ms": 25.886,
+        "predicted_per_second": 38.6,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.616,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 2,
+      "workload": "chinese",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 622.3,
+        "prompt_per_token_ms": 7.779,
+        "prompt_per_second": 128.6,
+        "predicted_n": 424,
+        "predicted_ms": 10982.6,
+        "predicted_per_token_ms": 25.902,
+        "predicted_per_second": 38.6,
+        "draft_n": 383,
+        "draft_n_accepted": 195
+      },
+      "elapsed_s": 11.613,
+      "request_sha256": "ccac99ef79f4c394fa7419cc2f4a3517f0edacffdeb19a2a7660e9ea759a63e4",
+      "text_sha256": "03cb119aa5009a2ee8fc46316c57d9bdcaf0b4e16952d1781157ef9dc429926a",
+      "content": "当你发现下载速度从15MB/s骤降至4MB/s，随后又可能回升时，这通常不是单一故障，而是网络链路中多个环节动态博弈的结果。首先，Wi-Fi链路往往是波动的源头。无线信号极易受干扰，微波炉、蓝牙设备甚至邻居的路由器都可能导致信道拥堵或信号衰减。当路由器自动切换信道或你的电脑移动位置导致信号强度下降时，物理层的传输速率会瞬间跌落，造成速度断崖式下跌；而当环境恢复安静或信号增强后，速度便会反弹。\n\n其次，公网拥塞是另一个常见因素。互联网骨干网在晚高峰时段流量巨大，数据包可能在路由节点排队甚至丢失。TCP协议具有拥塞控制机制，一旦检测到丢包，发送端会主动降低发送窗口以缓解压力，导致你的下载速度受限。随着网络拥堵缓解或路由路径优化，带宽资源重新释放，速度自然回升。\n\n此外，内容分发网络（CDN）节点的调度也至关重要。大型文件通常由分布在全球的CDN节点提供。初始连接时，你可能被分配到一个负载较低、距离较近的优质节点，从而获得15MB/s的高速体验。但随着时间推移，该节点可能因其他用户涌入而负载过高，或者DNS解析将你重新指向了另一个带宽受限或物理距离更远的节点，导致速度降至4MB/s。若系统再次调度至空闲节点，速度便会恢复。\n\n服务器端的限速策略同样不可忽视。许多服务商会对单连接或单IP设置带宽上限，以平衡整体负载。当你的下载触发阈值时，服务器会强制降速；而在非高峰时段或连接重置后，限制可能暂时解除。\n\n要判断下载是否仍在继续而非彻底中断，最直观的方法是观察任务管理器的网络活动图表，只要仍有数据吞吐波动，说明连接未断。更精准的方式是查看下载软件中的“已接收字节数”，若该数值持续增加，即便速度显示为0或极低，也证明数据流并未停止，只是处于极慢的传输状态。",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 424,
+        "total_tokens": 504,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 2,
+      "workload": "code",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 616.9,
+        "prompt_per_token_ms": 7.433,
+        "prompt_per_second": 134.5,
+        "predicted_n": 512,
+        "predicted_ms": 8540.8,
+        "predicted_per_token_ms": 16.681,
+        "predicted_per_second": 59.9,
+        "draft_n": 610,
+        "draft_n_accepted": 391
+      },
+      "elapsed_s": 9.175,
+      "request_sha256": "b4c322a8b57d595af4a2c25ee66ed6eb72b142656659317c6bd34df33719d282",
+      "text_sha256": "1e8c6cd47f61901bb2f1ad941122a7165a8066871946c2e84971508659ff98d3",
+      "content": "```python\nimport hashlib\nimport os\n\n\nclass FileMissingError(Exception):\n    \"\"\"Raised when the specified file does not exist.\"\"\"\n    pass\n\n\nclass DigestMismatchError(Exception):\n    \"\"\"Raised when the computed SHA256 digest does not match the expected digest.\"\"\"\n    pass\n\n\ndef verify_file_sha256(\n    filepath: str,\n    expected_digest: str,\n    chunk_size: int = 8192\n) -> bool:\n    \"\"\"\n    Read a file in chunks, compute its SHA256 hash, and compare it with an expected digest.\n\n    This function reads the file in fixed-size chunks to handle large files efficiently\n    without loading the entire file into memory. It raises specific exceptions for common\n    error conditions.\n\n    Args:\n        filepath: Path to the file to verify.\n        expected_digest: The expected SHA256 hex digest string (lowercase).\n        chunk_size: Number of bytes to read at a time. Defaults to 8192.\n\n    Returns:\n        True if the computed digest matches the expected digest.\n\n    Raises:\n        FileMissingError: If the file does not exist or cannot be opened.\n        DigestMismatchError: If the computed SHA256 digest does not match the expected digest.\n        ValueError: If chunk_size is not a positive integer.\n    \"\"\"\n    if chunk_size <= 0:\n        raise ValueError(\"chunk_size must be a positive integer\")\n\n    # Check if file exists\n    if not os.path.isfile(filepath):\n        raise FileMissingError(f\"File not found: {filepath}\")\n\n    sha256_hash = hashlib.sha256()\n\n    try:\n        with open(filepath, \"rb\") as f:\n            while True:\n                chunk = f.read(chunk_size)\n                if not chunk:\n                    break\n                sha256_hash.update(chunk)\n    except OSError as e:\n        raise FileMissingError(f\"Could not read file '{filepath}': {e}\") from e\n\n    computed_digest = sha256_hash.hexdigest()\n\n    # Normalize expected digest to lowercase for comparison\n    if computed_digest.lower() != expected_digest.lower():\n        raise DigestMismatchError(\n            f\"Digest mismatch for '{filepath}'. \"\n            f\"Expected: {expected_digest}, Got: {computed_digest}\"\n        )\n\n    return True\n\n\n",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 83,
+        "completion_tokens": 512,
+        "total_tokens": 595,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 2,
+      "workload": "32k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 32889,
+        "prompt_ms": 25698.9,
+        "prompt_per_token_ms": 0.781,
+        "prompt_per_second": 1279.8,
+        "predicted_n": 128,
+        "predicted_ms": 2367.4,
+        "predicted_per_token_ms": 18.495,
+        "predicted_per_second": 54.1,
+        "draft_n": 157,
+        "draft_n_accepted": 94
+      },
+      "elapsed_s": 28.106,
+      "request_sha256": "302f96ebdab8c48c2ab15af78a4ef4acd08a1876ba851316eccfbc6e28757388",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 32889,
+        "completion_tokens": 128,
+        "total_tokens": 33017,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 2,
+      "workload": "8k",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8313,
+        "prompt_ms": 6448.8,
+        "prompt_per_token_ms": 0.776,
+        "prompt_per_second": 1289.1,
+        "predicted_n": 128,
+        "predicted_ms": 2059.9,
+        "predicted_per_token_ms": 16.093,
+        "predicted_per_second": 62.1,
+        "draft_n": 136,
+        "draft_n_accepted": 98
+      },
+      "elapsed_s": 8.535,
+      "request_sha256": "954031ff83f6c910c4c8970866ad240dd9ce32e909abd7c032a2043add80129d",
+      "text_sha256": "9ad7a79328568d8866c46bde5a537cda218d9b6fc1588d61eec2f0f08baf97dd",
+      "content": "```json\n{\n  \"CHECK_A\": \"ORCHID7319\",\n  \"CHECK_B\": \"MAPLE2846\",\n  \"CHECK_C\": \"CEDAR9052\"\n}\n```\n\n```python\nfrom collections import deque\nfrom typing import List, Dict, Set, Optional, Any\n\ndef bfs_shortest_path(\n    graph: Dict[Any, List[Any]],\n    start: Any,\n    end: Any\n) -> Optional[List[Any]]:\n    \"\"\"\n    Find the shortest path from start to end in an unweighted graph using BFS",
+      "calls": [],
+      "usage": {
+        "prompt_tokens": 8313,
+        "completion_tokens": 128,
+        "total_tokens": 8441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "force-0-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8643,
+        "prompt_ms": 6699.1,
+        "prompt_per_token_ms": 0.775,
+        "prompt_per_second": 1290.2,
+        "predicted_n": 28,
+        "predicted_ms": 430.6,
+        "predicted_per_token_ms": 15.379,
+        "predicted_per_second": 65.0,
+        "draft_n": 30,
+        "draft_n_accepted": 22
+      },
+      "elapsed_s": 7.167,
+      "request_sha256": "ae429c9f484f0aa061ac0399f974e2d189fe11f1353d2377c54ca405353320d2",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_product",
+          "arguments": {
+            "query": "AX-17"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8643,
+        "completion_tokens": 28,
+        "total_tokens": 8671,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "force-5-openai-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 8804,
+        "prompt_ms": 6823.5,
+        "prompt_per_token_ms": 0.775,
+        "prompt_per_second": 1290.2,
+        "predicted_n": 26,
+        "predicted_ms": 440.3,
+        "predicted_per_token_ms": 16.935,
+        "predicted_per_second": 59.1,
+        "draft_n": 25,
+        "draft_n_accepted": 19
+      },
+      "elapsed_s": 7.299,
+      "request_sha256": "be383866873144007b145ee709da543b8430b01e0a6efe597eb271575000230e",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "name": "trial_lookup_weather",
+          "arguments": {
+            "city": "北京"
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 8804,
+        "completion_tokens": 26,
+        "total_tokens": 8830,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "codex-json",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 267,
+        "prompt_ms": 610.8,
+        "prompt_per_token_ms": 2.288,
+        "prompt_per_second": 437.1,
+        "predicted_n": 30,
+        "predicted_ms": 428.3,
+        "predicted_per_token_ms": 14.277,
+        "predicted_per_second": 70.0,
+        "draft_n": 30,
+        "draft_n_accepted": 24
+      },
+      "elapsed_s": 1.07,
+      "request_sha256": "5e72633091b0c11874a757ef5c8da6c74d759026f2dd71f0456e786650969809",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "fc_471fe85280454c7bb8687942119caac8",
+          "type": "function_call",
+          "status": "completed",
+          "call_id": "call_69f29f8d165645fe9251788c",
+          "name": "trial_lookup_product",
+          "arguments": "{\"query\":\"AX-17\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 267,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 30,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 297
+      }
+    },
+    {
+      "block": "4-off",
+      "repeat": 1,
+      "workload": "history",
+      "passed": true,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 513,
+        "prompt_ms": 861.1,
+        "prompt_per_token_ms": 1.679,
+        "prompt_per_second": 595.7,
+        "predicted_n": 39,
+        "predicted_ms": 453.9,
+        "predicted_per_token_ms": 11.638,
+        "predicted_per_second": 85.9,
+        "draft_n": 34,
+        "draft_n_accepted": 33
+      },
+      "elapsed_s": 1.343,
+      "request_sha256": "f190c7f1c665ff580d4109ac0f8bd9ebeedc7584da302437acba235a4b71a5e9",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "calls": [
+        {
+          "id": "ctc_cafdefbe99144aa79aedbae6f71370be",
+          "type": "custom_tool_call",
+          "status": "completed",
+          "call_id": "call_e5323ec8db2949b4a8680a6d",
+          "name": "exec",
+          "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+          "namespace": "functions"
+        }
+      ],
+      "usage": {
+        "input_tokens": 513,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 39,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 552
+      }
+    }
+  ],
+  "public_acceptance": {
+    "anonymous_models_http": 401,
+    "authenticated_health_http": 200,
+    "health_status": "ok",
+    "model_loaded": true,
+    "images": true,
+    "chat_sse": {
+      "status": 200,
+      "text": "长输入优化验收通过",
+      "done": true,
+      "passed": true
+    }
+  }
+}

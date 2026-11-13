@@ -1,0 +1,5724 @@
+{
+  "phase": "serve-regression",
+  "tests": 1420,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 31,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "passed": true,
+  "elapsed_s": 454.11,
+  "cases": [
+    {
+      "test": "serve.test_abort_sync.AbortSync.test_a_cancel_mid_answer_leaves_the_engine_in_step",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_abort_sync.AbortSync.test_err_alone_is_over_with_the_err",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_abort_sync.AbortSync.test_err_then_done_does_not_shift_the_next_answers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_admit_order.AdmitOrderTest.test_a_continuation_is_not_held_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_admit_order.AdmitOrderTest.test_a_long_request_that_waited_too_long_goes_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_admit_order.AdmitOrderTest.test_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_admit_order.AdmitOrderTest.test_short_first_puts_the_chat_before_the_agent_reads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_a_one_token_reply_has_no_absurd_rate",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_drafts_are_not_counted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_it_matches_the_timings_and_metrics_figure",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_prompt_reading_time_is_not_in_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_the_engines_decode_time_is_the_denominator",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_answer_speed.AnswerSpeed.test_without_a_done_line_the_server_clock_from_the_first_token_is_used",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_base_url.AnthropicBase.test_count_tokens_alias",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_base_url.AnthropicBase.test_only_the_two_messages_paths_are_aliased",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_base_url.AnthropicBase.test_sdk_streaming_through_the_alias",
+      "status": "skipped",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "serve.test_anthropic_base_url.AnthropicBase.test_sdk_with_the_old_v1_address_works_through_the_alias",
+      "status": "skipped",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "serve.test_anthropic_base_url.AnthropicBase.test_sdk_with_the_root_address_works",
+      "status": "skipped",
+      "reason": "the anthropic package is not installed"
+    },
+    {
+      "test": "serve.test_anthropic_tool_result_order.AnthropicToolResultOrder.test_all_complete_permutations_render_the_same_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_tool_result_order.AnthropicToolResultOrder.test_error_and_image_results_keep_the_matching_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_tool_result_order.AnthropicToolResultOrder.test_incomplete_or_ambiguous_ids_preserve_received_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_anthropic_tool_result_order.AnthropicToolResultOrder.test_multiple_tool_rounds_are_ordered_independently",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_cache_drop.CacheDrop.test_default_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_cache_drop.CacheDrop.test_files_and_advise",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_cache_drop.CacheDrop.test_not_while_engine_runs_or_not_opted_in",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_cache_drop.CacheDrop.test_on",
+      "status": "skipped",
+      "reason": "POSIX only"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_already_ordered_and_legacy_prompts_are_identical",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_ambiguous_or_incomplete_ids_preserve_received_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_each_tool_run_is_scoped_to_its_assistant_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_http_engine_receives_the_ordered_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_json_encoded_history_and_calls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_multimodal_result_moves_with_its_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chat_tool_results.ChatToolResults.test_reversed_results_of_the_same_function_follow_call_ids",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_bad_chunk_size_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_chunked_chat_request_is_read",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_chunked_control_body_is_consumed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_chunked_settings_body_is_read_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_content_length_request_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_a_truncated_chunked_body_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_an_overlong_chunked_trailer_does_not_change_settings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_an_oversized_chunked_body_is_a_413_and_is_never_allocated",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_chunked_trailer_limit_does_not_change_settings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_chunked_wins_over_content_length",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_complete_settings_bodies_still_apply",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_chunked_body.ChunkedBody.test_incomplete_chunked_trailers_do_not_change_settings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_additional_tools_after_compaction_enable_the_current_route",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_explicit_no_tools_is_respected",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_explicitly_declared_direct_shell_is_not_denied",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_flat_custom_declaration_is_supported",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_old_tool_history_and_current_declarations_are_preserved",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_other_current_outer_tools_remain_available",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_plain_function_api_and_unrelated_exec_tool_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_prompt_history_migration_preserves_command_id_result_and_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_codex_tool_routing.CodexToolRoutingTests.test_unrelated_or_incomplete_history_call_is_not_rewritten",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_context_overflow.ContextOverflow.test_both_overflow_errors_are_recognizable_before_streaming",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_context_overflow.ContextOverflow.test_default_service_shortens_an_overshooting_budget_in_every_dialect",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_context_overflow.ContextOverflow.test_one_token_of_room_still_answers_but_zero_is_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_context_overflow.ContextOverflow.test_prepare_preserves_prompt_and_budget_limits",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_context_overflow.ContextOverflow.test_the_anthropic_route_says_it_the_way_anthropic_does_and_keeps_strata_s_sentence",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_control_cancel.ControlCancelTest.test_no_stop_without_cancel",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_control_cancel.ControlCancelTest.test_stop_during_prompt_read",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_detok.Detok.test_constant_cost",
+      "status": "skipped",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "serve.test_detok.Detok.test_random_ids_and_broken_bytes",
+      "status": "skipped",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "serve.test_detok.Detok.test_text_with_split_characters",
+      "status": "skipped",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "serve.test_detok.HeapBpe.test_pack_vocab",
+      "status": "skipped",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "serve.test_detok.HeapBpe.test_speed_pack",
+      "status": "skipped",
+      "reason": "no pack tokenizer here"
+    },
+    {
+      "test": "serve.test_detok.HeapBpe.test_speed_synthetic",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_detok.HeapBpe.test_synthetic_vocab",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_detok.HeapBpe.test_words_directly",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_detok.ThreadedEncode.test_threads_match_serial",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_draft_layer.DraftLayer.test_only_an_explicit_false_turns_it_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_draft_layer.DraftLayer.test_strip_keeps_everything_but_the_draft_layer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_draft_layer.DraftLayer.test_the_server_applies_it_at_every_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_draft_layer.DraftLayer.test_the_web_settings_page_lists_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_drafting_retry.AutoRetriesWithTheMtp.test_a_start_that_works_is_not_started_twice",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_drafting_retry.AutoRetriesWithTheMtp.test_a_start_with_no_retry_arguments_fails_with_the_engines_reason",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_drafting_retry.AutoRetriesWithTheMtp.test_auto_that_picked_dflash2_starts_again_with_the_mtp_and_says_so_quietly",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_drafting_retry.AutoRetriesWithTheMtp.test_the_retry_is_one_start_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_drafting_retry.AutoRetriesWithTheMtp.test_the_same_arguments_are_not_a_retry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Api.test_marks_at_the_last_user_turn_and_the_pin_is_the_shared_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Api.test_off_with_0_and_never_the_clients_own",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Api.test_shared_is_asked_when_the_pin_is_switched_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Api.test_short_prompts_get_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Api.test_tail_point_for_a_long_last_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_a_system_message_after_the_first_user_turn_is_a_boundary_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_last_user_turn_the_shared_start_and_the_tail",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_settings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_short_starts_are_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_tail_zero_and_a_tail_inside_the_last_turn_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds4_restore_points.Pure.test_the_engine_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Args.test_parallel_key_is_deepseek_parallel",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Args.test_qwen_keeps_batch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_a_request_that_leaves_is_stopped_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_an_engine_that_runs_fewer_than_asked_is_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_chat_requests_run_at_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_ready_multi_makes_the_engine_parallel",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_requests_at_once_each_their_own_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_parallel.Engine.test_the_gen_line_carries_rid",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_a_bad_image_is_a_value_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_counts_must_match",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_odd_sizes_and_transparency_are_brought_to_the_grid",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_one_picture",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_the_engine_limit_holds_for_a_huge_picture",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Build.test_two_pictures_keep_their_order_and_starts",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Config.test_a_pack_without_a_tower_has_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Config.test_on_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Config.test_vision_off_turns_it_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Config.test_vision_on_flag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Geometry.test_a_huge_picture_shrinks_to_the_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Geometry.test_sizes_are_multiples_of_42_within_the_budget",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Geometry.test_small_pictures_grow_to_min_pixels",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Geometry.test_span_matches_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Serve.test_a_follow_up_with_the_picture_in_history_works",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Serve.test_a_picture_reaches_the_engine_as_a_geni_file",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Serve.test_pictures_off_keeps_the_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ds_pictures.Serve.test_text_requests_are_the_same_with_pictures_on",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_a_clients_own_prefix_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_a_normal_closed_think_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_a_tool_result_turn_renders_for_the_model",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_a_turn_cut_by_max_tokens_is_not_turned_into_an_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_anthropic_budget_picks_the_effort",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_anthropic_text_without_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_anthropic_tool_use",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_effort_words",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_forced_tool_choice",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_metrics_use_the_one_answer_speed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_model_name_and_card_sampling",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_no_closing_think_tag_makes_the_text_the_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_no_closing_think_tag_streaming_ends_with_the_answer_as_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_no_shared_start_without_a_system_prompt_or_when_switched_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_openai_tool_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_streamed_tool_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_the_end_token_is_deepseeks_not_qwens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_the_qwen_path_asks_for_no_prefix",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_the_system_prompt_and_tools_are_the_shared_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_thinking_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_thinking_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Api.test_two_calls_in_one_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.ArchFromTokenizer.test_a_deepseek_tokenizer_without_an_arch_is_deepseek41",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.ArchFromTokenizer.test_a_qwen_tokenizer_names_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.ArchFromTokenizer.test_an_arch_the_config_names_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.ArchFromTokenizer.test_without_the_family_the_pieces_of_im_end_are_not_stop_ids_and_the_end_token_is",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_a_call_cut_off_by_the_length_limit_is_not_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_a_non_string_value_is_json",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_a_string_value_stays_a_string_even_when_the_schema_says_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_clean_counts_a_held_tag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_content_before_the_call_and_none_after",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_forced_opening",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_reasoning_then_two_calls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Parser.test_the_plain_parser_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.PickTemplateTests.test_fixture_is_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.PickTemplateTests.test_v4flash_pack_template_is_replaced",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Pre.test_cjk_runs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Pre.test_digits_in_runs_of_three",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Pre.test_every_character_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Pre.test_punctuation_then_letters_and_whitespace",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.ReadyTimeout.test_the_config_sets_it_and_a_bad_value_is_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SlotEnv.test_deepseek_gets_a_folder_in_the_data_folder_and_the_default_switch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SlotEnv.test_other_families_get_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SlotEnv.test_the_configs_own_settings_win",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_a_client_budget_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_a_tool_call_under_a_short_cap_still_parses",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_every_short_cap_gets_an_answer_on_both_apis",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_other_families_keep_the_old_behaviour",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_the_default_budget_closes_a_long_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_the_family_default_thinking_budget",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.SmallCap.test_thinking_off_is_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Template.test_a_tool_call_and_its_result_render_in_dsml",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Template.test_the_golden_prompts",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Template.test_thinking_is_the_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Tokenizer.test_a_special_token_decodes_to_its_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Tokenizer.test_qwen_tokens_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Tokenizer.test_the_dsml_token_is_matched_without_parse_special_and_a_control_token_is_not",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Tokenizer.test_the_real_tokenizer_makes_the_ids_llama_cpp_made",
+      "status": "skipped",
+      "reason": "STRATA_DSV41_PACK (the pack's tokenizer folder) not set"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_a_call_becomes_the_qwen_form",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_a_missing_closing_tag_is_closed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_a_value_that_looks_like_a_tag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_text_with_angle_brackets_passes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_the_end_of_the_output_inside_a_tag_is_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_dsv41.Translator.test_the_split_of_the_stream_changes_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_an_unknown_level_is_a_400_not_the_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_anthropic_output_config_and_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_config_level_reaches_every_api",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_openai_reasoning_effort",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_openai_reasoning_object_and_template_kwargs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_responses_reasoning_effort",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_the_agents_request_shape_with_thinking_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_the_chat_settings_shared_with_apps_beat_the_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_the_level_follows_a_conversation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_the_requests_own_level_beats_the_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_the_web_apps_request_shape",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_effort_paths.EffortPaths.test_tools_and_a_system_message_keep_the_level",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_engine_arch_note.ArchNote.test_a_build_with_ptx_covers_newer_cards",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_engine_arch_note.ArchNote.test_a_card_the_build_does_not_cover_is_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_engine_arch_note.ArchNote.test_a_covered_pair_says_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_engine_arch_note.ArchNote.test_only_the_cards_the_run_uses_count",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_engine_arch_note.ArchNote.test_unknown_things_say_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_anthropic_requests_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_content_parts_get_a_leading_text_part",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_moved_to_the_first_user_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_off_and_no_block_change_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_text_parts_are_read_as_one_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_env_to_user.EnvBlockToUser.test_two_folders_share_the_system_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_exif_orientation.ExifOrientation.test_a_broken_jpeg_is_left_as_it_was_sent",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_exif_orientation.ExifOrientation.test_a_jpeg_without_the_tag_or_with_tag_1_passes_through_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_exif_orientation.ExifOrientation.test_a_turned_jpeg_comes_out_upright_as_a_png",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_exif_orientation.ExifOrientation.test_png_passes_through",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_family_name.FamilyName.test_config_name_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_family_name.FamilyName.test_old_configs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_family_name.FamilyName.test_per_family",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_after_the_window_it_tries_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_an_ordinary_death_is_not_counted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_an_ordinary_engine_error_stays_a_bad_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_one_fatal_death_is_restarted_with_one_plain_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_the_request_in_flight_fails_as_an_engine_death_not_a_bad_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_the_same_death_seen_by_many_requests_counts_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_gpu_restart.FatalGpuRestart.test_three_fatal_deaths_in_ten_minutes_stop_the_restarts_and_say_so",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_an_earlier_window_never_finished_is_fatal",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_batch_timeout_signature_also_invalidates_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_closed_serial_engine_rejects_without_accessing_closed_pipe",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_fatal_error_is_not_a_success_and_next_request_reloads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_fatal_lines_are_checked_before_batch_routing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_generate_batched_refuses_a_dead_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_http_health_and_next_request_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_fatal_recovery.FatalRecovery.test_validation_error_does_not_kill_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_anthropic_thinking_only_replies_are_not_rendered",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_empty_user_and_tool_turns_are_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_final_empty_assistant_turn_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_image_only_assistant_turn_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_openai_empty_replies_are_not_rendered",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyAssistantHistory.test_text_and_tool_calls_are_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyConversation.test_no_message_is_an_error_a_message_is_not",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.EmptyTurnsSwitch.test_keep_empty_turns_restores_the_old_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.FencedJsonCallInWrapper.test_fenced_and_bare_agree",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.FencedJsonCallInWrapper.test_off_without_recovery_or_for_an_undeclared_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.FencedJsonCallInWrapper.test_other_fences_and_prose_stay_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.ForcedCallOpening.test_required_with_one_tool_names_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_a_user_asking_for_a_closer_verbatim_gets_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_assistant_replay_keeps_every_tool_tag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_assistant_replay_keeps_its_token",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_every_tool_tag_a_user_quotes_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_template_keeps_seeing_a_tool_result_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_user_text_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.QuotedToolCallCloser.test_user_tool_result_keeps_its_outer_markers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_a_system_prompt_with_an_image_part_is_read_as_text_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_chat_file_and_audio_parts_are_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_chat_refusal_part_is_read_as_its_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_messages_blocks_real_clients_send_are_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_messages_redacted_thinking_is_dropped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_messages_tool_reference_in_a_tool_result_is_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_frontend.UnreadContentParts.test_text_and_image_requests_render_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_a_hand_edited_gpu_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_bad_roles_are_ignored",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_every_card_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_legacy_settings_are_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_one_card_on",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_roles_alone_give_the_order_main_last_and_off_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_the_log_line_names_every_role",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_gpu_roles_server.Roles.test_the_mirror_is_used_and_never_re_sorted_by_speed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_a_tool_the_conversation_called_is_a_tool_call_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_anthropic_tool_use_blocks_count",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_declared_names_are_not_doubled_and_no_tools_stays_no_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_odd_requests_are_left_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_responses_function_call_items_count",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_responses_namespace_is_part_of_the_name",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_the_other_routes_without_history_stay_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.HistoryTools.test_without_the_history_it_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.PrefixedNames.test_a_declared_dotted_name_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.PrefixedNames.test_an_undeclared_name_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.PrefixedNames.test_functions_prefix_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_history_tools.PrefixedNames.test_the_prefix_is_read_as_the_declared_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Command.test_config_checked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Command.test_env",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Command.test_native_switch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Command.test_other_steps_and_batch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Command.test_the_model_cards_command",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_b64",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_bad_request_and_failure",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_chat_waits_for_the_image",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_listed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_not_set_up",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.OverHttp.test_url",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Policy.test_eager_reload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Policy.test_keep_touches_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Policy.test_resolve",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Policy.test_shrink_gives_the_cache_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Policy.test_unload_saves_and_the_next_start_restores",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Request.test_defaults",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Request.test_fields",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_images.Request.test_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_a_failing_call_never_breaks_a_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_default_service_has_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_exit_clears_a_held_state",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_held_while_busy_and_released_when_idle",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_off_and_non_windows",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_keepawake.KeepAwakeTests.test_service_holds_for_the_whole_request_including_early_close",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_leftover_engines.LeftoverEngines.test_a_failed_check_never_stops_a_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_leftover_engines.LeftoverEngines.test_an_engine_that_is_still_there_is_said_and_the_start_goes_on",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_leftover_engines.LeftoverEngines.test_keep_leftovers_leaves_them_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_leftover_engines.LeftoverEngines.test_nothing_left_says_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_leftover_engines.LeftoverEngines.test_the_wait_is_long_enough_for_a_big_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_an_engine_that_died_on_load_is_reported_as_such",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_busy_auth_and_foreign_origin_cannot_unload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_close_cleans_up_after_a_broken_stdin_pipe",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_close_does_not_forget_a_process_still_exiting",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_close_sends_eof_before_waiting_for_windows_reader",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_close_terminates_before_it_kills",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_discover_chat_unload_and_stream_reload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_explicit_load_and_model_matching",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifecycle.Lifecycle.test_native_lazy_constructor_does_not_start_a_process",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifeline.HardFallback.test_an_engine_that_ignores_everything_is_killed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_a_child_ends_when_its_server_is_killed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_a_child_started_on_a_request_thread_outlives_that_thread_but_not_the_server",
+      "status": "skipped",
+      "reason": "PR_SET_PDEATHSIG is Linux"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_a_server_that_exits_normally_leaves_nothing_behind",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_the_child_is_recorded_while_it_runs_and_forgotten_after",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_the_portable_watcher_ends_the_child_when_the_server_is_killed",
+      "status": "skipped",
+      "reason": "the portable watcher is the POSIX path"
+    },
+    {
+      "test": "serve.test_lifeline.Lifeline.test_the_watcher_token_does_not_change_with_the_child_state",
+      "status": "skipped",
+      "reason": "the portable watcher is the POSIX path"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBias.test_capability_and_batch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBias.test_forms_and_transport",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBias.test_http_rejects_before_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBias.test_invalid",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBias.test_large_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_a_bad_list_is_never_stored",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_an_equal_list_in_a_later_request_is_a_hit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_false_is_not_zero",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_same_answers_as_the_plain_function",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_the_cache_is_bounded",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_the_result_is_a_copy",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logit_bias.LogitBiasCache.test_vocabulary_size_is_part_of_the_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_choice_of_ten_that_only_the_ended_reply_settles",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_held_tail_of_more_than_one_token",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_json_schema_reply_takes_any_max_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_named_token_the_model_chose_is_in_its_distribution",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_request_reads_only_its_own_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_a_streamed_reply_needs_no_bound",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_allowed_token_ids_are_renormalised_over_the_named_ids",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_allowed_token_ids_outside_the_vocabulary_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_allowed_token_ids_with_nothing_to_renormalise",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_an_engine_without_lp_lines_gives_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_json_schema_answer_as_written_with_its_logprobs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_logprobs_are_refused_on_the_batch_path",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_logprobs_take_any_max_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_not_asked_no_logprobs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_streamed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_the_tokens_spell_the_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Api.test_with_thinking_each_part_is_spelled_by_its_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Generate.test_a_consumer_that_stops_early_does_not_lose_the_done_read_after_the_token",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Generate.test_a_token_is_yielded_with_its_lp_line_read",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Generate.test_an_engine_without_lp_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Generate.test_not_asked_reads_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_a_filtered_line_with_nothing_left_keeps_its_token",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_a_named_token_the_line_does_not_repeat_is_its_own_distribution",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_allowed_ids",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_allowed_reaches_the_engine_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_the_engine_key_only_when_asked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_unreadable_lines_give_no_entry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Keys.test_what_the_request_asks",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Replicas.test_no_slots_behind_replicas",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Replicas.test_slots_behind_replicas",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Span.test_no_span",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs.Span.test_span",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_a_decision_gets_its_logprobs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_an_engine_without_lp_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_longer_replies_are_refused_with_batch_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_not_asked_nothing_changes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_the_named_ids_reach_the_slot_and_are_what_is_reported",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_logprobs_parallel.LogprobsWithBatchSlots.test_two_at_once_each_get_their_own",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_a_server_that_fails_is_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_cancel",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_crash_mid_call_then_restart",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_errors_become_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_initialize_and_list_every_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_namespaced_openai_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_timeout",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Client.test_truncation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Config.test_bad_entries_stop_the_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.Config.test_both_spellings_and_the_file",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.HttpClient.test_list_and_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.HttpClient.test_timeout_and_unreachable",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.NoServers.test_opt_in_without_servers_is_a_plain_chat",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_a_call_the_output_ends_inside_is_not_run",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_get_mcp",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_max_rounds",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_max_rounds_counts_rounds_with_multiple_calls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_max_rounds_does_not_execute_more_calls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_max_rounds_non_stream_with_existing_system",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_max_rounds_preserves_errors_and_disables_client_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_non_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_only_from_the_app_s_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_own_tools_still_go_to_the_client",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_plain_requests_get_no_mcp_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_sixteen_rounds_then_final_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_stop_during_a_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_tool_call_then_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_tool_error_is_a_result",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp.ToolLoop.test_truncated_for_the_model",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_authenticated_download_and_traversal",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_cache_deduplicates_and_preserves_bytes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_cache_failure_keeps_text_result",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_caps_images_per_result",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_disabled_is_identical_to_text_only_result",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_image_text_obeys_result_cap",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_null_and_non_object_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Cache.test_rejects_invalid_and_active_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Configuration.test_disabled_and_omitted_switch_stay_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Configuration.test_documented_switch_reaches_hub_and_tool_result",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.Configuration.test_switch_rejects_non_booleans",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.HistoryReferences.test_bad_reference_cannot_read_other_files",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.HistoryReferences.test_mixed_missing_and_valid_pictures_keeps_valid_vision",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.HistoryReferences.test_reference_resolves_only_to_cache",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_default_stream_has_no_image_fields",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_disabled_cache_history_continues_across_turns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_image_result_streams_and_reaches_vision_prepare",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_malformed_history_still_rejected_over_http",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_missing_cache_history_continues_across_turns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_mcp_media.ImageLoop.test_removed_mcp_history_continues_across_turns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_config_block_and_shared_settings_win_over_the_card",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_no_family_no_defaults",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_non_thinking_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_request_wins_and_zero_is_greedy",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_tables",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_model_card_sampling.ModelCardSampling.test_thinking_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.ConversationCacheCard.test_metrics",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.ConversationCacheCard.test_the_card_is_on_the_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.ConversationCacheCard.test_the_log",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_capture_is_bounded_and_eviction_returns_404",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_error_and_engine_death_are_not_successes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_history_is_authorized_and_does_not_capture_headers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_output_and_reasoning_for_both_dialects_and_stream_modes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_page_and_relative_assets_are_served",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.Monitor.test_queue_wait_and_loading_are_attributed_separately",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_monitor.MonitorOff.test_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_literal_call_markers_in_content_before_genuine_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_literal_call_markers_remain_reasoning_prose",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_namespace_alias_schema_and_exact_name_precedence",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_padded_bare_alias_is_declared_and_schema_typed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_padded_unknown_second_call_is_not_announced",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_padded_unknown_wrapper_stays_text_and_unpadded_stays_native",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_unclosed_think_call_and_split_tags",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_native_tool_parser.NativeTools.test_whitespace_name_keeps_namespace_schema_and_stream_events",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_child_env_wiring",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_cuda_on",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_explicit_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_hip_gfx12_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_hip_selected_cards_decide",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_other_models_and_backends_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.GdnStackDefaults.test_windows_and_mac_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelArgs.test_parallel_above_the_window_says_so_unless_batch_mtp",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelArgs.test_parallel_config_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_a_burst_of_connections_is_not_reset",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_admission_cap_uses_effective_slots_and_rejects_before_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_batch_groups_auto_follows_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_benchmark_cancel_suite_releases_batch_queue_and_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_benchmark_overload_suite_preserves_batch_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_benchmark_prefill_cancel_observes_progress_and_companion_completion",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_bgen_refused_by_the_engine_is_retried_not_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_bgen_refused_for_good_is_a_retryable_503_and_frees_the_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_concurrent_requests_share_the_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_engine_batch_window_sample_reaches_telemetry_without_entering_reply",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_engine_log_resolves_four_stage_layer_and_device_mapping",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_engine_reports_fewer_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_engine_turns_batching_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_pipeline_stage_host_spans_reach_telemetry_without_entering_reply",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_queue_timeout_parallel_control_and_stream_formats",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_queue_timeout_parallel_slot_wait_releases_control",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_queue_timeout_serial_fifo_returns_429_and_recovers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_stop_strings_in_a_batch_slot",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelService.test_telemetry_keeps_engine_waiting_age_visible",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelStackDefaults.test_explicit_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelStackDefaults.test_off_on_windows_and_mac",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelStackDefaults.test_off_without_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelStackDefaults.test_on_with_parallel",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.ParallelStackDefaults.test_other_engines_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.PickSlot.test_a_rewritten_next_turn_goes_to_the_slot_of_its_chat",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.PickSlot.test_batch_groups_spread_requests_over_the_groups",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.PickSlot.test_slots_view",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel.PickSlot.test_the_slot_that_holds_the_conversation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_continued_request_reports_its_own_prompt_reuse",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_failed_window_names_its_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_leaked_busy_slot_does_not_hang_the_next_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_long_prompt_gives_way_to_a_short_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_parallel_request_does_not_wait_for_the_fifo_on_a_loaded_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_request_moved_between_solo_and_slot_keeps_its_totals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_a_slot_request_ended_by_its_stop_token_reports_the_slot_leg",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_an_admission_gives_way_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_an_admission_is_asked_between_far_apart_progress_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_an_owned_busy_slot_is_never_taken",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_left_alone_it_goes_back_to_the_solo_path",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_next_turn_goes_back_to_its_slot",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_no_way_given_to_a_long_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_no_way_given_to_a_long_one_between_far_apart_progress_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_nonfinite_in_batch_mode",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_the_way_is_asked_between_far_apart_progress_lines",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parallel_yield.ParallelServiceYield.test_three_requests_long_long_short_do_not_deadlock",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.ParamEndOptions.test_a_call_followed_by_a_sentence_is_still_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.ParamEndOptions.test_a_file_that_lists_the_closing_tags_keeps_all_its_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.ParamEndOptions.test_two_calls_with_a_sentence_between_are_two_calls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.Streaming.test_a_long_sentence_after_a_call_cannot_hold_it_for_ever",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.Streaming.test_a_second_call_releases_the_first_at_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.Streaming.test_an_ordinary_call_is_delivered_when_the_turn_ends_and_not_before_a_second_call_is_needed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_param_end_options.Streaming.test_the_file_comes_whole_however_it_is_cut_into_pieces",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_call_scan.CallScanTests.test_chunk_boundaries_literal_tags_multiple_calls_and_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_call_scan.CallScanTests.test_no_structural_rescans_until_closer_and_reset_for_next_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_hold.HoldTests.test_every_real_tag_split",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_hold.HoldTests.test_overlapping_and_empty_tags",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_hold.HoldTests.test_streamed_events_match_reference",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_a_call_after_a_closed_longer_fence_is_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_a_call_after_an_indented_block_ends_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_a_plain_call_after_a_paragraph_is_still_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_a_tilde_fence_is_not_closed_by_backticks",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_an_indented_code_block_is_a_quote",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_markdown_code.MarkdownCode.test_an_inner_fence_does_not_close_a_longer_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_track.TrackTests.test_compaction_boundaries_reads_and_line_replacement",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_track.TrackTests.test_feed_events_with_long_lines_and_quoted_tool_tags",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_track.TrackTests.test_fragment_state_from_varied_initial_states",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_track.TrackTests.test_long_line_snapshots_restore_and_append",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_parser_track.TrackTests.test_random_streaming_boundaries",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_pool_cores.PoolCoresConfig.test_a_list_that_cannot_be_read_is_said_and_ignored",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_pool_cores.PoolCoresConfig.test_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_pool_cores.PoolCoresConfig.test_reaches_the_engine_arguments",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_pool_cores.PoolCoresConfig.test_text_and_list_forms",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_pool_cores.PoolCoresConfig.test_the_args_own_value_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Batched.test_every_concurrent_request_is_counted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Endpoint.test_a_request_shows_in_both_formats",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Units.test_histograms_are_cumulative",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Units.test_render_reads_the_server_record",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Units.test_strata_names_follow_the_json",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prometheus.Units.test_who_gets_the_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Served.test_a_refused_prompt_is_not_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Served.test_another_conversation_does_not_evict_the_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Served.test_quoted_think_across_turns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Served.test_random_messages_equal_a_full_encode",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Units.test_a_turn_reuses_the_previous_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Units.test_plain_agree_until",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_prompt_encoder.Units.test_same_ids_as_a_full_encode",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_q36_config.Q36Config.test_a_vision_section_starts_the_engine_with_pictures",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_q36_config.Q36Config.test_an_explicit_batch_in_the_args_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_q36_config.Q36Config.test_more_than_the_window_is_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_q36_config.Q36Config.test_parallel_becomes_batch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_queue_keepalive.QueueKeepAlive.test_a_queued_stream_gets_keep_alives_then_its_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_queue_keepalive.QueueKeepAlive.test_a_request_cancelled_while_queued_never_takes_the_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_queue_keepalive.QueueKeepAlive.test_closing_a_queued_request_is_no_longer_queued",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quiet_cancel.QuietPromptCancel.test_anthropic_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quiet_cancel.QuietPromptCancel.test_batch_solo_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quiet_cancel.QuietPromptCancel.test_other_http_modes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quiet_cancel.QuietWaitPolicy.test_expired_silence_is_not_a_heartbeat",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quiet_cancel.QuietWaitPolicy.test_polling_keeps_ten_second_heartbeats",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quoted_call_values.QuotedCallValues.test_prose_between_two_calls_still_ends_the_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_quoted_call_values.QuotedCallValues.test_values_are_exact_whole_streamed_and_chunked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reader_follows_engine.ReaderFollowsEngine.test_a_missing_reader_is_still_replaced",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reader_follows_engine.ReaderFollowsEngine.test_a_reader_already_in_the_engine_folder_stays",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reader_follows_engine.ReaderFollowsEngine.test_a_reader_in_the_older_engine_folder_moves_to_the_engine_in_use",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reader_follows_engine.ReaderFollowsEngine.test_a_reader_somewhere_else_is_the_persons_choice_and_stays",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_ready_timeout.ReadyTimeout.test_ready_timeout_on_lazy_load_answers_the_request",
+      "status": "skipped",
+      "reason": "the .cmd wrapper keeps the pipe open after the kill (only the wrapper dies), so the close of its stdout waits for the sleeping child; a real engine is one process"
+    },
+    {
+      "test": "serve.test_ready_timeout.ReadyTimeout.test_ready_timeout_on_restart_answers_the_request",
+      "status": "skipped",
+      "reason": "the .cmd wrapper keeps the pipe open after the kill (only the wrapper dies), so the close of its stdout waits for the sleeping child; a real engine is one process"
+    },
+    {
+      "test": "serve.test_ready_timeout.SpawnFailure.test_missing_engine_answers_503_and_leaves_nothing_running",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_a_loop_written_as_one_long_word",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_a_lower_top_p_and_top_k_are_never_raised_or_lowered",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_batch_status_and_history_record_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_cancel_during_reasoning_does_not_start_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_default_single_token_guard_does_not_detect_passage_loop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_disabled_is_one_pass",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_frozen_cohort_sampler_is_unchanged_during_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_missing_native_high_hint_skips_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_natural_answer_with_shared_budget_and_preserved_prefix",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_old_explicit_sampler_recovers_without_mutating_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_preserves_task_and_exact_generated_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_recovery_is_once_and_never_extends_output_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_repeated_final_text_does_not_change_sampler_or_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_repetition_and_novel_work",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_stop_mode_ends_a_loop_written_as_one_long_word",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_stop_mode_ends_the_reply_at_the_loop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_the_splice_keeps_a_literal_think_tag_as_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_loop_recovery.ReasoningLoopRecovery.test_user_instruction_is_never_rewritten",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Corpus.test_every_specimen_whole_and_in_chunks",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Corpus.test_the_corpus_has_the_reported_split",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_a_call_waits_and_is_not_streamed_early",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_a_fence_needs_the_same_marker_to_close",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_a_length_cut_keeps_even_a_clean_stranded_call_as_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_a_stranded_call_is_recovered",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_after_a_closed_fence_a_call_counts_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_an_undeclared_name_stays_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_fence_split_across_chunks",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_no_tools_declared_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_opener_split_across_chunks",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_recovered_call_keeps_the_text_before_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_the_counters",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_the_end_of_the_turn_splits_a_held_tail",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.Gates.test_the_reporters_negative_controls",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.OverHttp.test_a_stranded_call_is_a_call_in_every_api",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.OverHttp.test_quotes_and_cuts_are_not",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.OverHttp.test_visible_answer_fences_on_all_three_apis",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.VisibleAnswer.test_a_closed_call_in_a_length_cut_answer_stays_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.VisibleAnswer.test_quoted_calls_stay_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.VisibleAnswer.test_real_calls_still_fire",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_rescue.VisibleAnswer.test_without_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.OverHttp.test_finish_reasons_and_block_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_a_call_in_the_answer_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_a_declared_call_in_the_reasoning_is_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_a_partial_tag_is_held",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_a_tag_that_never_closes_does_not_hold_the_thinking_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_an_undeclared_name_stays_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_an_unfinished_call_is_never_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_no_tools_declared_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.Parser.test_the_thinking_ending_inside_a_call_makes_it_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.QuotedThinkEnd.test_a_call_quoted_after_it_is_not_run",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.QuotedThinkEnd.test_a_quoted_tag_stays_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.QuotedThinkEnd.test_an_output_that_ends_on_the_tag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_reasoning_tools.QuotedThinkEnd.test_the_end_after_a_quote_still_ends_the_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_call_cut_at_the_token_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_cut_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_whole_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_collect_keeps_calls_whose_arguments_parse",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_parser",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_quoted_incomplete_wrapper_is_not_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Config.test_a_number_cuts_the_gpu_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Config.test_cpu_sets_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Config.test_mistakes_are_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Config.test_named_groups",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Config.test_replica_cfg",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_a_conversation_goes_back_to_its_replica",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_a_replica_that_died_is_skipped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_engines_without_slots_run_one_each_at_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_metrics_and_status_see_all_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_requests_spread_over_both_and_answers_are_the_solo_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.ReplicaService.test_terminal_telemetry_correlates_second_replica_without_global_sample_claim",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_a_dead_replica_is_skipped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_a_long_prefix_outweighs_load",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_batch_is_the_sum",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_least_loaded_then_affinity",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_nonfinite_forgets_the_replica",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.RouteChoice.test_selected_replica_is_reported_for_solo_requests_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Routing.test_matched_prefix_per_replica",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.Routing.test_the_index_is_bounded",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_a_memfd_arena_warns_when_the_engines_will_not_all_fit",
+      "status": "skipped",
+      "reason": "Linux memfd"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_a_memfd_is_not_limited_by_dev_shm_and_is_closed_at_the_end",
+      "status": "skipped",
+      "reason": "Linux memfd"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_a_memfd_needs_free_ram",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_a_stale_file_goes_a_live_one_stays",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_no_room_or_no_shm_says_so_and_falls_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_off_by_default_and_for_one_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_on_by_config_or_environment",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_only_where_there_is_an_arena_to_share",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_removing_twice_or_nothing_is_harmless",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_the_replica_engine_unlinks_the_file_at_close",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_replicas.SharedArena.test_windows_gets_a_named_section",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_anthropic_nonstream_classifies_only_original_input_as_cached",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_anthropic_stream_classifies_only_original_input_as_cached",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_cancelled_continuation_keeps_original_input_and_counts_each_done_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_failed_continuation_does_not_count_the_first_done_twice",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_openai_nonstream_keeps_original_cache_and_all_segment_work",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_openai_stream_keeps_original_cache_and_all_segment_work",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.RequestAccounting.test_single_segment_keeps_its_own_usage_and_timings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.SlotLegAccounting.test_prompt_n_is_what_was_read",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.SlotLegAccounting.test_solo_leg_adds_to_the_slot_leg",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_accounting.SlotLegAccounting.test_two_hand_backs_sum",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_a_good_request_still_answers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_a_wrong_type_is_a_400_that_names_the_field",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_default_limit_is_generous",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_in_type_values_and_nulls_still_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_llama_cpp_names_for_the_repetition_penalty",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_negative_or_bad_content_length_is_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_not_json_is_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_numeric_strings_are_read_and_used",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_oversized_content_length_is_413_unread",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_request_hardening.Hardening.test_wrong_shapes_are_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_resource_warnings.Closed.test_the_cpu_and_ram_sampler_closes_its_files",
+      "status": "skipped",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "serve.test_resource_warnings.Closed.test_the_cpu_topology_closes_its_files",
+      "status": "skipped",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "serve.test_resource_warnings.Closed.test_the_hip_probes_close_their_files",
+      "status": "skipped",
+      "reason": "reads /proc and /sys"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_a_compaction_prompt_starts_as_its_conversations_last_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_a_compaction_that_sends_tools_keeps_them",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_a_custom_compact_prompt_is_a_compaction_when_codex_says_so",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_a_thread_title_turn_does_not_replace_the_kept_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_another_conversation_never_gets_these_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_malformed_metadata_is_no_error_and_no_reuse",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_requests_that_are_not_a_codex_compaction_are_rendered_as_sent",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_the_compact_prompt_in_a_message_is_not_a_compaction",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompaction.test_without_its_conversation_nothing_is_kept_or_used",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompactionOverHttp.test_a_compaction_too_long_with_the_kept_tools_is_rendered_as_sent",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompactionOverHttp.test_a_request_that_fails_leaves_the_kept_tools_as_they_were",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.CodexCompactionOverHttp.test_the_kept_tools_shape_only_the_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.JsonFormatWithTools.test_a_text_answer_that_breaks_the_schema_fails_as_without_tools",
+      "status": "skipped",
+      "reason": "the schema check needs jsonschema"
+    },
+    {
+      "test": "serve.test_responses.JsonFormatWithTools.test_a_tool_call_passes_through",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.JsonFormatWithTools.test_the_final_text_answer_is_the_schema_object",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.NoLeakedSampler.test_server_close_ends_the_sampler",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_a_foreign_page_cannot_name_a_file_as_an_image",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_api_key_and_foreign_pages",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_effort_none_does_not_think",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_errors_use_the_responses_format",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_json_schema_text_format",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_max_output_tokens_bad_values_are_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_max_output_tokens_ends_incomplete",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_max_output_tokens_zero_and_minus_one_mean_no_cap",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_monitor_and_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_non_streaming_text_with_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_stream_event_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.OverHttp.test_too_long_for_the_context",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_a_string_input_is_one_user_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_additional_tools_input_items_are_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_bad_arguments_from_a_cut_off_call_do_not_refuse_the_conversation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_codex_history_becomes_one_assistant_turn_per_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_effort_and_text_format",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_leading_developer_messages_join_the_system_message_later_ones_become_user",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_reasoning_comes_back_from_our_encrypted_content_and_foreign_tokens_are_ignored",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_tools_namespaces_custom_and_hosted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.Parsing.test_unsupported_items_are_named",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ThreadTitle.test_a_thread_title_is_answered_without_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ThreadTitle.test_off_by_default_the_engine_answers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ToolRoundTrip.test_function_call_round_trip",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ToolRoundTrip.test_namespace_and_custom_calls_come_back_under_their_own_names",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ToolRoundTrip.test_namespace_call_written_with_double_underscore",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_responses.ToolRoundTrip.test_quoted_incomplete_wrapper_is_not_a_completed_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_a_restart_that_fails_wakes_the_waiters",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_an_engine_err_answers_at_once_not_batched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_an_engine_err_answers_at_once_solo_loop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_an_old_request_meets_a_restart_in_progress",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_killed_while_reading_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_killed_while_reading_with_others_arriving",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_solo_engine_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_waiters_get_a_clean_503_when_the_engine_stays_down_2_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_waiters_get_a_clean_503_when_the_engine_stays_down_4_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_waiters_go_on_with_the_new_engine_2_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_restart_waiters.RestartWaiters.test_waiters_go_on_with_the_new_engine_4_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Apply.test_null_is_the_default_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Apply.test_only_the_named_keys_change",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Apply.test_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Apply.test_view",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Http.test_only_from_strata_s_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Http.test_read_and_write_from_the_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Http.test_the_api_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Http.test_the_page_has_the_view",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_runconfig.Http.test_without_a_run_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostCheck.test_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostCheck.test_any_host",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostCheck.test_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostNames.test_allowed_hosts_of",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostNames.test_host_name",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.HostNames.test_names_from_the_bind_address",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.ListenAddress.test_ipv4_address_family",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.ListenAddress.test_ipv6_loopback",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.NoApiKey.test_none_means_no_key_on_purpose",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.NoApiKey.test_the_warning_is_plain",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OriginCheck.test_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OriginCheck.test_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_a_trusted_origin_s_host_is_allowed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_allowed_hosts_and_wildcard",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_configured_origins_pass",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_control_body_arrives_before_the_operation_and_reply",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_cross_site_page_is_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_curl_and_sdks_without_origin",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_local_names_and_ips_pass",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_no_host_header_passes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_own_and_local_pages_pass",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_read_only_key_gets_bounded_redacted_request_activity",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_read_only_telemetry_key_does_not_authorize_inference_or_management",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_rebinding_name_is_refused_everywhere",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_refusal_names_both_ways_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_slots_need_json_from_the_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_terminal_telemetry_requires_the_existing_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_unload_and_load_need_json_from_the_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_with_a_key_the_host_check_is_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_security.OverHttp.test_with_a_key_the_key_decides",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AmdTelemetry.test_free_vram_on_hip",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AmdTelemetry.test_pcie_link_is_the_narrowest_slowest_hop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AmdTelemetry.test_readings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_body_a_handler_read_is_not_waited_for",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_body_that_comes_in_drops_does_not_hold_the_connection",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_host_the_server_does_not_answer_to",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_method_with_no_handler",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_wrong_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_a_wrong_key_and_a_body_of_megabytes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_load_and_unload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.AnswerBeforeTheBody.test_not_the_apps_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ApiKeyForms.test_a_blank_key_is_an_error_not_no_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ApiKeyForms.test_a_key_outside_ascii_matches_as_utf8_and_as_latin1",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ApiKeyForms.test_a_utf8_key_over_http",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ApiKeyForms.test_several_keys_1344",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ApiKeyForms.test_the_key_loses_what_a_header_cannot_carry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.BudgetOverRam.test_a_budget_that_fits_is_quiet",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.BudgetOverRam.test_no_budget_argument_is_quiet",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.BudgetOverRam.test_over_free_ram_warns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.BudgetOverRam.test_over_total_less_headroom_warns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.CancelledRead.test_history_and_totals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.CancelledRead.test_parse_done_chunk_fields",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.CancelledRead.test_parse_done_read_field",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.CancelledRead.test_prompt_tokens_seen",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.CancelledRead.test_request_stats_chunk_fields",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_a_plain_version_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_bounds",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_cc_version_tail_is_pinned",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_cch_is_pinned",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_only_at_the_start_of_the_system_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_string_system_is_pinned",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClaudeCodeBillingStamp.test_two_turns_share_the_whole_system_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientHangUp.test_non_streamed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientHangUp.test_streamed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_a_tool_schema_that_is_not_an_object_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_anthropic_mid_conversation_system",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_leading_system_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_malformed_tools_are_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_messages_as_a_json_string_over_http",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_messages_sent_as_a_json_string",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_no_user_turn_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_openai_late_developer_and_system",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_query_string",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_tool_call_malformed_arguments_fallback",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_vision_temp_image_removed_when_the_pipe_fails",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ClientShapes.test_well_formed_tools_still_work",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigApiKey.test_a_blank_key_is_refused",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigApiKey.test_a_key_and_no_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigApiKey.test_an_empty_key_is_a_warning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigReasoningEffort.test_config_level_fills_in_what_a_request_leaves_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigReasoningEffort.test_default_changes_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigReasoningEffort.test_shared_settings_win",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConfigReasoningEffort.test_the_flag_in_args_becomes_the_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConnectionClose.test_a_non_streamed_answer_says_the_connection_closes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ConnectionClose.test_a_streamed_answer_says_the_connection_closes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DesktopVramNote.test_desktop_detection",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DesktopVramNote.test_when_it_applies",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DesktopVramNote.test_when_it_does_not",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DraftCounts.test_drafts_in_history_and_totals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DraftHeadHint.test_an_older_engine_gets_the_advice_in_words",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DraftHeadHint.test_other_failures_and_earlier_starts_add_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.DraftHeadHint.test_the_engines_hint_is_relayed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EffortAtTheEnd.test_changing_the_effort_keeps_the_conversation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EffortAtTheEnd.test_the_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EffortAtTheEnd.test_the_default_prompt_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EffortAtTheEnd.test_the_next_turn_reuses_the_checkpoint",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EffortAtTheEnd.test_the_trailing_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EngineDeath.test_engine_err_mid_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.EngineDeath.test_error_then_restart",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.FitMaxTokens.test_a_budget_that_fits_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.FitMaxTokens.test_no_room_is_still_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.FitMaxTokens.test_overshoot_is_clamped_to_the_room",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_a_call_cut_by_max_tokens_is_not_a_tool_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_a_call_the_request_never_offered_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_a_call_with_a_dropped_function_keyword_is_still_the_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_a_collapsed_mcp_name_is_a_call_not_a_rejection",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_a_thinking_that_ends_right_after_a_quote_opens_the_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_an_undeclared_call_is_named_in_the_response",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_anthropic_any_tool_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_auto_absent_and_none_leave_the_tools_to_the_model",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_no_marker_when_nothing_was_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_required_and_named_after_the_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_the_anthropic_reply_names_the_rejected_call_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_the_budget_wrap_up_opens_the_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_the_flat_shape_names_a_function",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_values_it_cannot_honour_act_as_auto",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ForcedToolChoice.test_without_thinking_the_prompt_ends_with_the_opening",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_automatic_card_skips_what_the_engine_cannot_run",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_card_note_ties_the_engines_numbering_to_the_persons",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_card_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_env",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_hip_ordinal",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_igpu_is_never_the_last_stage",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_igpu_split_warning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_kfd_archs_and_engine_nice",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_kfd_scores",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_picture_reader_not_on_the_igpu",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.GpuChoice.test_vision_device",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HeldBackArgKeepalive.test_a_held_back_call_still_pings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HeldBackArgKeepalive.test_an_ordinary_answer_does_not_ping",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HipEnvGuard.test_healthy_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HipEnvGuard.test_only_for_hip",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HipEnvGuard.test_stale_hip_path_dropped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.HipEnvGuard.test_unwritable_temp_replaced",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageMarkers.test_anthropic_tool_result_image",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageMarkers.test_literal_marker_with_an_image",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageMarkers.test_pictures_are_keyed_by_their_bytes_for_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageMarkers.test_the_whole_marker_in_text_before_images",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageSources.test_a_page_of_another_site_cannot_name_a_file",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageSources.test_a_url_is_downloaded_outside_the_fifo",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageSources.test_a_url_is_read_up_to_the_cap",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageSources.test_network_paths_are_refused_before_any_look",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ImageSources.test_unreadable_sources_are_a_value_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_a_lazy_engine_keeps_the_prompts_its_arguments_ask_for",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_a_tokenizer_without_resume_points_encodes_in_full",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_counting_tokens_leaves_the_kept_prompts_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_same_ids_as_a_full_encode_on_varied_conversations",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_the_kept_prompts_follow_the_engines_conversation_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_the_slot_argument_wins_over_the_info_line_and_a_bad_one_falls_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_turns",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.IncrementalPrompts.test_without_a_slot_setting_four_prompts_are_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.JoinedEngineArgs.test_bad_json_names_the_place",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.JoinedEngineArgs.test_no_args",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.JoinedEngineArgs.test_one_element_becomes_flag_and_value",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.JoinedEngineArgs.test_proper_args_are_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LayerSplit.test_auto_and_absent",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LayerSplit.test_counts_per_card_are_refused_with_the_format",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LayerSplit.test_one_gpu_ignores_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LayerSplit.test_string_and_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LazyVision.test_a_failed_start_kills_the_process_and_raises",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LazyVision.test_lazy_starts_nothing_and_alive_says_so",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LazyVision.test_restart_starts_it_and_close_ends_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LearnedProfile.test_no_profile_in_the_args",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LearnedProfile.test_save_and_start_from_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LearnedProfile.test_without_the_key_nothing_changes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ListenProblem.test_messages",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_a_forged_turn_in_a_user_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_a_literal_inside_a_longer_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_beside_a_quoted_think_tag",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_history_tool_results_and_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_the_real_tokenizer_names_its_control_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralControlTokens.test_without_control_text_the_prompt_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralThinkTags.test_a_client_that_sends_the_reasoning_inline",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralThinkTags.test_a_quoted_tag_in_a_user_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralThinkTags.test_history_tool_results_and_tools",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralThinkTags.test_the_real_tokenizer_reads_the_tag_as_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiteralThinkTags.test_without_a_tag_the_prompt_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiveRate.test_a_request_without_a_done_keeps_no_engine_counters",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiveRate.test_prefill_rate_excludes_cached_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LiveRate.test_the_live_number_is_a_rate",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LostStep.test_silent_mid_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LostStep.test_silent_mid_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.LostStep.test_stop_never_acknowledged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MacTelemetry.test_bad_process",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MacTelemetry.test_no_registry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MacTelemetry.test_note_reaches_the_monitor",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MacTelemetry.test_readings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_a_prompt_that_alone_does_not_fit_is_still_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_anthropic_thinks_only_when_asked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_budget_that_fits_exactly_or_less_is_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_count_tokens_is_the_prompt_messages_reads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_debug_log_shows_the_resolved_budget",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_explicit_budget_is_honoured",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_explicit_budget_over_the_context_is_shortened_to_the_room_left",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_request_line_parses_the_engine_summary",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_strict_mode_keeps_the_llama_cpp_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_thinking_budget_follows_the_shortened_cap",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_unset_budget_is_the_rest_of_the_context",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.MaxTokens.test_unset_budget_with_a_near_full_prompt",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ModelAliases.test_models_lists_them",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ModelAliases.test_requests_are_answered_under_the_alias",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ModelAliases.test_set_aliases",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ModelAliases.test_without_aliases_nothing_changes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.NonFiniteLogits.test_engine_done_line_raises",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.NonFiniteLogits.test_mid_reply_ends_without_retry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.NonFiniteLogits.test_nothing_emitted_is_retried_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.NonFiniteLogits.test_twice_is_an_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.NonFiniteLogits.test_twice_over_http",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PcieShare.test_history",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PeerDevice.test_a_vision_section_starts_the_engine_with_images_1322",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PeerDevice.test_both_cards_visible",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PeerDevice.test_no_split_with_a_peer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PeerDevice.test_split_added_for_several_gpus",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrepareCancelled.test_cancel_before_the_encode_runs_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrepareCancelled.test_cancel_between_pictures_stops_the_next_encode",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrepareCancelled.test_cancel_while_waiting_for_the_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrepareCancelled.test_without_cancel_nothing_changes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrometheusMetrics.test_throughput_gauges_cover_the_window_between_scrapes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PrometheusMetrics.test_totals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PromptProgress.test_a_client_that_asks_gets_one_progress_per_chunk",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PromptProgress.test_a_client_that_does_not_ask_gets_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PromptProgress.test_nothing_before_the_first_chunk",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PromptProgress.test_the_line_that_says_the_prompt_is_read_is_dropped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.PromptProgressBatch.test_nothing_under_batch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ReasoningCloseRetry.test_a_reply_that_answered_is_not_touched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ReasoningCloseRetry.test_a_reply_that_closed_its_thinking_right_after_a_quote_is_not_touched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ReasoningCloseRetry.test_off_by_default_the_reply_stays_empty",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ReasoningCloseRetry.test_on_it_closes_the_thinking_once_and_answers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RepeatStop.test_a_long_run_is_ended",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RepeatStop.test_short_runs_and_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RestartWindow.test_context_zero_is_503",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RestartWindow.test_failed_restart_keeps_the_known_context",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RestartWindow.test_not_alive_until_ready",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.RestartWindow.test_restart_retries_a_start_that_fails",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_checkpoint_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_penalty_window",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_top_k",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_tune_aux_cpus",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_tune_keys",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SamplingKeys.test_tune_prefill_pipe",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedPrefix.test_chars_end_inside_a_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedPrefix.test_messages_resolve_to_the_boundary_token",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedPrefix.test_pin_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedPrefix.test_tokens_and_unusable_prefixes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedPrefix.test_without_the_field_nothing_changes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_a_body_without_the_defaults_wrapper_is_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_a_trusted_origin_is_strata_s_own_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_off_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_only_strata_s_own_page_may_set_them",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_other_apps_get_the_chat_settings",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_proxy_headers_do_not_make_a_page_strata_s_own",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharedSettings.test_they_need_the_key_when_one_is_set",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_before_load_failure_can_be_ignored_by_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_before_load_runs_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_before_load_strict_refuses_even_with_free_vram",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_before_load_timeout_is_configurable_and_a_timeout_refuses",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_failing_before_load_with_free_vram_still_loads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_failing_before_load_with_full_vram_refuses_with_503_and_retry_after",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_failing_before_load_without_a_vram_limit_loads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_idle_unload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_load_endpoint",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_min_free_vram_refuses_to_load",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_min_free_vram_unreadable_loads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_unload_refused_while_a_request_runs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_unload_then_the_next_request_loads",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_unload_wait_gives_up_after_the_given_seconds",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_unload_wait_waits_for_the_running_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SharingTheGpu.test_vision_encoder_unloads_and_starts_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_a_busy_gpu_is_not_a_frozen_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_a_long_first_chunk_is_allowed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_a_stop_never_acknowledged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_a_working_silent_engine_is_not_ended_by_the_stall_watchdog",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_config",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_death_note_finds_the_watchdog_line_under_a_long_trace",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_death_note_names_a_finite_rttime_limit_on_signal_9",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_engine_frozen_samples",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_frozen_engine_is_ended_by_the_stall_watchdog",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_no_reading_means_no_kill_and_zero_is_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_prompt_chunks_set_the_wait",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_silence_mid_answer_ends_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.SilentEngine.test_zero_waits_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartCrashReported.test_a_crash_is_not_a_transient_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartCrashReported.test_a_silent_exit_is_retried_without_claiming_the_gpu_runtime",
+      "status": "skipped",
+      "reason": "signals"
+    },
+    {
+      "test": "serve.test_server.StartCrashReported.test_sigill_is_reported_not_retried",
+      "status": "skipped",
+      "reason": "signals"
+    },
+    {
+      "test": "serve.test_server.StartCrashReported.test_status_words",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartCrashReported.test_the_runtimes_own_failure_is_named",
+      "status": "skipped",
+      "reason": "signals"
+    },
+    {
+      "test": "serve.test_server.StartFailureLog.test_the_last_lines_of_this_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartFailureLog.test_the_start_error_has_them",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartNarrator.test_a_mapped_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartNarrator.test_an_arena_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StartNarrator.test_the_words_follow_the_flags",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StatusHandover.test_abort_then_the_next_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StatusNeedsTheKey.test_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_a_prefix_that_is_not_a_stop_is_sent",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_bad_values_are_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_cut_at_the_stop_string",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_matcher_holds_back_only_a_possible_prefix",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_no_stop_and_an_empty_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_openai_takes_a_string",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.StopStrings.test_the_first_of_several",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.TelemetryNoDisks.test_sampler_runs_without_disk_counters",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.TemplateCaps.test_probe_errors_are_logged_and_swallowed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_bad_value_is_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_budget_above_max_tokens_is_capped_to_leave_room_for_the_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_budget_the_thinking_stays_under",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_budget_well_below_max_tokens_is_not_capped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_cap_that_the_thinking_would_eat_leaves_room_to_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_reply_cut_while_thinking_is_named_in_the_log",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_shared_budget_must_be_a_whole_number_of_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_shared_budget_reaches_a_request_that_sets_none",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_a_stop_string_is_found_in_the_answer_after_the_wrap_up",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_anthropic_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_anthropic_thinking_budget_tokens_is_a_budget",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_llama_cpp_thinking_budget_tokens_is_the_same_budget",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_no_room_left_to_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_the_answer_room_has_its_limits",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_the_budget_wraps_up_the_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_the_config_budget_reaches_the_anthropic_and_effort_requests",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_the_config_default_and_a_request_that_turns_it_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_the_thinking_progress_line_shows_the_budget_not_max_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ThinkingBudget.test_without_thinking_there_is_nothing_to_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.TimingsDrafts.test_draft_fields",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolArguments.test_both_frontends_render_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolArguments.test_helper",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_bare_function_stays_text_where_it_is_not_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_bare_function_without_the_wrapper",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_broken_json_is_content_not_an_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_json_in_the_wrapper",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_json_never_closed_is_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_json_of_an_unknown_tool_is_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_parameter_as_the_opener",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_parameter_opener_that_is_not_a_tool_is_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecovery.test_two_calls_in_one_wrapper",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecoveryOff.test_a_batch_is_one_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecoveryOff.test_drifted_forms_stay_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecoverySwitch.test_a_fresh_service_reads_the_call_without_being_told",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecoverySwitch.test_on_by_default_and_the_config_turns_it_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallRecoverySwitch.test_switch",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallTagInProse.test_named_tag_is_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallTagInProse.test_tag_alone_at_the_end_is_content",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolCallTerminators.test_values_keep_the_terminators",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolOrder.test_anthropic_shape_and_a_different_set",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolOrder.test_duplicate_names_and_one_tool_are_left_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.ToolOrder.test_openai_shape_keeps_the_first_order",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_call_cut_at_the_token_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_cut_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_a_whole_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_collect_keeps_calls_whose_arguments_parse",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_parser",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UnfinishedToolCall.test_quoted_incomplete_wrapper_is_not_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UntimedReads.test_a_vision_answer_in_time_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UntimedReads.test_engine_that_never_says_ready_is_ended",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UntimedReads.test_vision_encode_read_times_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UntimedReads.test_vision_ready_read_times_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_anthropic",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_cors_for_the_configured_origins_on_the_api_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_cors_is_off_by_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_no_clock",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_openai",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_openai_stream",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_origin_lists_are_checked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_responses",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_sse_is_not_buffered_by_proxies",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.UsageAndStatus.test_v1_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionArgs.test_min_tokens_is_passed_only_when_set",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionCacheEviction.test_one_request_with_more_than_64_images_keeps_all_its_files",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionCacheEviction.test_plain_encode_still_evicts_the_oldest",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionShutdown.test_shutdown_removes_the_work_dir_but_close_keeps_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionTempFiles.test_combined_file_is_written_whole_and_removable",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionTempFiles.test_combined_file_stays_off_a_small_shm",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionTempFiles.test_enc_line_names_files_relative_to_the_encoder_dir",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionTempFiles.test_smart_app_control_is_said_in_words",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.VisionTempFiles.test_work_dir_has_no_space_when_temp_has_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_build_model_path_and_slot_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_discovery_does_not_restart_a_dead_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_discovery_needs_the_api_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_metrics",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_metrics_need_the_key_when_one_is_set",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_model_discovery_and_props",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_only_the_app_files_are_served",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_page_and_files",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_props_caps_are_ready_for_concurrent_requests",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_props_caps_follow_the_active_template",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_props_total_slots_follows_the_batch_slots",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_slot_reports_the_context_in_use",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_slots_lists_every_batch_slot",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_server.WebApp.test_the_endpoints_keep_the_context_while_the_engine_restarts",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.HTTP.test_default_refusal_is_immediate_and_byte_identical",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.HTTP.test_fifo_blocks_restore_while_save_waits_and_releases_afterwards",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.HTTP.test_opt_in_recovers_native_refusal_and_keeps_response_and_process",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_admission_races_are_bounded_and_keep_latest_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_delayed_ram_reuses_same_process_path_and_floor",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_memory_probe_is_portable_and_unknown_fails_closed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_new_refusal_rechecks_its_larger_estimate",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_non_admission_error_during_retry_is_returned",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_persistent_pressure_expires_without_another_save",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_process_death_or_replacement_ends_wait",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_restore_other_categories_and_published_files_never_retry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_success_does_not_poll_or_wait",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_session_save_retry.Retry.test_unknown_telemetry_or_estimate_never_retries",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.OneGroup.test_reuse_then_least_recently_used",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.OneSlotGroups.test_groups_of_several_slots_still_ignore_held_tokens",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.OneSlotGroups.test_the_slot_of_the_chat",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.Pipelined.test_fills_a_leading_hole_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.Pipelined.test_held_tokens_are_ignored",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.Pipelined.test_never_opens_a_hole_below_the_pick",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slot_alloc.Pipelined.test_spreads_over_the_groups_first",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_a_blocking_step_gets_its_announced_allowance",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_a_blocking_step_that_never_ends_is_ended",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_a_foreign_page_or_a_form_never_reaches_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_a_silent_engine_is_ended_not_waited_for",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_a_small_save_reports_its_only_partial_block",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_disabled_without_a_slot_save_path",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_disk_and_ram_refusals_have_their_own_codes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_engine_death_is_a_server_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_engine_gets_an_absolute_path_on_one_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_failed_restore_transfer_is_a_server_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_filename_cannot_leave_the_directory",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_log_lines_are_not_answers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_malformed_allowances_end_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_malformed_or_mismatched_reply_is_a_server_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_missing_file_is_not_found",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_only_slot_zero_and_known_actions",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_ordinary_names_are_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_out_of_protocol_lines_end_the_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_progress_ends_the_allowance",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_progress_lines_keep_a_long_save_alive",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_published_failure_is_reported",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_refused_file_is_an_error_not_a_success",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_refused_with_parallel_requests",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_relative_save_dir_becomes_absolute",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_restore_answers_like_llama_server",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_restore_of_a_link_reaches_the_engine_which_decides",
+      "status": "skipped",
+      "reason": "symlinks need privileges on Windows"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_save_writes_into_the_slot_save_path",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_slot_work_counts_as_activity_and_shows_in_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_typed_refusals_have_their_own_codes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_slots.Slots.test_waits_for_a_running_request",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.AddedCodeIsDisplayOnly.test_nothing_but_arithmetic_and_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorPage.test_it_is_token_weighted_over_the_finished_requests",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorPage.test_requests_without_timings_or_with_one_token_are_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorPage.test_the_card_says_what_it_shows",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorTab.test_idle_shows_the_run_average_for_both_cards",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorTab.test_live_values_stay_live",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_speed_average.MonitorTab.test_without_totals_it_is_the_last_request_and_never_an_invented_zero",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_arena_choice",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_cards_and_defaults",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_check_cfg_refuses_what_cannot_run",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_common_prefix",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_mistakes_are_said",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_off_without_the_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Config.test_role_cfg",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_big_new_part_is_handed_over_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_dead_prefill_engine_is_not_an_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_decode_engine_that_dies_in_the_restore_is_an_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_long_prompt_is_handed_over",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_prefill_engine_that_dies_midway_falls_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_refused_file_falls_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_a_short_prompt_stays_on_the_decode_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_attributes_come_from_the_decode_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_cancel_during_the_prefill_ends_quietly",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_close_removes_the_work_dir",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_pictures_go_to_the_decode_engine",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split.Handover.test_the_next_turn_is_not_handed_over_when_the_decode_engine_holds_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_a_normal_config_is_untouched",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_a_split_config_keeps_its_arguments_through_the_drafter_step",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_a_split_engine_that_fails_is_replaced_by_the_normal_layer_split_with_one_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_a_split_engine_that_starts_is_used",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_the_engines_own_reason_is_in_the_line_and_its_log_is_kept",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_split_fallback.Fallback.test_without_a_fallback_the_failure_stays_a_failure",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_broken_pipe_still_quiet",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_open_pipe_gets_the_stop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_proc_gone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_stdin_closed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.ByteWise.test_a_multibyte_stop_string_is_cut_byte_by_byte",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.ByteWise.test_every_word_comes_out_whole_byte_by_byte",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.ByteWise.test_the_fixture_has_the_real_tokenizer_shape",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.EndTokenIds.test_a_service_without_a_family_does_not_stop_on_im",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.EndTokenIds.test_no_marker_and_no_eos_means_no_stop_id",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.EndTokenIds.test_pieces_of_the_qwen_markers_are_not_stop_ids",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.EndTokenIds.test_qwen_markers_that_are_one_token_each_are_the_stop_ids",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.EndTokenIds.test_the_fixture_has_the_real_tokenizer_shape",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.Fixture.test_the_fixture_has_the_real_tokenizer_shape",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.Routes.test_a_stop_string_cuts_the_reply_there",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.Routes.test_nerazim_and_its_kin_come_out_whole_with_no_stop_string",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.Routes.test_the_fixture_has_the_real_tokenizer_shape",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.Routes.test_the_held_tail_is_given_back_when_the_stop_string_never_comes",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.StopMatcherSplits.test_a_stop_string_cuts_exactly_there_at_every_split",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.StopMatcherSplits.test_a_stop_string_that_starts_like_the_word_costs_nothing_but_the_wait",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.StopMatcherSplits.test_text_without_a_stop_string_comes_out_whole_at_every_split",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_holdback.StopMatcherSplits.test_the_held_back_tail_is_given_back_at_the_end",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_h3_schema_success_and_stream_with_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_invalid_generation_is_an_error_and_never_streams_content",
+      "status": "skipped",
+      "reason": "jsonschema is not installed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_invalid_schema_is_400_and_local_refs_work",
+      "status": "skipped",
+      "reason": "jsonschema is not installed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_latex_escape_repair_helper",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_latex_escape_repair_is_opt_in_and_only_after_a_strict_failure",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_malformed_formats_and_tools_are_rejected_before_loading",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_object_mode_strict_json_and_truncation",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_rejected_schema_does_not_load_the_engine_or_retry",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_root_unions_of_object_shapes_are_accepted",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_schemas_that_allow_non_objects_are_still_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_the_repair_option_reaches_the_responses_format",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_the_server_does_not_import_jsonschema_at_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_structured.Structured.test_without_jsonschema_an_object_is_still_required",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.DriftedEnvelope.test_a_dropped_function_keyword_is_still_the_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.DriftedEnvelope.test_an_undeclared_name_in_a_drifted_opener_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.DriftedEnvelope.test_prose_about_the_tag_is_not_a_drift",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.DriftedEnvelope.test_streamed_and_whole_agree",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.DriftedEnvelope.test_the_template_form_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_a_call_for_another_tool_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_a_declared_call_after_an_undeclared_one_is_still_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_an_unparsed_call_is_counted_and_named_for_the_log",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_no_tools_declared",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_the_reasoning_state_is_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_envelope.OnlyDeclaredTools.test_the_responses_spelling_of_a_namespace_tool_counts",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_a_second_call_after_an_unclosed_one_is_its_own_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_a_value_that_holds_the_tags_still_ends_at_the_calls_own_closer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_closed_calls_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_following_literal_marker_does_not_complete_an_unclosed_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_omitted_wrapper_recovers_only_on_a_natural_stop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_call_unclosed.UnclosedCall.test_quoted_incomplete_wrapper_stays_literal",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_corpus.ToolCorpus.test_every_specimen_cut_in_two_at_every_byte",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_corpus.ToolCorpus.test_every_specimen_whole_and_in_pieces",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_corpus.ToolCorpus.test_the_same_events_whatever_the_pieces",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_corpus.ToolCorpus.test_the_sources_are_named",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.CollapsedUnderscoreNames.test_a_reordered_or_renamed_tool_stays_text_and_is_named",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.CollapsedUnderscoreNames.test_a_tool_declared_in_the_collapsed_spelling_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.CollapsedUnderscoreNames.test_the_collapsed_spelling_is_the_declared_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.CollapsedUnderscoreNames.test_the_declared_spelling_and_a_plain_tool_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.CollapsedUnderscoreNames.test_two_tools_with_the_same_collapsed_spelling_are_not_guessed",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_a_flat_tool_named_like_the_underscore_alias_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_a_flat_tool_with_the_member_name_wins",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_an_unknown_name_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_bare_list_allowed_directories_is_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_bare_write_file_is_the_one_namespace_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_double_underscore_still_maps",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_equals_inside_thinking_is_still_a_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_equals_write_is_the_namespace_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_single_underscore_edit_keeps_a_string_argument",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_alias.DriftedMcpNames.test_two_namespaces_sharing_a_member_stay_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_space.SpacedName.test_after_the_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_name_space.SpacedName.test_inside_the_thinking",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_routes.Routes.test_a_call_without_its_function_closer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_routes.Routes.test_a_call_without_its_wrapper_closer_at_the_end",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_routes.Routes.test_a_damaged_array_argument_arrives_as_the_array",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_routes.Routes.test_a_stray_closing_think_tag_keeps_the_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_routes.Routes.test_a_value_that_quotes_a_whole_call",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Calls.test_a_call_in_the_reasoning_is_rescued_too",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Calls.test_a_loaded_deferred_tool_keeps_its_schema",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Calls.test_an_undeclared_call_is_a_call_with_tool_search",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Calls.test_without_tool_search_it_stays_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Conversion.test_a_reference_loads_the_definition_where_it_is",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Conversion.test_a_reference_to_a_listed_tool_adds_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Conversion.test_a_reference_to_an_undeclared_tool_is_left_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Conversion.test_deferred_tools_stay_out_of_the_tool_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Conversion.test_the_parser_gets_every_declared_tool",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Route.test_a_tool_the_conversation_called_is_a_call_without_tool_search",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Route.test_claude_code_tool_search",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Route.test_the_loaded_tool_is_in_the_tool_result_not_the_tool_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_tool_search.Route.test_without_tool_search_the_rule_holds",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_busy.Busy.test_message_names_the_cause_from_the_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_busy.Busy.test_message_names_the_cause_from_the_log_tail",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_busy.Busy.test_other_failures_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_busy.Busy.test_start_raises_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_a_vram_reserve_stacks_on_the_encoders_share",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_an_encoder_that_fails_to_start_is_a_503_not_a_dropped_connection",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_an_engine_that_cannot_shrink_still_gets_its_encoder",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_an_idle_encoder_stops_and_the_cache_grows_back_whole",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_an_unload_lets_go_of_the_share",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_the_config_keys",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_the_first_picture_makes_room_then_starts_the_encoder",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_the_load_never_starts_an_elastic_encoder",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.Elastic.test_the_stop_is_logged_when_the_cache_never_made_room",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandByDefault.test_the_amd_reader_with_its_cpu_reader_is_on_demand_when_asked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandByDefault.test_the_plain_nvidia_config_is_on_demand",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandByDefault.test_what_stays_as_it_was",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandReader.test_a_gpu_reader_that_does_not_start_is_the_cpu_reader_for_this_start_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandReader.test_a_non_elastic_gpu_reader_keeps_the_cpu_reader_for_good",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandReader.test_no_room_and_a_cache_that_cannot_shrink_goes_straight_to_the_cpu_reader",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandReader.test_pictures_already_encoded_start_no_reader",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic.OnDemandReader.test_room_enough_and_a_cache_that_cannot_shrink_still_tries_the_card",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic_http.EncoderFailureHTTP.test_real_encoder_failure_retries_and_reaps_each_child",
+      "status": "skipped",
+      "reason": "child reaping is checked through /proc"
+    },
+    {
+      "test": "serve.test_vision_elastic_http.EncoderFailureHTTP.test_start_failure_and_retry_on_all_three_apis",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_elastic_http.EncoderFailureHTTP.test_text_requests_and_image_recovery_after_a_failed_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_reader_that_ended_while_a_child_holds_its_pipe_is_judged_after_the_grace",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_reader_that_only_prints_is_ended_at_the_deadline_with_its_lines_in_the_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_silent_reader_that_dies_is_the_same_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_before_READY_does_not_kill_the_reader",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_then_ERR_gives_the_ERR_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_then_the_end_names_the_exit_and_the_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_many_stray_lines_are_bounded_in_the_log_and_the_message",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_no_deadline_means_wait_for_ever_not_fail_at_once",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_non_utf8_startup_noise_does_not_hide_READY",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_the_cause_in_a_stray_line_is_named",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_the_encode_answers_after_READY_are_not_taken_by_the_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_a_normal_message_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_a_timeout_names_the_seconds_and_the_last_log_line",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_a_windows_crash_status_is_named",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_an_empty_line_is_never_a_blank_sentence",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_exit_code_and_stderr_tail_come_with_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_kernel_image_error_names_the_card_and_the_way_out",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_start_error.StartError.test_the_reader_that_ends_before_READY_raises_with_its_exit_code",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.TokenLimit.test_a_config_without_max_tokens_gets_the_default_of_its_kind",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.TokenLimit.test_a_limit_the_person_set_is_kept_not_capped",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.TokenLimit.test_an_unreadable_value_falls_back_to_the_default",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.TokenLimit.test_min_tokens_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.TokenLimit.test_zero_still_means_no_limit",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.Warn.test_93700_tokens_under_a_1024_limit_is_logged_with_the_numbers",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.Warn.test_a_picture_within_four_times_the_limit_is_quiet",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_token_limit.Warn.test_no_limit_no_warning",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_tool_image.ToolImage.test_an_elastic_encoder_is_started_for_a_tool_picture",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_tool_image.ToolImage.test_an_encoder_that_cannot_start_leaves_a_note_not_a_400",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_tool_image.ToolImage.test_encode_without_a_running_reader_is_a_clear_value_error",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_tool_image.ToolImage.test_prepare_survives_a_tool_picture_with_an_elastic_encoder",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_workdir.WorkDir.test_an_existing_folder_and_its_cache_are_left_alone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vision_workdir.WorkDir.test_start_makes_a_removed_work_folder_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.EngineCommand.test_config_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.EngineCommand.test_refused_and_died",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.EngineCommand.test_the_line_and_the_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.Route.test_an_engine_without_the_flag_says_so",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.Route.test_bad_input_busy_and_foreign_pages",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.Route.test_resize_and_status",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_vram.Route.test_unloaded_keeps_the_reserve_for_the_next_load",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_blocked_storage_still_uses_key_in_memory",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_clearing_key_removes_authorization",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_failed_save_warns_instead_of_claiming_success",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_failed_write_does_not_reuse_old_key",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_input_is_used_and_saved_without_blur",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_saved_key_is_restored_on_reload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_server_without_key_keeps_json_header_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_api_key.WebApiKey.test_successful_save_notifies_only_on_change",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_badges.FinishBadges.test_a_timed_out_request_has_a_badge",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_badges.FinishBadges.test_every_finish_the_server_stores_has_a_badge",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_follow.WebFollow.test_a_wheel_notch_inside_the_old_band_is_not_pulled_back",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_follow.WebFollow.test_back_at_the_bottom_it_follows_again",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_follow.WebFollow.test_the_old_120_px_rule_is_gone_and_the_reader_input_is_wired",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_follow.WebFollow.test_the_page_growing_under_a_following_reader_keeps_following",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.HistoryInNode.test_messages_titles_branches_and_the_browser_store",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.InABrowser.test_history_in_chrome",
+      "status": "skipped",
+      "reason": "set WEBTEST_MODULES (a folder with node_modules/puppeteer-core) to run the browser tests"
+    },
+    {
+      "test": "serve.test_web_history.NothingOnTheServer.test_the_scripts_are_served_and_there_is_no_chat_endpoint",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_an_interrupted_answer_keeps_what_was_written",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_nothing_about_a_chat_goes_to_the_server",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_pictures_and_files_are_kept_as_names_only",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_sending_while_busy_parks_nothing_unless_asked",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_the_browser_store_is_opened_only_for_the_list",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_the_edit_controls_wait_for_a_finished_answer",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_the_three_switches_start_off",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_history.OffIsThePageFromBefore.test_with_the_list_off_one_chat_is_kept_as_before",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_i18n.Catalogs.test_catalogs_are_complete",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_i18n.Catalogs.test_the_text_in_the_code_is_plain_literals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_i18n.Mechanism.test_tr_apply_and_set_language",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_i18n.Served.test_i18n_script_and_refusals",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_i18n.WhatTheServerHandsOut.test_a_link_out_of_the_folder_is_refused",
+      "status": "skipped",
+      "reason": "symlinks need a privilege here"
+    },
+    {
+      "test": "serve.test_web_i18n.WhatTheServerHandsOut.test_names_and_types",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_401_gets_the_key_copy",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_button_posts_load_and_unload",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_header_button_and_monitor_badge",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_header_refits_only_on_changed_text",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_poll_hold_until_a_poll_agrees",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_the_header_row_keeps_the_buttons_on_a_phone",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadMarkup.test_unload_asks_first_and_never_interrupts_a_turn",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_load_unload.WebLoadUnloadParses.test_app_js_parses",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.MathInNode.test_delimiters_escaping_drawing_and_hostile_formulas",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.Served.test_nothing_else_below_vendor",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.Served.test_scripts_style_and_fonts_are_served",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.Vendored.test_it_works_offline",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.Vendored.test_the_files_are_the_ones_in_provenance",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_math.Vendored.test_the_page_loads_nothing_until_math_is_on",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_preview.InABrowser.test_sandbox_in_chrome",
+      "status": "skipped",
+      "reason": "set WEBTEST_MODULES (a folder with node_modules/puppeteer-core) to run the browser tests"
+    },
+    {
+      "test": "serve.test_web_preview.PreviewInNode.test_documents_frames_and_flags",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_preview.TheHeader.test_other_files_do_not_carry_it",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_preview.TheHeader.test_the_page_forbids_a_frame_to_load_an_address",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_preview.ThePageSource.test_no_way_for_a_frame_to_reach_the_page",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_sampling.WebSampling.test_changed_values_are_sent_whole",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_sampling.WebSampling.test_the_old_default_is_shown_as_the_new_one",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_sampling.WebSampling.test_untouched_sends_nothing",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_web_sampling.WebSampling.test_zero_is_greedy",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob.TestNoThrottle.test_a_contained_child_is_opted_out_of_power_throttling",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob.TestWinJob.test_children_end_with_a_killed_server",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob.TestWinJob.test_elsewhere_or_without_a_process_it_is_a_no_op",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.EarlyGrandchild.test_a_cmd_shim_that_starts_node_is_ended_with_its_node",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.EarlyGrandchild.test_a_process_started_before_the_assignment_would_have_run_is_in_the_job",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.FlagsPipesAndRefusals.test_a_refused_assignment_still_starts_and_resumes_the_child",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.FlagsPipesAndRefusals.test_all_three_pipes_cwd_and_env_pass_through_and_the_child_runs",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.FlagsPipesAndRefusals.test_an_error_between_the_start_and_the_resume_leaves_no_child",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.FlagsPipesAndRefusals.test_the_callers_flags_are_kept_beside_the_suspended_start",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_winjob_early_child.ServerInsideAJob.test_a_server_that_runs_in_a_job_of_its_own_still_starts_and_resumes_its_child",
+      "status": "passed"
+    }
+  ]
+}

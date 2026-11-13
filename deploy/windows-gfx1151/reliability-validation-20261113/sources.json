@@ -1,0 +1,52 @@
+[
+  {
+    "sha": "bbf97633c8de03a7f6258bc7f68d0be4eb40bcfc",
+    "title": "serve: the STOP of a request that ends early never raises, whatever state the engine's pipe is in",
+    "files": [
+      "serve/server.py",
+      "serve/test_stop_closed_pipe.py"
+    ],
+    "patch_sha256": "f2a209aef8a313e72a76f862f92ff3fbb8dbca955ef174575670a117c98ad572",
+    "url": "https://github.com/Niko1221/Strata/commit/bbf97633c8de03a7f6258bc7f68d0be4eb40bcfc"
+  },
+  {
+    "sha": "5d87c4d8eb9d536c663698fdc38a9fc90537090a",
+    "title": "serve (Windows): a child is in the kill-on-close job before it runs, so what it starts at once is too",
+    "files": [
+      "serve/lifeline.py",
+      "serve/test_winjob_early_child.py",
+      "serve/winjob.py"
+    ],
+    "patch_sha256": "9169b3048fb2574f1f5bf0fafbc166ae1045eed0d139eb5b4611b5fd33ca42d8",
+    "url": "https://github.com/Niko1221/Strata/commit/5d87c4d8eb9d536c663698fdc38a9fc90537090a"
+  },
+  {
+    "sha": "4cce1ee4d0057ff718cb0219e0114e5ddf73f296",
+    "title": "The picture reader's READY pipe: one deadline, stray lines kept and logged, a printing reader is never killed",
+    "files": [
+      "serve/server.py",
+      "serve/test_vision_ready_pipe.py"
+    ],
+    "patch_sha256": "dac873c7ca3ee95266593868f0915b323bfcaf16c710e2f5237d6a609d743845",
+    "url": "https://github.com/Niko1221/Strata/commit/4cce1ee4d0057ff718cb0219e0114e5ddf73f296"
+  },
+  {
+    "sha": "79d529cc78a2c40a516dbd012636125f0a95b873",
+    "title": "procs.orphans_of on Windows: names first, a command line only where the image name can be the engine's file (reading every command line took 4-9 s per server start on a Windows PC with about 280 processes and a non-elevated account; now 0.1 s warm, 2 s cold)",
+    "files": [
+      "strata_control/procs.py",
+      "tests/terminal/test_procs.py"
+    ],
+    "patch_sha256": "94c1ea7593cb8c5c0e6c87767329430486a78b43e4099ac88b5825bcce79f15e",
+    "url": "https://github.com/Niko1221/Strata/commit/79d529cc78a2c40a516dbd012636125f0a95b873"
+  },
+  {
+    "sha": "ca9c53c1fd865651aafd639e9f74a80e8461f6e8",
+    "title": "robustness: the stall report's prompt lines and the Windows resume error in the approved wording",
+    "files": [
+      "serve/winjob.py"
+    ],
+    "patch_sha256": "1f19aaeb9a266b58e5b0832184ec44e1973257f0641a233c042ea526c192ab88",
+    "url": "https://github.com/Niko1221/Strata/commit/ca9c53c1fd865651aafd639e9f74a80e8461f6e8"
+  }
+]

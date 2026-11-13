@@ -1,0 +1,7 @@
+[chat-stream] {"event":"started","timestamp":"2026-11-13T11:00:54.620Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T11:00:54.620Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":0,"after":0}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T11:00:54.661Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":41,"completed":false,"sentThrough":1}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T11:00:55.665Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":1045,"after":1}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T11:00:55.671Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":1051,"events":3,"bytes":170}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T11:00:55.671Z","userId":1,"generationId":"a1384b17-6c7a-4081-83c9-020ae3139c9c","elapsedMs":1051,"completed":true,"sentThrough":3}
+PASS mobile viewport: reconnect label, automatic resume, no repeated text or inference, final status and saved history

@@ -1,0 +1,35 @@
+--- tests/test_codex_tool_routing.py
++++ tests/test_codex_tool_routing.py
+@@ -1,4 +1,5 @@
+ import copy
++import importlib.util
+ from pathlib import Path
+ import sys
+ import unittest
+@@ -9,6 +10,15 @@
+ 
+ 
+ class CodexToolRoutingTests(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        # UI integration installs a wrapper on the shared responses module at
++        # import time. Test the converter against a fresh module, regardless of
++        # whether that suite was loaded before this one.
++        spec = importlib.util.spec_from_file_location('routing_test_responses', server.responses_api.__file__)
++        cls.pristine_responses = importlib.util.module_from_spec(spec)
++        spec.loader.exec_module(cls.pristine_responses)
++
+     def setUp(self):
+         self.wrapper = {'type': 'namespace', 'name': 'functions', 'tools': [
+             {'type': 'custom', 'name': 'exec', 'description': 'Run JavaScript', 'format': {'type': 'text'}}]}
+@@ -20,8 +30,8 @@
+             {'type': 'function_call_output', 'call_id': 'old', 'output': 'PowerShell'},
+             {'role': 'user', 'content': 'Now check the date.'}]}
+         frozen = copy.deepcopy(req)
+-        original = server.responses_api.input_messages(req)
+-        messages = routed_input_messages(server.responses_api.input_messages)(req)
++        original = self.pristine_responses.input_messages(req)
++        messages = routed_input_messages(self.pristine_responses.input_messages)(req)
+         self.assertEqual(req, frozen)
+         self.assertEqual(messages[1:], original[1:])
+         self.assertTrue(messages[0]['content'].startswith('Keep the task instructions.'))

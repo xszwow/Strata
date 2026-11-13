@@ -1,0 +1,10 @@
+{
+  "drafting": "mtp",
+  "dm16": "1",
+  "tool_call_recovery": true,
+  "undeclared_tool_calls": "call",
+  "has_dflash_args": false,
+  "engine_exists": true,
+  "vision_exists": true,
+  "passed": true
+}

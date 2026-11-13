@@ -1,0 +1,138 @@
+{
+  "phase": "public-regression",
+  "tests": 31,
+  "errors": 0,
+  "failures": 1,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "passed": false,
+  "elapsed_s": 21.672,
+  "cases": [
+    {
+      "test": "tests.test_ui_compat.Integration.test_auth_and_sensitive_routes",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_ui_compat.Integration.test_disconnect_replay_exact_bytes_and_cancel",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_ui_compat.Integration.test_skip_reasoning_preserves_prefix_and_continues",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_additional_tools_after_compaction_enable_the_current_route",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_explicit_no_tools_is_respected",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_explicitly_declared_direct_shell_is_not_denied",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_flat_custom_declaration_is_supported",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_old_tool_history_and_current_declarations_are_preserved",
+      "status": "failed",
+      "error": "'Keep[18 chars]ions.\\n\\nThe tool interface has changed for th[446 chars]ded.' != 'Keep[18 chars]ions.'\n  Keep the task instructions.\n- \n- The tool interface has changed for this request. The only callable outer tool is functions.exec. exec_command is a JavaScript method on tools inside that tool, not an outer tool name. Historical exec_command calls do not make that outer name available now. If a shell operation is needed, return a functions.exec call containing JavaScript such as: text(await tools.exec_command({cmd:\"Get-Date\"})); Use the command required by the actual task, and answer normally when no tool is needed.\n"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_other_current_outer_tools_remain_available",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_plain_function_api_and_unrelated_exec_tool_are_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_prompt_history_migration_preserves_command_id_result_and_request",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_codex_tool_routing.CodexToolRoutingTests.test_unrelated_or_incomplete_history_call_is_not_rewritten",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_cancel_does_not_start_a_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_normal_answer_is_not_retried",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_output_cap_is_not_bypassed",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_recovers_in_same_prefix_and_preserves_reasoning",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_reproduce_without_recovery",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_retry_is_bounded_when_second_segment_is_empty",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_reasoning_close_retry.ReasoningCloseRetryTests.test_runtime_default_preserves_source_and_sampling",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_concurrent_start_requests_create_exactly_one_server",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_control_lock_releases_after_a_failed_start",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_existing_mtp_engine_blocks_a_duplicate_load",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_model_and_monitor_survive_termination_of_the_launchers_windows_job",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_monitor_blocks_recovery_when_an_untracked_model_is_responding",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_monitor_does_not_attach_to_a_reused_pid",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_monitor_rejects_a_healthy_port_owned_by_a_different_live_launch",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_original_and_public_launchers_share_lock_and_canonical_record",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_readiness_rejects_health_from_a_different_launch",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_reconciliation_preserves_explicit_stop_intent",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_reconciliation_rejects_another_workspaces_backend",
+      "status": "passed"
+    },
+    {
+      "test": "tests.test_model_startup.IsolatedModelTests.test_stale_records_reconcile_to_listener_and_monitor_without_reloading",
+      "status": "passed"
+    }
+  ]
+}

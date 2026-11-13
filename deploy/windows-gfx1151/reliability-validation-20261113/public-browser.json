@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "pageErrors": [],
+  "generationPosts": 2,
+  "cancellationPosts": 1,
+  "unexpectedReconnects": 0,
+  "stoppedFirstAnswer": true,
+  "nextQuestionCompleted": true,
+  "nextReply": "停止后继续正常"
+}

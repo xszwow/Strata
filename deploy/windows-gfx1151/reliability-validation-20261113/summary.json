@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "e0f97dbf7eaa0729367c377ac0df342e5906cbb0",
+  "scope": [
+    "request STOP race",
+    "Windows early child containment",
+    "vision READY protocol",
+    "Windows orphan scan"
+  ],
+  "baseline_reproductions": {
+    "tests": 8,
+    "passed_before": 2,
+    "failed_or_error_before": 6,
+    "passed_after": 8
+  },
+  "serve_regression": {
+    "phase": "serve-regression",
+    "tests": 1420,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 31,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "passed": true,
+    "elapsed_s": 454.11
+  },
+  "runtime_regression": {
+    "phase": "runtime-regression",
+    "tests": 37,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "passed": true,
+    "elapsed_s": 14.734
+  },
+  "compatibility_regression": {
+    "phase": "public-regression-final",
+    "tests": 31,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "passed": true,
+    "elapsed_s": 20.469
+  },
+  "ivyun_stream_tests": {
+    "tests": 18,
+    "passed": 18
+  },
+  "ivyun_mobile_resume_fixture": {
+    "passed": true
+  },
+  "live_checks": {
+    "checks": 17,
+    "passed": true
+  },
+  "public_browser": {
+    "passed": true,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageErrors": [],
+    "generationPosts": 2,
+    "cancellationPosts": 1,
+    "unexpectedReconnects": 0,
+    "stoppedFirstAnswer": true,
+    "nextQuestionCompleted": true,
+    "nextReply": "停止后继续正常"
+  },
+  "config": {
+    "drafting": "mtp",
+    "dm16": "1",
+    "tool_call_recovery": true,
+    "undeclared_tool_calls": "call",
+    "has_dflash_args": false,
+    "engine_exists": true,
+    "vision_exists": true,
+    "passed": true
+  },
+  "cleanup": {
+    "target": "<PUBLIC_WORKSPACE>\\work\\strata-reliability-20261113",
+    "deleted": true,
+    "files": 25,
+    "bytes": 2716229.0,
+    "reparse_points": 0,
+    "forced_deletion_used": false,
+    "preserved": [
+      "regression tests",
+      "synthetic requests and responses",
+      "upstream patches and runtime diffs",
+      "current engine and models"
+    ],
+    "old_implementations_replaced_in_place": true
+  },
+  "limits": [
+    "Windows gfx1151 only; other OS and GPUs not tested",
+    "Native binary unchanged; no new output TPS claim",
+    "Generated tool JavaScript syntax checked, not executed",
+    "Full serve, focused and deployed test groups overlap"
+  ],
+  "test_validation_notes": [
+    "Combined compatibility suite initially exposed mutable-module test isolation; isolated converter load fixes it without changing production behavior.",
+    "Responses custom call name is exec with namespace functions; code mode permits top-level await. Validator corrected and original replies retained."
+  ]
+}

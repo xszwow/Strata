@@ -1,0 +1,75 @@
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.915Z","userId":1,"generationId":"text","elapsedMs":1}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.916Z","userId":1,"generationId":"browser","elapsedMs":0}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.992Z","userId":1,"generationId":"old","elapsedMs":0}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:32.993Z","userId":1,"generationId":"old","elapsedMs":1,"events":1,"bytes":84}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.993Z","userId":1,"generationId":"active","elapsedMs":0}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.993Z","userId":2,"generationId":"other","elapsedMs":0}
+[chat-stream] {"event":"failed","timestamp":"2026-11-13T10:53:32.993Z","userId":2,"generationId":"other","elapsedMs":0,"reason":"缓存已满"}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:32.993Z","userId":2,"generationId":"other","elapsedMs":0,"events":1,"bytes":50}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.993Z","userId":1,"generationId":"reading","elapsedMs":0}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:32.994Z","userId":1,"generationId":"reading","elapsedMs":1,"events":1,"bytes":84}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.994Z","userId":1,"generationId":"active","elapsedMs":0}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:32.994Z","elapsedMs":0}
+[chat-stream] {"event":"failed","timestamp":"2026-11-13T10:53:32.994Z","elapsedMs":0,"reason":"长度限制"}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:32.994Z","elapsedMs":0,"events":3,"bytes":84}
+✔ browser replay passes the old 8 MiB and 100000 event limits while ordinary chat keeps its caps (77.595ms)
+✔ aggregate pressure evicts completed unread replay first and preserves running tasks (1.2004ms)
+✔ finished replay with an attached reader cannot be evicted under aggregate pressure (0.3584ms)
+✔ event caps apply within a multi-event write and still allow a terminal error receipt (0.197ms)
+[chat-stream] {"event":"outdated_client_rejected","timestamp":"2026-11-13T10:53:35.414Z","userId":1}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.417Z","userId":1,"generationId":"7d841347-e155-4e1e-8e1a-18b8705082ad","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.417Z","userId":1,"generationId":"7d841347-e155-4e1e-8e1a-18b8705082ad","elapsedMs":0,"after":0}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.428Z","userId":1,"generationId":"7d841347-e155-4e1e-8e1a-18b8705082ad","elapsedMs":11,"events":2,"bytes":84}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.429Z","userId":1,"generationId":"7d841347-e155-4e1e-8e1a-18b8705082ad","elapsedMs":12,"completed":true,"sentThrough":2}
+✔ production rejects stale streaming clients before model execution or quota reservation (162.5175ms)
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.555Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.555Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":0,"after":0}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.562Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":7,"completed":false,"sentThrough":1}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.624Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":69,"events":3,"bytes":146}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.626Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":71,"after":1}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.627Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":72,"completed":true,"sentThrough":3}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.629Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":74,"after":0}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.629Z","userId":1,"generationId":"43b418a6-e1e6-454e-a21a-13bb6566ae58","elapsedMs":74,"completed":true,"sentThrough":3}
+✔ disconnect/resume and duplicate POST keep one generation, one quota and user isolation (197.737ms)
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.703Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.703Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":0,"after":0}
+[browser-round] {"timestamp":"2026-11-13T10:53:35.710Z","userId":1,"messageId":"resume-message","turn":0,"actionsUsed":0,"historyPages":0,"contextStrategy":"current","imagePolicy":"always","compactions":0,"reasoningEffort":"default","reasoningCharacters":0,"requestMs":2,"responseReadyMs":2,"imageIncluded":false,"prefixCharacters":2125,"liveContextCharacters":174}
+[browser-step] {"timestamp":"2026-11-13T10:53:35.714Z","userId":1,"messageId":"resume-message","turn":0,"tool":"browser_click","status":"complete","durationMs":3,"observationId":1,"actionsUsed":1,"consecutiveActionFailures":0}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.715Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":12,"completed":false,"sentThrough":8}
+[browser-round] {"timestamp":"2026-11-13T10:53:35.779Z","userId":1,"messageId":"resume-message","turn":1,"actionsUsed":1,"historyPages":1,"contextStrategy":"current","imagePolicy":"always","compactions":0,"reasoningEffort":"default","reasoningCharacters":0,"requestMs":65,"responseReadyMs":1,"observationAgeMs":65,"observationTextCharacters":2,"observationElements":1,"imageIncluded":false,"prefixCharacters":2629,"liveContextCharacters":350}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.779Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":76,"events":11,"bytes":1209}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.780Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":77,"after":0}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.781Z","userId":1,"generationId":"1dff0ad4-eb50-47f4-b118-50cbe9f87c4a","elapsedMs":78,"completed":true,"sentThrough":11}
+✔ a disconnected browser task executes its click exactly once and replays its result (147.8359ms)
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.847Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.848Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":1,"after":0}
+[chat-stream] {"event":"cancel_requested","timestamp":"2026-11-13T10:53:35.873Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":26}
+[chat-stream] {"event":"failed","timestamp":"2026-11-13T10:53:35.874Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":27,"reason":"回答已停止"}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.874Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":27,"events":2,"bytes":127}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.874Z","userId":1,"generationId":"725b049f-de27-4415-8bc0-9c0770730eaf","elapsedMs":27,"completed":true,"sentThrough":2}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.895Z","generationId":"bounded","elapsedMs":0}
+[chat-stream] {"event":"reader_attached","timestamp":"2026-11-13T10:53:35.895Z","generationId":"bounded","elapsedMs":0,"after":0}
+✔ explicit cancellation stops detached inference and stop-before-start cannot create a task (108.4617ms)
+✔ DONE finishes both backend readers without waiting for the provider socket to close (1.2505ms)
+[chat-stream] {"event":"failed","timestamp":"2026-11-13T10:53:35.965Z","generationId":"bounded","elapsedMs":70,"reason":"长度限制"}
+[chat-stream] {"event":"reader_closed","timestamp":"2026-11-13T10:53:35.965Z","generationId":"bounded","elapsedMs":70,"completed":true,"sentThrough":2}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.965Z","generationId":"bounded","elapsedMs":70,"events":2,"bytes":107}
+[chat-stream] {"event":"started","timestamp":"2026-11-13T10:53:35.965Z","userId":1,"generationId":"first","elapsedMs":0}
+[chat-stream] {"event":"ended","timestamp":"2026-11-13T10:53:35.966Z","userId":1,"generationId":"first","elapsedMs":1,"events":0,"bytes":0}
+✔ heartbeats, backpressure, memory bounds and expiration keep replay bounded (100.4122ms)
+✔ frontend reconnects from last complete event, discards split UTF-8, and deduplicates replay (16.1558ms)
+✔ frontend closes on DONE, treats server errors as terminal, and never recreates a missing generation (15.2183ms)
+✔ silent connections trigger reconnect, retry limits end waiting, and user Stop sends cancellation (92.1447ms)
+✔ reconnected heartbeats keep a slow model alive beyond the network recovery window (109.2688ms)
+✔ persisted generation resumes with GET only; replay resets UI once and never starts another inference (2.6643ms)
+✔ persistent mobile recovery survives the old retry budget without POST replay (89.2529ms)
+✔ uncertain Stop reports missing acknowledgement and persisted Stop is retried without starting tools (17.6313ms)
+✔ Stop before the client attaches cancels an existing resumed task and preserves failed acknowledgement (3.1686ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3567.4262

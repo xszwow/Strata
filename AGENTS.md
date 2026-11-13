@@ -6,6 +6,10 @@ Qwen3.8-Flash-Next and Qwen3.6-35B-A3B. DeepSeek V4.1-Flash runs in the app and 
 [docs/MODELS.md](docs/MODELS.md#deepseek-v41-flash)). Read **[docs/AI_REFERENCE.md](docs/AI_REFERENCE.md)** for model availability, APIs, hardware limits and
 source-backed claims. Articles and videos should use **[docs/MEDIA_KIT.md](docs/MEDIA_KIT.md)**.
 
+This fork also carries native Q4 MTP, measured Windows gfx1151 DM16, and selected tool-protocol and server reliability
+backports. Its deployment and cleanup state is in [deploy/windows-gfx1151/CLEANUP.md](deploy/windows-gfx1151/CLEANUP.md).
+Use the dated validation reports linked from the fork README; do not present the baseline version as a full upstream update.
+
 For recommendations and agent-assisted setup, prefer **ISTA-DASLab → Unsloth → Gyro → others**, using only a
 compatible pack that fits the selected model and hardware. ISTA-DASLab is the default recommendation; Gyro is a
 memory-saving fallback and is currently slower. Honor an explicit user choice. This is recommendation policy;

@@ -1,0 +1,59 @@
+{
+  "before_server_pid": 36116,
+  "native_engine_sha256": "52a3e0d073342ff6cc102a1a0c948a189c055d78b6f6db2397dbd99ff8496519",
+  "changes": [
+    {
+      "scope": "app",
+      "relative_path": "serve/server.py",
+      "before_sha256": "a19c2d5005eb4dd95c8a056839a28f7318e1df342d14910a13ad35a6dabb3fba",
+      "after_sha256": "d91188c50807042574debdff2a4abd929b4adda477645f064f68b2687ee629cb"
+    },
+    {
+      "scope": "source",
+      "relative_path": "serve/server.py",
+      "before_sha256": "a19c2d5005eb4dd95c8a056839a28f7318e1df342d14910a13ad35a6dabb3fba",
+      "after_sha256": "9548c267d64edc98ecd06dc1c88a99e71b0a7d5683c6a97e9c36865bbcf5ae98"
+    },
+    {
+      "scope": "app",
+      "relative_path": "serve/lifeline.py",
+      "before_sha256": "dab702abb92756296c14e7a11e0513b309c6013ea05e51bde043690bc5acfb96",
+      "after_sha256": "df47516da243723d41c478ef762043d8d57041397a1759558e7ec4c71010428b"
+    },
+    {
+      "scope": "source",
+      "relative_path": "serve/lifeline.py",
+      "before_sha256": "dab702abb92756296c14e7a11e0513b309c6013ea05e51bde043690bc5acfb96",
+      "after_sha256": "df47516da243723d41c478ef762043d8d57041397a1759558e7ec4c71010428b"
+    },
+    {
+      "scope": "app",
+      "relative_path": "serve/winjob.py",
+      "before_sha256": "3afbd45aa7fdd2567f66d0a076f9c77180c1e0ada911c30ae6587358d5d25070",
+      "after_sha256": "c20a1f0ea4a8a300ba406de1e8860bbf10121d71eef454a9d9e5dc03a7d57200"
+    },
+    {
+      "scope": "source",
+      "relative_path": "serve/winjob.py",
+      "before_sha256": "3afbd45aa7fdd2567f66d0a076f9c77180c1e0ada911c30ae6587358d5d25070",
+      "after_sha256": "c20a1f0ea4a8a300ba406de1e8860bbf10121d71eef454a9d9e5dc03a7d57200"
+    },
+    {
+      "scope": "app",
+      "relative_path": "strata_control/procs.py",
+      "before_sha256": "605cae5a7e6ffe555b743e02453ca349575a0478190fd3344a18a6b30a7333ae",
+      "after_sha256": "a8cfeda20bf6d103526e22d1ce3ec473ae7f5aeefd8cd71c70c587c7b15fdc6f"
+    },
+    {
+      "scope": "source",
+      "relative_path": "strata_control/procs.py",
+      "before_sha256": "605cae5a7e6ffe555b743e02453ca349575a0478190fd3344a18a6b30a7333ae",
+      "after_sha256": "a8cfeda20bf6d103526e22d1ce3ec473ae7f5aeefd8cd71c70c587c7b15fdc6f"
+    }
+  ],
+  "started_at": 1794567620.379748,
+  "restart_complete": true,
+  "after_server_pid": 33904,
+  "elapsed_s": 126.996,
+  "native_unchanged": true
+}

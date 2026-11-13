@@ -11,12 +11,15 @@ Huihui UD-IQ4_XS · 原生 Q4 MTP + 57K 草稿词表 · 262K 上下文 · Vulkan
 </p>
 
 本仓库是 [Niko1221/Strata](https://github.com/Niko1221/Strata) 的社区 fork，维护 **Windows 11 + Ryzen AI Max+ 395 / Radeon 8060S（gfx1151）+ 128 GB 统一内存**上的本地部署。
-当前代码基于上游 **v0.2.10 / engine 0.1.56**，加入本 fork 的原生 Q4/Q8 MTP 支持与 Vulkan 高分辨率预热修正。
+当前代码基于上游 **v0.2.10 / engine 0.1.56**，加入原生 Q4/Q8 MTP、DM16、Vulkan 高分辨率预热修正，以及经过本机验证的上游工具协议和服务修复。
 
 The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K draft vocabulary. See the [Windows installation guide](docs/WINDOWS_RYZEN_AI_MAX395.md) and [current benchmark results](bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md).
 
 ## 11 月 13 日修复
 
+- 替换停止请求的旧异常处理：引擎同时关闭或重启时，已关闭的输入管道和已清空的进程对象不会再次抛错。旧实现的两个异常均在本机复现。
+- Windows 子进程先加入随服务退出而清理的作业对象，再开始运行，防止包装程序过早启动的后代进程残留；图片读取器允许就绪标记前的额外日志，并保留启动期限。两类问题也已做本机前后对照。
+- Windows 残留进程扫描先筛选程序名，再读取可能匹配的命令行，减少启动检查等待。以上改动的源码、复现结果和部署验收见 [服务可靠性验证](deploy/windows-gfx1151/reliability-validation-20261113/README.md)。
 - 合入上游 #4828 和 #4832，修正多工具强制调用的提示前缀，并按 `tool_use_id` 对齐 Anthropic 并行工具结果。真实 Qwen 对照中，结果倒序返回从 0/4 正确变为 4/4，强制调用前后均为 24/24。[测试输入、原始回复与合并后验收](deploy/windows-gfx1151/tool-protocol-validation-20261113/summary.json)
 - Codex 接入本地 Qwen 时，Responses 接口按本次工具声明处理 `functions.exec` 与旧的 `exec_command` 历史。流式解析器可从部分写错的工具标签中恢复调用。Windows 预设采用实测的 `undeclared_tool_calls: "call"`，由客户端处理无法识别的调用。[设置与实测数据](deploy/windows-gfx1151/README.md#codex-工具调用)
 - 公网 IVYUN 网页在发送前或回答收尾时点击停止，可以继续发送下一问。部署包还包含 Linux 反向 SSH 隧道占用旧端口时的恢复程序。[网页补丁、部署说明与验证数据](deploy/public-chat/)
@@ -24,6 +27,10 @@ The current fork uses Strata 0.2.10 / engine 0.1.56 with native Q4 MTP and a 57K
 ## 11 月 13 日长输入优化
 
 本机 Q4 MTP 对照中，8K 输入预填充从 6.42 秒降至 6.31 秒，32K 从 25.82 秒降至 25.47 秒。代码和中文的输出 TPS 基本持平。已在此 Windows gfx1151 配置启用 `STRATA_PF_DM16`。[逐项对照和部署验收](bench/results/2026-11-13-community-ryzen-ai-max395-dm16/README.md)
+
+## 当前部署与清理
+
+实测机器当前主程序为 `strata-native-mtp-dm16.exe`，图片由独立 Vulkan 读取器处理。旧主引擎、未使用的包内视觉程序、旧版本安装脚本及临时测试副本已删除；主模型、Q4 MTP、57K 词表、Python 环境和共享编译依赖保留。11 月 13 日此前两批清理合计约 **1.04 GiB**。[完整清理记录、组件入口和保留目录](deploy/windows-gfx1151/CLEANUP.md)
 
 ## 当前性能（2026-11-04 重新实测）
 
@@ -76,7 +83,7 @@ Set-Location .\Strata
 
 | 参数 | 当前值 |
 | --- | --- |
-| 源码 / 引擎 | **0.2.10 / 0.1.56 + 本 fork MTP 补丁** |
+| 源码 / 引擎 | **0.2.10 / 0.1.56 + 原生 MTP、DM16 和选定的服务修复** |
 | 主模型 | Huihui Qwen3.8 Flash-Next UD-IQ4_XS |
 | 草稿器 | 原生 Q4_0 MTP，57K 草稿词表，`spec 8`，`spec-min-p 0.6`，window 8,192 |
 | 总上下文 / KV | 262,144 tokens / INT8 |
@@ -109,7 +116,7 @@ Set-Location .\Strata
 
 ## 数据与历史记录
 
-本页展示 **2026-11-04 正式新版**的结果。10 月的速度表、旧性能图、词表与缓存对照保存在 [历史测试归档](docs/BENCHMARK_ARCHIVE.md)。
+性能主表是 **2026-11-04** 的同题复测；**11 月 13 日**追加 DM16 对照、工具协议和服务可靠性验证。10 月的速度表、旧性能图、词表与缓存对照保存在 [历史测试归档](docs/BENCHMARK_ARCHIVE.md)。
 旧测试输入、原始回复、日志和配置记录继续保留；临时测试执行脚本及本机旧运行文件已清理。
 
 上游通用安装与产品介绍见 [上游文档快照](README.upstream.md)；本 fork 的当前部署以本页和当前安装指南为准。

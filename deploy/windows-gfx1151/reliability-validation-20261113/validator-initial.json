@@ -1,0 +1,408 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "health",
+      "passed": true,
+      "health": {
+        "status": "ok",
+        "loaded": true,
+        "images": true,
+        "max_context": 262144,
+        "public_compat": "llama-ui-v1"
+      }
+    },
+    {
+      "name": "force-0-openai-json",
+      "passed": true,
+      "seconds": 1.203,
+      "response": {
+        "id": "chatcmpl-f35c66bdf9db40b391cecad6",
+        "object": "chat.completion",
+        "created": 1794567825,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "tool_calls": [
+                {
+                  "id": "call_77a2cb695b764ec7b2cd5598",
+                  "type": "function",
+                  "function": {
+                    "name": "trial_lookup_product",
+                    "arguments": "{\"query\":\"AX-17\"}"
+                  }
+                }
+              ]
+            },
+            "finish_reason": "tool_calls"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 386,
+          "completion_tokens": 28,
+          "total_tokens": 414,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 386,
+          "prompt_ms": 768.6,
+          "prompt_per_token_ms": 1.991,
+          "prompt_per_second": 502.2,
+          "predicted_n": 28,
+          "predicted_ms": 414.8,
+          "predicted_per_token_ms": 14.814,
+          "predicted_per_second": 67.5,
+          "draft_n": 29,
+          "draft_n_accepted": 22
+        }
+      }
+    },
+    {
+      "name": "force-0-anthropic-json",
+      "passed": true,
+      "seconds": 0.531,
+      "response": {
+        "id": "msg_1392349249f14a5ebbac6863",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "call_842f8e72d7a24c5fb547d33e",
+            "name": "trial_lookup_product",
+            "input": {
+              "query": "AX-17"
+            }
+          }
+        ],
+        "stop_reason": "tool_use",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 1,
+          "output_tokens": 28,
+          "cache_creation_input_tokens": 8,
+          "cache_read_input_tokens": 377
+        }
+      }
+    },
+    {
+      "name": "results-2-reversed",
+      "passed": true,
+      "seconds": 0.89,
+      "response": {
+        "id": "msg_e3726dd8e5e14490835d442c",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"customer_code\": \"C7D8E321\", \"warehouse_code\": \"47DDF1E9\"}"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 1,
+          "output_tokens": 28,
+          "cache_creation_input_tokens": 181,
+          "cache_read_input_tokens": 0
+        }
+      }
+    },
+    {
+      "name": "results-5-reversed",
+      "passed": true,
+      "seconds": 1.578,
+      "response": {
+        "id": "msg_9393f48af37a4d33b422d648",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"customer_code\": \"BC16AF95\", \"warehouse_code\": \"0ADD48D0\", \"shipment_code\": \"1B0DF92F\", \"invoice_code\": \"B3D03CB1\", \"supplier_code\": \"7A10E253\"}"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 1,
+          "output_tokens": 65,
+          "cache_creation_input_tokens": 330,
+          "cache_read_input_tokens": 0
+        }
+      }
+    },
+    {
+      "name": "codex-json",
+      "passed": true,
+      "seconds": 1.125,
+      "response": {
+        "id": "resp_d8bdabf6add24c1e88ccf544149e3633",
+        "object": "response",
+        "created_at": 1794567847,
+        "status": "completed",
+        "background": false,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 300,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "output": [
+          {
+            "id": "fc_b884a0d16dca4a62868e52b5ee91ed2b",
+            "type": "function_call",
+            "status": "completed",
+            "call_id": "call_7d36eebf1760414cb1bec2f8",
+            "name": "trial_lookup_product",
+            "arguments": "{\"query\":\"AX-17\"}"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "previous_response_id": null,
+        "reasoning": {
+          "effort": "none",
+          "summary": null
+        },
+        "store": false,
+        "temperature": 0,
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tool_choice": "required",
+        "tools": [
+          {
+            "type": "function",
+            "name": "trial_lookup_product",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "query"
+              ]
+            }
+          }
+        ],
+        "top_p": null,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 267,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 30,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 297
+        },
+        "user": null,
+        "metadata": {},
+        "completed_at": 1794567849,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 267,
+          "prompt_ms": 662.1,
+          "prompt_per_token_ms": 2.48,
+          "prompt_per_second": 403.3,
+          "predicted_n": 30,
+          "predicted_ms": 434.5,
+          "predicted_per_token_ms": 14.483,
+          "predicted_per_second": 69.0,
+          "draft_n": 33,
+          "draft_n_accepted": 24
+        }
+      }
+    },
+    {
+      "name": "history",
+      "passed": false,
+      "seconds": 1.297,
+      "response": {
+        "id": "resp_bb0b5fad457547c1a045886e76273d3d",
+        "object": "response",
+        "created_at": 1794567849,
+        "status": "completed",
+        "background": false,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": "You are a coding assistant. Use tools to inspect the computer.",
+        "max_output_tokens": 512,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "output": [
+          {
+            "id": "ctc_379e7738a5da44c19da2b9df80fd5845",
+            "type": "custom_tool_call",
+            "status": "completed",
+            "call_id": "call_a5e35ce18f9148aaaae6a11e",
+            "name": "exec",
+            "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+            "namespace": "functions"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "previous_response_id": null,
+        "reasoning": {
+          "effort": "none",
+          "summary": null
+        },
+        "store": false,
+        "temperature": 0,
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tool_choice": "auto",
+        "tools": [
+          {
+            "type": "namespace",
+            "name": "functions",
+            "tools": [
+              {
+                "type": "custom",
+                "name": "exec",
+                "description": "Run JavaScript code to orchestrate tool calls. All nested tools are on the global tools object. Nested exec_command takes {cmd:string}. For example: text(await tools.exec_command({cmd:\"Get-Date\"})); The raw input is JavaScript.",
+                "format": {
+                  "type": "text"
+                }
+              }
+            ]
+          }
+        ],
+        "top_p": null,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 513,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 39,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 552
+        },
+        "user": null,
+        "metadata": {},
+        "completed_at": 1794567850,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 513,
+          "prompt_ms": 807.8,
+          "prompt_per_token_ms": 1.575,
+          "prompt_per_second": 635.1,
+          "predicted_n": 39,
+          "predicted_ms": 434.8,
+          "predicted_per_token_ms": 11.149,
+          "predicted_per_second": 89.7,
+          "draft_n": 35,
+          "draft_n_accepted": 33
+        }
+      }
+    },
+    {
+      "name": "history",
+      "passed": false,
+      "seconds": 1.375,
+      "response": {
+        "id": "resp_5883587cdd25441caa457bae842e5979",
+        "object": "response",
+        "created_at": 1794567879,
+        "status": "completed",
+        "background": false,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": "You are a coding assistant. Use tools to inspect the computer.",
+        "max_output_tokens": 512,
+        "model": "qwen3.8-flash-next-iq4-xs",
+        "output": [
+          {
+            "id": "ctc_9260a90e04e543a9a94ae5fd5e2f5534",
+            "type": "custom_tool_call",
+            "status": "completed",
+            "call_id": "call_acda7c9dd0054ffb8108c481",
+            "name": "exec",
+            "input": "text(await tools.exec_command({\"cmd\": \"Get-Date\"}));",
+            "namespace": "functions"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "previous_response_id": null,
+        "reasoning": {
+          "effort": "none",
+          "summary": null
+        },
+        "store": false,
+        "temperature": 0,
+        "text": {
+          "format": {
+            "type": "text"
+          }
+        },
+        "tool_choice": "auto",
+        "tools": [
+          {
+            "type": "namespace",
+            "name": "functions",
+            "tools": [
+              {
+                "type": "custom",
+                "name": "exec",
+                "description": "Run JavaScript code to orchestrate tool calls. All nested tools are on the global tools object. Nested exec_command takes {cmd:string}. For example: text(await tools.exec_command({cmd:\"Get-Date\"})); The raw input is JavaScript.",
+                "format": {
+                  "type": "text"
+                }
+              }
+            ]
+          }
+        ],
+        "top_p": null,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 513,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 39,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 552
+        },
+        "user": null,
+        "metadata": {},
+        "completed_at": 1794567881,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 513,
+          "prompt_ms": 790.3,
+          "prompt_per_token_ms": 1.541,
+          "prompt_per_second": 649.1,
+          "predicted_n": 39,
+          "predicted_ms": 518.9,
+          "predicted_per_token_ms": 13.305,
+          "predicted_per_second": 75.2,
+          "draft_n": 42,
+          "draft_n_accepted": 32
+        }
+      }
+    }
+  ]
+}

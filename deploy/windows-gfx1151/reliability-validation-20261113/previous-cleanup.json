@@ -1,0 +1,79 @@
+{
+  "upgrade_20261104": {
+    "targets_deleted": 99,
+    "files_deleted": 23819,
+    "bytes_deleted": 6926073677,
+    "remaining_paths": []
+  },
+  "dm16_scratch_removed_bytes": 614702188.0,
+  "final_20261113": {
+    "deleted_targets": 8,
+    "deleted_files": 683,
+    "removed_bytes": 505619965.0,
+    "remaining_cleanup_targets": 0,
+    "active_engine": "strata-native-mtp-dm16.exe",
+    "component_entrypoint_aligned": true,
+    "readonly_and_hidden_attributes_cleared_with_powershell_before_normal_removal": true,
+    "forced_deletion_used": false,
+    "runtime_checks": {
+      "health_before": {
+        "status": "ok",
+        "images": true,
+        "loaded": true,
+        "public_compat": "llama-ui-v1"
+      },
+      "active_exe": "strata-native-mtp-dm16.exe",
+      "component_entrypoint_matches": true,
+      "component_integrity_passed": true,
+      "owned_process": true,
+      "dm16_enabled": true,
+      "tool_call": {
+        "passed": true,
+        "calls": [
+          {
+            "name": "trial_lookup_product",
+            "arguments": {
+              "query": "AX-17"
+            }
+          }
+        ]
+      },
+      "image": {
+        "passed": true,
+        "text": "幻X 本地模型测试\n工单编号：XIA-5297\n错误位置：第 17 行\n缓存容量：2048\n处理状态：等待重试\n校验短语：枫叶与兰花"
+      },
+      "health_after": {
+        "status": "ok",
+        "images": true,
+        "loaded": true
+      },
+      "idle_after": true
+    },
+    "public_checks": {
+      "anonymous_models": 401,
+      "authenticated_stream": 200,
+      "text": "清理后服务正常",
+      "done": true
+    },
+    "preserved": [
+      "active model weights",
+      "current engine and Vulkan vision reader",
+      "Python environment",
+      "shared build toolchains",
+      "current source",
+      "measurement inputs and results"
+    ]
+  },
+  "manifest": {
+    "entrypoint": "strata-native-mtp-dm16.exe",
+    "archs": [
+      "gfx1151"
+    ],
+    "build_id": "e0f97dbf7eaa-native-q4-mtp-dm16-gfx1151",
+    "local_unsigned_manifest": true,
+    "original_manifest_archived": true,
+    "quick_integrity_passed": true,
+    "current_engine_sha256": "52a3e0d073342ff6cc102a1a0c948a189c055d78b6f6db2397dbd99ff8496519",
+    "deletion_targets_not_running": true
+  }
+}

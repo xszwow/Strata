@@ -1,6 +1,6 @@
 # Windows Ryzen AI Max+ 395 安装指南
 
-**当前版本：上游源码 0.2.10 / 引擎 0.1.56 + 本 fork 原生 Q4/Q8 MTP 补丁。更新日期：2026-11-04。**
+**当前版本：上游源码 0.2.10 / 引擎 0.1.56 + 原生 Q4/Q8 MTP、DM16 及选定的上游服务修复。更新日期：2026-11-13。**
 
 这份指南安装本 fork 在 Windows 11、Ryzen AI Max+ 395 / Radeon 8060S（gfx1151）、约 128 GB 统一内存上实测的配置：
 Huihui UD-IQ4_XS 主模型、Q4 MTP + 57K 草稿词表、262,144 上下文、INT8 KV、16K prefill 和独立 Vulkan 视觉。
@@ -8,6 +8,7 @@ Huihui UD-IQ4_XS 主模型、Q4 MTP + 57K 草稿词表、262,144 上下文、INT
 [返回首页](../README.md) · [最新同题复测](../bench/results/2026-11-04-community-ryzen-ai-max395-current-performance/README.md) · [安装脚本](../deploy/windows-gfx1151/)
 
 脚本位于固定目录 `deploy/windows-gfx1151/`。主模型与 projector 沿用已核验的权重；[来源、revision 和哈希](../bench/results/2026-10-12-community-ryzen-ai-max395-huihui-iq4xs/models.json) 保留最初记录日期。
+实测机器已删除旧引擎和临时测试实现，当前组件及仍需保留的共享依赖见 [清理记录](../deploy/windows-gfx1151/CLEANUP.md)。
 仓库不包含模型权重，安装时会下载约 95 GB 的主模型和视觉文件，另需 MTP 与编译依赖空间。
 
 ## 1. 准备条件
@@ -185,6 +186,7 @@ $Config = Join-Path $RepoRoot 'strata-huihui-iq4xs-q4mtp.json'
 | 上下文 / KV | 262,144 / INT8 |
 | 并发生成 | 1（8 个 worker 是内部 worker pool，不是 8 路满速并发） |
 | Prefill chunk | 16,384 |
+| FP16 专家中间结果 | `STRATA_PF_DM16=1`，Windows gfx1151 实测启用 |
 | Expert cache | 24,576 |
 | Prompt cache | 6 个内存 checkpoint |
 | Host conversation parking | 关闭，`0 MiB` |

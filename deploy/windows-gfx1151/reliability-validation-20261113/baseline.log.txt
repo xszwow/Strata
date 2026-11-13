@@ -1,0 +1,103 @@
+test_broken_pipe_still_quiet (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_broken_pipe_still_quiet) ... ok
+test_open_pipe_gets_the_stop (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_open_pipe_gets_the_stop) ... ok
+test_proc_gone (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_proc_gone) ... ERROR
+test_stdin_closed (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_stdin_closed) ... ERROR
+test_a_cmd_shim_that_starts_node_is_ended_with_its_node (serve.test_winjob_early_child.EarlyGrandchild.test_a_cmd_shim_that_starts_node_is_ended_with_its_node)
+Close to the report: an MCP server started through a .cmd wrapper (npx / uvx are such shims) whose real program ... FAIL
+test_a_process_started_before_the_assignment_would_have_run_is_in_the_job (serve.test_winjob_early_child.EarlyGrandchild.test_a_process_started_before_the_assignment_would_have_run_is_in_the_job) ... FAIL
+test_a_stray_line_before_READY_does_not_kill_the_reader (serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_before_READY_does_not_kill_the_reader) ... FAIL
+test_the_encode_answers_after_READY_are_not_taken_by_the_start (serve.test_vision_ready_pipe.ReadyPipe.test_the_encode_answers_after_READY_are_not_taken_by_the_start) ... FAIL
+
+======================================================================
+ERROR: test_proc_gone (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_proc_gone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\server.py", line 2591, in generate
+    yield t
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_stop_closed_pipe.py", line 61, in test_proc_gone
+    self.run_case(gone)
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_stop_closed_pipe.py", line 53, in run_case
+    gen.close()                          # must not raise, whatever state the pipe is in
+    ^^^^^^^^^^^
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\server.py", line 2625, in generate
+    self.proc.stdin.write(stop_line)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'stdin'
+
+======================================================================
+ERROR: test_stdin_closed (serve.test_stop_closed_pipe.StopOnAClosedPipe.test_stdin_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\server.py", line 2591, in generate
+    yield t
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_stop_closed_pipe.py", line 56, in test_stdin_closed
+    self.run_case(lambda e: e.proc.stdin.close())          # ValueError: I/O operation on closed file
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_stop_closed_pipe.py", line 53, in run_case
+    gen.close()                          # must not raise, whatever state the pipe is in
+    ^^^^^^^^^^^
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\server.py", line 2625, in generate
+    self.proc.stdin.write(stop_line)
+ValueError: I/O operation on closed file
+
+======================================================================
+FAIL: test_a_cmd_shim_that_starts_node_is_ended_with_its_node (serve.test_winjob_early_child.EarlyGrandchild.test_a_cmd_shim_that_starts_node_is_ended_with_its_node)
+Close to the report: an MCP server started through a .cmd wrapper (npx / uvx are such shims) whose real program
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_winjob_early_child.py", line 137, in test_a_cmd_shim_that_starts_node_is_ended_with_its_node
+    self.assertEqual([h.label for h in held if not h.exited(10000)], [], "survived the end of the job")
+AssertionError: Lists differ: ['node'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'node'
+
+- ['node']
++ [] : survived the end of the job
+
+======================================================================
+FAIL: test_a_process_started_before_the_assignment_would_have_run_is_in_the_job (serve.test_winjob_early_child.EarlyGrandchild.test_a_process_started_before_the_assignment_would_have_run_is_in_the_job)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_winjob_early_child.py", line 111, in test_a_process_started_before_the_assignment_would_have_run_is_in_the_job
+    self.assertEqual(left, [], "outside the job, so it survived the end of the job")
+AssertionError: Lists differ: ['the grandchild'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'the grandchild'
+
+- ['the grandchild']
++ [] : outside the job, so it survived the end of the job
+
+======================================================================
+FAIL: test_a_stray_line_before_READY_does_not_kill_the_reader (serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_before_READY_does_not_kill_the_reader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_vision_ready_pipe.py", line 81, in test_a_stray_line_before_READY_does_not_kill_the_reader
+    self.assertIsNone(error)
+AssertionError: RuntimeError('the vision encoder did not start: [New LWP 477206] (exit code 1)') is not None
+
+======================================================================
+FAIL: test_the_encode_answers_after_READY_are_not_taken_by_the_start (serve.test_vision_ready_pipe.ReadyPipe.test_the_encode_answers_after_READY_are_not_taken_by_the_start)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<PUBLIC_WORKSPACE>\work\strata-github-sync-20261104\serve\test_vision_ready_pipe.py", line 95, in test_the_encode_answers_after_READY_are_not_taken_by_the_start
+    self.assertIsNone(error)
+AssertionError: RuntimeError('the vision encoder did not start: noise (exit code 1)') is not None
+
+----------------------------------------------------------------------
+Ran 8 tests in 23.203s
+
+FAILED (failures=4, errors=2)

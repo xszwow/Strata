@@ -1,0 +1,39 @@
+{
+  "scope": "read-only orphan scan; no processes ended; existing engine unchanged",
+  "runs": [
+    {
+      "implementation": "old",
+      "seconds": 5.645665,
+      "orphans": 0
+    },
+    {
+      "implementation": "new",
+      "seconds": 0.069477,
+      "orphans": 0
+    },
+    {
+      "implementation": "new",
+      "seconds": 0.066474,
+      "orphans": 0
+    },
+    {
+      "implementation": "old",
+      "seconds": 0.131794,
+      "orphans": 0
+    },
+    {
+      "implementation": "old",
+      "seconds": 0.113347,
+      "orphans": 0
+    },
+    {
+      "implementation": "new",
+      "seconds": 0.063364,
+      "orphans": 0
+    }
+  ],
+  "median_seconds": {
+    "old": 0.131794,
+    "new": 0.066474
+  }
+}

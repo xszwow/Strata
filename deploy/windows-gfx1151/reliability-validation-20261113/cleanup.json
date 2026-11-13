@@ -1,0 +1,15 @@
+{
+  "target": "<PUBLIC_WORKSPACE>\\work\\strata-reliability-20261113",
+  "deleted": true,
+  "files": 25,
+  "bytes": 2716229.0,
+  "reparse_points": 0,
+  "forced_deletion_used": false,
+  "preserved": [
+    "regression tests",
+    "synthetic requests and responses",
+    "upstream patches and runtime diffs",
+    "current engine and models"
+  ],
+  "old_implementations_replaced_in_place": true
+}

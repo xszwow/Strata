@@ -1,0 +1,57 @@
+{
+  "server_pid": 33904,
+  "server_created_at": 1794567620.430582,
+  "native_instances": 1,
+  "vision_instances": 1,
+  "active_engine": "strata-native-mtp-dm16.exe",
+  "native_sha256": "52a3e0d073342ff6cc102a1a0c948a189c055d78b6f6db2397dbd99ff8496519",
+  "runtime_files_sha256": {
+    "serve/lifeline.py": "df47516da243723d41c478ef762043d8d57041397a1759558e7ec4c71010428b",
+    "serve/winjob.py": "c20a1f0ea4a8a300ba406de1e8860bbf10121d71eef454a9d9e5dc03a7d57200",
+    "strata_control/procs.py": "a8cfeda20bf6d103526e22d1ce3ec473ae7f5aeefd8cd71c70c587c7b15fdc6f",
+    "serve/server.py": "d91188c50807042574debdff2a4abd929b4adda477645f064f68b2687ee629cb"
+  },
+  "modified_server_nodes_match_fork": true,
+  "previous_cleanup_rechecked": [
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\dm16-trial",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<PUBLIC_WORKSPACE>\\work\\tool-fix-practicality-20261113",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\versions\\0.1.56\\engine\\strata-native-mtp.exe",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\versions\\0.1.56\\engine\\strata.exe",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\versions\\0.1.56\\engine\\strata-vision.exe",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\versions\\0.1.56\\engine\\strata-vision-hip.exe",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\scripts\\Install-Release.py",
+      "Exists": false,
+      "StillAbsent": true
+    },
+    {
+      "Path": "<MODEL_WORKSPACE>\\engines\\strata\\scripts\\__pycache__\\Install-Release.cpython-312.pyc",
+      "Exists": false,
+      "StillAbsent": true
+    }
+  ]
+}

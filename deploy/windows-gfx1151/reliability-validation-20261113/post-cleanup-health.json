@@ -1,0 +1,12 @@
+{
+  "health": {
+    "status": "ok",
+    "loaded": true,
+    "images": true,
+    "max_context": 262144,
+    "public_compat": "llama-ui-v1"
+  },
+  "state": "idle",
+  "temporary_directory_absent": true,
+  "native_binary_unchanged": true
+}

@@ -126,6 +126,7 @@ if (Test-Path -LiteralPath $tuning -PathType Leaf) {
 }
 $environment['STRATA_PF_FUSED'] = '1'
 $environment['STRATA_PF_GEMM'] = '1'
+$environment['STRATA_PF_DM16'] = '1'
 $environment['STRATA_HC_UPMIX'] = '1'
 $environment['STRATA_PA_FAST'] = '1'
 $environment['STRATA_HIP_WMMA'] = '1'

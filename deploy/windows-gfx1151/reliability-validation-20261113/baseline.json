@@ -1,0 +1,51 @@
+{
+  "phase": "baseline",
+  "tests": 8,
+  "errors": 2,
+  "failures": 4,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "passed": false,
+  "elapsed_s": 23.437,
+  "cases": [
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_broken_pipe_still_quiet",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_open_pipe_gets_the_stop",
+      "status": "passed"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_proc_gone",
+      "status": "error",
+      "error": "'NoneType' object has no attribute 'stdin'"
+    },
+    {
+      "test": "serve.test_stop_closed_pipe.StopOnAClosedPipe.test_stdin_closed",
+      "status": "error",
+      "error": "I/O operation on closed file"
+    },
+    {
+      "test": "serve.test_winjob_early_child.EarlyGrandchild.test_a_cmd_shim_that_starts_node_is_ended_with_its_node",
+      "status": "failed",
+      "error": "Lists differ: ['node'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'node'\n\n- ['node']\n+ [] : survived the end of the job"
+    },
+    {
+      "test": "serve.test_winjob_early_child.EarlyGrandchild.test_a_process_started_before_the_assignment_would_have_run_is_in_the_job",
+      "status": "failed",
+      "error": "Lists differ: ['the grandchild'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'the grandchild'\n\n- ['the grandchild']\n+ [] : outside the job, so it survived the end of the job"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_a_stray_line_before_READY_does_not_kill_the_reader",
+      "status": "failed",
+      "error": "RuntimeError('the vision encoder did not start: [New LWP 477206] (exit code 1)') is not None"
+    },
+    {
+      "test": "serve.test_vision_ready_pipe.ReadyPipe.test_the_encode_answers_after_READY_are_not_taken_by_the_start",
+      "status": "failed",
+      "error": "RuntimeError('the vision encoder did not start: noise (exit code 1)') is not None"
+    }
+  ]
+}

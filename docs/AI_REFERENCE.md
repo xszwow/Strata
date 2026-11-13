@@ -1,4 +1,4 @@
-> **This fork: source 0.2.10 / engine 0.1.56 + native Q4 MTP.** For the measured Windows Ryzen AI Max+ 395 preset, use [WINDOWS_RYZEN_AI_MAX395.md](WINDOWS_RYZEN_AI_MAX395.md). The upstream reference below retains its own review date and scope.
+> **This fork: source 0.2.10 / engine 0.1.56 + native Q4 MTP, DM16 and selected server backports.** For the measured Windows Ryzen AI Max+ 395 preset, use [WINDOWS_RYZEN_AI_MAX395.md](WINDOWS_RYZEN_AI_MAX395.md). The upstream reference below retains its own review date and scope.
 
 # Strata reference for AI tools and automated readers
 
